@@ -1,4 +1,4 @@
-Protection Profile Template
+PP-Module Template
 ===============
 
 Quickstart
@@ -9,28 +9,28 @@ Quickstart
 
 
 ````
-git clone --bare https://github.com/commoncriteria/pp-template.git
+git clone --bare https://github.com/commoncriteria/module-template.git
 # Make a bare clone of the repository
 
-cd pp-template.git
+cd module-template.git
 git push --mirror $NEW_REPO_GIT_URL
 # Mirror-push to the new repository
 
 cd ..
-rm -rf pp-template.git
+rm -rf module-template.git
 # Remove our temporary local repository
 ````
 
 3. Do a full clone of your new project
 
-4. Rename the input file, currently named, input/pp-template.xml to the name
+4. Rename the input file, currently named, input/module-template.xml to the name
    of the project with xml added to it; for example, operatingsystem and application
    have operatingsystem.xml and application.xml input files respectively.
 
    If something was the project name it would be,
 
    ````
-   git mv input/pp-template.xml input/something.xml
+   git mv input/module-template.xml input/something.xml
    ````
 5. If creating a Protection Profile Module rename Module.make to Makefile 
    otherwise rename ProtectionProfile.make to Makefile and delete the other .make file.
@@ -39,13 +39,13 @@ rm -rf pp-template.git
    \<PP> and closing \</PP> tags to be \<Module> and \</Module> respectively. 
    If you're creating a standard Protection Profile then these tags do not need to be changed.
 
-7. Remove this content from the readme, up to the line below and customize (look for 'QQQQ' and 'pp-template'). 
+7. Remove this content from the readme, up to the line below and customize (look for 'QQQQ' and 'module-template'). 
 
 Note: Adding this project to the Travis CI live build requires special permission and cannot be done without assistance.
 Contact the the framework coordinators for more informatino.
 
 
-For more information see the [PP Development Wiki](https://github.com/commoncriteria/pp-template/wiki).
+For more information see the [PP Development Wiki](https://github.com/commoncriteria/module-template/wiki).
 
 ----
 
@@ -53,17 +53,17 @@ For more information see the [PP Development Wiki](https://github.com/commoncrit
 Protection Profile or Extended Package for QQQQ
 ===============
 ![Master Badges](https://img.shields.io/badge/Build-master-black.svg)
-![Build](https://github.com/commoncriteria/pp-template/workflows/Build/badge.svg)
-![Validate](https://github.com/commoncriteria/pp-template/workflows/Validate/badge.svg)
+![Build](https://github.com/commoncriteria/module-template/workflows/Build/badge.svg)
+![Validate](https://github.com/commoncriteria/module-template/workflows/Validate/badge.svg)
 
-![Last QuickBuilt Branch](https://raw.githubusercontent.com/commoncriteria/pp-template/gh-pages/build-branch-badge.svg)
-[![Validation](https://raw.githubusercontent.com/commoncriteria/pp-template/gh-pages/validation.svg)](https://github.com/commoncriteria/pp-template/blob/gh-pages/ValidationReport.txt)
-[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/pp-template/gh-pages/warnings.svg)](https://github.com/commoncriteria/pp-template/blob/gh-pages/SanityChecksOutput.md)
-[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/pp-template/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/pp-template/blob/gh-pages/SpellCheckReport.txt)
-[![QuickBuild](https://github.com/commoncriteria/pp-template/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/pp-template)
+![Last QuickBuilt Branch](https://raw.githubusercontent.com/commoncriteria/module-template/gh-pages/build-branch-badge.svg)
+[![Validation](https://raw.githubusercontent.com/commoncriteria/module-template/gh-pages/validation.svg)](https://github.com/commoncriteria/module-template/blob/gh-pages/ValidationReport.txt)
+[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/module-template/gh-pages/warnings.svg)](https://github.com/commoncriteria/module-template/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/module-template/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/module-template/blob/gh-pages/SpellCheckReport.txt)
+[![QuickBuild](https://github.com/commoncriteria/module-template/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/module-template)
 
 
-[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/pp-template.svg?maxAge=2592000)](https://github.com/commoncriteria/pp-template/issues) 
+[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/module-template.svg?maxAge=2592000)](https://github.com/commoncriteria/module-template/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
 This repository hosts the draft version of the Protection Profile for QQQQ based on the 
