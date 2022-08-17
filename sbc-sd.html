@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html><head><title>Supporting Document - 
-    PP-Module for Widgets</title><style type="text/css">
+    PP-Module for Session Border Controllers</title><style type="text/css">
     #toc a{
         display: block;
     }
@@ -25,8 +25,12 @@
     .assignable-content{
       font-style: italic;
     }
-    .selection-content{
+    .selectable-content{
       font-style: italic;
+    }
+    .not-selectable-content{
+      font-style: italic;
+      text-decoration: line-through;
     }
     .refinement{
       font-weight: bold;
@@ -55,7 +59,11 @@
        max-width: 15px;
     }
 
-
+    a.definition{
+      color: inherit;
+      text-decoration: inherit;
+    }
+      
     a {
       text-decoration: none;
       word-wrap: break-word;
@@ -244,7 +252,7 @@
    
    </style></head><body><div style="text-align: center; margin-left: auto; margin-right: auto;"><h1 class="title" style="page-break-before:auto;">Supporting Document<br/>
         Mandatory Technical Document</h1><img src="images/niaplogo.png" alt="NIAP"></img><hr width="50%"></hr><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><br/>
-    PP-Module for Widgets<br/>
+    PP-Module for Session Border Controllers<br/>
       Version: 1.0<br/>2020-01-16<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
       and the associated Common Evaluation Methodology for
       Information Technology Security Evaluation.</p><p>SDs may be “Guidance Documents”, that highlight specific approaches 
@@ -256,20 +264,23 @@
       issued as a result of their application are recognized under the CCRA.</p><p><b>Technical Editor:</b><br/>
       National Information Assurance Partnership (NIAP)
       </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>1.0</td><td>2016-10-06</td><td>Initial Release </td></tr></table></p><p><b>General Purpose:</b><br/>
-      The purpose of this SD is to define evaluation methods for the functional behavior of 
-      Widgets  products.
+      The purpose of this SD is to define evaluation methods for the functional behavior of
+      Session Border Controller      
+      products.
       </p><p><b>Acknowledgments:</b><br/>
       This SD was developed with support from NIAP 
-      Widgets Technical Community members, with representatives from industry, government 
+      Session Border Controllers
+      Technical Community members, with representatives from industry, government 
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-vir" style="text-indent:10px">2.1<span>
-    Protection Profile for Virtualization Systems</span></a><a href="#qq-sfrs-vir-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
+    Protection Profile for Session Border Controllers</span></a><a href="#qq-sfrs-vir-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
         </span></a><a href="#aa-b-nd" style="text-indent:10px">2.2<span>
     Protection Profile for Network Device</span></a><a href="#qq-sfrs-b-nd-Modified" style="text-indent:20px">2.2.1<span>Modified SFRs
         </span></a><a href="#from_nd_fpt" style="text-indent:30px">2.2.1.1<span>Protection of the TSF (FPT)</span></a><a href="#ftp" style="text-indent:30px">2.2.1.2<span>Trusted Paths/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">2.3<span>TOE SFR Evaluation Activities</span></a><a href="#man_fau" style="text-indent:20px">2.3.1<span>Security Audit (FAU)</span></a><a href="#fdp" style="text-indent:20px">2.3.2<span>User Data Protection (FDP)</span></a><a href="#fmt" style="text-indent:20px">2.3.3<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Optional SFRs</span></a><a href="#opt_fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#sel-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#sel_fau" style="text-indent:20px">2.5.1<span>Security Audit (FAU)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Objective SFRs</span></a><a href="#obj_fau" style="text-indent:20px">2.6.1<span>Security Audit (FAU)</span></a><a href="#fpt" style="text-indent:20px">2.6.2<span>Protection of the TSF (FPT)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
-    PP-Module for Widgets is
+    PP-Module for Session Border Controllers is
     to describe the security functionality of 
-      Widgets products in terms of 
+    Session Border Controllers
+    products in terms of 
     [CC] and to define functional and assurance requirements for them.
 
     
@@ -278,7 +289,7 @@
         version 
         1.1.1</a></li><li><a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440">Network Device, version 2.1</a></li></ul><br/>
     This SD is mandatory for evaluations of TOEs that claim conformance to a PP-Configuration that includes the PP-Module for :
-    <ul><li>Widgets, Version 1.0</li></ul>
+    <ul><li>Session Border Controllers, Version 1.0</li></ul>
     As such it defines Evaluation Activities for the functionality described in the PP-Module as well as any impacts to the Evaluation Activities to the Base-PP(s) it modifies.
     </p><p> 
 Although Evaluation Activities are defined mainly for the evaluators to follow, in general they also help developers to prepare for evaluation by identifying specific requirements for their TOE.
@@ -374,7 +385,7 @@ The following sections list Common Criteria and technology terms used in this do
     in the manner declared by the developer and as mandated by the EA. 
     The CEM workunits that are associated with the EAs specified in this section 
     are: ATE_IND.1-3, ATE_IND.1-4, ATE_IND.1-5, ATE_IND.1-6, and ATE_IND.1-7.</p><h2 class="indexable" data-level="1" id="aa-vir">2.1 
-    Protection Profile for Virtualization Systems</h2>
+    Protection Profile for Session Border Controllers</h2>
       The EAs defined in this section are only applicable in cases where the TOE claims conformance
       to a PP-Configuration that includes the Virtualization PP.
      <h3 class="indexable" data-level="2" id="qq-sfrs-vir-Modified">2.1.1 Modified SFRs
@@ -409,13 +420,13 @@ The following sections list Common Criteria and technology terms used in this do
                 capabilities.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>The evaluator shall perform a series of events or generate traffic that
+                  <li id="_t_1"><b><a href="#_t_1" class="definition">Test 1</a>: </b>The evaluator shall perform a series of events or generate traffic that
                     would successfully trigger an alert. The evaluator should verify and record
                     whether the TOE generated the alert. The evaluator should also record the events
                     or traffic that was generated and what alert was attempted to be triggered and
                     record the details provided by the TOE in the alert.
                   </li>
-                  <li><b>Test 2: </b><i>[conditional]</i> If capturing of raw frames was selected, verify that the packet capture was
+                  <li id="_t_2"><b><a href="#_t_2" class="definition">Test 2</a>: </b><i>[conditional]</i> If capturing of raw frames was selected, verify that the packet capture was
                     triggered and stored as appropriate.</li>
                 </ul>
               </div></div><div class="comp" id=""><h4>FAU_ARP_EXT.2 Security Alarm Filtering</h4><div class="component-activity-header">FAU_ARP_EXT.2</div>
@@ -428,7 +439,7 @@ The following sections list Common Criteria and technology terms used in this do
                 instructions on enabling and disabling alerts.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_3"><b><a href="#_t_3" class="definition">Test 1</a>: </b>
                     <ul>
                       <li>The evaluator shall use the operational guidance to enable/disable
                         detection of available detection capabilities through the WIDS administrator
@@ -472,7 +483,7 @@ The following sections list Common Criteria and technology terms used in this do
                 evaluator shall confirm and note the existence of the capability, and test for the
                 appropriate selection-based requirements.
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_4"><b><a href="#_t_4" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP and connect it to the protected wired
                         infrastructure via wire.</li>
@@ -514,7 +525,7 @@ The following sections list Common Criteria and technology terms used in this do
                 within range of the TOE sensors.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea"> 
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_5"><b><a href="#_t_5" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Per guidance in FMT_SMF.1, add MAC Addresses for an AP and EUD to the whitelist.</li>
                       <li><b>Step 2: </b>Deploy the AP and EUD that were added to whitelist within the range of the TOE's sensors.</li>                 
@@ -525,7 +536,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 7: </b>Verify that the AP is classified as unauthorized.</li>
                     </ul>
                   </li>             
-                  <li><b>Test 2: </b>
+                  <li id="_t_6"><b><a href="#_t_6" class="definition">Test 2</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP and EUD, and connect the EUD to the AP.</li>
                       <li><b>Step 2: </b>Verify that the list of detected APs and EUDs contains the whitelisted AP
@@ -534,7 +545,7 @@ The following sections list Common Criteria and technology terms used in this do
                     whitelisted devices.</li>
                     </ul>
                    </li>                
-                  <li><b>Test 3: </b>
+                  <li id="_t_7"><b><a href="#_t_7" class="definition">Test 3</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-whitelisted AP and EUD and connect the EUD to the AP.</li>
                       <li><b>Step 2: </b>Verify that the list of detected APs and EUDs contains the non-whitelisted
@@ -557,7 +568,7 @@ The following sections list Common Criteria and technology terms used in this do
                 above.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea"> 
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_8"><b><a href="#_t_8" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP, non-whitelisted AP and two whitelisted
                         EUDs.</li>
@@ -584,7 +595,7 @@ The following sections list Common Criteria and technology terms used in this do
                 information regarding the format of each alert.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_9"><b><a href="#_t_9" class="definition">Test 1</a>: </b>
                     Create the following connections between two whitelisted EUDs. 
                     <ul>
                       <li>Windows Ad Hoc Connection</li>
@@ -593,7 +604,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li>Wi-Fi Direct</li>
                     </ul>
                   </li>
-                  <li><b>Test 2: </b> Create the following connections between one whitelisted EUD and a
+                  <li id="_t_10"><b><a href="#_t_10" class="definition">Test 2</a>: </b> Create the following connections between one whitelisted EUD and a
                     non-whitelisted EUD <ul>
                       <li>Windows Ad Hoc Connection</li>
                       <li>Mac OS Ad Hoc</li>
@@ -601,9 +612,9 @@ The following sections list Common Criteria and technology terms used in this do
                       <li>Wi-Fi Direct</li>
                     </ul>
                   </li>
-                  <li><b>Test 3: </b>(optional) Bridge two network interfaces on a whitelisted EUD (one must be
+                  <li id="_t_11"><b><a href="#_t_11" class="definition">Test 3</a>: </b>(optional) Bridge two network interfaces on a whitelisted EUD (one must be
                     the wireless card listed as whitelisted).</li>
-                  <li><b>Test 4: </b>
+                  <li id="_t_12"><b><a href="#_t_12" class="definition">Test 4</a>: </b>
                     <ul>
                       <li>Create a Windows Hosted Network with a whitelisted EUD. </li>
                       <li>Connect a different whitelisted EUD to the network.</li>
@@ -637,7 +648,7 @@ The following sections list Common Criteria and technology terms used in this do
                 viewed.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_13"><b><a href="#_t_13" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy an AP within range of the sensors.</li>
                       <li><b>Step 2: </b>Verify that TSF is able to provide location information on the
@@ -646,7 +657,7 @@ The following sections list Common Criteria and technology terms used in this do
                         of the sensors.</li>
                     </ul>
                   </li>                 
-                  <li><b>Test 2: </b>
+                  <li id="_t_14"><b><a href="#_t_14" class="definition">Test 2</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy an AP within range of the sensors.</li>
                       <li><b>Step 2: </b>Check the WIDS user interface for a list of detected APs and
@@ -657,7 +668,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                   </li>            
                   
-                  <li><b>Test 3: </b>
+                  <li id="_t_15"><b><a href="#_t_15" class="definition">Test 3</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy an AP within range of the sensors.</li>
                       <li><b>Step 2: </b>Verify the TS provides location tracking information about the
@@ -687,28 +698,28 @@ The following sections list Common Criteria and technology terms used in this do
                 If classification rules for rogue APs are configurable, the evaluator shall verify that the operational guidance contains instructions for configuring the classification rules. The evaluator shall verify that the operational guidance provides instructions on how to configure SSIDs as authorized.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">             
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_16"><b><a href="#_t_16" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>The evaluator shall configure the AP classifcation rules, if supported.</li>
                       <li><b>Step 2: </b>Deploy an AP that would be detected as rogue by the classification rules.</li>
                       <li><b>Step 3: </b>Verify that the AP gets correctly classified.</li>
                     </ul>                
                   </li>
-                  <li><b>Test 2: </b>
+                  <li id="_t_17"><b><a href="#_t_17" class="definition">Test 2</a>: </b>
                     For each test below the evaluator shall verify that the TOE detects and appropriately classifies the APs and EUDs.
                     <ul> 
-                      <li><b>Test 2.1: </b>Deploy a non-whitelisted AP in the area of the WIDS sensor, but take no action against the network.</li>
-                      <li><b>Test 2.2: </b>Deploy a non-whitelisted AP in the area of the WIDS sensor and connect it to the internal wired infrastructure (optional for overlay WIDS).</li>
-                      <li><b>Test 2.3: </b>Connect a whitelisted EUD to a non-whitelisted AP.</li>
-                      <li><b>Test 2.4: </b>Connect a non-whitelisted EUD to a whitelisted AP.</li>
-                      <li><b>Test 2.5: </b>Launch an attack against authorized AP with an unauthorized EUD.</li>
+                      <li id="_t_18"><b><a href="#_t_18" class="definition">Test 2.1</a>: </b>Deploy a non-whitelisted AP in the area of the WIDS sensor, but take no action against the network.</li>
+                      <li id="_t_19"><b><a href="#_t_19" class="definition">Test 2.2</a>: </b>Deploy a non-whitelisted AP in the area of the WIDS sensor and connect it to the internal wired infrastructure (optional for overlay WIDS).</li>
+                      <li id="_t_20"><b><a href="#_t_20" class="definition">Test 2.3</a>: </b>Connect a whitelisted EUD to a non-whitelisted AP.</li>
+                      <li id="_t_21"><b><a href="#_t_21" class="definition">Test 2.4</a>: </b>Connect a non-whitelisted EUD to a whitelisted AP.</li>
+                      <li id="_t_22"><b><a href="#_t_22" class="definition">Test 2.5</a>: </b>Launch an attack against authorized AP with an unauthorized EUD.</li>
                     </ul>
                   </li>
                   
                   The evaluator shall configure the TSF with a set of authorized SSIDs and
                   perform the following tests:
                   
-                  <li><b>Test 3: </b> 
+                  <li id="_t_23"><b><a href="#_t_23" class="definition">Test 3</a>: </b> 
                       <b>Unauthorized SSID, Unauthorized Connections - 2.4 GHz band</b>
                       <ul>
                         <li><b>Step 1: </b>Configure a whitelisted AP to operate on a set channel on the 2.4 GHz
@@ -723,7 +734,7 @@ The following sections list Common Criteria and technology terms used in this do
                       </ul>
                     </li>
                     
-                    <li><b>Test 4: </b>
+                    <li id="_t_24"><b><a href="#_t_24" class="definition">Test 4</a>: </b>
                       <b>Unauthorized SSID, Unauthorized Connections - 5 GHz band</b>
                       <ul>
                         <li><b>Step 1: </b>Configure a whitelisted AP to operate on a set channel on the 5 GHz band
@@ -752,7 +763,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div><div class="eacategory">Tests</div><div class="ea"> 
                 <b>Channels Monitored</b>
                 <ul>
-                  <li><b>Test 1: </b> Channels on On 5GHz band 
+                  <li id="_t_25"><b><a href="#_t_25" class="definition">Test 1</a>: </b> Channels on On 5GHz band 
                     <ul>
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
                       <li><b>Step 2: </b>Deploy an AP on at least 2 different channels within the regulatory domain on 5GHz band.</li>
@@ -760,7 +771,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 4: </b>Verify that the AP gets detected on each channel tested.</li>
                     </ul>
                   </li>
-                  <li><b>Test 2: </b> Channels on 2.4GHz band 
+                  <li id="_t_26"><b><a href="#_t_26" class="definition">Test 2</a>: </b> Channels on 2.4GHz band 
                     <ul>
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
                       <li><b>Step 2: </b>Deploy AP on at least 2 different channels within the regulatory domain on 2.4GHz band.</li>
@@ -768,7 +779,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 4: </b>Verify that the AP gets detected on each channel tested.</li>
                     </ul>
                   </li>
-                  <li><b>Test 3: </b> Non-standard channel frequencies 
+                  <li id="_t_27"><b><a href="#_t_27" class="definition">Test 3</a>: </b> Non-standard channel frequencies 
                     <ul>
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
                       <li><b>Step 2: </b>Deploy AP on at least 2 different channels on non-standard channel frequencies.</li>
@@ -782,7 +793,7 @@ The following sections list Common Criteria and technology terms used in this do
                 transmit wirelessly. The evaluator shall then deploy a signal analyzer in order to check for wireless emanations from the TOE. <br/>   
                 Repeat the two tests below, for both the 2.4GHz and the 5 GHz band.
                 <ul>                  
-                  <li><b>Test 1: </b>
+                  <li id="_t_28"><b><a href="#_t_28" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Boot a sensor and using the signal analyzer observe to check if any
                         eminations are coming from the sensor.</li>
@@ -790,7 +801,7 @@ The following sections list Common Criteria and technology terms used in this do
                         sensor.</li>
                     </ul>
                   </li>
-                  <li><b>Test 2: </b>
+                  <li id="_t_29"><b><a href="#_t_29" class="definition">Test 2</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>During normal sensor operations, observe the analyzer for about 10
                         minutes to check if any eminations are coming from the sensor.</li>
@@ -803,7 +814,7 @@ The following sections list Common Criteria and technology terms used in this do
                 
                 
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_30"><b><a href="#_t_30" class="definition">Test 1</a>: </b>
                     <b>MAC Spoofing</b>
                     <ul>
                       <li><b>Step 1: </b>Spoof mac address of whiteliste EUD connected to a whitelisted AP on a
@@ -813,7 +824,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 3: </b>Verify that the TSF detected the MAC spoofing.</li>
                     </ul>
                   </li>
-                  <li><b>Test 2: </b>
+                  <li id="_t_31"><b><a href="#_t_31" class="definition">Test 2</a>: </b>
                     <b>MAC Spoofing</b>
                     <ul>
                       <li><b>Step 1: </b>Spoof mac address of whiteliste AP on a second AP. </li>
@@ -821,7 +832,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                   </li>
                   
-                  <li><b>Test 3: </b>
+                  <li id="_t_32"><b><a href="#_t_32" class="definition">Test 3</a>: </b>
                     <b>Active Probing</b>
                     <ul>
                       <li><b>Step 1: </b>Perform an active scan on the subnet of the WLAN.</li>
@@ -830,7 +841,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                   </li>
                   
-                  <li><b>Test 4: </b>
+                  <li id="_t_33"><b><a href="#_t_33" class="definition">Test 4</a>: </b>
                     <b>Point-to-Point Wireless Bridges</b>
                     <ul>
                       <li><b>Step 1: </b>Setup a point-to-point wireless bridge using whitelisted APs in the
@@ -839,7 +850,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                   </li>
                   
-                  <li><b>Test 5: </b>
+                  <li id="_t_34"><b><a href="#_t_34" class="definition">Test 5</a>: </b>
                     <b>NULL Client Associations</b>
                     <ul>
                       <li><b>Step 1: </b>Deploy whitelisted AP.</li>
@@ -855,7 +866,7 @@ The following sections list Common Criteria and technology terms used in this do
                 </ul>
                 <b>Stateful Frame Inspection</b>
                 <ul>               
-                  <li><b>Test 1: </b>
+                  <li id="_t_35"><b><a href="#_t_35" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy whitelisted AP.</li>
                       <li><b>Step 2: </b>Connect a whitelisted EUD to the AP.</li>
@@ -881,7 +892,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div><div class="eacategory">Tests</div><div class="ea">
                 
                 <ul>                  
-                  <li><b>Test 1: </b>
+                  <li id="_t_36"><b><a href="#_t_36" class="definition">Test 1</a>: </b>
                     <b>RF-based DoS</b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP and configure to stay in a particular channel.</li>
@@ -890,7 +901,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 4: </b>Verify that the TOE detects the RF-based DoS.</li>
                     </ul>
                   </li>
-                  <li><b>Test 2: </b> 
+                  <li id="_t_37"><b><a href="#_t_37" class="definition">Test 2</a>: </b> 
                     <b>Deauthentication Flood</b>
                     <ul>
                       <li><b>Step 1: </b>Deploy whitelisted AP and configure to a set channel.</li>
@@ -900,7 +911,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 4: </b>Verify that the TSF detects the deauthentication flood.</li>
                     </ul>
                   </li>
-                  <li><b>Test 3: </b>
+                  <li id="_t_38"><b><a href="#_t_38" class="definition">Test 3</a>: </b>
                     <b>Deauthentication Flood</b>
                     <ul>
                       <li><b>Step 1: </b>Deploy whitelisted AP and configure to a set channel.</li>
@@ -910,7 +921,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 4: </b>Verify that the TSF detects the deauthentication flood.</li>
                     </ul>
                   </li> 
-                  <li><b>Test 4: </b> 
+                  <li id="_t_39"><b><a href="#_t_39" class="definition">Test 4</a>: </b> 
                     <b>Dissasociation Flood</b>
                     <ul>
                       <li><b>Step 1: </b>Deploy whitelisted AP and configure to a set channel.</li>
@@ -935,7 +946,7 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall configure the TOE, per FMT_SMF.1, with 802.1x authentication as the only
                 mode of authorized WLAN authentication scheme.
                 <ul>                             
-                  <li><b>Test 1: </b>
+                  <li id="_t_40"><b><a href="#_t_40" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP with open authentication.</li>
                       <li><b>Step 2: </b>Connect a whitelisted EUD to AP.</li>
@@ -943,7 +954,7 @@ The following sections list Common Criteria and technology terms used in this do
                         authentication schemes. </li>                     
                     </ul>
                   </li>
-                  <li><b>Test 2: </b>
+                  <li id="_t_41"><b><a href="#_t_41" class="definition">Test 2</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP that uses pre-shared key authentication.</li>
                       <li><b>Step 2: </b>Connect a whitelisted EUD to AP.</li>
@@ -966,7 +977,7 @@ The following sections list Common Criteria and technology terms used in this do
                 There are no operational guidance activities.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>                
-                  <li><b>Test 1: </b>
+                  <li id="_t_42"><b><a href="#_t_42" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Configure the TOE with 128 bit AES encryption type as the
                         only allowed encryption scheme.</li>
@@ -976,7 +987,7 @@ The following sections list Common Criteria and technology terms used in this do
                         encryption schemes.</li>
                     </ul>
                   </li>
-                  <li><b>Test 2: </b>
+                  <li id="_t_43"><b><a href="#_t_43" class="definition">Test 2</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Configure the TOE with 128 bit AES encryption type as the
                         only allowed encryption scheme.</li>
@@ -986,7 +997,7 @@ The following sections list Common Criteria and technology terms used in this do
                         encryption schemes.</li>
                     </ul>
                   </li>
-                  <li><b>Test 3: </b>
+                  <li id="_t_44"><b><a href="#_t_44" class="definition">Test 3</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP with no encryption.</li>
                       <li><b>Step 2: </b>Connect a whitelisted EUD to AP and generate traffic.</li>
@@ -997,7 +1008,7 @@ The following sections list Common Criteria and technology terms used in this do
                         the whitelisted AP and non-whitelisted EUD.</li>
                     </ul>                   
                   </li>
-                  <li><b>Test 4: </b>
+                  <li id="_t_45"><b><a href="#_t_45" class="definition">Test 4</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-whitelisted AP with no encryption.</li>
                       <li><b>Step 2: </b>Connect a whitelisted EUD to AP and generate traffic.</li>
@@ -1016,7 +1027,7 @@ The following sections list Common Criteria and technology terms used in this do
                 different types of IEEE 802.11 frame types and subtypes.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_46"><b><a href="#_t_46" class="definition">Test 1</a>: </b>
                     <ul>
                       <li>Set the WIDS sensor for a set channel</li>
                       <li>Start a traffic capture from the WIDS sensor</li>
@@ -1051,7 +1062,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_47"><b><a href="#_t_47" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP and connect it to the protected wired
                         infrastructure via wire.</li>
@@ -1082,7 +1093,7 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall enable and configure detection of the selected
                 technologies. 
                 <ul>
-                  <li><b>Test 1: </b>Deploy a device within the given technology and verify that the TSF detects
+                  <li id="_t_48"><b><a href="#_t_48" class="definition">Test 1</a>: </b>Deploy a device within the given technology and verify that the TSF detects
                     the device.</li>
                 </ul>
               </div></div><div class="comp" id=""><h4>FAU_WID_EXT.7 Wireless Intrusion Detection – Wireless Spectrum Analysis</h4><div class="component-activity-header">FAU_WID_EXT.7</div>
@@ -1127,7 +1138,7 @@ The following sections list Common Criteria and technology terms used in this do
                 available.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_49"><b><a href="#_t_49" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Craft a signature with the available fields indicated in the TSS.</li>
                       <li><b>Step 2: </b>Send a crafted frame that matches the signature to a whitelisted
@@ -1147,9 +1158,9 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall verify that the operational guidance provides instructions on how to configure the trusted channel. If the behavior of the TOE when local storage space for packet capture data is exhausted is configurable, the evaluator shall verify that the operational guidance provides information on what the configurable behaviors are and how they can be set.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>The evaluator shall configure packet captures according to the guidance specified. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the captured traffic being sent to the external device is being sent through a trusted channel.</li>
-                  <li><b>Test 2: </b>The evaluator shall configure packet captures to be stored on the TSF according to the guidance specified. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the TSF.</li>
-                  <li><b>Test 3: </b>The evaluator shall define packet data retention and deletion rules on the TSF according to the guidance specified and test the functionality of the specified rules.</li>
+                  <li id="_t_50"><b><a href="#_t_50" class="definition">Test 1</a>: </b>The evaluator shall configure packet captures according to the guidance specified. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the captured traffic being sent to the external device is being sent through a trusted channel.</li>
+                  <li id="_t_51"><b><a href="#_t_51" class="definition">Test 2</a>: </b>The evaluator shall configure packet captures to be stored on the TSF according to the guidance specified. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the TSF.</li>
+                  <li id="_t_52"><b><a href="#_t_52" class="definition">Test 3</a>: </b>The evaluator shall define packet data retention and deletion rules on the TSF according to the guidance specified and test the functionality of the specified rules.</li>
                 </ul>
               </div></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.6 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="obj_fau">2.6.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_INV_EXT.5 Detection of Unauthorized Connections</h4><div class="component-activity-header">FAU_INV_EXT.5</div>
               
@@ -1164,7 +1175,7 @@ The following sections list Common Criteria and technology terms used in this do
                 infrastructure.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_53"><b><a href="#_t_53" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-whitelisted AP.</li>
                       <li><b>Step 2: </b>Connect the AP via wire to the protected network infrastructure.</li>
@@ -1191,7 +1202,7 @@ The following sections list Common Criteria and technology terms used in this do
                 ability to import, export, and update the signal library.
                 
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_54"><b><a href="#_t_54" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a whitelisted AP and connect it to the protected wired
                         infrastructure via wire.</li>
@@ -1219,7 +1230,7 @@ The following sections list Common Criteria and technology terms used in this do
                 subsequent attempts for an EUD to connect from two separate locations.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_55"><b><a href="#_t_55" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Setup a whitelisted AP (Location 1).</li>
                       <li><b>Step 2: </b>Connect a whitelisted EUD to AP.</li>
@@ -1234,7 +1245,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                   </li>
                 
-                  <li><b>Test 2: </b>
+                  <li id="_t_56"><b><a href="#_t_56" class="definition">Test 2</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Configure the timeframe allowed between connection of two EUDs in two
                         separate locations (Location 1, Location 2).</li>
@@ -1261,7 +1272,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div><div class="eacategory">Guidance</div><div class="ea"> There are no operational guidance activities for this SFR.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea"> Configure the containment methods available on the TSF and perform the
                 following test for each method. <ul>
-                  <li><b>Test 1: </b>
+                  <li id="_t_57"><b><a href="#_t_57" class="definition">Test 1</a>: </b>
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-whitelisted AP and connect to the protected wired
                         infrastructure via wire (make sure it gets classified as rogue, or manually
@@ -1280,7 +1291,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall review the operational guidance to verify that it identifies the potential TOE failures, how the TSF preserves a secure state following these failures, and any actions that are required to restore the TOE to normal operation following the transition to a failure state. <br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
-                  <li><b>Test 1: </b>For each failure mode specified in the ST, the evaluator shall ensure that the TOE attains a secure state after initiating each failure mode type.</li>
+                  <li id="_t_58"><b><a href="#_t_58" class="definition">Test 1</a>: </b>For each failure mode specified in the ST, the evaluator shall ensure that the TOE attains a secure state after initiating each failure mode type.</li>
                 </ul>
               </div></div><h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     
