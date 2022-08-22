@@ -11,7 +11,6 @@ output/sbc-release-linkable.html: EAP
 output/sbc-release-linkable.html: FDP
 output/sbc-release-linkable.html: FFW
 output/sbc-release-linkable.html: FRU
-output/sbc-release-linkable.html: H323
 output/sbc-release-linkable.html: IFC
 output/sbc-release-linkable.html: IFF
 output/sbc-release-linkable.html: ITU
@@ -30,6 +29,7 @@ output/sbc-release-linkable.html: SBCs
 output/sbc-release-linkable.html: SEL
 output/sbc-release-linkable.html: SIPT
 output/sbc-release-linkable.html: SKP
+output/sbc-release-linkable.html: SNMPv3
 output/sbc-release-linkable.html: SP800
 output/sbc-release-linkable.html: STM
 output/sbc-release-linkable.html: TBD
@@ -44,6 +44,7 @@ output/sbc-release-linkable.html: doesn
 output/sbc-release-linkable.html: firewalling
 output/sbc-release-linkable.html: inhibitPolicyMapping
 output/sbc-release-linkable.html: ipsec
+output/sbc-release-linkable.html: nd
 output/sbc-release-linkable.html: persistend
 output/sbc-release-linkable.html: protocls
 output/sbc-release-linkable.html: rescynchronization
@@ -69,7 +70,6 @@ output/sbc-release.html: EAP
 output/sbc-release.html: FDP
 output/sbc-release.html: FFW
 output/sbc-release.html: FRU
-output/sbc-release.html: H323
 output/sbc-release.html: IFC
 output/sbc-release.html: IFF
 output/sbc-release.html: ITU
@@ -88,6 +88,7 @@ output/sbc-release.html: SBCs
 output/sbc-release.html: SEL
 output/sbc-release.html: SIPT
 output/sbc-release.html: SKP
+output/sbc-release.html: SNMPv3
 output/sbc-release.html: SP800
 output/sbc-release.html: STM
 output/sbc-release.html: TBD
@@ -102,6 +103,7 @@ output/sbc-release.html: doesn
 output/sbc-release.html: firewalling
 output/sbc-release.html: inhibitPolicyMapping
 output/sbc-release.html: ipsec
+output/sbc-release.html: nd
 output/sbc-release.html: persistend
 output/sbc-release.html: protocls
 output/sbc-release.html: rescynchronization
@@ -152,6 +154,7 @@ output/sbc-sd.html: explicitPolicy
 output/sbc-sd.html: inhibitAny
 output/sbc-sd.html: inhibitAnyPolicy
 output/sbc-sd.html: inhibitPolicyMapping
+output/sbc-sd.html: nd
 output/sbc-sd.html: resynchronization
 output/sbc-sd.html: resynchronize
 output/sbc.html: 2a
@@ -183,7 +186,6 @@ output/sbc.html: EAP
 output/sbc.html: FDP
 output/sbc.html: FFW
 output/sbc.html: FRU
-output/sbc.html: H323
 output/sbc.html: IFC
 output/sbc.html: IFF
 output/sbc.html: ITU
@@ -205,6 +207,7 @@ output/sbc.html: SBCs
 output/sbc.html: SEL
 output/sbc.html: SIPT
 output/sbc.html: SKP
+output/sbc.html: SNMPv3
 output/sbc.html: SP800
 output/sbc.html: STM
 output/sbc.html: TBD
@@ -224,6 +227,7 @@ output/sbc.html: inhibitAny
 output/sbc.html: inhibitAnyPolicy
 output/sbc.html: inhibitPolicyMapping
 output/sbc.html: ipsec
+output/sbc.html: nd
 output/sbc.html: persistend
 output/sbc.html: protocls
 output/sbc.html: rescynchronization
