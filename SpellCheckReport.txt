@@ -1,7 +1,6 @@
 output/sbc-release-linkable.html: 2e
 output/sbc-release-linkable.html: 63b
 output/sbc-release-linkable.html: AIA
-output/sbc-release-linkable.html: ARP
 output/sbc-release-linkable.html: AUTH
 output/sbc-release-linkable.html: CEM
 output/sbc-release-linkable.html: CRLDP
@@ -60,7 +59,6 @@ output/sbc-release-linkable.html: verifier
 output/sbc-release.html: 2e
 output/sbc-release.html: 63b
 output/sbc-release.html: AIA
-output/sbc-release.html: ARP
 output/sbc-release.html: AUTH
 output/sbc-release.html: CEM
 output/sbc-release.html: CRLDP
@@ -174,7 +172,6 @@ output/sbc.html: 8f
 output/sbc.html: 8g
 output/sbc.html: 8h
 output/sbc.html: AIA
-output/sbc.html: ARP
 output/sbc.html: AUTH
 output/sbc.html: C1
 output/sbc.html: C2
