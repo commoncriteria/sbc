@@ -660,6 +660,48 @@
     <man-sfrs>
       
       <sec:man_fau title="Security Audit (FAU)">
+        <ext-comp-def title="Security Audit Automatic Response" fam-id="FAU_ARP_EXT">
+          <fam-behavior>TBD</fam-behavior> 
+        </ext-comp-def>
+        <f-component cc-id="fau_arp_ext.1" name="Inter-TSF Trusted Channel"> 
+          <consistency-rationale>TBD</consistency-rationale>
+          
+          <comp-lev>TBD
+          </comp-lev>
+          <management>TBD
+          </management>
+          <audit>TBD
+          </audit>
+          <dependencies>TBD
+          </dependencies>
+          
+          <f-element>
+            <title>
+              The TSF shall be capable of using 
+              <selectables>
+                <selectable>TLS</selectable>
+                <selectable>IPsec</selectable>
+                <selectable>SSH</selectable>
+                <selectable>HTTPS</selectable>
+                <selectable>SNMPv3</selectable>
+              </selectables> to transmit potential security violations to an external IT entity in the OE upon detection.
+            </title>
+            <note role="application">
+              The selected protocols must be reflected in FTP_ITC.1.
+            </note>
+            <aactivity>
+              <TSS>TBD
+                <h:p/></TSS>
+              <Guidance>TBD
+                <h:p/></Guidance>
+              <Tests>
+                TBD
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        
         <f-component cc-id="fau_gen.1" name="Audit Data Generation" iteration="AuthSvr">
           <consistency-rationale>This SFR iterates the FAU_GEN.1 SFR defined in the Base-PP to define auditable events for the functionality that is specific to this PP-Module.</consistency-rationale>
 <f-element>
