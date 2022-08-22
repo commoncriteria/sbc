@@ -467,34 +467,113 @@
       <modified-sfrs>
         <!-- per open comment, it's unclear whether we need to treat any other NDcPP SFRs as 'modified' (most notably FIA_X509_EXT.1/Rev and FTP_ITC.1, or are those completely separate from what is needed for auth server) -->
 
-        <sec:from_nd_fia title="Identification and Authentication (FIA)">
-          <f-component cc-id="fia_x509_ext.1" iteration="Rev" name="X.509 Certificate Validation"> 
-            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by making it mandatory rather than selection-based.</consistency-rationale>
+        <sec:from_nd_fia title="Cryptographic Support (FCS)">
+          <f-component cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol without Mutual Authentication"> 
+            <consistency-rationale>TBD</consistency-rationale>
             <f-element>
               <title>
-                This SFR is selection-based in the NDcPP. When the TOE conforms to this PP-Module it is mandatory because of the PP-Module's requirement for implementation of mutually-authenticated TLS or DTLS.
+                This SFR is selection-based in the NDcPP but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server.
               </title>
               <aactivity>
-                <TSS>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/></TSS>
-                <Guidance>There are no additional guidance evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/></Guidance>
+                <TSS>TBD
+                <h:p/></TSS>
+                <Guidance>TBD
+                  <h:p/></Guidance>
                 <Tests>
-                  There are no additional test evaluation activities for this component beyond what the NDcPP requires.
+                  TBD
+                </Tests>
+              </aactivity>
+            </f-element>
+          </f-component>
+      
+            <f-component cc-id="fcs_tlsc_ext.2" name="TLS Client Support for Mutual Authentication"> 
+              <consistency-rationale>TBD</consistency-rationale>
+              <f-element>
+                <title>
+                  This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS.
+                </title>
+                <aactivity>
+                  <TSS>TBD
+                    <h:p/></TSS>
+                  <Guidance>TBD
+                    <h:p/></Guidance>
+                  <Tests>
+                    TBD
+                  </Tests>
+                </aactivity>
+              </f-element>
+            </f-component>
+      
+          <f-component cc-id="fcs_tlss_ext.1" name="TLS Server Protocol without Mutual Authentication"> 
+            <consistency-rationale>TBD</consistency-rationale>
+            <f-element>
+              <title>
+                This SFR is selection-based in the NDcPP but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server.
+              </title>
+              <aactivity>
+                <TSS>TBD
+                  <h:p/></TSS>
+                <Guidance>TBD
+                  <h:p/></Guidance>
+                <Tests>
+                  TBD
+                </Tests>
+              </aactivity>
+            </f-element>
+          </f-component>
+          
+          <f-component cc-id="fcs_tlss_ext.2" name="TLS Server Support for Mutual Authentication"> 
+            <consistency-rationale>TBD</consistency-rationale>
+            <f-element>
+              <title>
+                This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS.
+              </title>
+              <aactivity>
+                <TSS>TBD
+                  <h:p/></TSS>
+                <Guidance>TBD
+                  <h:p/></Guidance>
+                <Tests>
+                  TBD
+                </Tests>
+              </aactivity>
+            </f-element>
+          </f-component>
+      
+        </sec:from_nd_fia>
+
+        <sec:from_nd_fia title="Identification and Authentication (FIA)">
+          <f-component cc-id="fia_x509_ext.1" iteration="Rev" name="X.509 Certificate Validation"> 
+            <consistency-rationale>TBD</consistency-rationale>
+            <f-element>
+              <title>
+                This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
+              </title>
+              <aactivity>
+                <TSS>TBD
+                  <h:p/></TSS>
+                <Guidance>TBD
+                  <h:p/></Guidance>
+                <Tests>
+                  TBD
                 </Tests>
               </aactivity>
             </f-element>
           </f-component>
           
           <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication"> 
-            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by making it mandatory rather than selection-based.</consistency-rationale>
+            <consistency-rationale>TBD</consistency-rationale>
             <f-element>
               <title>
-                This SFR is selection-based in the NDcPP. When the TOE conforms to this PP-Module it is mandatory because of the PP-Module's requirement for implementation of mutually-authenticated TLS or DTLS.
+                This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
               </title>
               <aactivity>
-                <TSS>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/></TSS>
-                <Guidance>There are no additional guidance evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/></Guidance>
+                <TSS>TBD
+                  <h:p/></TSS>
+                <Guidance>TBD
+                  <h:p/></Guidance>
                 <Tests>
-                  There are no additional test evaluation activities for this component beyond what the NDcPP requires.
+                  TBD
                 </Tests>
               </aactivity>
             </f-element>
@@ -502,22 +581,68 @@
           
           
           <f-component cc-id="fia_x509_ext.3" name="X.509 Certificate Requests"> 
-            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by making it mandatory rather than selection-based.</consistency-rationale>
+            <consistency-rationale>TBD</consistency-rationale>
             <f-element>
               <title>
-                This SFR is selection-based in the NDcPP. When the TOE conforms to this PP-Module it is mandatory because of the PP-Module's requirement for implementation of mutually-authenticated TLS or DTLS.
+                This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
               </title>
               <aactivity>
-                <TSS>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/></TSS>
-                <Guidance>There are no additional guidance evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/></Guidance>
+                <TSS>TBD
+                  <h:p/></TSS>
+                <Guidance>TBD
+                  <h:p/></Guidance>
                 <Tests>
-                  There are no additional test evaluation activities for this component beyond what the NDcPP requires.
+                  TBD
                 </Tests>
               </aactivity>
             </f-element>
           </f-component>
           
         </sec:from_nd_fia>
+        <sec:from_nd_ftp>
+          <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel"> 
+            <consistency-rationale>TBD</consistency-rationale>
+            <f-element>
+              <title>
+                The TSF shall be capable of using <h:b>TLS and</h:b> 
+                <selectables>
+                  <selectable>IPsec</selectable>
+                  <selectable>SSH</selectable>
+                  <selectable>DTLS</selectable>
+                  <selectable>HTTPS</selectable>
+                  <selectable><h:b>SNMPv3</h:b></selectable>
+                  <selectable><h:b>no other protocol</h:b></selectable></selectables>
+                to provide a trusted communication channel between itself and authorized IT entities supporting the following capabilities: audit server, 
+                <selectables>
+                  <selectable>authentication server</selectable>
+                  <selectable><assignable>other capabilities</assignable></selectable>
+                </selectables> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from disclosure and detection of modification of the channel data.
+              </title>
+            </f-element>
+            <f-element>
+              <title>
+                The TSF shall permit the TSF or the authorized IT entities to initiate communication via the trusted channel.
+              </title>
+            </f-element>
+            <f-element>
+              <title>
+                The TSF shall initiate communication via the trusted channel for <assignable>list of services for which the TSF is able to initiate communications</assignable>.
+              </title>
+            <note role="application">
+              TLS is mandated for SIP trunking as required by FIA_SIPT_EXT.1. SNMPv3 added as a selection to support FAU_ARP_EXT.1.
+            </note>
+              <aactivity>
+                <TSS>TBD
+                  <h:p/></TSS>
+                <Guidance>TBD
+                  <h:p/></Guidance>
+                <Tests>
+                  TBD
+                </Tests>
+              </aactivity>
+            </f-element>
+          </f-component>
+        </sec:from_nd_ftp>
         
 
       </modified-sfrs>
