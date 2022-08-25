@@ -68,6 +68,7 @@
       <term abbr="RTP"  full="Real-Time Transport Protocol"/>
       <term abbr="PSTN"  full="Public Switched Telephone Network"/>
       <term abbr="SDES"  full="Security Descriptions for Media Streams"/>
+      <term abbr="SDP"  full="Session Description Protocol"/>
       <term abbr="SIP" full="Session Initiation Protocol">
         A communications protocol defined by IETF that is used for creating, modifying, and terminating multimedia sessions with multiple participants.
       </term>
@@ -156,7 +157,12 @@
       <threats>
         <threat name="T.MALICIOUS_TRAFFIC">
           <description>An attacker may attempt to send malformed packets to the SBC in order to cause the network stack or services listening on TCP/UDP ports on the SBC or protected network to crash.</description>
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            The Base-PP does not define a threat for malicious traffic because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This PP-Module defines interfaces where the TOE is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the TOE as opposed to to/from the TOE. 
+            This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.
+          </consistency-rationale>
           <objective-refer ref="O.SYSTEM_MONITORING">
             <rationale>The TOE mitigates the threat of malformed traffic causing a system crash by ensuring that any such instances are logged so that their cause can be diagnosed and prevented in the future.</rationale>
           </objective-refer>
@@ -167,7 +173,12 @@
         
         <threat name="T.NETWORK_ACCESS">
           <description>An attacker may send traffic through the TOE that enables them to access devices in the TOE’s OE without authorization.</description>
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            The Base-PP does not define a threat for access to network resources because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This PP-Module defines interfaces where the TOE is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the TOE as opposed to into/out of the TOE. 
+            This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.
+          </consistency-rationale>
           <objective-refer ref="O.AUTHORIZED_ADMINISTRATION">
             <rationale>The TOE mitigates the threat of unauthorized network access by giving the administrator the ability to configure traffic filtering rules to block unauthorized traffic.</rationale>
           </objective-refer>
@@ -188,7 +199,12 @@
         
         <threat name="T.RESOURCE_EXHAUSTION">
           <description>An attacker may transmit network traffic to the TOE that causes it to be unable to perform its functions on legitimate network traffic.</description>
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            The threat of network traffic causing the TOE to be unable to perform its functions is similar to T.SECURITY_FUNCTIONALITY_FAILURE in the Base-PP 
+            because the intent of the threat is to cause the TSF to fail. 
+            The Base-PP does not define denial of service protections because it does not define logical interfaces that are intended to process large volumes of network traffic. 
+            This PP-Module extends the threat by defining a specific example of it that applies to an SBC device that has this functionality.
+          </consistency-rationale>
           <objective-refer ref="O.AUTHORIZED_ADMINISTRATION">
             <rationale>The TOE mitigates the threat of resource exhaustion by giving administrators the ability to configure traffic rules so that traffic flooding attempts can be discarded.</rationale>
           </objective-refer>
@@ -206,7 +222,9 @@
         
         <threat name="T.UNTRUSTED_COMMUNICATION_CHANNELS">
           <description>An attacker may acquire sensitive TOE or user data that is transmitted to or from the TOE because an untrusted communication channel causes a disclosure of data in transit.</description>
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            The threat of disclosure of data in transit is fundamentally the same as the NDcPP threat with the same name. This PP-Module extends the threat to apply to the external interfaces that are defined specifically in support of SBC functions.
+          </consistency-rationale>
           <objective-refer ref="O.PROTECTED_COMMUNICATIONS">
             <rationale>The TOE mitigates the threat of disclosure of data in transit by enforcing the use of protected communications channels that prevent transmitted data from unauthorized disclosure.</rationale>
           </objective-refer>
@@ -215,7 +233,12 @@
         
         <threat name="T.USER_DATA_REUSE">
           <description>User data may be inadvertently sent to a destination not intended by the original sender, causing an unauthorized disclosure of the data.</description>
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            The Base-PP does not define a threat of user data transmitted to the wrong destination because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This PP-Module defines interfaces where the TOE is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the TOE as opposed to to/from the TOE. 
+            This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.
+          </consistency-rationale>
           <objective-refer ref="O.USER_DATA_DELIVERY">
             <rationale>The TOE mitigates the threat of inadvertently sending user data to an unintended destination by implementing measures that ensure that data is only sent to the intended recipient.</rationale>
           </objective-refer>
@@ -245,11 +268,12 @@
             <h:b>Addressed by:</h:b> FMT_SMF.1/SBC
           </description>
           <consistency-rationale>
-            TBD
+            The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
+            This TOE objective is consistent with the NDcPP because the individual security functions needed to satisfy the objective do not contradict with the security functions required by the NDcPP.
           </consistency-rationale>
           <addressed-by>FMT_SMF.1/SBC</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining TSF management functions that require authorizations to use.
           </rationale>
         </SO>
         
@@ -264,59 +288,60 @@
             FIA_X509_EXT.3 (refined from Base-PP), FTP_ITC.1 (refined from Base-PP), FCS_SRTP_EXT.1, FIA_SIPT_EXT.1, FTP_ITC.1/ESC, FTP_ITC.1/VVoIP, FTP_ITC.1/H323 (selection-based)
           </description>
           <consistency-rationale>
-            TBD
+            The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
+            This TOE objective is consistent with the NDcPP because the individual security functions needed to satisfy the objective do not contradict with the security functions required by the NDcPP.
           </consistency-rationale>
           <addressed-by>FCS_TLSC_EXT.1 (refined from Base-PP)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by requiring TLS for SIP trunking and ESC signaling channel communications.
           </rationale>
           <addressed-by>FCS_TLSC_EXT.2 (refined from Base-PP)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by requiring mutually-authenticated TLS for SIP trunking.
           </rationale>
           <addressed-by>FCS_TLSS_EXT.1 (refined from Base-PP)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by requiring TLS for SIP trunking and ESC signaling channel communications.
           </rationale>
           <addressed-by>FCS_TLSS_EXT.2 (refined from Base-PP)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by requiring mutually-authenticated TLS for SIP trunking.
           </rationale>
           <addressed-by>FIA_X509_EXT.1/Rev (refined from Base-PP)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
           </rationale>
           <addressed-by>FIA_X509_EXT.2 (refined from Base-PP)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
           </rationale>
           <addressed-by>FIA_X509_EXT.3 (refined from Base-PP)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining a mechanism by which the TOE obtains the certificates it uses for TLS client and server connections.
           </rationale>
           <addressed-by>FTP_ITC.1 (refined from Base-PP)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications.
           </rationale>
           <addressed-by>FCS_SRTP_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.
           </rationale>
           <addressed-by>FIA_SIPT_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining secure behavior for SIP trunking.
           </rationale>
           <addressed-by>FTP_ITC.1/ESC</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining how communications with an external ESC are protected.
           </rationale>
           <addressed-by>FTP_ITC.1/VVoIP</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining how communications with an external VVoIP endpoint are protected.
           </rationale>
           <addressed-by>FTP_ITC.1/H323 (selection-based)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining H.323 as a permitted method of protected communications for when a conformant TOE implements this logical interface.
           </rationale>
         </SO>
         
@@ -328,15 +353,16 @@
             <h:b>Addressed by:</h:b> FRU_PRS_EXT.1, FRU_RSA.1
           </description>
           <consistency-rationale>
-            TBD
+            The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
+            This TOE objective is consistent with the NDcPP because the individual security functions needed to satisfy the objective do not contradict with the security functions required by the NDcPP.
           </consistency-rationale>
           <addressed-by>FRU_PRS_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by requiring the TSF to implement priority of service to ensure that low-priority traffic cannot cause a denial of service.
           </rationale>
           <addressed-by>FRU_RSA.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by enforcing quotas for TSF resources to prevent denial of service.
           </rationale>
         </SO>
         
@@ -348,26 +374,28 @@
             The SBC is also expected to support real-time system monitoring by providing the ability to automatically generate alerts when certain types of events occur.
             <h:p/>
             <h:b>Addressed by:</h:b> FAU_ARP_EXT.1, FAU_GEN.1/SBC, FAU_SAA.1, FAU_SEL.1
-            <h:p/> <comment>[JF] This is saying that NTP is required by that's not currently backed up by SFRs. Should it be? e.g. mandate the NTP selection in Base-PP FPT_STM_EXT.1 and mandate FCS_NTP_EXT.1</comment>
+            <h:p/> <comment>[JF] This is saying that NTP is required but that's not currently backed up by SFRs. Should it be? e.g. mandate the NTP selection in Base-PP FPT_STM_EXT.1 and mandate FCS_NTP_EXT.1</comment>
           </description>
           <consistency-rationale>
-            TBD
+            The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
+            This TOE objective is consistent with the NDcPP because the individual security functions needed to satisfy the objective do not contradict with the security functions required by the NDcPP.
           </consistency-rationale>
           <addressed-by>FAU_ARP_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining the ability to generate security violations that are transmitted to external entities.
           </rationale>
           <addressed-by>FAU_GEN.1/SBC</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by iterating a Base-PP requirement to define additional auditable events that are specific to SBC functionality.
           </rationale>
           <addressed-by>FAU_SAA.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining a set of rules to monitor auditable events for potential security violations. 
           </rationale>
           <addressed-by>FAU_SEL.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
+            audit records can be suppressed when it is not practical to generate those records for performance reasons.
           </rationale>
         </SO>
         
@@ -381,19 +409,20 @@
             <h:b>Addressed by:</h:b> FDP_IFC.1, FDP_IFF.1, FFW_NAT_EXT.1
           </description>
           <consistency-rationale>
-            TBD
+            The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
+            This TOE objective is consistent with the NDcPP because the individual security functions needed to satisfy the objective do not contradict with the security functions required by the NDcPP.
           </consistency-rationale>
           <addressed-by>FDP_IFC.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining a B2BUA policy so that VVoIP endpoints are only connected to each other through the TOE as an intermediary.
           </rationale>
           <addressed-by>FDP_IFF.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining the specific rules that the B2BUA policy enforces.
           </rationale>
           <addressed-by>FFW_NAT_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining the use of NAT to obfuscate IP addresses of endpoint devices on the TOE’s internal network. 
           </rationale>
         </SO>
         
@@ -406,19 +435,20 @@
             <h:b>Addressed by:</h:b> FFW_ACL_EXT.1, FFW_ACL_EXT.2, FFW_DPI_EXT.1
           </description>
           <consistency-rationale>
-            TBD
+            The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
+            This TOE objective is consistent with the NDcPP because the individual security functions needed to satisfy the objective do not contradict with the security functions required by the NDcPP.
           </consistency-rationale>
           <addressed-by>FFW_ACL_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining capabilities for traffic filtering of network packets.
           </rationale>
           <addressed-by>FFW_ACL_EXT.2</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining specific methods of stateful traffic inspection for specific protocols.
           </rationale>
           <addressed-by>FFW_DPI_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining the capability to perform DPI for certain network traffic.
           </rationale>
         </SO>
         
@@ -430,27 +460,28 @@
             <h:b>Addressed by:</h:b> FDP_IFC.1, FDP_IFF.1, FFW_NAT_EXT.1, FIA_SIPT_EXT.1, FIA_SIPS_EXT.1 (optional)
           </description>
           <consistency-rationale>
-            TBD
+            The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
+            This TOE objective is consistent with the NDcPP because the individual security functions needed to satisfy the objective do not contradict with the security functions required by the NDcPP.
           </consistency-rationale>
           <addressed-by>FDP_IFC.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining a B2BUA policy that is used by the TOE to establish connections between VVoIP endpoints.
           </rationale>
           <addressed-by>FDP_IFF.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining the rules that the B2BUA policy enforces.
           </rationale>
           <addressed-by>FFW_NAT_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by requiring the use of NAT to maintain a unique relationship between how external entities identify entities on the TOE’s internal network and how they are actually addressed by that network.
           </rationale>
           <addressed-by>FIA_SIPT_EXT.1</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining the use of SIP trunking, which requires authentication of endpoints to ensure data is only transmitted to the intended endpoint.
           </rationale>
           <addressed-by>FIA_SIPS_EXT.1 (optional)</addressed-by>
           <rationale>
-            TBD
+            This SFR supports the objective by defining an optional capability to handle SIP registration in cases where the OE does not include an ESC that will provide that functionality.  
           </rationale>
         </SO>
         
@@ -474,7 +505,9 @@
 
         <sec:from_nd_fia title="Cryptographic Support (FCS)">
           <f-component cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol without Mutual Authentication"> 
-            <consistency-rationale>TBD</consistency-rationale>
+            <consistency-rationale>
+              This PP-Module mandates the inclusion of this selection-based SFR because it is required to implement the trusted communications required by the PP-Module.
+            </consistency-rationale>
             <f-element>
               <title>
                 This SFR is selection-based in the NDcPP but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server.
@@ -492,7 +525,9 @@
           </f-component>
       
             <f-component cc-id="fcs_tlsc_ext.2" name="TLS Client Support for Mutual Authentication"> 
-              <consistency-rationale>TBD</consistency-rationale>
+              <consistency-rationale>
+                This PP-Module mandates the inclusion of this optional SFR because it is required to implement the trusted communications required by the PP-Module.
+              </consistency-rationale>
               <f-element>
                 <title>
                   This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS.
@@ -510,7 +545,9 @@
             </f-component>
       
           <f-component cc-id="fcs_tlss_ext.1" name="TLS Server Protocol without Mutual Authentication"> 
-            <consistency-rationale>TBD</consistency-rationale>
+            <consistency-rationale>
+              This PP-Module mandates the inclusion of this selection-based SFR because it is required to implement the trusted communications required by the PP-Module.
+            </consistency-rationale>
             <f-element>
               <title>
                 This SFR is selection-based in the NDcPP but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server.
@@ -528,7 +565,9 @@
           </f-component>
           
           <f-component cc-id="fcs_tlss_ext.2" name="TLS Server Support for Mutual Authentication"> 
-            <consistency-rationale>TBD</consistency-rationale>
+            <consistency-rationale>
+              This PP-Module mandates the inclusion of this optional SFR because it is required to implement the trusted communications required by the PP-Module.
+            </consistency-rationale>
             <f-element>
               <title>
                 This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS.
@@ -549,7 +588,9 @@
 
         <sec:from_nd_fia title="Identification and Authentication (FIA)">
           <f-component cc-id="fia_x509_ext.1" iteration="Rev" name="X.509 Certificate Validation"> 
-            <consistency-rationale>TBD</consistency-rationale>
+            <consistency-rationale>
+              This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
+            </consistency-rationale>
             <f-element>
               <title>
                 This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
@@ -567,7 +608,9 @@
           </f-component>
           
           <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication"> 
-            <consistency-rationale>TBD</consistency-rationale>
+            <consistency-rationale>
+              This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
+            </consistency-rationale>
             <f-element>
               <title>
                 This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
@@ -586,7 +629,9 @@
           
           
           <f-component cc-id="fia_x509_ext.3" name="X.509 Certificate Requests"> 
-            <consistency-rationale>TBD</consistency-rationale>
+            <consistency-rationale>
+              This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
+            </consistency-rationale>
             <f-element>
               <title>
                 This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
@@ -606,7 +651,10 @@
         </sec:from_nd_fia>
         <sec:from_nd_ftp>
           <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel"> 
-            <consistency-rationale>TBD</consistency-rationale>
+            <consistency-rationale>
+              This PP-Module refines the Base-PP SFR to mandate the use of one of the trusted protocols defined by the Base-PP and 
+              to optionally allow the use of a new protocol (SNMPv3) specifically for the use of the alert channel that is defined in the PP-Module.
+            </consistency-rationale>
             <f-element>
               <title>
                 The TSF shall be capable of using <h:b>TLS and</h:b> 
@@ -653,8 +701,8 @@
       </modified-sfrs>
       <additional-sfrs/>
       <con-toe> 
-        When this PP-Module is used to extend the NDcPP, the TOE type for the overall TOE is still a network device.
-        The TOE boundary is simply extended to include authentication server functionality that is provided by the network device. </con-toe>
+        When this PP-Module is used to extend the NDcPP, the TOE type for the overall TOE is still a network device. The TOE boundary is simply extended to include SBC functionality that is provided by the network device.
+      </con-toe>
       <con-sec-prob/>
       <con-obj/>
       <con-op-en/>
@@ -668,8 +716,10 @@
         <ext-comp-def title="Security Audit Automatic Response" fam-id="FAU_ARP_EXT">
           <fam-behavior>TBD</fam-behavior> 
         </ext-comp-def>
-        <f-component cc-id="fau_arp_ext.1" name="Inter-TSF Trusted Channel"> 
-          <consistency-rationale>TBD</consistency-rationale>
+        <f-component cc-id="fau_arp_ext.1" name="Security Audit Automatic Response"> 
+          <consistency-rationale>
+            This SFR applies to the generation of alerts when a given auditable event is detected, which is beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
           <comp-lev>TBD
           </comp-lev>
@@ -708,7 +758,9 @@
         
         
         <f-component cc-id="fau_gen.1" name="Audit Data Generation (Session Border Controller)" iteration="SBC">
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR iterates a Base-PP requirement to define additional auditable events for SBC functionality that the Base-PP could not be expected to cover.
+          </consistency-rationale>
 <f-element>
             <title> The TSF shall be able to generate an audit record of the following auditable
               events: <h:ol type="a">
@@ -885,7 +937,9 @@
         
         
         <f-component cc-id="fau_saa.1" name="Potential Violation Analysis"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to the detection of auditable events as potential security violations requiring the generation of alerts, which is beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
           <f-element>
             <title>
@@ -917,7 +971,9 @@
         
         
         <f-component cc-id="fau_sel.1" name="Selective Audit"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to the behavior of the audit function with respect to the auditable events defined in this PP-Module. It does not affect the audit functions that apply to the Base-PP.
+          </consistency-rationale>
           
           <f-element>
             <title>
@@ -953,7 +1009,9 @@
           <fam-behavior>TBD</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="fcs_srtp_ext.1" name="Secure Real-Time Transport Protocol"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to the implementation of SRTP, which is a protocol that is not used for any Base-PP functionality.
+          </consistency-rationale>
           
           <comp-lev>TBD
           </comp-lev>
@@ -1014,7 +1072,9 @@
       <sec:man_fdp title="User Data Protection (FDP)">
         
         <f-component cc-id="fdp_ifc.1" name="Subset Information Flow Control"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to the TOE’s implementation of a B2BUA policy, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
           <f-element>
             <title>
@@ -1034,7 +1094,9 @@
         </f-component>
         
         <f-component cc-id="fdp_iff.1" name="Simple Security Attributes"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to the TOE’s implementation of a B2BUA policy, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
           <f-element>
             <title>
@@ -1084,11 +1146,13 @@
       </sec:man_fdp>
       <sec:man_ffw title="Firewall">
         
-        <ext-comp-def title="Network Access Control" fam-id="FFW_ACL_EXT">
+        <ext-comp-def title="Traffic Filtering" fam-id="FFW_ACL_EXT">
           <fam-behavior>TBD</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="ffw_acl_ext.1" name="Real-Time Communications Traffic Filtering"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to traffic filtering, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
           <comp-lev>TBD
           </comp-lev>
@@ -1202,7 +1266,9 @@
         
         
         <f-component cc-id="ffw_acl_ext.2" name="Stateful VVoIP Traffic Filtering"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to traffic filtering, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
           <comp-lev>TBD
           </comp-lev>
@@ -1217,7 +1283,7 @@
             <title>
               The TSF shall perform stateful traffic filtering on the following VVoIP protocols: <selectables>
                 <selectable>SIP</selectable>
-                <selectable>H.323 (H.225, H.245)</selectable>
+                <selectable id="stateful_H323">H.323 (H.225, H.245)</selectable>
                 <selectable>MGCP</selectable></selectables>.
             </title>
             <note role="application">
@@ -1272,7 +1338,9 @@
           <fam-behavior>TBD</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="ffw_dpi_ext.1" name="Deep Packet Inspection"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to DPI, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
           <comp-lev>TBD
           </comp-lev>
@@ -1324,7 +1392,9 @@
           <fam-behavior>TBD</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="ffw_nat_ext.1" name="Topology Hiding/NAT Traversal"> 
-          <consistency-rationale>TBD</consistency-rationale>
+          <consistency-rationale>
+            This SFR applies to NAT, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
           <comp-lev>TBD
           </comp-lev>
@@ -1379,268 +1449,48 @@
       
       <sec:man_fia title="Identification and Authentication (FIA)">
         
-        <f-component name="Authentication Failure Handling (Claimant)" cc-id="fia_afl.1" iteration="AuthSvr">
+        <ext-comp-def title="Session Initiation Protocol Trunking" fam-id="FAU_SIPT_EXT">
+          <fam-behavior>TBD</fam-behavior> 
+        </ext-comp-def>
+        <f-component cc-id="fia_sipt_ext.1" name="Session Initiation Protocol Trunking"> 
+          <consistency-rationale>
+            This SFR applies to SIP trunking, which is a logical interface that is beyond the original scope of the Base-PP.
+          </consistency-rationale>
           
-          <consistency-rationale>This SFR defines functional behavior enforced on external users being authenticated by the TOE, which is functionality that is not covered by the Base-PP.</consistency-rationale>
-
-          <f-element>
-            <title>The TSF shall detect when [<h:i>an administrator configurable positive integer <h:b>of successive</h:b></h:i>] unsuccessful authentication attempts occur related to [<h:i>claimants attempting to authenticate</h:i>]. 
-            </title>
-          </f-element>
-          <f-element><title>When the defined number of unsuccessful authentication attempts has been [<h:i>met</h:i>], 
-            the TSF shall <selectables onlyone="yes">
-              <selectable>prevent the offending remote entity from successfully authenticating until 
-                <assignable>action</assignable> is taken by a local Administrator</selectable>
-              <selectable>prevent the offending claimant from successfully authenticating until an administrator-defined time period has elapsed</selectable></selectables>. 
-            </title>
-            <note role="application">
-              This requirement applies to claimant authentication attempts in support of an authentication service provided for a federated relying party. 
-              This requirement does not apply to login to the TOE by privileged users for administrative accesses; these cases are addressed by the Base-PP iteration of this SFR. 
-              Responses to authentication queries to aid the claimant in providing acceptable authenticators is not considered a preventative action and are allowed prior to reaching the lockout threshold. 
-              The “action” taken by a local administrator is implementation specific and is defined in the operational guidance (for example, lockout reset or password reset). 
-              The ST author chooses one of the selections for handling of authentication failures depending on how the TOE has implemented this handler. 
-          </note>
-            <aactivity>
-              <TSS>
-                The evaluator shall examine the TSS to verify that it contains a description of how successive unsuccessful authentication attempts by claimants are detected and tracked. 
-                The evaluator shall verify that the TSS describes the method by which the offending claimant is prevented from successfully being authenticated by the TOE, and the actions necessary to restore this ability. 
-                <h:p/>
-              </TSS>
-              <Guidance>The evaluator shall examine the operational guidance to verify that it describes how to configure the threshold for unsuccessful claimant authentication attempts and how to perform 
-                any actions that affect claimants that are limited in this manner (e.g., instructions for configuring the lockout period or for manually unlocking the offending claimant).<h:p/>
-              </Guidance>
-              <Tests>
-                The evaluator shall perform the following tests in conjunction with testing for FCS_EAPTLS_EXT.1 test 2a, and if applicable, test 2c for each claimant authentication method:
-                <testlist>
-                  <test>
-                    The evaluator shall follow the operational guidance to configure a number of failed attempts that will cause lockout behavior to be enforced against a claimant. 
-                    The evaluator shall establish a registered user and provide invalid input for the authentication method repeatedly to reach the configured limit. 
-                    The evaluator shall then observe the configured penalty is imposed.
-                  </test>
-                  <test>
-                    If the administrator action selection is claimed in FIA_AFL.1.2/AuthSvr, the evaluator shall ensure that following the operational guidance for restoring access to a locked-out claimant will subsequently allow that claimant to be
-                    authenticated.
-                    <h:p/>
-                    If the time period selection is claimed in FIA_AFL.1.2/AuthSvr, the evaluator shall follow the operational guidance to configure a certain lockout time for claimants that are locked out due to excessive authentication failures.
-                    The evaluator shall cause a claimant to be locked out in this manner, wait for a time period that is just less than the configured value, and verify that an authentication attempt using valid credentials still does not result in
-                    successful access.
-                    The evaluator shall then repeat this behavior but wait for just after the configured time period has elapsed to show that an authentication attempt using valid credentials results in successful access.
-                  </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-        </f-component>
-      
-        <f-component name="Re-Authenticating" cc-id="fia_uau.6">
-          <consistency-rationale>This SFR defines support for re-authentication of administrators, which expands on the authentication functionality defined in the Base-PP.</consistency-rationale>
-          <f-element>
-            <title>The TSF shall re-authenticate the <h:b>administrative</h:b> user under the conditions [<h:i>when the user
-              changes their password, <selectables>
-                <selectable>following TSF-initiated session locking</selectable>
-                <selectable><assignable>other conditions</assignable></selectable>
-                <selectable exclusive="yes">no other conditions</selectable></selectables></h:i>]. 
-            </title>
-            <aactivity>
-              <TSS>There are no TSS evaluation activities for this component.<h:p/></TSS>
-              <Guidance>The evaluator shall ensure that the operational guidance includes instructions on how an administrator of the TOE can change their own password.<h:p/></Guidance>
-              <Tests>
-                The evaluator will access the TOE using a particular administrative account and then attempt to change the password of that account as directed by the operational guidance.
-                While making this attempt, the evaluator will verify that re-authentication is required.
-                <h:p>
-                  If other re-authentication conditions are specified, the evaluator shall cause those conditions to
-                  occur and verify that the TSF re-authenticates the authenticated user.
-                </h:p>
-              </Tests>
-            </aactivity>
-          </f-element>
-        </f-component>
-      
-        <f-component name="X.509 Certificate Validation (Claimant)" cc-id="fia_x509_ext.1" iteration="AuthSvr">
-          <consistency-rationale>The Base-PP defines X.509 validation requirements for external entities presenting certificates to the TOE. This PP-Module
-          defines a separate iteration of this function to define the certificate validation behavior that is enforced against claimants requesting to be authenticated by the TOE. It is substantially refined
-          from its original definition to address issues specific to the handling of claimant certificates.</consistency-rationale>
+          <comp-lev>TBD
+          </comp-lev>
+          <management>TBD
+          </management>
+          <audit>TBD
+          </audit>
+          <dependencies>TBD
+          </dependencies>
+          
           <f-element>
             <title>
-              The TSF shall validate certificates in accordance with the following rules: 
-              <h:ul>
-                <h:li>RFC 5280 <h:b>version 3</h:b> certificate validation and certification path validation <h:b>supporting <selectables>
-                  <selectable>a minimum path length of <assignable>value greater than or equal to three</assignable></selectable>
-                  <selectable>no prior constraints on path length</selectable></selectables></h:b></h:li>
-                <h:li>The certification path must terminate with a CA certificate <h:b>trusted by the TSF specifically for claimant authentication.</h:b></h:li>
-                <h:li>The TSF shall validate a certification path by ensuring that all CA certificates in the certification path contain the basicConstraints extension with the CA flag set to TRUE.</h:li>
-                <h:li>The TSF shall validate the revocation status of <h:b>each certificate in the certificate path <selectables linebreak="yes">
-                  <selectable>containing an OCSP provider in the AIA extension using the Online Certificate Status Protocol (OCSP) as specified in RFC 6960</selectable>
-                  <selectable>containing a certificate revocation list (CRL) distribution point in the 
-                    CRLDP extension or AIA extension using <selectables>
-                      <selectable>a CRL as specified in RFC 5280 Section 6.3</selectable>
-                      <selectable>a CRL as specified in RFC 5759 Section 5</selectable></selectables></selectable></selectables></h:b>.
-                </h:li>
-                <h:li>
-                  The TSF shall validate the extendedKeyUsage field <h:b>is present and contains key usage values</h:b> according to the following rules: <h:b>
-                  <selectables linebreak="yes">
-                    <selectable>Certificates do not assert anyExtendedKeyUsage (OID 2.5.29.37.0)</selectable>
-                    <selectable>Client certificates associated with authenticated entities presented for <selectables>
-                      <selectable>TLS</selectable>
-                      <selectable>DTLS</selectable></selectables> shall have the Client Authentication purpose (id-kp 2 with OID 1.3.6.1.5.5.7.3.2) in the extendedKeyUsage field.</selectable>
-                    <selectable>
-                      <selectables linebreak="yes">
-                        <selectable>Server certificates presented for <selectables><selectable>TLS</selectable><selectable>DTLS</selectable></selectables> shall 
-                          have the Server Authentication purpose (id-kp 1 with OID 1.3.6.1.5.5.7.3.1) in the extendedKeyUsage field.</selectable>
-                        <selectable>Certificates presented for IPsec shall have the ipsec-IKE purpose (id-kp 17 with OID 1.3.6.1.5.5.7.3.17)</selectable>
-                        <selectable>OCSP certificates presented for OCSP responses shall have the OCSP Signing purpose (id-kp 9 with OID 1.3.6.1.5.5.7.3.9) in the extendedKeyUsage field.</selectable></selectables></selectable></selectables></h:b>.
-                </h:li><h:b>
-                <h:li>
-                  The TSF shall validate that each CA certificate in the certification path indicating a path length constraint in the basicConstraints 
-                  extension does not have more than the specified number of subordinate CA certificates in the certification path from the end-entity certificate 
-                  to the CA certificate indicating the constraint, not counting the CA certificate itself or any self-issued certificates in the certification path.
-                </h:li>
-                <h:li>
-                  The TSF shall process name constraints of type Directory Name and <selectables>
-                    <selectable>rfc822Name</selectable>
-                    <selectable>dnsName</selectable>
-                    <selectable>UPN Name (Other Name = id-ms-san-sc-logon-upn)</selectable>
-                    <selectable><assignable>other name type</assignable></selectable>
-                    <selectable>no other name type</selectable></selectables> 
-                  by verifying that each name of a supported name type present in the end-entity certificate subject field or subjectAlternateName extension, 
-                  is allowed in each CA certificate in the certification path, is not disallowed by any of the CA certificates in the certification path, 
-                  and that each name type included in the end-entity certificate and constrained by a CA certificate in the certification path is processed.
-                </h:li>
-                <h:li>
-                  The TSF shall process the following certificate extensions: <selectables>
-                    <selectable>Certificate Policy extension in accordance with RFC 5280 and <selectables linebreak="yes">
-                      <selectable>Policy mapping extension in accordance with RFC 5280</selectable>
-                      <selectable>Policy constraints extension in accordance with RFC 5280</selectable>
-                      <selectable>Inhibit anyPolicy extension in accordance with RFC 5280</selectable>
-                      <selectable>No other policy related extension</selectable></selectables> in support of claimant authentication and <assignable>
-                        other intended purposes and limitations of policy related extension processing</assignable></selectable>
-                    <selectable><assignable>other standard extensions</assignable></selectable>
-                    <selectable>no other extensions</selectable></selectables>.
-                </h:li></h:b>
-              </h:ul>
+          The TSF shall provide support for SIP trunking.
             </title>
-            <note role="Application">
-              The ST author claims supported certificate validity checking options for each rule. For name constraints, all supported name types used to match names presented in a certificate to registered users 
-              and the associated standard matching method are described.
-              <h:p/>
-              The ST author claims supported certificate policies. ‘Policy Constraints…’ is claimed if the TOE’s authentication policy depends on the certificate policies for claimant certificates. 
-              Other policy related extensions within the selection are claimed if supported. 
-              The extension inhibitPolicyMapping is not claimed if the TSF does not support certificate chains of length four or more. 
-              The policy related extensions, if supported, are primarily used in this PP-Module for claimant authentication, but are allowed for other certificate authentications. 
-              The ST author specifies the intended use and any limits of support for these extensions or specifies ‘no other policy related extension’ in the assignment of this selection.
-              <h:p/>
-              The ST author specifies any additional supported X509 extensions, and the associated extension processing rules used to determine claimant identity attributes or conditions that can be used in the TOE’s authentication policy. 
-            </note>
           </f-element>
           <f-element>
-            <title>The TSF shall only treat a certificate as a CA certificate if the basicConstraints extension is present and the CA flag is set to TRUE.</title>
-            <aactivity>
-              <TSS>
-                The evaluator shall ensure the TSS describes where the check of validity of the certificates takes place. 
-                The evaluator ensures the TSS also provides a description of the certificate path validation algorithm. 
-              </TSS>
-              <Guidance>
-                The evaluator shall ensure that instructions for any configurable features of the validation process are included. 
-                If the ST includes provisions for exception processing of certificate revocation status information,
-                the evaluator shall ensure the operational guidance contains instructions on how the indicated options are configured. 
-                <h:p/>
-                If the TOE supports processing of the policy constraints extension and the TOE requires configuration to validate the policy of a claimant certificate, the evaluator shall verify that the operational guidance includes instructions for 
-                configuring this behavior.
-              </Guidance>
+            <title>
+              The TSF shall require a service provider to provide valid identification in the form of a 
+              <selectables>
+                <selectable>username and password</selectable>
+                <selectable>X.509 certificate</selectable></selectables> and IP address in order to establish a SIP trunk.
+            </title>
+          </f-element>
+          <f-element>
+            <title>The TSF shall require a service provider to provide a valid authentication credential in order to establish a SIP trunk.</title>
+          </f-element>
+          <f-element>
+            <title>The TSF shall require a service provider to encrypt traffic using TLS in order to establish a SIP trunk.</title>
+          <aactivity>
+              <TSS>TBD
+                <h:p/></TSS>
+              <Guidance>TBD
+                <h:p/></Guidance>
               <Tests>
-                The evaluator shall perform the following tests. The tests for the extendedKeyUsage rules, name constraints and policy constraints, if supported, are performed in conjunction with the uses that require those rules.
-                <testlist>
-                  <test>
-                    The evaluator shall demonstrate that validating a certificate without a valid certification path results in the function failing, for each of the following reasons, in turn: 
-                    <h:ul>
-                      <h:li>by establishing a certificate path in which one of the issuing certificates is not a CA certificate</h:li>
-                      <h:li>by omitting the basicConstraints field in one of the issuing certificates</h:li>
-                      <h:li>by setting the basicConstraints field in an issuing certificate to have CA=False</h:li>
-                      <h:li>by omitting the CA signing bit of the key usage field in an issuing certificate</h:li>
-                      <h:li>by setting the path length field of a valid CA field to a value strictly less than the certificate path</h:li>
-                    </h:ul> <h:p/>
-                    The evaluator shall then establish a valid certificate path consisting of valid CA certificates and demonstrate that the function succeeds. 
-                    The evaluator shall then remove trust in one of the CA certificates and show that the function fails. 
-                  </test>
-                  <test>
-                    The evaluator shall demonstrate that validating an expired certificate results in the function failing. 
-                  </test>
-                  <test>
-                    The evaluator shall test that the TOE can properly handle revoked certificates – conditional on the revocation method that is selected; if multiple methods are selected, then the test is repeated for each method. 
-                    The evaluator tests revocation for each certificate in the trust chain which advertises certificate status information. 
-                    The evaluator shall ensure that a valid certificate is used, and that the validation function succeeds. 
-                    The evaluator shall then attempt the test with a certificate that will be revoked (for each method chosen in the selection) and verify that the validation function fails. 
-                  </test>
-                  <test>
-                    [conditional] If any OCSP option is selected, the evaluator shall present a delegated OCSP certificate that does not have the OCSP signing purpose and verify that validation of the OCSP response fails. 
-                    If CRL is selected, the evaluator shall configure the CA to sign a CRL with a certificate that does not have the cRLsign key usage bit set and verify that validation of the CRL fails.
-                  </test>
-                  <test>
-                    [conditional] If the TOE supports EC certificates, then the evaluator shall establish a valid, trusted certificate chain consisting of an EC leaf certificate, 
-                    an EC Intermediate CA certificate not designated as a trust anchor, and an EC certificate designated as a trusted anchor, 
-                    where the elliptic curve parameters are specified as a named curve. The evaluator shall confirm that the TOE validates the certificate chain. 
-                  </test>
-                  <test>
-                    [conditional] If the TOE supports EC certificates, then the evaluator shall replace the intermediate certificate in the certificate chain for Test 5 with a modified certificate.
-                    This certificate is modified to have the public key information field where the EC parameters use an explicit format version of the Elliptic Curve parameters 
-                    in the corresponding field of intermediate CA certificate from Test 5. This certificate is also modified to be signed by the trusted EC root CA, but with no other changes. 
-                    The evaluator shall confirm the TOE treats the certificate as invalid.
-                  </test>
-                  <test>
-                    The evaluator shall test the following name constraints: <h:ul>
-                      <h:li>Test 7a: For each name type supported, the evaluator shall establish a valid certificate for a registered entity. 
-                        The evaluator shall ensure the certificate has a valid path length of at least three, consisting of a trusted root, 
-                        an issuing CA that is not a trust anchor, and the leaf certificate representing the entity. 
-                        The evaluator shall ensure that the leaf certificate includes a single name of the supported name type and no other DN or SAN entries. 
-                        The evaluator shall initiate an application requiring authentication of that entity using the certificate and verify the TSF successfully authenticates the entity. </h:li>
-                      <h:li>Test 7b: For each leaf certificate used in test 7a, the evaluator shall establish a new leaf certificate that includes the same name and name type, 
-                        but which is issued by a different subordinate CA asserting an allowed-list that does not include the name for the name-type. 
-                        The evaluator shall ensure the subordinate CA is included in a valid chain to the same trusted root. 
-                        The evaluator shall initiate the same application attempt as in test 7a for the new certificate and observe that the TSF indicates the certificate is invalid.</h:li>
-                      <h:li>Test 7c: For each leaf certificate used in test 7a, 
-                        the evaluator shall establish a new leaf certificate that includes the same name and name type, 
-                        but which is issued by a different subordinate CA asserting a denylist matching the name for the name type. 
-                        The evaluator shall ensure the subordinate CA is included in a valid certificate path to the same trusted root. 
-                        The evaluator shall initiate the same application attempt as in test 7a using the new certificate and observe that the TSF indicates the certificate is invalid. </h:li>
-                    </h:ul> 
-                  </test>
-                  <test>
-                    [conditional] If the TOE supports processing of the policy constraints extension, then for each distinct purpose and within the constraints indicated in the ST 
-                    (claimant authentication and any other supported subject types), the evaluator shall follow the operational guidance as necessary to configure the TOE to require the subject’s certificate to assert a specific certificate policy. 
-                    The evaluator shall perform the following sub-tests: <h:ul>
-                      <h:li>Test 8a: The evaluator shall establish a certificate for the subject asserting the certificate policy OID required, issued by a Certification Authority also specifying the required certificate policy. 
-                        The evaluator shall present the established certificate for authentication and verify that the TSF successfully validates the certificate. </h:li>
-                      <h:li>Test 8b: [conditional] If the ST selects 'Inhibit anyPolicy extension...," the evaluator shall repeat test 8a using a certificate asserting the required policy but issued by a Certification Authority only asserting the ‘anyPolicy’ OID (value {2 5 29 32 0}) in its policy constraints extension. The evaluator shall observe that the TSF successfully validates the certificate.</h:li>
-                      <h:li>Test 8c: [conditional] If the ST indicates support for the policy mapping extension, 
-                        the evaluator shall repeat test 8a using a certificate asserting a new policy OID that does not match the required policy OID. This certificate  
-                        is issued by a CA asserting the new policy OID in the policy constraints extension, and the CA certificate is issued by a second CA. This second
-                        CA asserts the required OID in its certificate constraints extension and contains a policy mapping extension 
-                        including the mapping of the asserted policy to the required policy. 
-                        The evaluator shall observe that the TSF successfully validates the certificate.<h:p/> 
-                        Note that installing a root CA trusted by the TOE with the required policy constraints and policy mapping extensions may be required if the TSF limits the path length of certificate chains.</h:li>
-                      <h:li>Test 8d: [conditional] If the ST indicates support for both policy mapping and policy constraints extensions and also supports certificate chains of length four or more, 
-                        the evaluator shall establish a certificate for the subject asserting a new policy OID that does not match the required policy OID. This certificate 
-                        is issued by a CA asserting the new policy OID, which in turn is issued by a second CA which includes the policy mapping extension that maps the required policy OID to the new policy OID.  
-                        The second CA is in turn issued by a third CA that has the extension policy constraints with the inhibitPolicyMapping field having value 0. 
-                        The evaluator shall present the certificate to the TSF for authentication and observe that the TSF indicates the certificate is invalid.</h:li>
-                      <h:li>Test 8e: [conditional] If the ST indicates support for both policy mapping and policy constraints extensions, 
-                        the evaluator shall select a policy OID not required for authentication in the TOE’s current configuration. 
-                        The evaluator shall establish a certificate for the subject that does not assert the non-required policy, 
-                        which is issued by a CA also asserting the new policy OID, which in turn, is issued by a CA asserting the ‘anyPolicy’ OID and having a critical policy constraints extension 
-                        with the explicitPolicy field with value 0. The evaluator shall present the certificate to the TSF for authentication and observe that the TSF indicates the certificate is invalid.</h:li>
-                      <h:li>Test 8f: The evaluator shall establish a certificate for the subject asserting the required policy but issued by a Certification Authority that does not include any certificate policy related extensions. 
-                        The evaluator shall present the certificate for authentication and observe that the TSF indicates the certificate is invalid.</h:li>
-                      <h:li>Test 8g: The evaluator shall establish a certificate for the subject asserting the required certificate policy issued by a Certification Authority that only asserts a single, 
-                        non-matching policy OID in its policy related extensions (i.e., the CA certificate does not include the matching OID, ‘anyPolicy’ assertions or assert an OID that is mapped to the required OID 
-                        via policy matching extensions by previous Certification Authorities in the certificate chain, if supported). 
-                        The evaluator shall present the certificate to the TSF for authentication and observe the TSF indicates the certificate is invalid.</h:li>
-                      <h:li>Test 8h: [conditional] If the ST indicates the inhibitAnyPolicy extension is supported, the evaluator shall establish a certificate for the subject asserting the required policy issued by a CA 
-                        asserting the ‘anyPolicy’ OID, which is in turn issued by a CA with an inhibitAny extension with value 0. 
-                        The evaluator shall present the certificate to the TSF for authentication and observe the TSF indicates the certificate is invalid. <h:p/>
-                        Note that installing a root CA trusted by the TOE with the inhibitAny extension may be required if the TSF limits the path length of certificate chains.</h:li>
-                    </h:ul>
-                  </test>
-                </testlist>
+                TBD
               </Tests>
             </aactivity>
           </f-element>
@@ -1651,838 +1501,386 @@
       </sec:man_fia>
       
       <sec:man_fmt title="Security Management (FMT)">
-        <f-component name="Specification of Management Functions (Authentication Server)" id="fel-managementfun-as" cc-id="fmt_smf.1" iteration="AuthSvr">
-			<consistency-rationale>This SFR defines additional management functionality that is specific to the PP-Module’s product type and would therefore not be expected to be present in the Base-PP.</consistency-rationale>
+        <f-component name="Specification of Management Functions (SBC)" id="fel-managementfun-as" cc-id="fmt_smf.1" iteration="SBC">
+			<consistency-rationale>
+			  This SFR defines management functions for SBC that are not applicable to the Base-PP and therefore appropriately defined as a separate iteration of FMT_SMF.1.
+			</consistency-rationale>
 			<f-element>
-			<title>The TSF shall be capable of performing the following management functions: [<h:i>
+			<title>The TSF shall be capable of performing the following management functions <h:b>related to SBC functionality</h:b>: [<h:i>Ability of a Security Administrator to:
 			  <h:ul>
-			    <h:li>Ability to configure claimant verification data</h:li>
-			    <h:li>Ability to manage trust store data</h:li>
-			    <h:li>Ability to configure administrator authentication credential</h:li>
-			    <h:li>Ability to configure trusted channel to relying party</h:li>
-			    <h:li><selectables linebreak="yes">
-			      <selectable>Ability to configure IPsec functionality</selectable>
-			      <selectable>Ability to configure DTLS functionality</selectable>
-			      <selectable>Ability to configure TLS functionality</selectable>
-			      <selectable>Ability to manage claimant authentication policy</selectable>
-			      <selectable>Ability to configure RADIUS shared secret</selectable>
-			      <selectable>Ability to define authorized NAS</selectable>
-			      <selectable>Ability to configure cryptographic key storage</selectable>
-			      <selectable>Ability to configure lockout policy for failed claimant authentication</selectable>
-			      <selectable>Ability to unlock a claimant account</selectable>
-			      <selectable>Ability to configure certificate validation checking mechanisms</selectable>
-			      <selectable>Ability to define conditions in which claimant authentication attempts are rejected</selectable>
-			      <selectable>Ability to associate pre-shared keys with claimants or external entities</selectable>
-			      <selectable>Ability to configure restrictions on the composition of pre-shared keys</selectable>
-			      <selectable>Ability to configure restrictions on the validation of pre-shared keys</selectable>
-			      <selectable>Ability to generate pre-shared keys</selectable>
-			      <selectable>Ability to accept pre-shared keys</selectable>
-			      <selectable>No other functions</selectable>
-			    </selectables></h:li>
+			    <h:li>Change a user's password</h:li>
+			    <h:li>Require a user's password to be changed upon next login</h:li>
+			    <h:li>Configure the auditable events that will result in the generation of an alarm</h:li>
+			    <h:li>Configure the B2BUA policy</h:li>
+			    <h:li>Configure traffic filtering rules</h:li>
+			    <h:li>Configure auditable events</h:li>
+			    <h:li>Configure NAT</h:li>
+			    <h:li>Configure ports and cryptography for signaling and media communications</h:li>
 			  </h:ul></h:i>].
 			</title>
 			  <note role="Application">
 			    This SFR defines additional management functions for the TOE beyond what is defined in the Base-PP as FMT_SMF.1. 
+			    The TOE may have all management functionality implemented in the same logical interface; 
+			    it is not necessary for “network device management” and “SBC management” to be implemented in separate interfaces.
+			    <h:p/>
+			    This PP-Module may rely on management functionality defined in the Base-PP to support the implementation of its functions. 
+			    For example, the SBC portion of the TOE relies on the reliable time function that must be implemented by the Base-PP portion of the TOE. 
+			    If the Base-PP implements this using NTP, the “Ability to set the time which is used for time-stamps” or “Ability to configure NTP” 
+			    management function defined in FMT_SMF.1 in the Base-PP can be used to address this PP-Module’s dependency on reliable system time.
+			    <h:p/>
+			    The ’configurable auditable events’ function relates to FAU_SEL.1, specifically with respect to allowing a Security Administrator 
+			    to determine whether a given event is auditable. As this refers to the events for the triggering of various filtering rules, 
+			    it may be implicitly addressed through the ‘configure traffic filtering rules’ function, 
+			    for example by explicitly defining a rule with a type that automatically requires it to be logged or a parameter that causes it to be logged if triggered.
 			  </note>
 			<aactivity>
 			  <TSS>
-			    The evaluator shall verify that the TSS identifies all of the security-relevant management functions that apply to the security functions the TOE claims from this PP-Module.<h:p/>
+			    TBD
+			    <h:p/>
 			  </TSS>
 			  <Guidance> 
-			    For each claimed management function, the evaluator shall ensure that the operational guidance contains instructions for how to configure the function.<h:p/>
+			    TBD
+			    <h:p/>
 			  </Guidance>
 			  <Tests>
-			  For each claimed management function, the evaluator shall follow the operational guidance to configure the behavior of that function and ensure that applying the configuration settings have the intended effect. 
-			  Note that some or all of these functions may be tested in the course of performing the test activities for other claimed SFRs. 
+			  TBD 
 			  </Tests>
 			</aactivity>
 		</f-element>
 		</f-component>
         </sec:man_fmt>
       
-      
-      <sec:man_fta title="TOE Access (FTA)">
+      <sec:man_fru title="Resource Utilization (FRU)">
         
-        <f-component name="TOE Session Establishment" cc-id="fta_tse.1">
-          <consistency-rationale>This SFR relates to the handling of claimants being authenticated by the TOE, which is functionality that is beyond the original scope of the Base-PP.</consistency-rationale>
-          <f-element>
-            <title>The TSF shall be able to deny <h:b>claimant</h:b> session establishment based on [<h:i>invalid certificate, 
-              <selectables>
-                <selectable><assignable>other identity attributes</assignable></selectable>
-                <selectable>no other attributes</selectable></selectables></h:i>].</title>
-            <note role="application">
-              The intent of this SFR is to describe any circumstances that would cause a claimant’s authentication request to be rejected. 
-              All compliant TOEs will reject authentication requests based on invalid credentials. 
-              A compliant TOE may also impose additional limitations such as suspended accounts or time of day restrictions, depending on the capabilities of the TSF’s authentication mechanism.
-            </note>
-            <aactivity>
-              <TSS>The evaluator shall examine the TSS to determine that all of the attributes on which a claimant session can be denied are specifically defined.<h:p/>
-              </TSS>
-              <Guidance>The evaluator shall examine the operational guidance to verify that it contains instructions for configuring each of the attributes identified in the TSS.<h:p/> </Guidance>
-              <Tests>The evaluator shall successfully have a claimant be authenticated by the TOE. 
-                For each attribute claimed in the SFR, the evaluator shall configure the TOE to deny user access based on a specific value of that attribute.
-                The evaluator shall then attempt to establish a new session in contravention to the attribute setting while still providing valid authentication data. The evaluator shall observe that the access attempt fails.  
-              </Tests>
-            </aactivity>
-          </f-element>
-        </f-component>
-      </sec:man_fta>
-      
-	  <sec:man_ftp title="Trusted Path/Channels (FTP)">
-		  <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (Relying Party Communications)" iteration="NAS">
-		  <consistency-rationale>
-			  This SFR iterates the FTP_ITC.1 SFR defined in the Base-PP to define trusted communication channels for the functionality that is specific to this PP-Module.
-			  </consistency-rationale>
-			  <f-element>
-			  <title>
-			    The TSF shall provide <h:b><selectables>
-			      <selectable>an IPsec</selectable>
-			      <selectable id="uses-radsec">a RadSec</selectable>
-			      <selectable>a mutually authenticated TLS</selectable>
-			      <selectable>a mutually authenticated DTLS</selectable></selectables></h:b>
-			    communication channel between itself and <h:b>a relying party</h:b> that is logically distinct from other communication channels and provides assured 
-			    identification of its end points and protection of the channel data from modification or disclosure.
-				  </title>
-			    <note role="Application">If "a RadSec" is selected, the selection-based SFR FCS_RADSEC_EXT.1 must be claimed.</note>
-				</f-element>
-			    <f-element>
-		<title>
-		  The TSF shall permit [<h:i>the TSF, <h:b>or the relying party</h:b></h:i>] to initiate communication via the trusted channel.
-		</title>
-	</f-element>
-			  <f-element>
-			    <title>The TSF shall initiate communication via the trusted channel for [<h:i>responses to authentication request messages received from the relying party</h:i>].</title>
-				  <aactivity>
-				    <TSS>
-				      The evaluator shall examine the TSS to determine that, for all communications with authorized IT entities identified in the requirement, 
-				      each communications mechanism is identified in terms of the allowed protocols for that IT entity. 
-				      The evaluator shall also confirm that all protocols listed in the TSS are specified and included in the requirements in the ST. 
-				    </TSS>
-				    <Guidance>
-				      The evaluator shall confirm that the guidance documentation contains instructions for establishing and reestablishing the allowed protocols with each authorized IT entity. 
-				    </Guidance>
-				    <Tests>For each claimed trusted channel mechanism, the evaluator shall configure the TOE to interact with a relying party using that channel and verify using packet captures that the claimed mechanism
-				    is used.</Tests>
-				  </aactivity>	  
-			  </f-element>
-		  </f-component>
-      </sec:man_ftp>
-        
-    </man-sfrs>
-   <opt-sfrs/>
-    <sel-sfrs>
-      
-      <sec:sel_fcs title="Cryptographic Support (FCS)">
-        
-        <ext-comp-def title="RadSec" fam-id="FCS_RADSEC_EXT">
-          <fam-behavior>Components in this family define requirements for the TSF to use RadSec to secure RADIUS data in transit.</fam-behavior> 
+        <ext-comp-def title="Limited Priority of Service" fam-id="FRU_PRS_EXT">
+          <fam-behavior>TBD</fam-behavior> 
         </ext-comp-def>
-        
-        <f-component name="RadSec" cc-id="fcs_radsec_ext.1">
-		  <depends on-sel="uses-radsec"/>
-          <consistency-rationale>This SFR defines the implementation of RadSec and the peer authentication method that it uses. 
-            This relies on the TLS requirements defined by the Base-PP and may also use the X.509v3 certificate validation methods
-            specified in the Base-PP, depending on the selected peer authentication method.</consistency-rationale>
+        <f-component cc-id="fru_prs_ext.1" name="Limited Priority of Service"> 
+          <consistency-rationale>
+            This SFR applies to enforcement of bandwidth priority of service, which is a mechanism that is beyond the scope of the Base-PP and does not interfere with the ability of the Base-PP to process valid network traffic securely.
+          </consistency-rationale>
           
-          <comp-lev>defines implementation requirements for RadSec.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT:
-            <h:ul>
-              <h:li>Configuration of trusted channel to relying party</h:li>
-            </h:ul></management>
-          <audit>There are no auditable events foreseen.</audit>
-          <dependencies>
-            <no-link>FCS_RADIUS_EXT.1</no-link> Authentication Protocol<h:p/>
-            FCS_RBG_EXT.1 Random Bit Generation<h:p/>
-            [<no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Composition, or<h:p/>
-            FIA_X509_EXT.1 X.509 Certificate Validation]
-            
-	  </dependencies>
+          <comp-lev>TBD
+          </comp-lev>
+          <management>TBD
+          </management>
+          <audit>TBD
+          </audit>
+          <dependencies>TBD
+          </dependencies>
+          
           <f-element>
             <title>
-              The TSF shall implement RadSec as specified in RFC 6614, as updated by RFC 8996, to communicate securely with a relying party.
+              The TSF shall assign a priority to each type of communications packet that traverses the TSF.
             </title>
           </f-element>
           <f-element>
             <title>
-              The TSF shall perform relying party authentication using <selectables>
-              <selectable id="s-x509-certs">X.509v3 certificates</selectable>
-              <selectable id="radsec-uses-psk">pre-shared keys</selectable></selectables>.
+              The TSF shall ensure that each access to network bandwidth shall be mediated on the basis of the subject’s assigned priority and R-factor.
             </title>
-            <note role="application">
-              It is recommended that both X.509v3 certificates and pre-shared keys be supported for resiliency purposes.
-            </note>
-          </f-element>
-          <f-element>
-            <title>
-              The TSF shall implement RadSec using 
-              <selectables>
-                <selectable>TLS</selectable>
-                <selectable>DTLS</selectable></selectables> with mutual authentication.
-            </title>
-            <note role="Application">This SFR is claimed if "a RadSec" is selected in FTP_ITC.1.1/NAS.
-            <h:p/>
-            If "pre-shared keys" is selected in FCS_RADSEC_EXT.1.2, the selection-based SFR FIA_PSK_EXT.1/AuthSvr must be claimed.</note>
-          <aactivity>
-              <TSS>
-                TBD<h:p/>
-	      </TSS>
-              <Guidance>
-                TBD<h:p/>
-	      </Guidance>
+            <aactivity>
+              <TSS>TBD
+                <h:p/></TSS>
+              <Guidance>TBD
+                <h:p/></Guidance>
               <Tests>
                 TBD
               </Tests>
             </aactivity>
           </f-element>
         </f-component>
-      
         
-      </sec:sel_fcs> 
-      
-      <sec:sel_fia title="Identification and Authentication (FIA)">
-        
-        
-        
-        <ext-comp-def title="HMAC-Based One-Time Password Pre-Shared Keys" fam-id="FIA_HOTP_EXT">
-          <fam-behavior>Components in this family define requirements for the use of HMAC-based One-Time Password authentication, including generation methods and usage restrictions.</fam-behavior>
-        </ext-comp-def>
-        <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
-          <depends on-sel="eaptls-uses-hotp" and="psk-uses-hotp"/>
-          <consistency-rationale>This SFR extends the functionality of the Base-PP by defining the use of pre-shared keys as an authenticator.</consistency-rationale>
-          <comp-lev> defines the implementation of HOTP.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT:
-            <h:ul>
-              <h:li>Ability to configure restrictions on the composition of pre-shared keys</h:li>
-              <h:li>Ability to configure restrictions on the validation of pre-shared keys</h:li>
-            </h:ul></management>
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
-            <h:ul>
-              <h:li>Generation of a HOTP seed key</h:li>
-              <h:li>Entity HOTP value comparison</h:li>
-            </h:ul>
-          </audit>
-          <dependencies>FCS_COP.1 Cryptographic Operation<h:p/>
-            FCS_RBG_EXT.1 Random Bit Generation</dependencies>
-          <f-element id="fia-hotp-ext-1e1">
+        <f-component cc-id="fru_rsa.1" name="Maximum Quotas"> 
+          <consistency-rationale>
+            This SFR applies to enforcement of resource quotas, which is a mechanism that is beyond the scope of the Base-PP and does not interfere with the ability of the Base-PP to process valid network traffic securely.
+          </consistency-rationale>
+
+          <f-element>
             <title>
-              The TSF shall support HMAC-Based One-Time Password authentication (HOTP) in accordance with RFC 4226. 
+              The TSF shall enforce maximum quotas of the following resources: [<h:i>CPU, memory, <assignable>other resources</assignable></h:i>], 
+              that [<h:i>subjects</h:i>] can use <selectables>
+                <selectable>simultaneously</selectable>
+                <selectable>over a specified period of time</selectable></selectables>. 
             </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e2">
-            <title>
-              The TSF shall generate a HOTP seed key according to FCS_RBG_EXT.1 of 
-              <selectables>
-                <selectable>128</selectable>
-                <selectable>256</selectable></selectables> bits.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e3">
-            <title>The TSF shall generate a new HOTP seed key for each claimant to be authenticated.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e4">
-            <title>
-              The TSF shall use
-              <selectables>
-                <selectable>SHA-1</selectable>
-                <selectable>SHA-256</selectable>
-                <selectable>SHA-384</selectable>
-                <selectable>SHA-512</selectable></selectables> with key sizes 
-              <assignable>key size (in bits) used in HMAC</assignable> and message digest sizes 
-              <selectables>
-                <selectable>160</selectable>
-                <selectable>256</selectable>
-                <selectable>384</selectable>
-                <selectable>512</selectable></selectables> to derive a HOTP hash from the HOTP seed and counter.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e5">
-            <title>
-              The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create a HOTP of  
-              <selectables linebreak="yes">
-                <selectable>administrator configurable character length of at least 6</selectable>
-                <selectable>preset character length of
-                  <selectables>
-                    <selectable>6</selectable>
-                    <selectable>7</selectable>
-                    <selectable>8</selectable>
-                    <selectable>9</selectable>
-                    <selectable>10</selectable></selectables></selectable></selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e6">
-            <title>
-              The TSF shall 
-              <selectables>
-                <selectable>throttle invalid requests to 
-                  <selectables linebreak="yes">
-                    <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable></selectables> per minute</selectable>
-                <selectable>lock the associated account after 
-                  <selectables>
-                    <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable></selectables> failed attempts until 
-                  <selectables>
-                    <selectable>an administrator unlocks the account</selectable>
-                    <selectable>a configurable time period has elapsed</selectable></selectables></selectable></selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e7">
-            <title>
-              The TSF shall not verify HOTP attempts outside of the counter look-ahead window of 
-              <assignable>a value less than or equal to three</assignable> 
-              <selectables>
-                <selectable>except for rescynchronization</selectable>
-                <selectable>where a look-ahead window of <selectables>
-                  <selectable>a configurable value</selectable>
-                  <selectable><assignable>fixed value</assignable></selectable></selectables> is used to reset the counter but which is not considered a valid HOTP value</selectable>
-                <selectable>with no exception</selectable></selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e8">
-            <title>
-              The TSF shall increment the counter after each successful authentication.
-            </title>
-            
             <note role="application">
-              This SFR is claimed if "HOTP" is selected in FCS_EAPTLS_EXT.1.3 or if "HMAC-based one-time password" is selected in FIA_PSK_EXT.1.2/AuthSvr.
+              The intent of this SFR is for the TOE to be resistant to denial of service attacks.
+            </note>
+            <aactivity>
+              <TSS>TBD
+                <h:p/></TSS>
+              <Guidance>TBD
+                <h:p/></Guidance>
+              <Tests>
+                TBD
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        
+      </sec:man_fru>
+ 
+      
+	  <sec:man_ftp title="Trusted Path/Channels (FTP)">
+		  <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (ESC Communications)" iteration="ESC">
+		  <consistency-rationale>
+		    The PP-Module iterates an SFR defined in the Base-PP to define a new external interface for communications with an ESC. 
+		    This does not interfere with the ability of the Base-PP to enforce its security functionality on the existing logical interfaces.
+			  </consistency-rationale>
+			  <f-element>
+			  <title>
+			    The TSF shall provide a <h:b>signaling</h:b> channel between itself and <h:b>an ESC using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and <selectables>
+			      <selectable>DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</selectable>
+			      <selectable>no other protocol</selectable></selectables></h:b> that is logically distinct from other communication channels 
+			    and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+				  </title>
+			    <note role="Application">
+			      FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the Base-PP.
+			    </note>
+				</f-element>
+			    <f-element>
+		<title>
+		  The TSF shall permit [<h:i>the TSF</h:i>] to initiate communication via the trusted channel.
+		</title>
+	</f-element>
+			  <f-element>
+			    <title>The TSF shall initiate communication via the trusted channel for [<h:i>all communications with the ESC</h:i>]. 
+			    </title>
+			      
+				  <aactivity>
+				    <TSS>
+				      TBD
+				      <h:p/>
+				    </TSS>
+				    <Guidance>
+				      TBD
+				      <h:p/> 
+				    </Guidance>
+				    <Tests>
+				      TBD
+				    </Tests>
+				  </aactivity>	  
+			  </f-element>
+		  </f-component>
+	    
+	    
+	    <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (VVoIP Communications)" iteration="VVoIP">
+	      <consistency-rationale>
+	        The PP-Module iterates an SFR defined in the Base-PP to define a new external interface for communications with a VVoIP endpoint. 
+	        This does not interfere with the ability of the Base-PP to enforce its security functionality on the existing logical interfaces.
+	      </consistency-rationale>
+	      <f-element>
+	        <title>
+	          The TSF shall <h:b>be capable of using SRTP, <selectables>
+	            <selectable>SIP-TLS</selectable>
+	            <selectable>IPsec</selectable>
+	            <selectable>H.235</selectable>
+	            <selectable><assignable>other protocols</assignable></selectable></selectables></h:b> 
+	          to provide a <h:b>trusted</h:b> communication channel between itself and <h:b>authorized</h:b> IT 
+	          <h:b>entities supporting the following capabilities: VVoIP signaling and media channels</h:b> that is
+	          logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+	        </title>
+	        <note role="Application">
+	          FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the Base-PP.
+	        </note>
+	      </f-element>
+	      <f-element>
+	        <title>
+	          The TSF shall permit [<h:i>the TSF, the authorized IT entities</h:i>] to initiate communication via the trusted channel.
+	        </title>
+	      </f-element>
+	      <f-element>
+	        <title>The TSF shall initiate communication via the trusted channel for <assignable>list of functions for which a trusted channel is required</assignable>. 
+	        </title>
+	        
+	        <aactivity>
+	          <TSS>
+	            TBD
+	            <h:p/>
+	          </TSS>
+	          <Guidance>
+	            TBD
+	            <h:p/> 
+	          </Guidance>
+	          <Tests>
+	            TBD
+	          </Tests>
+	        </aactivity>	  
+	      </f-element>
+	    </f-component>
+	    
+      </sec:man_ftp>
+        
+    </man-sfrs>
+   <opt-sfrs/>
+    <sel-sfrs>
+      
+      <sec:sel_ftp title="Trusted Path/Channels (FTP)">
+        
+        <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (H.323 Communications)" iteration="H323">
+          <depends on-sel="filters_H323" and="stateful_H323" also="H323_SDP"/>
+          <consistency-rationale>
+            The PP-Module iterates an SFR defined in the Base-PP to define a new external interface for communications using H.323. 
+            This does not interfere with the ability of the Base-PP to enforce its security functionality on the existing logical interfaces.
+          </consistency-rationale>
+          <f-element>
+            <title>
+              <comment>[JF] need syntax for when there are >3 triggers for a sel-based SFR (FFW_ACL_EXT.1, FFW_ACL_EXT.2, FFW_DPI_EXT.1, FIA_SIPS_EXT.1)</comment>
+              The TSF shall provide an <h:b>H.323</h:b> communication channel <h:b>in accordance with ITU-REC H.235.0</h:b> between itself and 
+              <h:b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and <selectables>
+                <selectable>IPsec as specified in FCS_IPSEC_EXT.1</selectable>
+                <selectable>no other protocol</selectable>
+              </selectables></h:b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+            </title>
+            <note role="Application">
+              FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the Base-PP.
+            </note>
+          </f-element>
+          <f-element>
+            <title>
+              The TSF shall permit [<h:i>the TSF</h:i>] to initiate communication via the trusted channel.
+            </title>
+          </f-element>
+          <f-element>
+            <title>The TSF shall initiate communication via the trusted channel for [<h:i>all communications with the gatekeeper</h:i>]. 
+            </title>
+            <note role="application">
+              This SFR is claimed if H.323 is specified as being supported by the TOE in FFW_ACL_EXT.1, FFW_ACL_EXT.2, FFW_DPI_EXT.1, or FIA_SIPS_EXT.1.
               <h:p/>
-              The selection in FIA_HOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <h:p/>In FIA_HOTP_EXT.1.5, the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
-              <h:p/>In FIA_HOTP_EXT.1.6, the ST may select throttle requests, account lockout, or both.
-              <h:p/>The selections in FIA_HOTP_EXT.1.7 indicate an optional resynchronization process that allows an arbitrary look-ahead to determine a new counter value by the verifier. 
-              This can be used for out-of-sync claimants or for initial use of a HOTP mechanism.  
-              The HOTP value presented for resynchronization does not serve to authenticate a user. 
-              A second verification using a small look-ahead window (at most three) is required after resynchronization to ensure the claimant and the TOE counter values are indeed synchronized 
-              so that arbitrary values are not considered valid. If such a resynchronization function is not supported, ‘with no exception’ is claimed. 
-              <h:p/>The HOTP seed and all derived values are considered secret keys for purposes of protection.
+              FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, and FCS_IPSEC_EXT.1 are defined in the Base-PP.
             </note>
             <aactivity>
               <TSS>
-                The evaluator shall confirm the TSS describes how the TOE complies with the RFC.<h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the key storage requirements in FCS_STG_EXT.1.
-                <h:p/>
-                The evaluator shall confirm that the TSS describes HOTP seed keys and HOTP security parameters and indicates controlled access in accordance with FCS_CKM.3, 
-                and that it includes a description of encrypted export for seed keys that require transfer to claimant devices.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each claimant and how each claimant is uniquely identified.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into a HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_HOTP_EXT.1.6.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects values outside of the look-ahead window selected in FIA_TOTP_EXT.1.7 for claimant authentication.
-                <h:p/>
-              </TSS>
-              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_HOTP_EXT.1 requirements.<h:p/>
-              </Guidance>
-              <Tests>
-                The following tests may be performed in conjunction with those in FCS_EAPTLS_EXT.1. 
-                The evaluator shall follow any instructions in the operational guidance to establish a HOTP seed key for a registered claimant, 
-                initialize a claimant HOTP token, synchronize the counter between the token and the TSF if necessary, and perform the tests listed below.
-                <h:p/>
-                Note that response of the TSF for an invalid HOTP value may be a request for the claimant to submit a new value, 
-                an indication that resynchronization is required, or an indication that the claimant’s authentication request is rejected. 
-                Any of these responses is acceptable; a response that the authentication request is successful in Test 2 or Test 3 represents a failed test.
-                <testlist>
-                  <test>The evaluator shall attempt to authenticate the claimant using a valid HOTP token and confirm that the TSF determines the value to be valid.</test>
-                  <test>The evaluator shall advance a registered claimant’s HOTP token counter beyond the look-ahead window and attempt to validate the claimant using the next HOTP token value. 
-                    The evaluator shall observe that the TSF does not indicate the claimant is authenticated. </test>
-                  <test>The evaluator shall replay a previous HOTP value from a registered claimant (e.g., the value used in Test 1) and confirm that the TSF does not indicate the claimant is authenticated.</test>
-                  <test>[conditional on support for resynchronization] The evaluator shall repeat Test 2 and then follow the operational guidance to resynchronize the counter. 
-                    The evaluator shall observe that after resynchronization, the TSF does not indicate successful authentication, but instead requests an additional HOTP value from the claimant.</test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
-	  
-        <ext-comp-def title="Pre-Shared Keys" fam-id="FIA_PSK_EXT">
-          <fam-behavior>Components in this family describe the requirements for pre-shared keys used for authentication.</fam-behavior>
-        </ext-comp-def>
-		
-		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
-        <f-component cc-id="fia_psk_ext.1" name="Pre-Shared Key Usage" status="invisible">
-          <consistency-rationale/>
-          <comp-lev>defines the use and composition of pre-shared keys used for authentication.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT:
-            <h:ul>
-              <h:li>Ability to associate pre-shared keys with claimants or external entities</h:li>
-            </h:ul></management>
-          <audit>There are no auditable events foreseen.
-          </audit>
-          <dependencies>[<no-link>FCS_EAPTLS_EXT.1</no-link> EAP-TLS Protocol, or <h:p/>
-            FCS_IPSEC_EXT.1 IPsec]</dependencies>
-          <f-element>
-            <title>
-              The TSF shall be able to use pre-shared keys for <assignable>protocols or authentication schemes that use pre-shared keys</assignable>. 
-            </title>
-          </f-element>
-          <f-element>
-            <title>
-              The TSF shall be able to accept the following as pre-shared keys: <assignable>types of supported pre-shared keys (e.g., randomly generated, password-based, OTP)</assignable>.
-            </title>
-            <aactivity>
-              <no-tests></no-tests>
-            </aactivity>
-          </f-element>            
-          <audit-event/>
-        </f-component>
-        
-        
-        
-        <f-component cc-id="fia_psk_ext.1" name="Pre-Shared Key Usage (Claimant Authentication)" iteration="AuthSvr">
-          <depends on-sel="eaptls-uses-psk" and="radsec-uses-psk"/>
-          <consistency-rationale>This SFR extends the functionality of the Base-PP by defining the use of pre-shared keys as an authenticator.</consistency-rationale>
-          
-          <f-element id="fia-psk-ext-1e1">
-            <title>
-              The TSF shall be able to use pre-shared keys for <selectables>
-                <selectable>IPsec</selectable>
-                <selectable>RadSec</selectable>
-                <selectable>EAP-TTLS</selectable>
-                <selectable>TLS</selectable>
-                <selectable>DTLS</selectable>
-                <selectable>RADIUS</selectable>
-                <selectable>HOTP</selectable>
-                <selectable>TOTP</selectable></selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-1e2">
-            <title>
-              The TSF shall be able to accept the following as pre-shared keys: 
-              <selectables>
-                <selectable id="psk-generated">generated bit-based</selectable>
-                <selectable id="psk-password">password-based</selectable>
-                <selectable id="psk-uses-hotp">HMAC-based one-time password</selectable>
-                <selectable id="psk-uses-totp">time-based one-time password</selectable></selectables>.
-            </title>
-            <note role="application">
-              This SFR is claimed if any other TOE functions require the use of pre-shared keys. Within the scope of this PP-Module, this includes the following:
-              <h:ul>
-                <h:li>Any of "static PSK," "HOTP," or "TOTP" is selected in FCS_EAPTLS_EXT.1.3.</h:li>
-                <h:li>"pre-shared keys" is selected in FCS_RADSEC_EXT.1.2.</h:li>
-                <h:li>"pre-shared keys" is selected in FCS_IPSEC_EXT.1.13 (from the Base-PP).</h:li>
-              </h:ul>
-              <h:p/>
-              IPsec is claimed in FIA_PSK_EXT.1.1/AuthSvr, if IPsec is claimed in FTP_ITC.1/NAS and the selection for FCS_IPSEC_EXT.1.13 in the Base-PP includes ‘pre-shared keys.’  
-              PSK in IPsec may use any supported type of PSK – those supported are claimed in FIA_PSK_EXT.1.2/AuthSvr. Use of certificates in IPsec is preferred.
-              <h:p/>
-              RadSec is claimed in FIA_PSK_EXT.1.1/AuthSvr, if RadSec is selected in FTP_ITC.1/NAS and the (D)TLS implementation in RadSec allows server-only authentication or supports a PSK ciphersuite. 
-              RadSec can use any type of PSK – those supported should be claimed in FIA_PSK_EXT.1.2/AuthSvr. Use of a mutually authenticated (D)TLS channel using certificate-based authentication is preferred.
-              <h:p/>
-              If a pre-shared key used for RADIUS is validated directly using legacy methods, RADIUS is claimed. 
-              It should not be claimed when RADIUS is used exclusively with RadSec since in that case, the legacy PSK used in RADIUS is replaced with a fixed value not used in authenticating the relying party.  
-              Use of a mutually authenticated channel using certificates to authenticate the relying party is preferred.
-              <h:p/>
-              EAP-TTLS is claimed in FIA_PSK_EXT.1.1/AuthSvr if it is claimed in FCS_EAPTLS_EXT.1.1 and support for static PSK (alone or in combination) is indicated in FCS_EAPTLS_EXT.1.3. 
-              When EAP-TTLS is claimed in FIA_PSK_EXT.1.1/AuthSvr, at least one of ‘password-based,’ ‘HMAC-based one-time password,’ or ‘time-based one-time password’ is claimed in FIA_PSK_EXT.1.2/AuthSvr. 
-              Multiple password types are claimed if the TSF supports validation of combinations of password types, even if presented in a single payload.
-              <h:p/>
-              Note that even if presented by a claimant, PSK are ignored in EAP-TLS implementations.
-              <h:p/>
-              TLS or DTLS, respsectively, are claimed if a PSK-based ciphersuite is claimed in FCS_TLSS_EXT.1 or FCS_DTLSS_EXT.1 of the Base-PP.
-              <h:p/>
-              HOTP or TOTP, respectively, are claimed if the respective entry is claimed in FCS_EAPTLS_EXT.1.3 and the TSF validates the HOTP or TOTP values presented in an authentication request. 
-              If claimed, the PSK represents the seed key value generated by the TOE and shared via out-of-band mechanisms with the claimant as well as 
-              the HOTP or TOTP values presented by a claimant to be validated; the ‘generated as bit-based PSK’ as well as the respective HOTP or TOTP entries are claimed in FIA_PSK_EXT.1.2/AuthSvr. The selection-based SFRs
-              FIA_HOTP_EXT.1 and FIA_TOTP_EXT.1 must also be claimed if HOTP or TOTP are claimed, respectively.
-              <h:p/>
-              Note that if HOTP or TOTP mechanisms are supported, but the values are only validated by an external entity, the HOTP or TOTP entries are not claimed in FIA_PSK_EXT.1/AuthSvr.
-              <h:p/>
-              If "generated bit-based" is selected in FIA_PSK_EXT.1.2/AuthSvr, FIA_PSK_EXT.2 must be claimed.
-              <h:p/>
-              If "password-based" is selected in FIA_PSK_EXT.1.2/AuthSvr, FIA_PSK_EXT.3 must be claimed.
-            </note>
-            <aactivity>
-              <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
-                For each protocol identified by the requirement, the evaluator shall confirm that the TSS states which pre-shared key 
-                selections are supported.<h:p/></TSS>
-              
-              <Guidance>The evaluator shall examine the operational guidance to determine that it provides guidance to 
-                administrators on how to configure all selected pre-shared key options if any configuration is required.<h:p/>
-              </Guidance>
-              
-              <Tests>
-                The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
-                if performed by a different implementation on the TOE). 
-                <testlist>
-                  <test>For each mechanism selected in FIA_PSK_EXT.1.2/AuthSvr, the evaluator shall attempt to establish a connection 
-                    and confirm that the connection requires the selected factors in the PSK to establish the connection. </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>            
-		 <audit-event/>
-        </f-component>
-        
-        
-        <f-component cc-id="fia_psk_ext.2" id="fia-psk-ext-2" name="Generated Pre-Shared Keys">
-          
-          <depends on-sel="psk-generated"/>
-          
-          <consistency-rationale>This SFR extends the functionality of the Base-PP by defining the use of pre-shared keys as an authenticator.</consistency-rationale>
-          <comp-lev>defines the use and composition of generated pre-shared keys used for authentication.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT:
-            <h:ul>
-              <h:li>Ability to generate pre-shared keys</h:li>
-              <h:li>Ability to accept pre-shared keys</h:li>
-            </h:ul></management>
-          <audit>There are no auditable events foreseen.
-          </audit>
-          <dependencies><no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Usage</dependencies>
-          <f-element id="fia-psk-ext-2e1">
-            <title>
-              The TSF shall be able to 
-              <selectables>
-                <selectable>accept externally generated pre-shared keys</selectable>
-                <selectable>
-                  generate 
-                  <selectables>
-                    <selectable>128</selectable>
-                    <selectable>256</selectable></selectables> bit-based pre-shared keys via FCS_RBG_EXT.1. 
-                  </selectable></selectables>.
-            </title>
-            <note role="application">
-              This SFR is claimed if "generated bit-based" is selected in FIA_PSK_EXT.1.2/AuthSvr.
-              <h:p/>
-              Generated PSKs are expected to be shared between components via an out-of-band mechanism. 
-                            <h:p/>
-              
-            </note>
-            <aactivity>
-              <TSS>If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
-                and the output matches the size selected in FIA_PSK_EXT.2.1.<h:p/> 
-              </TSS>
-              <Guidance>The evaluator shall confirm the operational guidance contains instructions for generating or entering pre-shared keys (based on the selection made in FIA_PSK_EXT.2.1)
-                for each protocol identified in the FIA_PSK_EXT.1.1/AuthSvr. <h:p/>
-              </Guidance>
-              <Tests>
-                <testlist>
-                  <test>For each selection made in FIA_PSK_EXT.2.1, the evaluator shall input and register the PSK (whether this involves generating the key or inputting it). 
-                    The evaluator shall attempt to use the PSK (e.g., by making a claimant authentication attempt using the registered key) and confirm that the TSF indicates the PSK matches.
-                  </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
-        
-        <f-component cc-id="fia_psk_ext.3" id="fia-psk-ext-3" name="Password-Based Pre-Shared Keys">
-          <depends on-sel="psk-password"/>
-          <consistency-rationale>This SFR extends the functionality of the Base-PP by defining the use of pre-shared keys as an authenticator.</consistency-rationale>
-          <comp-lev>defines the use and composition of password-based pre-shared keys used for authentication.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT:
-            <h:ul>
-              <h:li>Ability to configure restrictions on the composition of pre-shared keys</h:li>
-              <h:li>Ability to configure restrictions on the validation of pre-shared keys</h:li>
-            </h:ul></management>
-          <audit>No auditable events are foreseen.</audit>
-          <dependencies>FCS_COP.1 Cryptographic Operation <h:p/>
-            FCS_RBG_EXT.1 Random Bit Generation <h:p/>
-            <no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Usage</dependencies>
-          <f-element id="fia-psk-ext-3e1">
-            <title>
-              The TSF shall support a PSK of up to <assignable>positive integer of 64 or more</assignable> characters. 
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-3e2">
-            <title>The TSF shall allow PSKs to be composed of any combination of uppercase characters, 
-              lowercase characters, numbers, the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
-              <selectables>
-                <selectable><assignable>other supported special characters</assignable></selectable>
-                <selectable exclusive="yes">no other characters</selectable></selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-3e3">
-            <title>
-              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-<selectables>
-                <selectable>SHA-256</selectable>
-                <selectable>SHA-384</selectable>
-                <selectable>SHA-512</selectable></selectables>, with 
-              <assignable>positive integer of 4096 or more</assignable> iterations, and output cryptographic key sizes 
-              <selectables>
-                <selectable>128</selectable>
-                <selectable>256</selectable></selectables> bits that meet the following: [<h:i>NIST SP 800-132</h:i>].
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-3e4">
-            <title>
-              The TSF shall not accept PSKs failing to meet <selectables>
-                <selectable>an administrator-defined</selectable>
-                <selectable>a fixed</selectable></selectables>
-              password policy indicating the maximum PSK length consistent with FIA_PSK_EXT.3.1 and <selectables>
-                <selectable><assignable>password policy indicating minimum length and types of characters required</assignable></selectable>
-                <selectable>no additional password constraints</selectable></selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-3e5">
-            <title>
-              The TSF shall generate all salts using an RBG that meets FCS_RBG_EXT.1 and with entropy corresponding 
-              to the key size selected for PBKDF in FIA_PSK_EXT.3.3.
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-3e6">
-            <title>
-              The TSF shall require the PSK to be entered in accordance with the 
-              <selectables>
-                <selectable>user authentication policy</selectable>
-                <selectable>protocol authentication requirement</selectable>
-              </selectables>.
-            </title>
-          </f-element>
-          
-            <f-element id="fia-psk-ext-3e7">
-              <title>
-                The TSF shall 
-                <selectables>
-                  <selectable>provide a password strength meter</selectable>
-                  <selectable>check the password against a denylist</selectable>
-                  <selectable>perform no action to assist the user in choosing a strong password</selectable></selectables>. 
-              </title>
-            <note role="application">
-              This SFR is claimed if "password-based" is selected in FIA_PSK_EXT.1.2/AuthSvr.
-              <h:p/>
-              For FIA_PSK_EXT.3.1, the ST author assigns the maximum size of the PSK it supports; it must support at least 64 characters. 
-              <h:p/>
-              For FIA_PSK_EXT.3.2, the ST author assigns any other supported characters; if there are no other supported characters, they should select "no other characters." 
-              <h:p/>
-              For FIA_PSK_EXT.3.3, the ST author selects the parameters based on the PBKDF used by the TSF. 
-              <h:p/>
-              For FIA_PSK_EXT.3.4, if the minimum length is settable, then the ST author chooses "a value settable by the administrator." If the minimum length is not settable, 
-              the ST author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
-              <h:p/>
-              For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP800-63b.
-              </note>
-            <aactivity>
-              <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
-                <h:p/>
-                Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
-                <h:p/>
-                Support for character set: The evaluator shall check to ensure that the TSS describes the allowable character set and that it contains the characters listed in the SFR.
-                <h:p/>
-                Support for PBKDF: The evaluator shall examine the TSS to ensure that the use of PBKDF2 is described and that the key sizes match that described by the ST author.
-                <h:p/>
-                The evaluator shall check that the TSS describes the method by which the PSK is first encoded and then fed to the hash algorithm. 
-                The settings for the algorithm (padding, blocking, etc.) shall be described, and the evaluator shall verify that these are supported by the selections in this component as well as the selections concerning the hash function itself. 
-                <h:p/>
-                For the NIST SP 800-132-based conditioning of the PSK, the required evaluation activities will be performed when doing the evaluation activities for the appropriate requirements (FCS_COP.1/KeyedHash). 
-                <h:p/>
-                The evaluator shall confirm that the minimum length is described.
-                <h:p/>
-                The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG_EXT.1.
-                <h:p/>
-                [conditional] If password strength meter or password denylist is selected, the evaluator shall examine the TSS to ensure 
-                any password checking functionality provided by the TSF is described and contains details on how the function operates.
+                TBD
                 <h:p/>
               </TSS>
               <Guidance>
-                The evaluator shall examine the operational guidance to determine that it provides guidance to administrators on the composition of strong text-based pre-shared keys and 
-                (if the selection indicates keys of various lengths can be entered) that it provides information on the range of lengths supported.
-                The guidance must specify the allowable characters for pre-shared keys in accordance with FIA_PSK_EXT.3.2.
-                <h:p/>
+                TBD
+                <h:p/> 
               </Guidance>
               <Tests>
-                If the TSF supports a configurable password policy, the evaluator shall follow the operational guidance to configure the password policy based on the selections made in FIA_PSK_EXT.3.4. 
-                If the password policy is not configurable, the evaluator will determine the password policy used by the TSF.
-                <h:p/>
-                The evaluator shall perform the following tests:
-                <testlist>
-                  <test>The evaluator shall compose a representative set of PSK meeting the TSF’s password policy, 
-                    to include one having the maximum length, one having the minimum length, and which, 
-                    in aggregate, contain each of the supported special characters and each type of character supported. 
-                    For each of the PSK, the evaluator shall demonstrate successful registration and use of the PSK.  </test>
-                  <test>For each of the password policy constraints indicated in FCS_PSK_EXT.3.4, 
-                    the evaluator shall compose a password violating the constraint and demonstrate that the TSF rejects the PSK.</test>
-                  <test>[conditional] If a password strength meter is supported, when performing Tests 1 and 2, the evaluator shall confirm that the TSF reflects the indicated strength of the PSK.</test>
-                  <test>[conditional] If the TOE supports a password denylist, the evaluator shall enter a denylisted password and verify that the password is rejected or flagged as such.</test>
-                </testlist>
+                TBD
               </Tests>
-            </aactivity>
+            </aactivity>	  
           </f-element>
-          <audit-event/>
         </f-component>
-     
         
-        <ext-comp-def title="Time-Based One-Time Password Pre-Shared Keys" fam-id="FIA_TOTP_EXT">
-          <fam-behavior>Components in this family define requirements for the use of Time-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
-        </ext-comp-def>
-        <f-component cc-id="fia_totp_ext.1" id="fia-totp-ext-1" name="Time-Based One-Time Password Pre-Shared Keys">
-          <depends on-sel="eaptls-uses-totp" and="psk-uses-totp"/>
-          <consistency-rationale>This SFR extends the functionality of the Base-PP by defining the use of pre-shared keys as an authenticator.</consistency-rationale>
-          <comp-lev> defines the implementation of TOTP.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT:
-            <h:ul>
-              <h:li>Ability to configure restrictions on the composition of pre-shared keys</h:li>
-              <h:li>Ability to configure restrictions on the validation of pre-shared keys</h:li>
-            </h:ul></management>
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
-            <h:ul>
-              <h:li>Generation of a TOTP seed key</h:li>
-              <h:li>Entity TOTP value comparison</h:li>
-            </h:ul>
-          </audit>
-          <dependencies>FCS_COP.1 Cryptographic Operation<h:p/>
-            FCS_RBG_EXT.1 Random Bit Generation</dependencies>
-          <f-element id="fia-totp-ext-1e1">
-            <title>
-              The TSF shall support Time-Based One-Time Password (TOTP) authentication in accordance with RFC 6238. 
-            </title>
-          </f-element>
-          <f-element id="fia-totp-ext-1e2">
-            <title>
-              The TSF shall generate a TOTP seed according to FCS_RBG_EXT.1 of 
-              <selectables>
-                <selectable>128</selectable>
-                <selectable>256</selectable></selectables> bits.
-            </title>
-          </f-element>
-          <f-element id="fia-totp-ext-1e3">
-            <title>The TSF shall generate a new TOTP seed for each claimant.
-            </title>
-          </f-element>
-          <f-element id="fia-totp-ext-1e4">
-            <title>
-              The TSF shall use 
-              <selectables>
-                <selectable>SHA-1</selectable>
-                <selectable>SHA-256</selectable>
-                <selectable>SHA-384</selectable>
-                <selectable>SHA-512</selectable></selectables> with key sizes 
-              <assignable>key size (in bits) used in HMAC</assignable> and message digest sizes 
-              <selectables>
-                <selectable>160</selectable>
-                <selectable>256</selectable>
-                <selectable>384</selectable>
-                <selectable>512</selectable></selectables> bits to derive a TOTP hash from the TOTP seed and current time provided by NTP.
-            </title>
-          </f-element>
-          <f-element id="fia-totp-ext-1e5">
-            <title>
-              The TSF shall truncate the TOTP hash per FIA_TOTP_EXT.1.4 to create a TOTP of  
-              <selectables linebreak="yes">
-                <selectable>administrator configurable character length of at least 6</selectable>
-                <selectable>preset character length of
-                  <selectables> 
-                    <selectable>6</selectable>
-                    <selectable>7</selectable>
-                    <selectable>8</selectable>
-                    <selectable>9</selectable>
-                    <selectable>10</selectable></selectables></selectable></selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-totp-ext-1e6">
-            <title>
-              The TSF shall
-              <selectables linebreak="yes">
-                <selectable>throttle invalid requests to 
-                  <selectables>
-                    <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable></selectables> per minute</selectable>
-                <selectable>lock the associated account after 
-                  <selectables>
-                    <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable></selectables> failed attempts until 
-                  <selectables>
-                    <selectable>an administrator unlocks the account</selectable>
-                    <selectable>a configurable time period has elapsed</selectable></selectables></selectable></selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-totp-ext-1e7">
-            <title>
-              The TSF shall set a time-step size of 
-              <selectables onlyone="yes">
-                <selectable>a configurable number of</selectable>
-                <selectable><assignable>a value less than or equal to 30</assignable></selectable></selectables> seconds.
-            </title>
-          </f-element>
-          <f-element id="fia-totp-ext-1e8">
-            <title>
-              The TSF shall not validate a TOTP value calculated using a time drift of more than 
-              <selectables onlyone="yes">
-                <selectable>a configurable value</selectable>
-                <selectable><assignable>a value less than or equal to 3</assignable></selectable></selectables> time-steps.            
-            </title>
-          </f-element>
-          <f-element id="fia-totp-ext-1e9">
-            <title>
-              The TSF shall 
-              <selectables onlyone="yes">
-                <selectable>allow resynchronization by recording time drift within the limit of FIA_TOTP_EXT.1.8</selectable>
-                <selectable>not permit resynchronization</selectable></selectables>.           
-            </title>
-         
-            <note role="application">
-              This SFR is claimed if "TOTP" is selected in FCS_EAPTLS_EXT.1.3 or if "time-based one-time password" is selected in FIA_PSK_EXT.1.2/AuthSvr.
-              <h:p/>
-              The selection FIA_TOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <h:p/>
-              In FIA_TOTP_EXT.1.5, the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
-              <h:p/>
-              In FIA_TOTP_EXT.1.6, the ST author may select throttle requests, account lockout, or both.
-              <h:p/>
-              The TOTP seed and all derived values are considered secret keys for purposes of protection.
-              </note>
-            <aactivity>
-              <TSS>
-                The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with FCS_STG_EXT.1. 
-                <h:p/>
-                The evaluator shall confirm that the TSS describes TOTP seed keys and TOTP security parameters and indicates controlled access in accordance with FCS_CKM.3, 
-                and that it includes a description of encrypted export for seed keys that require transfer to claimant devices. 
-                <h:p/>
-                The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each claimant and how each claimant is uniquely identified.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the TOTP seed is conditioned into a TOTP hash and verify that it matches the selection in FIA_TOTP_EXT.1.4.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the TOTP hash is truncated and verify that it matches the selection in FIA_TOTP_EXT.1.5.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections in FIA_TOTP_EXT.1.6.
-                <h:p/>
-                The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects values outside of the look-ahead window selected in FIA_TOTP_EXT.1.7 for claimant authentication.
-                <h:p/>
-                </TSS>
-              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_TOTP_EXT.1 requirements.<h:p/></Guidance>
-              <Tests>
-                The following tests may be performed in conjunction with those in FCS_EAPTLS_EXT.1.
-                The evaluator shall follow any instructions in the operational guidance to establish a TOTP seed key for a registered claimant, 
-                initialize a claimant TOTP token, synchronize time between the token and the TSF if necessary, and perform the tests listed below.
-                <h:p/>
-                Note that the response of the TSF for an invalid TOTP value may be a request for the claimant to submit a new value, 
-                or an indication that the claimant’s authentication request is rejected. 
-                Any of these responses is acceptable; a response that the authentication request is successful in Test 2 or Test 3 represents a failed test.
-                
-                <testlist>
-                  <test>The evaluator shall attempt to authenticate the claimant using the TOTP token and confirm that the TSF determines the value to be valid.</test>
-                  <test>The evaluator shall advance a registered claimant’s TOTP token time beyond the allowed time drift and attempt to validate the claimant using the TOTP token value. 
-                    The evaluator shall observe that the TSF does not indicate the claimant is authenticated. </test>
-                  <test>The evaluator shall replay a previous TOTP value from a registered claimant (e.g., the value used in Test 1) after a delay equal to one time step and confirm that the TSF does not indicate the claimant is authenticated.</test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
-    
-    
-      </sec:sel_fia> 
+      </sec:sel_ftp> 
+      
 
     </sel-sfrs>
     <obj-sfrs>
     </obj-sfrs>
-    <impl-dep-sfrs></impl-dep-sfrs>
+    <impl-dep-sfrs>
+      
+      <sec:impl_fia title="Identification and Authentication (FIA)">
+        
+        <ext-comp-def title="Session Initiation Protocol Registration" fam-id="FIA_SIPS_EXT">
+          <fam-behavior>TBD</fam-behavior> 
+        </ext-comp-def>
+        <f-component cc-id="fia_sips_ext.1" name="Session Initiation Protocol Registration"> 
+          <consistency-rationale>
+            This SFR applies to SIP registration, which is beyond the original scope of the Base-PP.
+          </consistency-rationale>
+          
+          <comp-lev>TBD
+          </comp-lev>
+          <management>TBD
+          </management>
+          <audit>TBD
+          </audit>
+          <dependencies>TBD
+          </dependencies>
+          
+          <f-element>
+            <title>
+              The TSF shall implement the <selectables>
+                <selectable>SIP that complies with RFC 3261</selectable>
+                <selectable id="H323_SDP">H.323 protocol that compiles with ITU-REC H.235.0</selectable></selectables> using the Session Description Protocol (SDP) complying with RFC 4566 to 
+              describe the multimedia session that will be used to carry the VVoIP traffic.
+            </title>
+            <note role="application">
+              If “H.323 protocol that complies with ITU-REC H.235.0” is selected in this requirement, the ST must include the selection-based SFR FTP_ITC.1/H323.
+            </note>
+          </f-element>
+          <f-element>
+            <title>
+              The TSF shall require password authentication for SIP REGISTER function requests as specified in Section 22 of RFC 3261.
+            </title>
+          </f-element>
+          <f-element>
+            <title>
+              The TSF shall support ESC authentication passwords that contain at least <assignable>positive integer of 8 or more</assignable> 
+              characters in the set of [<h:i>upper case characters, lower case characters, numbers, and the following special characters: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”, 
+                and <assignable>other supported special characters</assignable></h:i>].
+            </title>
+          </f-element>
+          <f-element>
+            <title>
+              The TSF shall provide the ability to modify SIP header values for SIP traffic received by the TOE prior to retransmitting the traffic.
+            </title>
+          <note role="application">
+            This SFR is optional because this functionality is not standard for SBCs because device registration can generally be handled by an ESC in the TOE’s OE. 
+            However, in some cases, SIP registration directly to the SBC is required. 
+            If an SBC advertises this service, it is expected that this functionality be included within the TOE boundary. 
+            This SFR is therefore implementation-dependent based on whether the SBC has the capability to perform its own SIP registration of devices.
+          </note>
+            <aactivity>
+              <TSS>TBD
+                <h:p/></TSS>
+              <Guidance>TBD
+                <h:p/></Guidance>
+              <Tests>
+                TBD
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+      </sec:impl_fia>
+      
+    </impl-dep-sfrs>
   </sec:Security_Requirements>
   
   <appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
-    This PP-Module has no implicitly satisfied requirements. All SFR dependencies are explicitly met either through SFRs defined by the PP-Module or inherited from the Base-PP. 
+    <h:b><ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements</ctr></h:b>
+    <h:table>	
+      <h:tr class="header"><h:td>Requirement</h:td><h:td>Rationale for Satisfaction</h:td></h:tr>
+      <h:tr>
+        <h:td><h:b>FMT_MSA.3 – Static Attribute Initialization</h:b></h:td>
+        <h:td>
+          FDP_IFF.1 has a dependency on FMT_MSA.3 to define the default security posture of security attributes for the purpose of information flow control enforcement. 
+          This SFR has not been defined by this PP-Module because the enforcement of FDP_IFF.1 
+          is not dependent on the initial state of security attributes. 
+          For example, FDP_IFF.1.2 requires the TSF to determine if a communication attempt is valid before authorizing it. 
+          This is true regardless of whether the default value of security attributes associated 
+          with the connection attempt are permissive or restrictive; there is no difference in how the TSF determines “validity” in this case. 
+          <h:p/>
+          The default values of security attributes do not cause the information flow control policy to behave differently for those rules that must always be enforced by the TSF. 
+          FDP_IFF.1.4 requires that all allowlisted calling parties be authorized while all denylisted calling parties be rejected. 
+          It does not matter for the purpose of enforcing this SFR whether the absence of a calling party from both the allowlist and the denylist means they are authorized or rejected by default. 
+        </h:td>
+      </h:tr>
+      <h:tr>
+        <h:td><h:b>FMT_SMR.1 – Security Roles</h:b></h:td>
+        <h:td>
+          FCS_CKM.1 (which is defined in this PP-Module as
+          FCS_CKM.1/VPN) requires FCS_CKM.4 to be claimed so that
+          the generated keys are not disclosed through improper or
+          nonexistent key destruction methods.<h:p/>
+          Each of the supported Base-PPs except for the App PP define
+          FCS_CKM_EXT.4 as an extended SFR, which defines key
+          destruction functionality consistent with FCS_CKM.4, but with
+          additional details that are specific to the respective
+          technology types of the Base-PP. When the App PP is the
+          Base-PP, this PP-Module defines its own instance of
+          FCS_CKM_EXT.4 to achieve the same purpose. The
+          dependency on FCS_CKM.4 is considered to be satisfied
+          through the fact that a compliant TOE will always claim
+          FCS_CKM_EXT.4, which is intended to satisfy the same
+          purpose.
+        </h:td>
+      </h:tr>
+    </h:table> 
   </appendix>
   
   <appendix title="Allocation of Requirements in Distributed TOEs" id="allocation">
