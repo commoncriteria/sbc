@@ -1906,100 +1906,101 @@
         <h:td>Distributed TOE SFR Allocation</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FAU_GEN.1/AuthSvr</h:td>
-        <h:td>Audit Data Generation (Authentication Server)</h:td>
+        <h:td>FAU_ARP_EXT.1</h:td>
+        <h:td>Security Audit Automatic Response</h:td>
+        <h:td>Feature-dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FAU_GEN.1/SBC</h:td>
+        <h:td>Audit Data Generation (Session Border Controller)</h:td>
         <h:td>All</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FCO_NRO.1</h:td>
-        <h:td>Selective Proof of Origin</h:td>
+        <h:td>FAU_SAA.1</h:td>
+        <h:td>Potential Violation Analysis</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FCO_NRR.1</h:td>
-        <h:td>Selective Proof of Receipt</h:td>
+        <h:td>FAU_SEL.1</h:td>
+        <h:td>Selective Audit</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FCS_CKM.3</h:td>
-        <h:td>Cryptographic Key Access</h:td>
-        <h:td>All</h:td>
-      </h:tr>
-      <h:tr>
-        <h:td>FCS_EAPTLS_EXT.1</h:td>
-        <h:td>EAP-TLS Protocol</h:td>
+        <h:td>FCS_SRTP_EXT.1</h:td>
+        <h:td>Secure Real-Time Transport Protocol</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FCS_RADIUS_EXT.1</h:td>
-        <h:td>Authentication Protocol</h:td>
+        <h:td>FDP_IFC.1</h:td>
+        <h:td>Subset Information Flow Control</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FCS_STG_EXT.1</h:td>
-        <h:td>Cryptographic Key Storage</h:td>
-        <h:td>All</h:td>
-      </h:tr>
-      <h:tr>
-        <h:td>FIA_AFL.1/AuthSvr</h:td>
-        <h:td>Authentication Failure Handling (Claimant)</h:td>
+        <h:td>FDP_IFF.1</h:td>
+        <h:td>Simple Security Attributes</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FIA_X509_EXT.1/AuthSvr</h:td>
-        <h:td>X.509 Certificate Validation (Claimant)</h:td>
+        <h:td>FFW_ACL_EXT.1</h:td>
+        <h:td>Real-Time Communications Traffic Filtering</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FIA_UAU.6</h:td>
-        <h:td>Re-Authenticating</h:td>
+        <h:td>FFW_ACL_EXT.2</h:td>
+        <h:td>Stateful VVoIP Traffic Filtering</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FMT_SMF.1/AuthSvr</h:td>
-        <h:td>Specification of Management Functions (Authentication Server)</h:td>
-        <h:td>All</h:td>
-      </h:tr>
-      <h:tr>
-        <h:td>FTA_TSE.1</h:td>
-        <h:td>TOE Session Establishment</h:td>
+        <h:td>FFW_DPI_EXT.1</h:td>
+        <h:td>Deep Packet Inspection</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FTP_ITC.1/NAS</h:td>
-        <h:td>Inter-TSF Trusted Channel (Relying Party Communications)</h:td>
+        <h:td>FFW_NAT_EXT.1</h:td>
+        <h:td>Topology Hiding/NAT Traversal</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FCS_RADSEC_EXT.1 (selection-based)</h:td>
-        <h:td>RadSec</h:td>
+        <h:td>FIA_SIPS_EXT.1 (implementation-dependent)</h:td>
+        <h:td>Session Initiation Protocol Registration</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FIA_HOTP_EXT.1 (selection-based)</h:td>
-        <h:td>HMAC-Based One-Time Password Pre-Shared Keys</h:td>
+        <h:td>FIA_SIPT_EXT.1</h:td>
+        <h:td>Session Initiation Protocol Trunking</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FIA_PSK_EXT.1/AuthSvr (selection-based)</h:td>
-        <h:td>Pre-Shared Key Usage</h:td>
+        <h:td>FMT_SMF.1/SBC</h:td>
+        <h:td>Specification of Management Functions (SBC)</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FIA_PSK_EXT.2 (selection-based)</h:td>
-        <h:td>Generated Pre-Shared Keys</h:td>
+        <h:td>FRU_PRS_EXT.1</h:td>
+        <h:td>Limited Priority of Service</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FIA_PSK_EXT.3 (selection-based)</h:td>
-        <h:td>Password-Based Pre-Shared Keys</h:td>
+        <h:td>FRU_RSA.1</h:td>
+        <h:td>Maximum Quotas</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FIA_TOTP_EXT.1 (selection-based)</h:td>
-        <h:td>Time-Based One-Time Password Pre-Shared Keys</h:td>
+        <h:td>FTP_ITC.1/ESC</h:td>
+        <h:td>Inter-TSF Trusted Channel (ESC Communications)</h:td>
         <h:td>Feature-dependent</h:td>
       </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1/H323 (selection-based)</h:td>
+        <h:td>Inter-TSF Trusted Channel (H.323 Communications)</h:td>
+        <h:td>Feature-dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1/VVoIP</h:td>
+        <h:td>Inter-TSF Trusted Channel (VVoIP Communications)</h:td>
+        <h:td>Feature-dependent</h:td>
+      </h:tr>
+      
       
     </h:table>
     
