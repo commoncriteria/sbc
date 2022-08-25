@@ -1,7 +1,6 @@
 output/sbc-release-linkable.html: 2e
 output/sbc-release-linkable.html: CEM
 output/sbc-release-linkable.html: CRCX
-output/sbc-release-linkable.html: Configuraiton
 output/sbc-release-linkable.html: DLCX
 output/sbc-release-linkable.html: DTLSC
 output/sbc-release-linkable.html: ITU
@@ -34,7 +33,6 @@ output/sbc-release-linkable.html: transcoding
 output/sbc-release.html: 2e
 output/sbc-release.html: CEM
 output/sbc-release.html: CRCX
-output/sbc-release.html: Configuraiton
 output/sbc-release.html: DLCX
 output/sbc-release.html: DTLSC
 output/sbc-release.html: ITU
@@ -74,7 +72,6 @@ output/sbc-sd.html: nd
 output/sbc.html: 2e
 output/sbc.html: CEM
 output/sbc.html: CRCX
-output/sbc.html: Configuraiton
 output/sbc.html: DLCX
 output/sbc.html: DTLSC
 output/sbc.html: ITU

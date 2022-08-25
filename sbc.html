@@ -1062,9 +1062,9 @@ The following sections list Common Criteria and technology terms used in this do
                 <td>None</td>
               </tr>
               <tr>
-                <td><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td>
-                <td>Configuraiton of <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic filtering rules</td>
-                <td>Information uniquely identifying the rules that were modified</td>
+                <td rowspan="3"><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td>
+                <td rowspan="3">Application of traffic filtering rules</td>
+                <td>Source and destination of observed traffic</td>
               </tr>
               <tr>
                 <td rowspan="3"><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a></td>
@@ -1079,7 +1079,7 @@ The following sections list Common Criteria and technology terms used in this do
               </tr>
               <tr>
                 <td rowspan="3"><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></td>
-                <td rowspan="3">Application of deep packet inspection (<abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr>) rules</td>
+                <td rowspan="3">Application of deep packet inspection rules</td>
                 <td>Source and destination of observed traffic</td>
               </tr>
               <tr>
@@ -1325,7 +1325,7 @@ The following sections list Common Criteria and technology terms used in this do
             </div></div>
           <div class="element"><div class="reqid" id="FDP_IFF.1.3"><a href="#FDP_IFF.1.3" class="abbr">FDP_IFF.1.3</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the [<i>following configurable behavioral rules: 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_22">Default-deny (allowlist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly deny all information flows except for those explicitly authorized by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></li><li style=""><span class="selectable-content" id="_s_23">Default-allow (denylist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly allow all information flows except for those explicitly denied by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></li></ul>]</i>]. 
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_24">Default-deny (allowlist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly deny all information flows except for those explicitly authorized by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></li><li style=""><span class="selectable-content" id="_s_25">Default-allow (denylist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly allow all information flows except for those explicitly denied by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></li></ul>]</i>]. 
             </div></div>
           <div class="element"><div class="reqid" id="FDP_IFF.1.4"><a href="#FDP_IFF.1.4" class="abbr">FDP_IFF.1.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall explicitly authorize an information flow based on the following rules: 
@@ -1348,6 +1348,9 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div></div></div>
       
       <h3 id="man_ffw" class="indexable" data-level="3">5.2.4 Firewall</h3>
+        
+          Firewall functionality involves selective processing of network traffic such that the traffic is routed or discarded based on some notion of whether the traffic is valid. 
+            Requirements in this class define capabilities for these processing functions.
         
         
         <div class="comp" id="FFW_ACL_EXT.1"><h4>FFW_ACL_EXT.1 Real-Time Communications Traffic Filtering</h4> 
@@ -1391,7 +1394,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <li>Distinct Interface <b>(physical vs virtual or trust zone, e.g., trusted vs untrusted)</b></li>
                 
                 <li><i>Application (Real-Time Communications Protocol) <ul>
-                  <li>signaling protocols: [<b>selection</b>: <span class="selectable-content" id="_s_24"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="filters_H323">H.323</span> ]</li>
+                  <li>signaling protocols: [<b>selection</b>: <span class="selectable-content" id="_s_26"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="filters_H323">H.323</span> ]</li>
                 </ul></i></li>
               </ul>
             <div class="appnote"><span class="note-header">Application
@@ -1416,11 +1419,11 @@ The following sections list Common Criteria and technology terms used in this do
           <div class="element"><div class="reqid" id="FFW_ACL_EXT.1.5"><a href="#FFW_ACL_EXT.1.5" class="abbr">FFW_ACL_EXT.1.5</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall: <ul>
               <li>Accept a network packet without further processing of traffic filtering rules if it matches an allowed established session for the following protocols: TCP, UDP, based on the following network packet attributes: <ul> 
-                <li>TCP: source and destination addresses, source and destination ports, sequence number, flags;</li> 
-                <li>UDP: source and destination addresses, source and destination ports; </li>
+                <li>TCP: source and destination addresses, source and destination ports, sequence number, flags</li> 
+                <li>UDP: source and destination addresses, source and destination ports</li>
               </ul>
               </li>
-              <li>Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_26">session inactivity timeout</span>,  <span class="selectable-content" id="_s_27">completion of the expected information flow</span> ].</li>
+              <li>Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_28">session inactivity timeout</span>,  <span class="selectable-content" id="_s_29">completion of the expected information flow</span> ].</li>
               </ul>
             </div></div>
           <div class="element"><div class="reqid" id="FFW_ACL_EXT.1.6"><a href="#FFW_ACL_EXT.1.6" class="abbr">FFW_ACL_EXT.1.6</a></div><div class="reqdesc">
@@ -1450,14 +1453,14 @@ The following sections list Common Criteria and technology terms used in this do
           
           
           <div class="element"><div class="reqid" id="FFW_ACL_EXT.2.1"><a href="#FFW_ACL_EXT.2.1" class="abbr">FFW_ACL_EXT.2.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful traffic filtering on the following <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols: [<b>selection</b>: <span class="selectable-content" id="_s_28"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="stateful_H323">H.323 (H.225, H.245)</span>,  <span class="selectable-content" id="_s_30"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr></span> ].
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful traffic filtering on the following <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols: [<b>selection</b>: <span class="selectable-content" id="_s_30"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="stateful_H323">H.323 (H.225, H.245)</span>,  <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr></span> ].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
               If “H.323” is selected in this requirement, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must include the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a>.
             </span></div></div></div>
 
-          <div class="element"><div class="reqid" id="FFW_ACL_EXT.2.2"><a href="#FFW_ACL_EXT.2.2" class="abbr">FFW_ACL_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following default stateful traffic filtering rules on all network traffic matching protocol types identified in <a href="#FFW_ACL_EXT.2.1">FFW_ACL_EXT.2.1</a>:[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> traffic where a BYE message precedes an INVITE message</span></li><li style=""><span class="selectable-content" id="_s_32">H.225 traffic where an RCF reply precedes any other traffic</span></li><li style=""><span class="selectable-content" id="_s_33">H.245 traffic where a ResponseMessage precedes a RequestMessage</span></li><li style=""><span class="selectable-content" id="_s_34"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr> traffic where a DLCX message precedes a CRCX message</span></li></ul>].
+          <div class="element"><div class="reqid" id="FFW_ACL_EXT.2.2"><a href="#FFW_ACL_EXT.2.2" class="abbr">FFW_ACL_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following default stateful traffic filtering rules on all network traffic matching protocol types identified in <a href="#FFW_ACL_EXT.2.1">FFW_ACL_EXT.2.1</a>:[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_33"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> traffic where a BYE message precedes an INVITE message</span></li><li style=""><span class="selectable-content" id="_s_34">H.225 traffic where an RCF reply precedes any other traffic</span></li><li style=""><span class="selectable-content" id="_s_35">H.245 traffic where a ResponseMessage precedes a RequestMessage</span></li><li style=""><span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr> traffic where a DLCX message precedes a CRCX message</span></li></ul>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1499,7 +1502,7 @@ The following sections list Common Criteria and technology terms used in this do
           
           
           <div class="element"><div class="reqid" id="FFW_DPI_EXT.1.1"><a href="#FFW_DPI_EXT.1.1" class="abbr">FFW_DPI_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="_s_35">H.323 (H.225, H.245)</span>,  <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_RTP">RTP</a></abbr></span>,  <span class="selectable-content" id="_s_38"><abbr class="dyn-abbr"><a href="#abbr_RTCP">RTCP</a></abbr></span> ]. 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="_s_37">H.323 (H.225, H.245)</span>,  <span class="selectable-content" id="_s_38"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="_s_39"><abbr class="dyn-abbr"><a href="#abbr_RTP">RTP</a></abbr></span>,  <span class="selectable-content" id="_s_40"><abbr class="dyn-abbr"><a href="#abbr_RTCP">RTCP</a></abbr></span> ]. 
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">If “H.323” is selected in this requirement, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must include the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a>.</span></div></div></div>
@@ -1510,7 +1513,7 @@ The following sections list Common Criteria and technology terms used in this do
             </div></div>
           <div class="element"><div class="reqid" id="FFW_DPI_EXT.1.3"><a href="#FFW_DPI_EXT.1.3" class="abbr">FFW_DPI_EXT.1.3</a></div><div class="reqdesc">
               When traffic is found to be in violation of a <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> rule, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall take the following action:
-              [<b>selection</b>: <span class="selectable-content" id="_s_39">drop the traffic</span>,  <span class="selectable-content" id="_s_40">generate an audit record</span>,  <span class="selectable-content" id="_s_41">generate an alarm</span> ].
+              [<b>selection</b>: <span class="selectable-content" id="_s_41">drop the traffic</span>,  <span class="selectable-content" id="_s_42">generate an audit record</span>,  <span class="selectable-content" id="_s_43">generate an alarm</span> ].
             </div></div>
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></div>
               
@@ -1536,11 +1539,11 @@ The following sections list Common Criteria and technology terms used in this do
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> of signaling and media channel traffic through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that is mediated by the [<i><abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy</i>] defined by <a href="#FDP_IFC.1">FDP_IFC.1</a>.
             </div></div>
           <div class="element"><div class="reqid" id="FFW_NAT_EXT.1.2"><a href="#FFW_NAT_EXT.1.2" class="abbr">FFW_NAT_EXT.1.2</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols [<b>selection</b>: <span class="selectable-content" id="_s_42"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="_s_43"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>,  <span class="selectable-content" id="_s_44">H.225</span>,  <span class="selectable-content" id="_s_45">H.245</span> ]. 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="_s_44"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="_s_45"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>,  <span class="selectable-content" id="_s_46">H.225</span>,  <span class="selectable-content" id="_s_47">H.245</span> ]. 
             </div></div>
           <div class="element"><div class="reqid" id="FFW_NAT_EXT.1.3"><a href="#FFW_NAT_EXT.1.3" class="abbr">FFW_NAT_EXT.1.3</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with 
-              [<b>selection</b>: <span class="selectable-content" id="_s_46">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>,  <span class="selectable-content" id="_s_47">a [<i>Security Administrator</i>]-defined value</span> ].
+              [<b>selection</b>: <span class="selectable-content" id="_s_48">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>,  <span class="selectable-content" id="_s_49">a [<i>Security Administrator</i>]-defined value</span> ].
             </div></div>
           <div class="element"><div class="reqid" id="FFW_NAT_EXT.1.4"><a href="#FFW_NAT_EXT.1.4" class="abbr">FFW_NAT_EXT.1.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall maintain a <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> table to ensure that traffic bound for the internal network is directed to only the intended recipient.
@@ -1575,7 +1578,7 @@ The following sections list Common Criteria and technology terms used in this do
             </div></div>
           <div class="element"><div class="reqid" id="FIA_SIPT_EXT.1.2"><a href="#FIA_SIPT_EXT.1.2" class="abbr">FIA_SIPT_EXT.1.2</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide valid identification in the form of a 
-              [<b>selection</b>: <span class="selectable-content" id="_s_48">username and password</span>,  <span class="selectable-content" id="_s_49">X.509 certificate</span> ] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.
+              [<b>selection</b>: <span class="selectable-content" id="_s_52">username and password</span>,  <span class="selectable-content" id="_s_53">X.509 certificate</span> ] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_SIPT_EXT.1.3"><a href="#FIA_SIPT_EXT.1.3" class="abbr">FIA_SIPT_EXT.1.3</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide a valid authentication credential in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.</div></div>
           <div class="element"><div class="reqid" id="FIA_SIPT_EXT.1.4"><a href="#FIA_SIPT_EXT.1.4" class="abbr">FIA_SIPT_EXT.1.4</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to encrypt traffic using TLS in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.</div></div>
@@ -1606,6 +1609,7 @@ The following sections list Common Criteria and technology terms used in this do
 			    <li>Configure auditable events</li>
 			    <li>Configure <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr></li>
 			    <li>Configure ports and cryptography for signaling and media communications</li>
+			    <li>Configure <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> communications</li>
 			  </ul></i>].
 			<div class="appnote"><span class="note-header">Application
       Note:
@@ -1672,7 +1676,7 @@ The following sections list Common Criteria and technology terms used in this do
           <div class="element"><div class="reqid" id="FRU_RSA.1.1"><a href="#FRU_RSA.1.1" class="abbr">FRU_RSA.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce maximum quotas of the following resources: [<i>CPU, memory, [<b>assignment</b>: 
      <span class="assignable-content">other resources</span>]</i>], 
-              that [<i>subjects</i>] can use [<b>selection</b>: <span class="selectable-content" id="_s_50">simultaneously</span>,  <span class="selectable-content" id="_s_51">over a specified period of time</span> ]. 
+              that [<i>subjects</i>] can use [<b>selection</b>: <span class="selectable-content" id="_s_54">simultaneously</span>,  <span class="selectable-content" id="_s_55">over a specified period of time</span> ]. 
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1696,7 +1700,7 @@ The following sections list Common Criteria and technology terms used in this do
 		  <div class="comp" id="FTP_ITC.1/ESC"><h4>FTP_ITC.1/ESC Inter-TSF Trusted Channel (ESC Communications)</h4>
 		  
 			  <div class="element"><div class="reqid" id="FTP_ITC.1.1/ESC"><a href="#FTP_ITC.1.1/ESC" class="abbr">FTP_ITC.1.1/ESC</a></div><div class="reqdesc">
-			    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a <b>signaling</b> channel between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> using TLS as specified in <a href="#FCS_TLSC_EXT.1">FCS_TLSC_EXT.1</a> and <a href="#FCS_TLSC_EXT.2">FCS_TLSC_EXT.2</a> and [<b>selection</b>: <span class="selectable-content" id="_s_52">DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</span>,  <span class="selectable-content" id="_s_53">no other protocol</span> ]</b> that is logically distinct from other communication channels 
+			    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a <b>signaling</b> channel between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> using TLS as specified in <a href="#FCS_TLSC_EXT.1">FCS_TLSC_EXT.1</a> and <a href="#FCS_TLSC_EXT.2">FCS_TLSC_EXT.2</a> and [<b>selection</b>: <span class="selectable-content" id="_s_56">DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</span>,  <span class="selectable-content" id="_s_57">no other protocol</span> ]</b> that is logically distinct from other communication channels 
 			    and provides assured identification of its end points and protection of the channel data from modification or disclosure.
 				  <div class="appnote"><span class="note-header">Application
       Note:
@@ -1726,7 +1730,7 @@ The following sections list Common Criteria and technology terms used in this do
 	    <div class="comp" id="FTP_ITC.1/VVoIP"><h4>FTP_ITC.1/VVoIP Inter-TSF Trusted Channel (VVoIP Communications)</h4>
 	      
 	      <div class="element"><div class="reqid" id="FTP_ITC.1.1/VVoIP"><a href="#FTP_ITC.1.1/VVoIP" class="abbr">FTP_ITC.1.1/VVoIP</a></div><div class="reqdesc">
-	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>, [<b>selection</b>: <span class="selectable-content" id="_s_54"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>,  <span class="selectable-content" id="_s_55">IPsec</span>,  <span class="selectable-content" id="_s_56">H.235</span>,  <span class="selectable-content" id="_s_57">[<b>assignment</b>: 
+	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>, [<b>selection</b>: <span class="selectable-content" id="_s_58"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>,  <span class="selectable-content" id="_s_59">IPsec</span>,  <span class="selectable-content" id="_s_60">H.235</span>,  <span class="selectable-content" id="_s_61">[<b>assignment</b>: 
      <span class="assignable-content">other protocols</span>]</span> ]</b> 
 	          to provide a <b>trusted</b> communication channel between itself and <b>authorized</b> IT 
 	          <b>entities supporting the following capabilities: <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> signaling and media channels</b> that is
@@ -2021,7 +2025,7 @@ The following sections list Common Criteria and technology terms used in this do
           
           
           <div class="element"><div class="reqid" id="FIA_SIPS_EXT.1.1"><a href="#FIA_SIPS_EXT.1.1" class="abbr">FIA_SIPS_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_60"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>,  <span class="selectable-content" id="H323_SDP">H.323 protocol that compiles with ITU-REC H.235.0</span> ] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_64"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>,  <span class="selectable-content" id="H323_SDP">H.323 protocol that compiles with ITU-REC H.235.0</span> ] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
               describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic.
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -2072,7 +2076,7 @@ The following sections list Common Criteria and technology terms used in this do
           <div class="element"><div class="reqid" id="FTP_ITC.1.1/H323"><a href="#FTP_ITC.1.1/H323" class="abbr">FTP_ITC.1.1/H323</a></div><div class="reqdesc">
               <span style="" class="comment " id="Comment-0-">[JF] need syntax for when there are &gt;3 triggers for a sel-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> (<a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a>, <a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a>, <a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a>, <a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a>)</span>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide an <b>H.323</b> communication channel <b>in accordance with ITU-REC H.235.0</b> between itself and 
-              <b>a gatekeeper using TLS as specified in <a href="#FCS_TLSC_EXT.1">FCS_TLSC_EXT.1</a> and <a href="#FCS_TLSC_EXT.2">FCS_TLSC_EXT.2</a> and [<b>selection</b>: <span class="selectable-content" id="_s_58">IPsec as specified in FCS_IPSEC_EXT.1</span>,  <span class="selectable-content" id="_s_59">no other protocol</span> ]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+              <b>a gatekeeper using TLS as specified in <a href="#FCS_TLSC_EXT.1">FCS_TLSC_EXT.1</a> and <a href="#FCS_TLSC_EXT.2">FCS_TLSC_EXT.2</a> and [<b>selection</b>: <span class="selectable-content" id="_s_62">IPsec as specified in FCS_IPSEC_EXT.1</span>,  <span class="selectable-content" id="_s_63">no other protocol</span> ]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2115,168 +2119,199 @@ The following sections list Common Criteria and technology terms used in this do
 
 <table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">4</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_SRTP_EXT Secure Real-Time Transport Protocol<br/></td></tr><tr data-sortkey="Firewall"><td>Firewall</td><td>FFW_ACL_EXT Traffic Filtering<br/>FFW_DPI_EXT Deep Packet Inspection<br/>FFW_NAT_EXT Network Address Translation<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FAU_SIPT_EXT Session Initiation Protocol Trunking<br/>FIA_SIPS_EXT Session Initiation Protocol Registration<br/></td></tr><tr data-sortkey="Resource Utilization (FRU)"><td>Resource Utilization (FRU)</td><td>FRU_PRS_EXT Limited Priority of Service<br/></td></tr><tr data-sortkey="Security Audit (FAU)"><td>Security Audit (FAU)</td><td>FAU_ARP_EXT Security Audit Automatic Response<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This Module defines the following extended components as part of the
 	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
-	<h3 id="ext-comp-FCS_SRTP_EXT" class="indexable" data-level="4">C.2.1.1 FCS_SRTP_EXT Secure Real-Time Transport Protocol</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>TBD</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_SRTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a>,
+	<h3 id="ext-comp-FCS_SRTP_EXT" class="indexable" data-level="4">C.2.1.1 FCS_SRTP_EXT Secure Real-Time Transport Protocol</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for the implementation of <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_SRTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a>,
              Secure Real-Time Transport Protocol,
-             TBD
-          </p><h4>Management: FCS_SRTP_EXT.1</h4><p>TBD
-          </p><h4>Audit: FCS_SRTP_EXT.1</h4><p>TBD
-          </p><h4>FCS_SRTP_EXT.1 Secure Real-Time Transport Protocol</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: TBD
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> in accordance with specified standards, and for some of this functionality to be configurable.
+          </p><h4>Management: FCS_SRTP_EXT.1</h4><p>The following actions could be considered for the management functions in FMT: <ul>
+            <li>Configuration of ports and cryptography for signaling communications.</li>
+          </ul>
+          </p><h4>Audit: FCS_SRTP_EXT.1</h4><p>There are no auditable events foreseen.
+          </p><h4>FCS_SRTP_EXT.1 Secure Real-Time Transport Protocol</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: FMT_SMR.1 Security Roles<p></p>
+            <a href="#FTP_ITC.1">FTP_ITC.1</a> Inter-TSF Trusted Channel
           </p><h4 id="ext-comp-FCS_SRTP_EXT.1.1">FCS_SRTP_EXT.1.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the Secure Real-Time Transport Protocol (<abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>) that complies with RFC 3711, 
               and use Security Descriptions for Media Streams (<abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>) in compliance with RFC 4568 to provide key information for the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> connection. 
-            <h4 id="ext-comp-FCS_SRTP_EXT.1.2">FCS_SRTP_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>-SRTP supporting the following cipher suites: [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_14">AES_CM_128_HMAC_SHA1_80, in accordance with RFC 4568</span></li><li style=""><span class="selectable-content" id="_s_15">AES_CM_128_HMAC_SHA1_32, in accordance with RFC 4568</span></li><li style=""><span class="selectable-content" id="_s_16">AES_256_CM_HMAC_SHA1_80, in accordance with RFC 6188</span></li><li style=""><span class="selectable-content" id="_s_17">AES_256_CM_HMAC_SHA1_32, in accordance with RFC 6188</span></li><li style=""><span class="selectable-content" id="_s_18">AEAD_AES_128_GCM, in accordance with RFC 7714</span></li><li style=""><span class="selectable-content" id="_s_19">AEAD_AES_256_GCM, in accordance with RFC 7714</span></li></ul>]
-            <h4 id="ext-comp-FCS_SRTP_EXT.1.3">FCS_SRTP_EXT.1.3</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_20">is disabled</span>,  <span class="selectable-content" id="_s_21">can be disabled by a [<i>Security Administrator</i>]</span> ].
-            <h4 id="ext-comp-FCS_SRTP_EXT.1.4">FCS_SRTP_EXT.1.4</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> ports to be used for <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> communications to be specified by a [<i>Security Administrator</i>].
-            </div></div></span><span data-sortkey="Firewall"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.2 Firewall</h3>This Module defines the following extended components as part of the
+            <h4 id="ext-comp-FCS_SRTP_EXT.1.2">FCS_SRTP_EXT.1.2</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>-SRTP supporting the following cipher suites [<b>assignment</b>: 
+     <span class="assignable-content">list of supported cipher suites and the standard in which they are defined</span>]. 
+              <h4 id="ext-comp-FCS_SRTP_EXT.1.3">FCS_SRTP_EXT.1.3</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_22">is disabled</span>,  <span class="selectable-content" id="_s_23">can be disabled by a [<b>assignment</b>: 
+     <span class="assignable-content">administrator role</span>]</span> ].
+              <h4 id="ext-comp-FCS_SRTP_EXT.1.4">FCS_SRTP_EXT.1.4</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> ports to be used for <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> communications to be specified by a [<b>assignment</b>: 
+     <span class="assignable-content">administrator role</span>].  
+              </div></div></span><span data-sortkey="Firewall"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.2 Firewall</h3>This Module defines the following extended components as part of the
 	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
-	<h3 id="ext-comp-FFW_ACL_EXT" class="indexable" data-level="4">C.2.2.1 FFW_ACL_EXT Traffic Filtering</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>TBD</div><h4>Component Leveling</h4><svg style="max-height: 50px;"><text x="4" fill="black" font-size="15" y="44">FFW_ACL_EXT</text><rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="17" stroke="black"></line><text x="234" fill="black" font-size="15" y="44">2</text><rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="37" stroke="black"></line></svg><p><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a>,
+	<h3 id="ext-comp-FFW_ACL_EXT" class="indexable" data-level="4">C.2.2.1 FFW_ACL_EXT Traffic Filtering</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
+            This family defines requirements for controlling traffic filtering, including the use of stateful traffic filtering on protocols and ports.</div><h4>Component Leveling</h4><svg style="max-height: 50px;"><text x="4" fill="black" font-size="15" y="44">FFW_ACL_EXT</text><rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="17" stroke="black"></line><text x="234" fill="black" font-size="15" y="44">2</text><rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="37" stroke="black"></line></svg><p><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a>,
              Real-Time Communications Traffic Filtering,
-             TBD
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement traffic filtering rules based on network protocol attributes.
           </p><p><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a>,
              Stateful <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> Traffic Filtering,
-             TBD
-          </p><h4>Management: FFW_ACL_EXT.1</h4><p>TBD
-          </p><h4>Audit: FFW_ACL_EXT.1</h4><p>TBD
-          </p><h4>FFW_ACL_EXT.1 Real-Time Communications Traffic Filtering</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: TBD
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to perform stateful traffic filtering on traffic that matches certain unauthorized state conditions.
+          </p><h4>Management: FFW_ACL_EXT.1</h4><p>The following actions could be considered for the management functions in FMT: <ul>
+            <li>Configuration of traffic filtering rules.</li>
+          </ul>
+          </p><h4>Audit: FFW_ACL_EXT.1</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: <ul>
+            <li>Application of traffic filtering rules.</li>
+          </ul>
+          </p><h4>FFW_ACL_EXT.1 Real-Time Communications Traffic Filtering</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: None
           </p><h4 id="ext-comp-FFW_ACL_EXT.1.1">FFW_ACL_EXT.1.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform traffic filtering on network packets processed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
             <h4 id="ext-comp-FFW_ACL_EXT.1.2">FFW_ACL_EXT.1.2</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the definition of traffic filtering for real-time communications traffic using the following network protocol fields: 
-              <ul>
-                <li>IPv4 <ul>
-                  <li>source address</li>
-                  <li>destination address</li>
-                  <li>transport layer protocol</li>
-                </ul></li>
-                
-                <li>IPv6<ul>
-                  <li>source address</li>
-                  <li>destination address</li>
-                  <li>transport layer protocol</li>
-                </ul></li>
-                
-                <li>TCP <b>(for signaling channel)</b><ul>
-                  <li>source port</li>
-                  <li>destination port</li>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the definition of traffic filtering for real-time communications traffic using the following network protocol fields: 
+                <ul>
+                  <li>IPv4 <ul>
+                    <li>source address</li>
+                    <li>destination address</li>
+                    <li>transport layer protocol</li>
+                  </ul></li>
+                  
+                  <li>IPv6<ul>
+                    <li>source address</li>
+                    <li>destination address</li>
+                    <li>transport layer protocol</li>
+                  </ul></li>
+                  
+                  <li>TCP<ul>
+                    <li>source port</li>
+                    <li>destination port</li>
+                  </ul>
+                  </li>
+                  
+                  <li>UDP<ul>
+                    <li>source port</li>
+                    <li>destination port</li>
+                  </ul>
+                  </li>
+                  
+                  <li>Distinct Interface</li>
+                  
+                  <li>[<b>assignment</b>: 
+     <span class="assignable-content">other protocols or protocol types</span>]</li>
                 </ul>
-                </li>
-                
-                <li>UDP <b>(for signaling channel)</b><ul>
-                  <li>source port</li>
-                  <li>destination port</li>
-                </ul>
-                </li>
-                
-                <li>Distinct Interface <b>(physical vs virtual or trust zone, e.g., trusted vs untrusted)</b></li>
-                
-                <li><i>Application (Real-Time Communications Protocol) <ul>
-                  <li>signaling protocols: [<b>selection</b>: <span class="selectable-content" id="_s_24"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="filters_H323">H.323</span> ]</li>
-                </ul></i></li>
-              </ul>
-            <h4 id="ext-comp-FFW_ACL_EXT.1.3">FFW_ACL_EXT.1.3</h4>
+              <h4 id="ext-comp-FFW_ACL_EXT.1.3">FFW_ACL_EXT.1.3</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the following operations to be associated with traffic filtering rules: permit or drop with the capability to log the operation <b>for each specific rule defined</b>.
             <h4 id="ext-comp-FFW_ACL_EXT.1.4">FFW_ACL_EXT.1.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the traffic filtering rules to be assigned to each distinct network interface.
             <h4 id="ext-comp-FFW_ACL_EXT.1.5">FFW_ACL_EXT.1.5</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall: <ul>
               <li>Accept a network packet without further processing of traffic filtering rules if it matches an allowed established session for the following protocols: TCP, UDP, based on the following network packet attributes: <ul> 
-                <li>TCP: source and destination addresses, source and destination ports, sequence number, flags;</li> 
-                <li>UDP: source and destination addresses, source and destination ports; </li>
+                <li>TCP: source and destination addresses, source and destination ports, sequence number, flags</li> 
+                <li>UDP: source and destination addresses, source and destination ports</li>
               </ul>
               </li>
-              <li>Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_26">session inactivity timeout</span>,  <span class="selectable-content" id="_s_27">completion of the expected information flow</span> ].</li>
+              <li>Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_28">session inactivity timeout</span>,  <span class="selectable-content" id="_s_29">completion of the expected information flow</span> ].</li>
               </ul>
             <h4 id="ext-comp-FFW_ACL_EXT.1.6">FFW_ACL_EXT.1.6</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall process the applicable traffic filtering rules in an administratively defined order.
             <h4 id="ext-comp-FFW_ACL_EXT.1.7">FFW_ACL_EXT.1.7</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall deny packet flow if a matching rule is not identified.
-            </div><h4>Management: FFW_ACL_EXT.2</h4><p>TBD
-          </p><h4>Audit: FFW_ACL_EXT.2</h4><p>TBD
-          </p><h4>FFW_ACL_EXT.2 Stateful VVoIP Traffic Filtering</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: TBD
+            </div><h4>Management: FFW_ACL_EXT.2</h4><p>No specific management functions are identified.
+          </p><h4>Audit: FFW_ACL_EXT.2</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: <ul>
+            <li>Application of traffic filtering rules.</li>
+          </ul>
+          </p><h4>FFW_ACL_EXT.2 Stateful VVoIP Traffic Filtering</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: None
           </p><h4 id="ext-comp-FFW_ACL_EXT.2.1">FFW_ACL_EXT.2.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful traffic filtering on the following <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols: [<b>selection</b>: <span class="selectable-content" id="_s_28"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="stateful_H323">H.323 (H.225, H.245)</span>,  <span class="selectable-content" id="_s_30"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr></span> ].
-            <h4 id="ext-comp-FFW_ACL_EXT.2.2">FFW_ACL_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following default stateful traffic filtering rules on all network traffic matching protocol types identified in <a href="#FFW_ACL_EXT.2.1">FFW_ACL_EXT.2.1</a>:[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> traffic where a BYE message precedes an INVITE message</span></li><li style=""><span class="selectable-content" id="_s_32">H.225 traffic where an RCF reply precedes any other traffic</span></li><li style=""><span class="selectable-content" id="_s_33">H.245 traffic where a ResponseMessage precedes a RequestMessage</span></li><li style=""><span class="selectable-content" id="_s_34"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr> traffic where a DLCX message precedes a CRCX message</span></li></ul>].
-            <h4 id="ext-comp-FFW_ACL_EXT.2.3">FFW_ACL_EXT.2.3</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful traffic filtering on the following <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols:  [<b>assignment</b>: 
+     <span class="assignable-content"><abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols</span>].
+              <h4 id="ext-comp-FFW_ACL_EXT.2.2">FFW_ACL_EXT.2.2</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following default stateful traffic filtering rules on all network traffic matching protocol types identified in <a href="#FFW_ACL_EXT.2.1">FFW_ACL_EXT.2.1</a>: <ul>
+                  <li>[<b>assignment</b>: 
+     <span class="assignable-content">default stateful traffic filtering rules</span>]</li>
+                </ul>
+              <h4 id="ext-comp-FFW_ACL_EXT.2.3">FFW_ACL_EXT.2.3</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall terminate any connection found to be in violation of the default stateful traffic filtering rules and provide the ability to generate an audit record of the event.
             <h4 id="ext-comp-FFW_ACL_EXT.2.4">FFW_ACL_EXT.2.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall dynamically open media ports to <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocol traffic upon negotiation of a session and close these ports upon termination of a session.
-            <h4 id="ext-comp-FFW_ACL_EXT.2.5">FFW_ACL_EXT.2.5</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not define a static range of ports to remain open indefinitely for the purpose of allowing <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocol traffic.</div></div><h3 id="ext-comp-FFW_DPI_EXT" class="indexable" data-level="4">C.2.2.2 FFW_DPI_EXT Deep Packet Inspection</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>TBD</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FFW_DPI_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a>,
+            <h4 id="ext-comp-FFW_ACL_EXT.2.5">FFW_ACL_EXT.2.5</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not define a static range of ports to remain open indefinitely for the purpose of allowing <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocol traffic.</div></div><h3 id="ext-comp-FFW_DPI_EXT" class="indexable" data-level="4">C.2.2.2 FFW_DPI_EXT Deep Packet Inspection</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for implementation of <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> functionality.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FFW_DPI_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a>,
              Deep Packet Inspection,
-             TBD
-          </p><h4>Management: FFW_DPI_EXT.1</h4><p>TBD
-          </p><h4>Audit: FFW_DPI_EXT.1</h4><p>TBD
-          </p><h4>FFW_DPI_EXT.1 Deep Packet Inspection</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: TBD
+              defines traffic that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is expected to be able to perform <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> on, the specific elements of that traffic that is subject to <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr>, and the action that is taken when invalid traffic is discovered by the <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> mechanism.
+          </p><h4>Management: FFW_DPI_EXT.1</h4><p>No specific management functions are identified.
+          </p><h4>Audit: FFW_DPI_EXT.1</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: <ul>
+            <li>Application of <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> rules.</li>
+          </ul>
+          </p><h4>FFW_DPI_EXT.1 Deep Packet Inspection</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: None
           </p><h4 id="ext-comp-FFW_DPI_EXT.1.1">FFW_DPI_EXT.1.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="_s_35">H.323 (H.225, H.245)</span>,  <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_RTP">RTP</a></abbr></span>,  <span class="selectable-content" id="_s_38"><abbr class="dyn-abbr"><a href="#abbr_RTCP">RTCP</a></abbr></span> ]. 
-            <h4 id="ext-comp-FFW_DPI_EXT.1.2">FFW_DPI_EXT.1.2</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for the following protocols: [<b>assignment</b>: 
+     <span class="assignable-content">communications protocols</span>].
+              <h4 id="ext-comp-FFW_DPI_EXT.1.2">FFW_DPI_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following rules for <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr>: [<b>assignment</b>: 
      <span class="assignable-content">for each protocol listed in <a href="#FFW_DPI_EXT.1.1">FFW_DPI_EXT.1.1</a>, 
               list elements of the packet data that are examined for potentially malicious content or compatibility with the protocol definition</span>]. 
             <h4 id="ext-comp-FFW_DPI_EXT.1.3">FFW_DPI_EXT.1.3</h4>
-              When traffic is found to be in violation of a <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> rule, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall take the following action:
-              [<b>selection</b>: <span class="selectable-content" id="_s_39">drop the traffic</span>,  <span class="selectable-content" id="_s_40">generate an audit record</span>,  <span class="selectable-content" id="_s_41">generate an alarm</span> ].
-            </div></div><h3 id="ext-comp-FFW_NAT_EXT" class="indexable" data-level="4">C.2.2.3 FFW_NAT_EXT Network Address Translation</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>TBD</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FFW_NAT_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a>,
+                When traffic is found to be in violation of a <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> rule, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall take the following action:
+                [<b>assignment</b>: 
+     <span class="assignable-content">action taken in response to rule violation</span>].
+              </div></div><h3 id="ext-comp-FFW_NAT_EXT" class="indexable" data-level="4">C.2.2.3 FFW_NAT_EXT Network Address Translation</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for implementation of <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FFW_NAT_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a>,
              Topology Hiding/<abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> Traversal,
-             TBD
-          </p><h4>Management: FFW_NAT_EXT.1</h4><p>TBD
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for defined network protocols.
+          </p><h4>Management: FFW_NAT_EXT.1</h4><p>The following actions could be considered for the management functions in FMT: <ul>
+            <li>Configuration of <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr>.</li>
+          </ul>
           </p><h4>Audit: FFW_NAT_EXT.1</h4><p>TBD
-          </p><h4>FFW_NAT_EXT.1 Topology Hiding/NAT Traversal</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: TBD
+          </p><h4>FFW_NAT_EXT.1 Topology Hiding/NAT Traversal</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: <a href="#FDP_IFC.1">FDP_IFC.1</a> Subset Information Flow Control<p></p>
+            FMT_SMR.1 Security Roles
           </p><h4 id="ext-comp-FFW_NAT_EXT.1.1">FFW_NAT_EXT.1.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> of signaling and media channel traffic through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that is mediated by the [<i><abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy</i>] defined by <a href="#FDP_IFC.1">FDP_IFC.1</a>.
-            <h4 id="ext-comp-FFW_NAT_EXT.1.2">FFW_NAT_EXT.1.2</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols [<b>selection</b>: <span class="selectable-content" id="_s_42"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>,  <span class="selectable-content" id="_s_43"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>,  <span class="selectable-content" id="_s_44">H.225</span>,  <span class="selectable-content" id="_s_45">H.245</span> ]. 
-            <h4 id="ext-comp-FFW_NAT_EXT.1.3">FFW_NAT_EXT.1.3</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with 
-              [<b>selection</b>: <span class="selectable-content" id="_s_46">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>,  <span class="selectable-content" id="_s_47">a [<i>Security Administrator</i>]-defined value</span> ].
-            <h4 id="ext-comp-FFW_NAT_EXT.1.4">FFW_NAT_EXT.1.4</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> of signaling and media channel traffic through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that is mediated by the [<b>assignment</b>: 
+     <span class="assignable-content">information flow control policy</span>] defined by <a href="#FDP_IFC.1">FDP_IFC.1</a>.
+              <h4 id="ext-comp-FFW_NAT_EXT.1.2">FFW_NAT_EXT.1.2</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols: [<b>assignment</b>: 
+     <span class="assignable-content">list of protocols</span>].
+              <h4 id="ext-comp-FFW_NAT_EXT.1.3">FFW_NAT_EXT.1.3</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with 
+                [<b>selection</b>: <span class="selectable-content" id="_s_50">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>,  <span class="selectable-content" id="_s_51">a [<b>assignment</b>: 
+     <span class="assignable-content">administrator role</span>]-defined value</span> ].  
+              <h4 id="ext-comp-FFW_NAT_EXT.1.4">FFW_NAT_EXT.1.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall maintain a <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> table to ensure that traffic bound for the internal network is directed to only the intended recipient.
             </div></div></span><span data-sortkey="Identification and Authentication (FIA)"><h3 id="ext-comp-FIA" class="indexable" data-level="3">C.2.3 Identification and Authentication (FIA)</h3>This Module defines the following extended components as part of the
 	 FIA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
-	<h3 id="ext-comp-FAU_SIPT_EXT" class="indexable" data-level="4">C.2.3.1 FAU_SIPT_EXT Session Initiation Protocol Trunking</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>TBD</div><h4>Component Leveling</h4><svg style="max-height: 10px;"><text x="4" fill="black" font-size="15" y="24">FAU_SIPT_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect></svg></div><h3 id="ext-comp-FIA_SIPS_EXT" class="indexable" data-level="4">C.2.3.2 FIA_SIPS_EXT Session Initiation Protocol Registration</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>TBD</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_SIPS_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a>,
+	<h3 id="ext-comp-FAU_SIPT_EXT" class="indexable" data-level="4">C.2.3.1 FAU_SIPT_EXT Session Initiation Protocol Trunking</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> validation, authentication, and traffic encryption. </div><h4>Component Leveling</h4><svg style="max-height: 10px;"><text x="4" fill="black" font-size="15" y="24">FAU_SIPT_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect></svg></div><h3 id="ext-comp-FIA_SIPS_EXT" class="indexable" data-level="4">C.2.3.2 FIA_SIPS_EXT Session Initiation Protocol Registration</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> registration.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_SIPS_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a>,
              Session Initiation Protocol Registration,
-             TBD
-          </p><h4>Management: FIA_SIPS_EXT.1</h4><p>TBD
-          </p><h4>Audit: FIA_SIPS_EXT.1</h4><p>TBD
-          </p><h4>FIA_SIPS_EXT.1 Session Initiation Protocol Registration</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: TBD
+              defines requirements for how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must implement <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> registration, including protocol implementations and constraints on authentication.
+          </p><h4>Management: FIA_SIPS_EXT.1</h4><p>The following actions could be considered for the management functions in FMT: <ul>
+            <li>Configuration of <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> communications.</li>
+          </ul>
+          </p><h4>Audit: FIA_SIPS_EXT.1</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:<ul>
+            <li>Call Detail Record (<abbr class="dyn-abbr"><a href="#abbr_CDR">CDR</a></abbr>)</li>
+          </ul>
+          </p><h4>FIA_SIPS_EXT.1 Session Initiation Protocol Registration</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: None
           </p><h4 id="ext-comp-FIA_SIPS_EXT.1.1">FIA_SIPS_EXT.1.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_60"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>,  <span class="selectable-content" id="H323_SDP">H.323 protocol that compiles with ITU-REC H.235.0</span> ] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_64"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>,  <span class="selectable-content" id="H323_SDP">H.323 protocol that compiles with ITU-REC H.235.0</span> ] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
               describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic.
             <h4 id="ext-comp-FIA_SIPS_EXT.1.2">FIA_SIPS_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require password authentication for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> REGISTER function requests as specified in Section 22 of RFC 3261.
             <h4 id="ext-comp-FIA_SIPS_EXT.1.3">FIA_SIPS_EXT.1.3</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> authentication passwords that contain at least [<b>assignment</b>: 
-     <span class="assignable-content">positive integer of 8 or more</span>] 
-              characters in the set of [<i>upper case characters, lower case characters, numbers, and the following special characters: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”, 
-                and [<b>assignment</b>: 
-     <span class="assignable-content">other supported special characters</span>]</i>].
-            <h4 id="ext-comp-FIA_SIPS_EXT.1.4">FIA_SIPS_EXT.1.4</h4>
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> authentication passwords that contain at least [<b>assignment</b>: 
+     <span class="assignable-content">minimum numeric length</span>] characters in the set of [<b>assignment</b>: 
+     <span class="assignable-content">supported character set</span>].
+              <h4 id="ext-comp-FIA_SIPS_EXT.1.4">FIA_SIPS_EXT.1.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to modify <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> header values for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> traffic received by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> prior to retransmitting the traffic.
             </div></div></span><span data-sortkey="Resource Utilization (FRU)"><h3 id="ext-comp-FRU" class="indexable" data-level="3">C.2.4 Resource Utilization (FRU)</h3>This Module defines the following extended components as part of the
 	 FRU class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
-	<h3 id="ext-comp-FRU_PRS_EXT" class="indexable" data-level="4">C.2.4.1 FRU_PRS_EXT Limited Priority of Service</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>TBD</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FRU_PRS_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a>,
+	<h3 id="ext-comp-FRU_PRS_EXT" class="indexable" data-level="4">C.2.4.1 FRU_PRS_EXT Limited Priority of Service</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for prioritizing communication packets and bandwidth.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FRU_PRS_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a>,
              Limited Priority of Service,
-             TBD
-          </p><h4>Management: FRU_PRS_EXT.1</h4><p>TBD
-          </p><h4>Audit: FRU_PRS_EXT.1</h4><p>TBD
-          </p><h4>FRU_PRS_EXT.1 Limited Priority of Service</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: TBD
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement mechanisms to limit the amount of network bandwidth that is available to subjects based on certain attributes.
+          </p><h4>Management: FRU_PRS_EXT.1</h4><p>No specific management functions are identified.
+          </p><h4>Audit: FRU_PRS_EXT.1</h4><p>There are no auditable events foreseen.
+          </p><h4>FRU_PRS_EXT.1 Limited Priority of Service</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: None
           </p><h4 id="ext-comp-FRU_PRS_EXT.1.1">FRU_PRS_EXT.1.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall assign a priority to each type of communications packet that traverses the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
             <h4 id="ext-comp-FRU_PRS_EXT.1.2">FRU_PRS_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that each access to network bandwidth shall be mediated on the basis of the subject’s assigned priority and R-factor.
             </div></div></span><span data-sortkey="Security Audit (FAU)"><h3 id="ext-comp-FAU" class="indexable" data-level="3">C.2.5 Security Audit (FAU)</h3>This Module defines the following extended components as part of the
 	 FAU class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
-	<h3 id="ext-comp-FAU_ARP_EXT" class="indexable" data-level="4">C.2.5.1 FAU_ARP_EXT Security Audit Automatic Response</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>TBD</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_ARP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a>,
+	<h3 id="ext-comp-FAU_ARP_EXT" class="indexable" data-level="4">C.2.5.1 FAU_ARP_EXT Security Audit Automatic Response</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for secure external transmission of detected security violations to the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.  </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_ARP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a>,
              Security Audit Automatic Response,
-             TBD
-          </p><h4>Management: FAU_ARP_EXT.1</h4><p>TBD
-          </p><h4>Audit: FAU_ARP_EXT.1</h4><p>TBD
-          </p><h4>FAU_ARP_EXT.1 Security Audit Automatic Response</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: TBD
+              defines the mechanism used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to securely transmit security alerts to the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.  
+          </p><h4>Management: FAU_ARP_EXT.1</h4><p>No specific management functions are identified.
+          </p><h4>Audit: FAU_ARP_EXT.1</h4><p>There are no auditable events foreseen.
+          </p><h4>FAU_ARP_EXT.1 Security Audit Automatic Response</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: <a href="#FAU_SAA.1">FAU_SAA.1</a> Potential Violation Analysis<p></p>
+            <a href="#FTP_ITC.1">FTP_ITC.1</a> Inter-TSF Trusted Channel
           </p><h4 id="ext-comp-FAU_ARP_EXT.1.1">FAU_ARP_EXT.1.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of using 
-              [<b>selection</b>: <span class="selectable-content" id="_s_9">TLS</span>,  <span class="selectable-content" id="_s_10">IPsec</span>,  <span class="selectable-content" id="_s_11">SSH</span>,  <span class="selectable-content" id="_s_12">HTTPS</span>,  <span class="selectable-content" id="_s_13">SNMPv3</span> ] to transmit potential security violations to an external IT entity in the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> upon detection.
-            </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of using [<b>assignment</b>: 
+     <span class="assignable-content">trusted channel defined in <a href="#FTP_ITC.1">FTP_ITC.1</a></span>] to transmit potential security violations to an external IT entity in the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> upon detection.
+              </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 	successfully evaluated against this Module. These requirements are not featured
 	explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
 	standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation.
