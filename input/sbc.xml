@@ -714,20 +714,21 @@
       
       <sec:man_fau title="Security Audit (FAU)">
         <ext-comp-def title="Security Audit Automatic Response" fam-id="FAU_ARP_EXT">
-          <fam-behavior>TBD</fam-behavior> 
+          <fam-behavior>This family defines requirements for secure external transmission of detected security violations to the OE.  </fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="fau_arp_ext.1" name="Security Audit Automatic Response"> 
           <consistency-rationale>
             This SFR applies to the generation of alerts when a given auditable event is detected, which is beyond the original scope of the Base-PP.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> defines the mechanism used by the TOE to securely transmit security alerts to the OE.  
           </comp-lev>
-          <management>TBD
+          <management>No specific management functions are identified.
           </management>
-          <audit>TBD
+          <audit>There are no auditable events foreseen.
           </audit>
-          <dependencies>TBD
+          <dependencies>FAU_SAA.1 Potential Violation Analysis<h:p/>
+            FTP_ITC.1 Inter-TSF Trusted Channel
           </dependencies>
           
           <f-element>
@@ -741,6 +742,11 @@
                 <selectable>SNMPv3</selectable>
               </selectables> to transmit potential security violations to an external IT entity in the OE upon detection.
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall be capable of using <assignable>trusted channel defined in FTP_ITC.1</assignable> to transmit potential security violations to an external IT entity in the OE upon detection.
+              </title>
+            </ext-comp-def-title>
             <note role="application">
               The selected protocols must be reflected in FTP_ITC.1.
             </note>
@@ -801,9 +807,9 @@
                 <h:td>None</h:td>
               </h:tr>
               <h:tr>
-                <h:td>FFW_ACL_EXT.1</h:td>
-                <h:td>Configuraiton of VVoIP traffic filtering rules</h:td>
-                <h:td>Information uniquely identifying the rules that were modified</h:td>
+                <h:td rowspan="3">FFW_ACL_EXT.1</h:td>
+                <h:td rowspan="3">Application of traffic filtering rules</h:td>
+                <h:td>Source and destination of observed traffic</h:td>
               </h:tr>
               <h:tr>
                 <h:td rowspan="3">FFW_ACL_EXT.2</h:td>
@@ -818,7 +824,7 @@
               </h:tr>
               <h:tr>
                 <h:td rowspan="3">FFW_DPI_EXT.1</h:td>
-                <h:td rowspan="3">Application of deep packet inspection (DPI) rules</h:td>
+                <h:td rowspan="3">Application of deep packet inspection rules</h:td>
                 <h:td>Source and destination of observed traffic</h:td>
               </h:tr>
               <h:tr>
@@ -1006,20 +1012,23 @@
       <sec:man_fcs title="Cryptographic Support (FCS)">
         
         <ext-comp-def title="Secure Real-Time Transport Protocol" fam-id="FCS_SRTP_EXT">
-          <fam-behavior>TBD</fam-behavior> 
+          <fam-behavior>This family defines requirements for the implementation of SRTP.</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="fcs_srtp_ext.1" name="Secure Real-Time Transport Protocol"> 
           <consistency-rationale>
             This SFR applies to the implementation of SRTP, which is a protocol that is not used for any Base-PP functionality.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> requires the TSF to implement SRTP in accordance with specified standards, and for some of this functionality to be configurable.
           </comp-lev>
-          <management>TBD
+          <management>The following actions could be considered for the management functions in FMT: <h:ul>
+            <h:li>Configuration of ports and cryptography for signaling communications.</h:li>
+          </h:ul>
           </management>
-          <audit>TBD
+          <audit>There are no auditable events foreseen.
           </audit>
-          <dependencies>TBD
+          <dependencies>FMT_SMR.1 Security Roles<h:p/>
+            FTP_ITC.1 Inter-TSF Trusted Channel
           </dependencies>
           
           <f-element>
@@ -1038,6 +1047,11 @@
               <selectable>AEAD_AES_256_GCM, in accordance with RFC 7714</selectable>
             </selectables>
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall implement SDES-SRTP supporting the following cipher suites <assignable>list of supported cipher suites and the standard in which they are defined</assignable>. 
+              </title>
+            </ext-comp-def-title>
           
           <note role="application">
             This requirement specifies that the SRTP session that will be used to carry the VoIP traffic will be keyed according to an SDES dialog using one of the identified cipher suites. 
@@ -1050,11 +1064,23 @@
                 <selectable>is disabled</selectable>
                 <selectable>can be disabled by a [<h:i>Security Administrator</h:i>]</selectable></selectables>.
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall ensure the SRTP NULL algorithm <selectables>
+                  <selectable>is disabled</selectable>
+                  <selectable>can be disabled by a <assignable>administrator role</assignable></selectable></selectables>.
+              </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element>
             <title>
               The TSF shall allow the SRTP ports to be used for SRTP communications to be specified by a [<h:i>Security Administrator</h:i>].
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall allow the SRTP ports to be used for SRTP communications to be specified by a <assignable>administrator role</assignable>.  
+              </title>
+            </ext-comp-def-title>
           <aactivity>
               <TSS>TBD
                 <h:p/></TSS>
@@ -1145,22 +1171,30 @@
         </f-component>
       </sec:man_fdp>
       <sec:man_ffw title="Firewall">
-        
+        <ext-comp-class class="Firewall (FFW)">
+          <description>Firewall functionality involves selective processing of network traffic such that the traffic is routed or discarded based on some notion of whether the traffic is valid. 
+            Requirements in this class define capabilities for these processing functions.</description>
+        </ext-comp-class>
         <ext-comp-def title="Traffic Filtering" fam-id="FFW_ACL_EXT">
-          <fam-behavior>TBD</fam-behavior> 
+          <fam-behavior>
+            This family defines requirements for controlling traffic filtering, including the use of stateful traffic filtering on protocols and ports.</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="ffw_acl_ext.1" name="Real-Time Communications Traffic Filtering"> 
           <consistency-rationale>
             This SFR applies to traffic filtering, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> requires the TSF to implement traffic filtering rules based on network protocol attributes.
           </comp-lev>
-          <management>TBD
+          <management>The following actions could be considered for the management functions in FMT: <h:ul>
+            <h:li>Configuration of traffic filtering rules.</h:li>
+          </h:ul>
           </management>
-          <audit>TBD
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST: <h:ul>
+            <h:li>Application of traffic filtering rules.</h:li>
+          </h:ul>
           </audit>
-          <dependencies>TBD
+          <dependencies>None
           </dependencies>
           
           <f-element>
@@ -1203,6 +1237,40 @@
                 </h:ul></h:i></h:li>
               </h:ul>
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall allow the definition of traffic filtering for real-time communications traffic using the following network protocol fields: 
+                <h:ul>
+                  <h:li>IPv4 <h:ul>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>transport layer protocol</h:li>
+                  </h:ul></h:li>
+                  
+                  <h:li>IPv6<h:ul>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>transport layer protocol</h:li>
+                  </h:ul></h:li>
+                  
+                  <h:li>TCP<h:ul>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
+                  </h:ul>
+                  </h:li>
+                  
+                  <h:li>UDP<h:ul>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
+                  </h:ul>
+                  </h:li>
+                  
+                  <h:li>Distinct Interface</h:li>
+                  
+                  <h:li><assignable>other protocols or protocol types</assignable></h:li>
+                </h:ul>
+              </title>
+            </ext-comp-def-title>
           
           
             <note role="application">
@@ -1230,14 +1298,13 @@
             <title>
               The TSF shall: <h:ul>
               <h:li>Accept a network packet without further processing of traffic filtering rules if it matches an allowed established session for the following protocols: TCP, UDP, based on the following network packet attributes: <h:ul> 
-                <h:li>TCP: source and destination addresses, source and destination ports, sequence number, flags;</h:li> 
-                <h:li>UDP: source and destination addresses, source and destination ports; </h:li>
+                <h:li>TCP: source and destination addresses, source and destination ports, sequence number, flags</h:li> 
+                <h:li>UDP: source and destination addresses, source and destination ports</h:li>
               </h:ul>
               </h:li>
               <h:li>Remove existing traffic flows from the set of established traffic flows based on the following: <selectables>
                 <selectable>session inactivity timeout</selectable>
-                <selectable>completion of the expected information flow</selectable>
-              </selectables>.</h:li>
+                <selectable>completion of the expected information flow</selectable></selectables>.</h:li>
               </h:ul>
             </title>
           </f-element>
@@ -1270,13 +1337,15 @@
             This SFR applies to traffic filtering, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> requires the TSF to perform stateful traffic filtering on traffic that matches certain unauthorized state conditions.
           </comp-lev>
-          <management>TBD
+          <management>No specific management functions are identified.
           </management>
-          <audit>TBD
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST: <h:ul>
+            <h:li>Application of traffic filtering rules.</h:li>
+          </h:ul>
           </audit>
-          <dependencies>TBD
+          <dependencies>None
           </dependencies>
           
           <f-element>
@@ -1286,6 +1355,11 @@
                 <selectable id="stateful_H323">H.323 (H.225, H.245)</selectable>
                 <selectable>MGCP</selectable></selectables>.
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall perform stateful traffic filtering on the following VVoIP protocols:  <assignable>VVoIP protocols</assignable>.
+              </title>
+            </ext-comp-def-title>
             <note role="application">
               If “H.323” is selected in this requirement, the ST must include the selection-based SFR FTP_ITC.1/H323.
             </note>
@@ -1298,6 +1372,13 @@
               <selectable>H.245 traffic where a ResponseMessage precedes a RequestMessage</selectable>
               <selectable>MGCP traffic where a DLCX message precedes a CRCX message</selectable></selectables>.
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall enforce the following default stateful traffic filtering rules on all network traffic matching protocol types identified in FFW_ACL_EXT.2.1: <h:ul>
+                  <h:li><assignable>default stateful traffic filtering rules</assignable></h:li>
+                </h:ul>
+              </title>
+            </ext-comp-def-title>
             <note role="application">
               The stateful traffic filtering rules selected in FFW_ACL_EXT.2.2 must match the selections made for VVoIP protocols in FFW_ACL_EXT.2.1.
             </note>
@@ -1335,20 +1416,22 @@
         
         
         <ext-comp-def title="Deep Packet Inspection" fam-id="FFW_DPI_EXT">
-          <fam-behavior>TBD</fam-behavior> 
+          <fam-behavior>This family defines requirements for implementation of DPI functionality.</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="ffw_dpi_ext.1" name="Deep Packet Inspection"> 
           <consistency-rationale>
             This SFR applies to DPI, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> defines traffic that the TSF is expected to be able to perform DPI on, the specific elements of that traffic that is subject to DPI, and the action that is taken when invalid traffic is discovered by the DPI mechanism.
           </comp-lev>
-          <management>TBD
+          <management>No specific management functions are identified.
           </management>
-          <audit>TBD
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST: <h:ul>
+            <h:li>Application of DPI rules.</h:li>
+          </h:ul>
           </audit>
-          <dependencies>TBD
+          <dependencies>None
           </dependencies>
           
           <f-element>
@@ -1359,6 +1442,11 @@
                 <selectable>RTP</selectable>
                 <selectable>RTCP</selectable></selectables>. 
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall implement DPI for the following protocols: <assignable>communications protocols</assignable>.
+              </title>
+            </ext-comp-def-title>
             <note role="application">If “H.323” is selected in this requirement, the ST must include the selection-based SFR FTP_ITC.1/H323.</note>
           </f-element>
           <f-element>
@@ -1375,6 +1463,12 @@
                 <selectable>generate an audit record</selectable>
                 <selectable>generate an alarm</selectable></selectables>.
             </title>
+            <ext-comp-def-title>
+              <title>
+                When traffic is found to be in violation of a DPI rule, the TSF shall take the following action:
+                <assignable>action taken in response to rule violation</assignable>.
+              </title>
+            </ext-comp-def-title>
             <aactivity>
               <TSS>TBD
                 <h:p/></TSS>
@@ -1389,35 +1483,48 @@
         
         
         <ext-comp-def title="Network Address Translation" fam-id="FFW_NAT_EXT">
-          <fam-behavior>TBD</fam-behavior> 
+          <fam-behavior>This family defines requirements for implementation of NAT.</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="ffw_nat_ext.1" name="Topology Hiding/NAT Traversal"> 
           <consistency-rationale>
             This SFR applies to NAT, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> requires the TSF to implement NAT for defined network protocols.
           </comp-lev>
-          <management>TBD
+          <management>The following actions could be considered for the management functions in FMT: <h:ul>
+            <h:li>Configuration of NAT.</h:li>
+          </h:ul>
           </management>
           <audit>TBD
           </audit>
-          <dependencies>TBD
+          <dependencies>FDP_IFC.1 Subset Information Flow Control<h:p/>
+            FMT_SMR.1 Security Roles
           </dependencies>
           
           <f-element>
             <title>
               The TSF shall support NAT of signaling and media channel traffic through the TOE that is mediated by the [<h:i>B2BUA policy</h:i>] defined by FDP_IFC.1.
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall support NAT of signaling and media channel traffic through the TOE that is mediated by the <assignable>information flow control policy</assignable> defined by FDP_IFC.1.
+              </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element>
             <title>
-              The TSF shall support NAT for the following protocols <selectables>
+              The TSF shall support NAT for the following protocols: <selectables>
                 <selectable>SIP</selectable>
                 <selectable>SIP-TLS</selectable>
                 <selectable>H.225</selectable>
                 <selectable>H.245</selectable></selectables>. 
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall support NAT for the following protocols: <assignable>list of protocols</assignable>.
+              </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element>
             <title>
@@ -1426,6 +1533,14 @@
                 <selectable>the IP address of the TOE</selectable>
                 <selectable>a [<h:i>Security Administrator</h:i>]-defined value</selectable></selectables>.
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall use NAT to replace the IP address header value of traffic originating from the internal network with 
+                <selectables>
+                  <selectable>the IP address of the TOE</selectable>
+                  <selectable>a <assignable>administrator role</assignable>-defined value</selectable></selectables>.  
+              </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element>
             <title>
@@ -1450,20 +1565,28 @@
       <sec:man_fia title="Identification and Authentication (FIA)">
         
         <ext-comp-def title="Session Initiation Protocol Trunking" fam-id="FAU_SIPT_EXT">
-          <fam-behavior>TBD</fam-behavior> 
+          <fam-behavior>This family defines requirements for SIP validation, authentication, and traffic encryption. </fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="fia_sipt_ext.1" name="Session Initiation Protocol Trunking"> 
           <consistency-rationale>
             This SFR applies to SIP trunking, which is a logical interface that is beyond the original scope of the Base-PP.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> requires the TSF to implement SIP trunking using defined authentication and encryption methods.
           </comp-lev>
-          <management>TBD
+          <management>The following actions could be considered for the management functions in FMT: <h:ul>
+            <h:li>Configuration of SIP communications.</h:li>
+          </h:ul>
           </management>
-          <audit>TBD
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST: <h:ul>
+            <h:li>All SIP trunk authentication attempts.</h:li>
+          </h:ul>
           </audit>
-          <dependencies>TBD
+          <dependencies>FCS_TLSC_EXT.1 TLS Client Protocol without Mutual Authentication<h:p/> 
+            FCS_TLSC_EXT.2 TLS Client Support for Mutual Authentication<h:p/>
+            FCS_TLSS_EXT.1 TLS Server Protocol without Mutual Authentication<h:p/>
+            FCS_TLSC_EXT.2 TLS Server Support for Mutual Authentication<h:p/>
+            FTP_ITC.1 Inter-TSF Trusted Channel 
           </dependencies>
           
           <f-element>
@@ -1516,6 +1639,7 @@
 			    <h:li>Configure auditable events</h:li>
 			    <h:li>Configure NAT</h:li>
 			    <h:li>Configure ports and cryptography for signaling and media communications</h:li>
+			    <h:li>Configure SIP communications</h:li>
 			  </h:ul></h:i>].
 			</title>
 			  <note role="Application">
@@ -1553,20 +1677,20 @@
       <sec:man_fru title="Resource Utilization (FRU)">
         
         <ext-comp-def title="Limited Priority of Service" fam-id="FRU_PRS_EXT">
-          <fam-behavior>TBD</fam-behavior> 
+          <fam-behavior>This family defines requirements for prioritizing communication packets and bandwidth.</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="fru_prs_ext.1" name="Limited Priority of Service"> 
           <consistency-rationale>
             This SFR applies to enforcement of bandwidth priority of service, which is a mechanism that is beyond the scope of the Base-PP and does not interfere with the ability of the Base-PP to process valid network traffic securely.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> requires the TSF to implement mechanisms to limit the amount of network bandwidth that is available to subjects based on certain attributes.
           </comp-lev>
-          <management>TBD
+          <management>No specific management functions are identified.
           </management>
-          <audit>TBD
+          <audit>There are no auditable events foreseen.
           </audit>
-          <dependencies>TBD
+          <dependencies>None
           </dependencies>
           
           <f-element>
@@ -1776,20 +1900,24 @@
       <sec:impl_fia title="Identification and Authentication (FIA)">
         
         <ext-comp-def title="Session Initiation Protocol Registration" fam-id="FIA_SIPS_EXT">
-          <fam-behavior>TBD</fam-behavior> 
+          <fam-behavior>This family defines requirements for SIP registration.</fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="fia_sips_ext.1" name="Session Initiation Protocol Registration"> 
           <consistency-rationale>
             This SFR applies to SIP registration, which is beyond the original scope of the Base-PP.
           </consistency-rationale>
           
-          <comp-lev>TBD
+          <comp-lev> defines requirements for how the TSF must implement SIP registration, including protocol implementations and constraints on authentication.
           </comp-lev>
-          <management>TBD
+          <management>The following actions could be considered for the management functions in FMT: <h:ul>
+            <h:li>Configuration of SIP communications.</h:li>
+          </h:ul>
           </management>
-          <audit>TBD
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:<h:ul>
+            <h:li>Call Detail Record (CDR)</h:li>
+          </h:ul>
           </audit>
-          <dependencies>TBD
+          <dependencies>None
           </dependencies>
           
           <f-element>
@@ -1814,6 +1942,11 @@
               characters in the set of [<h:i>upper case characters, lower case characters, numbers, and the following special characters: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”, 
                 and <assignable>other supported special characters</assignable></h:i>].
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall support ESC authentication passwords that contain at least <assignable>minimum numeric length</assignable> characters in the set of <assignable>supported character set</assignable>.
+              </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element>
             <title>
