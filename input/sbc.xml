@@ -50,6 +50,7 @@
       <term abbr="ACL"  full="Access Control List"/>
       <term abbr="B2BUA"  full="Back-To-Back User Agent"/>
       <term abbr="CDR"  full="Call Detail Record"/>
+      <term abbr="DoS"  full="Denial of Service"/>
       <term abbr="DPI"  full="Deep Packet Inspection"/>
       <term abbr="ESC" full="Enterprise Session Controller">
         A voice/video over IP (VVoIP) infrastructure device that is used to set up and tear down calls between VVoIP endpoints.
@@ -64,6 +65,7 @@
         A means of communication between a media gateway and a media gateway controller.
       </term>
       <term abbr="NAT"  full="Network Address Translation"/>
+      <term abbr="QoS"  full="Quality of Service"/>
       <term abbr="RTCP"  full="RTP Control Protocol"/>
       <term abbr="RTP"  full="Real-Time Transport Protocol"/>
       <term abbr="PSTN"  full="Public Switched Telephone Network"/>
@@ -513,13 +515,7 @@
                 This SFR is selection-based in the NDcPP but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server.
               </title>
               <aactivity>
-                <TSS>TBD
-                <h:p/></TSS>
-                <Guidance>TBD
-                  <h:p/></Guidance>
-                <Tests>
-                  TBD
-                </Tests>
+                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -533,13 +529,7 @@
                   This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS.
                 </title>
                 <aactivity>
-                  <TSS>TBD
-                    <h:p/></TSS>
-                  <Guidance>TBD
-                    <h:p/></Guidance>
-                  <Tests>
-                    TBD
-                  </Tests>
+                  <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
                 </aactivity>
               </f-element>
             </f-component>
@@ -553,13 +543,9 @@
                 This SFR is selection-based in the NDcPP but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server.
               </title>
               <aactivity>
-                <TSS>TBD
-                  <h:p/></TSS>
-                <Guidance>TBD
-                  <h:p/></Guidance>
-                <Tests>
-                  TBD
-                </Tests>
+                <TSS>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:p/></TSS>
+                <Guidance>There are no additional guidance evaluation activities for this component beyond what the NDcPP requires.<h:p/></Guidance>
+                <Tests>There are no additional test evaluation activities for this component beyond what the NDcPP requires.</Tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -573,13 +559,7 @@
                 This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS.
               </title>
               <aactivity>
-                <TSS>TBD
-                  <h:p/></TSS>
-                <Guidance>TBD
-                  <h:p/></Guidance>
-                <Tests>
-                  TBD
-                </Tests>
+                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -596,13 +576,7 @@
                 This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
               </title>
               <aactivity>
-                <TSS>TBD
-                  <h:p/></TSS>
-                <Guidance>TBD
-                  <h:p/></Guidance>
-                <Tests>
-                  TBD
-                </Tests>
+                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -616,13 +590,7 @@
                 This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
               </title>
               <aactivity>
-                <TSS>TBD
-                  <h:p/></TSS>
-                <Guidance>TBD
-                  <h:p/></Guidance>
-                <Tests>
-                  TBD
-                </Tests>
+                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -637,13 +605,7 @@
                 This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
               </title>
               <aactivity>
-                <TSS>TBD
-                  <h:p/></TSS>
-                <Guidance>TBD
-                  <h:p/></Guidance>
-                <Tests>
-                  TBD
-                </Tests>
+                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -684,15 +646,10 @@
             <note role="application">
               TLS is mandated for SIP trunking as required by FIA_SIPT_EXT.1. SNMPv3 added as a selection to support FAU_ARP_EXT.1.
             </note>
-              <aactivity>
-                <TSS>TBD
-                  <h:p/></TSS>
-                <Guidance>TBD
-                  <h:p/></Guidance>
-                <Tests>
-                  TBD
-                </Tests>
-              </aactivity>
+                <aactivity>
+                  <no-tests>The evaluator shall evaluate this SFR in the manner specified in the NDcPP except that SNMPv3 communications shall be tested (if claimed) in addition to any other selected protocols. 
+                    Testing for SNMPv3 is performed through evaluation of FAU_ARP_EXT.1 if claimed there.</no-tests>
+                </aactivity>
             </f-element>
           </f-component>
         </sec:from_nd_ftp>
@@ -751,12 +708,23 @@
               The selected protocols must be reflected in FTP_ITC.1.
             </note>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to transmit potential security violations to an alert receiver in the operational environment. 
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to configure the TOE 
+                so that it is able to communicate potential security violations to an alert receiver in the operational environment using the selected protocols. 
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall deploy the TOE in an environment that contains an alert receiver in the operational environment. 
+                The evaluator shall configure the TOE to communicate with an alert receiver in the manner that is specified by the operational guidance. 
+                The evaluator shall deploy a packet capture tool that is capable of sniffing the traffic between the TOE and the alert receiver. 
+                For each type of potential security violation that is defined by the ST, the evaluator shall cause that potential security violation to occur on the TOE, 
+                including configuring the TOE to detect the behavior as a potential security violation if it is necessary to do so.
+                <h:p/>
+                Depending on what the TSF considers to be potential security violations, 
+                it may be necessary for the evaluator to set up traffic generators, heat guns, or other equipment that is used to simulate potential security violations.
+                <h:p/>
+                After this is done, the evaluator shall observe via use of the packet capture tool and direct interaction with the alert receiver 
+                that the TSF transmitted the potential security violation and that it correctly used the selected protocols.
               </Tests>
             </aactivity>
           </f-element>
@@ -930,12 +898,28 @@
       </h:ol>
     </title>
   <aactivity>
-    <TSS>TBD
+    <TSS>The evaluator shall examine the TSS to determine that it identifies the TOE’s auditable events. 
+      If the TOE is distributed across multiple components, the evaluator shall also ensure that the TSS identifies the component that is responsible for each type of auditable event.
       <h:p/></TSS>
-    <Guidance>TBD
+    <Guidance>The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and provides a format for audit records. 
+      Each audit record format type must be covered, along with a brief description of each field. 
+      The evaluator shall check to make sure that every audit event type mandated by the PP-Module 
+      and claimed in the ST is described and that the description of the fields contains the 
+      information required in FAU_GEN.1.2/SBC and the additional information specified in the Auditable Events table of the PP-Module.
+      <h:p/>
+      If the TOE’s default configuration does not include all required auditable events, 
+      the evaluator shall check the operational guidance to ensure that it includes instructions on how to place the TOE into its evaluated configuration by ensuring that all required auditable events are generated.
       <h:p/></Guidance>
     <Tests>
-      TBD
+      The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate audit records 
+      in accordance with the EAs associated with the functional requirements in the PP-Module. 
+      Additionally, the evaluator shall test that each administrative action applicable in the context of the PP-Module is auditable. 
+      When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the operational guidance, 
+      and that the fields in each audit record have the proper entries. 
+      <h:p/>
+      Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
+      For example, the testing that is performed to ensure that the operational guidance provided is correct will verify that AGD_OPE.1 is satisfied 
+      and should address the invocation of the administrative actions that are needed to verify the audit records are generated as expected.
     </Tests>
   </aactivity>
 </f-element> 
@@ -964,12 +948,14 @@
             Examples of monitored audited events include authentication failures, self-test failures, or environmental failures (e.g. temperature violation).
             </note>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall verify that the TSS describes the conditions that will be flagged by the TSF as a potential security violation and whether these conditions are administratively configurable.
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>If the conditions that are flagged by the TSF as a potential security violation are configurable, 
+                the evaluator shall review the operational guidance to determine that it describes how an administrator can configure potential security violations.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                Testing for this SFR is completed in conjunction with FAU_ARP_EXT.1. This SFR is tested by causing each type of potential security violation defined by the TSF 
+                and observing that they are correctly treated as such. This activity is performed as part of the EA for FAU_ARP_EXT.1 so a separate test is not required.
               </Tests>
             </aactivity>
           </f-element>
@@ -995,12 +981,22 @@
               The TOE must have the ability to generate these records when necessary but this SFR exists to allow for the generation of those events to be suppressed when the TOE is in its evaluated configuration.
             </note>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall examine the TSS to verify that it identifies the auditable events that can be suppressed and the filters that can be applied to suppress them. 
+                For example, if TOE has the ability to suppress the generation of events related to application of rules, 
+                the evaluator shall examine the TSS to determine whether this suppression is done globally, on a per-rule basis, etc.
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>The evaluator shall examine the operational guidance to verify that it identifies the auditable events that can be suppressed and instructions for enabling/disabling the generation of these events.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                For each auditable event that can be disabled, the evaluator shall configure the TOE to enable all auditable events, 
+                perform actions against the TOE that cause these events to be generated, and verify that the corresponding events are generated. 
+                The evaluator shall then disable the generation of a specific type of event, repeat the activity, and verify that a corresponding event is not generated. 
+                <h:p/>
+                For cases where multiple event types can be suppressed in this manner, 
+                or multiple mechanisms exist to selectively suppress events, 
+                the evaluator shall repeat this test as many times as necessary to ensure that each mechanism is validated. 
+                For example, if the suppression of audit records for application of traffic filtering rules can be configured globally, 
+                on a per-rule basis, and on a per-subject basis, the evaluator shall ensure that all three mechanisms of suppression are tested individually.
               </Tests>
             </aactivity>
           </f-element>
@@ -1082,12 +1078,45 @@
               </title>
             </ext-comp-def-title>
           <aactivity>
-              <TSS>TBD
+            <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to do the following: <h:ol>
+              <h:li>Support the use of SRTP and the cipher suites that are supported by the SRTP implementation.</h:li>
+              <h:li>Disable the SRTP NULL algorithm and/or provide the ability for it to be disabled by a Security Administrator.</h:li>
+              <h:li>Provide the ability for a Security Administrator to specify the SRTP ports used for SRTP communications.</h:li>
+            </h:ol>
                 <h:p/></TSS>
-              <Guidance>TBD
+            <Guidance>The evaluator shall verify that the TSS describes the ability of the TOE to do the following: <h:ol>
+              <h:li>How to configure the cipher suites used by SRTP.</h:li>
+              <h:li>[conditional, if “can be disabled by a [Security Administrator]” is selected in FCS_SRTP_EXT.1.3] How to disable use of the SRTP NULL algorithm.</h:li>
+              <h:li>How to specify the ports used for SRTP communications.</h:li>
+            </h:ol>
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall perform the following tests:
+                <testlist>
+                <test> <h:ol>
+                <h:li>If necessary, configure the TOE to use SRTP.</h:li> 
+                <h:li>Deploy a packet capture tool that is capable of sniffing traffic on the network interface where SRTP traffic will be transmitted.</h:li> 
+                <h:li>Establish an SRTP connection with the TOE and verify using packet captures and audit logs that SRTP communications are established and that encrypted traffic is transmitted over the SRTP channel.</h:li> 
+                <h:li>Repeat this test for each cipher suite supported for the SRTP implementation. </h:li>
+                </h:ol>
+                </test>
+                
+                <test> <h:ol>
+                <h:li>Deploy a packet capture tool that is capable of sniffing traffic on the network interface where SRTP traffic will be transmitted.</h:li> 
+                <h:li>[conditional, if “can be disabled by a [Security Administrator]” is selected in FCS_SRTP_EXT.1.3] Configure the TOE to disable use of the SRTP NULL algorithm.</h:li> 
+                <h:li>Transmit SRTP NULL message to the TOE and observe that it is rejected.</h:li>
+                </h:ol>
+                </test>
+                
+                <test> <h:ol>
+                  <h:li>Configure the TOE to use a specified port for SRTP traffic.</h:li> 
+                  <h:li>Deploy a packet capture tool that is capable of sniffing traffic on the network interface where SRTP traffic will be transmitted.</h:li> 
+                  <h:li>Transmit SRTP traffic to the TOE and observe that the traffic is transmitted over the specified port. </h:li>
+                  <h:li>Configure the TOE to use a different port for SRTP traffic. </h:li>
+                  <h:li>Transmit SRTP traffic to the TOE and observe that the traffic is transmitted over the newly-specified port.</h:li>
+                </h:ol>
+                </test>
+                </testlist>
               </Tests>
             </aactivity>
           </f-element>
@@ -1108,13 +1137,7 @@
             </title>
 
             <aactivity>
-              <TSS>TBD
-                <h:p/></TSS>
-              <Guidance>TBD
-                <h:p/></Guidance>
-              <Tests>
-                TBD
-              </Tests>
+              <no-tests>N/A - the evaluation of this SFR is performed as part of FDP_IFF.1.</no-tests>
             </aactivity>
           </f-element>
         </f-component>
@@ -1159,12 +1182,54 @@
                 any calling parties that are present on the denylist (identifiable by calling number or source IP address, or communications protocols) are explicitly denied</h:i>].
             </title>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall review the TSS to verify that it describes the ability of the TOE to function as a B2BUA and that it provides the ability to operate in either an allowlist or a denylist posture.
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>The evaluator shall review the operational guidance to verify that it provides instructions for 
+                setting the TOE into either an allowlist or a denylist posture and for how to add or remove entries from the allowlist or denylist.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall perform the following tests: 
+                <testlist>
+                  <test>Configure a custom Access Control List (ACL) to deny a call originating from an IP address or subnet. 
+                    Make a call from that IP address or subnet and verify the call cannot be completed. Verify calls from any other IP address or subnet will complete a call. 
+                  <h:p/></test>
+                  <test>Configure a custom ACL to only permit a call originating from an IP address or subnet. 
+                    Make a call from that IP address or subnet and verify the call can be completed. 
+                  <h:p/></test>
+                  <test>Configure a custom ACL to deny a call destined for an IP address or subnet. 
+                    Make a call to that IP address or subnet and verify the call cannot be completed. Verify calls to any other IP address or subnet will complete a call. 
+                  <h:p/></test>
+                  <test>Configure a custom ACL to only permit a call destined an IP address or subnet. 
+                    Make a call to that IP address or subnet and verify the call can be completed. Verify calls to any other IP address or subnet will not complete a call. 
+                  <h:p/></test>
+                  <test>Configure a custom ACL to deny a call using a certain signaling (e.g. SIP) or media (e.g. RTP) protocol. 
+                    Make a call using that protocol and verify the call cannot be completed. 
+                    If other signaling (e.g. H.323) and/or media (e.g. SRTP) protocols are supported, verify that they can be used to complete a call while this ACL is in effect. 
+                  <h:p/></test>
+                  <test>Configure a custom ACL to only permit a call using a certain signaling (e.g., SIP) or media (e.g., RTP) protocol. 
+                    Make a call using that protocol and verify the call can be completed. 
+                    If other signaling (e.g. H.323) and/or media (e.g. SRTP) protocols are supported, verify that they cannot be used to complete a call while this ACL is in effect. 
+                  <h:p/></test>
+                  <test>On the TOE, configure an allowlist of allowed callers by calling number and all other numbers to be blocked. 
+                    Verify the configuration through the audit log. Call through the TOE from each one of the allowlisted numbers. 
+                    Verify that each number can complete. Attempt a call through the TOE from other non-allowlisted numbers. Verify that the calls cannot complete. 
+                  <h:p/></test>
+                  <test>On the TOE, configure an allowlist of allowed callers by IP address and all other IP addresses to be blocked. 
+                    Verify the configuration through the audit log. Call through the TOE from each one of the allowlisted IP addresses. 
+                    Verify that each IP address can complete. Change the IP address of the end points; 
+                    however, keep the calling number the same. Attempt a call through the TOE from new IP addresses. Verify that the calls cannot complete. 
+                  <h:p/></test>
+                  <test>On the TOE, configure a denylist of disallowed callers by calling number and all other numbers to be allowed. 
+                    Verify the configuration through the audit log. Attempt to call through the TOE from each one of the denylisted numbers. 
+                    Verify that each number cannot complete. Call through the TOE from other non-denylisted numbers. 
+                    Verify that the calls can complete. 
+                  <h:p/></test>
+                  <test>On the TOE, configure a denylist of disallowed callers by IP address and all other IP addresses to be allowed. 
+                    Verify the configuration through the audit log. Attempt to call through the TOE from each one of the denylisted IP addresses. 
+                    Verify that each IP address cannot complete. Change the IP address of the end-points; however, keep the calling number the same. 
+                    Attempt a call through the TOE from new IP addresses. Verify that the calls can complete.
+                  <h:p/></test>
+                </testlist>
               </Tests>
             </aactivity>
           </f-element>
@@ -1201,6 +1266,35 @@
             <title>
               The TSF shall perform traffic filtering on network packets processed by the TOE. 
             </title>
+            <aactivity level="element">
+              <TSS>
+                The evaluator shall verify that the TSS provides a description of the TOE’s initialization/startup process, 
+                which clearly indicates where processing of network packets begins to take place, and provides a discussion that supports the assertion that packets cannot flow during this process.
+                <h:p/>
+                The evaluator shall verify that the TSS also includes a narrative that identifies the components 
+                (e.g., an active entity such as a process or task) involved in processing the network packets and 
+                describes the safeguards that would prevent packets flowing through the TOE without applying the ruleset in the event of a component failure. 
+                This could include the failure of a component, such as a process being terminated, or a failure within a component, such as memory buffers full and cannot process packets. 
+                <h:p/>
+              </TSS>
+              <Guidance>
+                The guidance documentation associated with this element is assessed in the subsequent test EAs.
+                <h:p/>
+              </Guidance>
+              <Tests>
+                The evaluator shall perform the following tests:
+                <testlist>
+                <test>The evaluator shall attempt to get network traffic to flow through the TOE while the TOE is being initialized. 
+                A steady flow of network packets that would otherwise be denied by the ruleset should be sourced and be directed to a host. 
+                The evaluator shall verify, using a packet sniffer, that none of the generated network traffic is permitted through the firewall during initialization.
+                <h:p/>
+                </test>The evaluator shall attempt to get network traffic to flow through the TOE while the TOE is being initialized. 
+                  A steady flow of network packets that would be permitted by the ruleset should be sourced and be directed at a host. 
+                  The evaluator shall verify, using a packet sniffer, that none of the generated network traffic is permitted through the TOE during initialization and is only permitted once initialization is complete.
+                </testlist>
+                <h:p/>
+              </Tests>
+            </aactivity>
           </f-element>
           <f-element>
             <title>
@@ -1279,6 +1373,77 @@
               <h:p/>
               If “H.323” is selected in this requirement, the ST must include the selection-based SFR FTP_ITC.1/H323.
             </note>
+            <aactivity level="element">
+              <TSS>
+                The evaluator shall verify that the TSS describes a packet filtering policy and the following attributes are identified as being configurable within traffic filtering rules for the associated protocols: <h:ul>
+                <h:li>IPv4/IPv6 <h:ul>
+                  <h:li>Source address (e.g., 10.0.0.1/16, 10.0.0.1, any)</h:li> 
+                  <h:li>Destination Address (e.g., 10.0.0.1/16, 10.0.0.1, any)</h:li> 
+                  <h:li>Transport Layer Protocol (e.g., TCP, UDP, TCP+UDP)</h:li>
+                </h:ul></h:li> 
+                <h:li>TCP/UDP (for signaling channel) <h:ul> 
+                  <h:li>Source Port</h:li> 
+                  <h:li>Destination Port</h:li>
+                </h:ul>
+                </h:li>
+                <h:li>Distinct interface (physical/virtual or trust zone, e.g., trusted/untrusted)</h:li> 
+                <h:li>Application (Real-Time Communications Protocol) <h:ul> 
+                  <h:li>Signaling (whatever is claimed by the TSF; SIP, H.323, or both)</h:li>
+                </h:ul>
+                </h:li>
+                </h:ul>
+                The evaluator shall verify that each rule can identify the following actions: permit or drop with the option to log the operation. 
+                The evaluator shall verify that the TSS identifies all interface types subject to the packet filtering policy 
+                and explains how rules are associated with distinct network interfaces. 
+               <h:p/> 
+              </TSS>
+              <Guidance>
+                The evaluator shall verify that the guidance documentation identifies the following attributes as being configurable within traffic filtering rules for the associated protocols:<h:ul>
+                  <h:li>IPv4/IPv6 <h:ul>
+                    <h:li>Source address (e.g., 10.0.0.1/16, 10.0.0.1, any)</h:li> 
+                    <h:li>Destination Address (e.g., 10.0.0.1/16, 10.0.0.1, any)</h:li> 
+                    <h:li>Transport Layer Protocol (e.g., TCP, UDP, TCP+UDP)</h:li>
+                  </h:ul></h:li> 
+                  <h:li>TCP/UDP (for signaling channel) <h:ul> 
+                    <h:li>Source Port</h:li> 
+                    <h:li>Destination Port</h:li>
+                  </h:ul>
+                  </h:li>
+                  <h:li>Distinct interface (physical/virtual or trust zone, e.g., trusted/untrusted)</h:li> 
+                  <h:li>Application (Real-Time Communications Protocol) <h:ul> 
+                    <h:li>Signaling (whatever is claimed by the TSF; SIP, H.323, or both)</h:li>
+                  </h:ul>
+                  </h:li>
+                </h:ul>
+                The evaluator shall verify that the guidance documentation indicates that each rule can identify the following actions: permit, drop, and log.
+                <h:p/>
+              </Guidance>
+              <Tests>
+                The evaluator shall perform the following tests: <testlist>
+                <test>The evaluator shall use the instructions in the guidance documentation to test that stateful packet filter firewall rules can be created that permit, drop, and log packets for each of the following attributes: 
+                  <h:ul>
+                    <h:li>IPv4/IPv6 <h:ul>
+                      <h:li>Source address (e.g., 10.0.0.1/16, 10.0.0.1, any)</h:li> 
+                      <h:li>Destination Address (e.g., 10.0.0.1/16, 10.0.0.1, any)</h:li> 
+                      <h:li>Transport Layer Protocol (e.g., TCP, UDP, TCP+UDP)</h:li>
+                    </h:ul></h:li> 
+                    <h:li>TCP/UDP (for signaling channel) <h:ul> 
+                      <h:li>Source Port</h:li> 
+                      <h:li>Destination Port</h:li>
+                    </h:ul>
+                    </h:li>
+                    <h:li>Distinct interface (physical/virtual or trust zone, e.g., trusted/untrusted)</h:li> 
+                    <h:li>Application (Real-Time Communications Protocol) <h:ul> 
+                      <h:li>Signaling (whatever is claimed by the TSF; SIP, H.323, or both)</h:li>
+                    </h:ul>
+                    </h:li>
+                  </h:ul>
+                <h:p/></test>
+                <test>Repeat Test 1 above as needed to ensure that traffic filtering rules can be defined for each distinct network interface type supported by the TOE.
+                </test>
+                </testlist>
+              </Tests>
+            </aactivity>
           </f-element>
           <f-element>
             <title>
@@ -1288,11 +1453,17 @@
               Whether or not logging is performed may be applied to individual rules or groups of rules on an independent basis. 
               For example, if there are six rules defined, the TOE should allow for any subset of these rules to be logged, independent of one another.  
             </note>
+            <aactivity level="element">
+              <no-tests>This element is evaluated through the evaluation activities for FFW_ACL_EXT.1.2.</no-tests>
+            </aactivity>
           </f-element>
           <f-element>
             <title>
               The TSF shall allow the traffic filtering rules to be assigned to each distinct network interface.
             </title>
+            <aactivity level="element">
+              <no-tests>This element is evaluated through the evaluation activities for FFW_ACL_EXT.1.2.</no-tests>
+            </aactivity>
           </f-element>
           <f-element>
             <title>
@@ -1307,24 +1478,102 @@
                 <selectable>completion of the expected information flow</selectable></selectables>.</h:li>
               </h:ul>
             </title>
+            <aactivity level="element">
+              <TSS>
+                The evaluator shall verify that the TSS identifies the protocols that support session handling to include both TCP and UDP.
+                <h:p/>
+                The evaluator shall verify that the TSS describes how sessions are established (including handshake processing) and maintained.
+                <h:p/>
+                The evaluator shall verify that for TCP, the TSS identifies and describes the use of the following attributes in session determination: 
+                source and destination addresses, source and destination ports, sequence number, and individual flags. 
+                <h:p/>
+                The evaluator shall verify that for UDP, the TSS identifies and describes the following attributes in session determination: source and destination addresses and source and destination ports.
+                <h:p/>
+                The evaluator shall verify that the TSS describes how established sessions are removed. 
+                The TSS shall describe how connections are removed for each protocol based on normal completion and/or timeout conditions. 
+                The TSS shall also indicate when session removal becomes effective (e.g., before the next packet that might match the session is processed).  
+                <h:p/>
+              </TSS>
+              <Guidance>
+                The evaluator shall verify that the guidance documentation describes session behaviors. For example, a TOE might not log packets that are permitted as part of an existing session.
+                <h:p/>
+              </Guidance>
+              <Tests>
+                The evaluator shall perform the following tests: 
+                <testlist>
+                <test>The evaluator shall configure the TOE to permit and log TCP traffic. 
+                  The evaluator shall initiate a TCP session. 
+                  While the TCP session is being established, the evaluator shall introduce session establishment packets with incorrect flags 
+                  to determine that the altered traffic is not accepted as part of the session 
+                  (i.e., a log event is generated to show the ruleset was applied). 
+                  After a TCP session is successfully established, the evaluator shall alter each of the session determining attributes 
+                  (source and destination addresses, source and destination ports, sequence number, flags) 
+                  one at a time in order to verify that the altered packets are not accepted as part of the established session.
+                <h:p/></test>
+                <test>The evaluator shall terminate the TCP session established per Test 1 as described in the TSS. 
+                  The evaluator shall then immediately send a packet matching the former session definition in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
+                <h:p/></test>
+                <test>The evaluator shall expire (i.e., reach timeout) the TCP session established per Test 1 as described in the TSS. 
+                  The evaluator shall then send a packet matching the former session in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
+                <h:p/></test>
+                <test>The evaluator shall configure the TOE to permit and log UDP traffic. 
+                  The evaluator shall establish a UDP session. Once a UDP session is established, 
+                  the evaluator shall alter each of the session determining attributes 
+                  (source and destination addresses, source and destination ports) one at a time in order to verify that the altered packets are not accepted as part of the established session. 
+                <h:p/></test>
+                <test>The evaluator shall expire (i.e., reach timeout) the UDP session established per Test 4 as described in the TSS. 
+                  The evaluator shall then send a packet matching the former session in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
           </f-element>
           <f-element>
             <title>
               The TSF shall process the applicable traffic filtering rules in an administratively defined order.
             </title>
+            <aactivity level="element">
+              <TSS>
+                The evaluator shall verify that the TSS describes the algorithm applied to incoming packets, 
+                including the processing of default rules, determination of whether a packet is part of an established session, 
+                and application of administrator defined and ordered ruleset. 
+                <h:p/>
+              </TSS>
+              <Guidance>
+                The evaluator shall verify that the guidance documentation describes how the order of traffic filtering rules is determined 
+                and provides the necessary instructions so that an administrator can configure the order of rule processing.
+                <h:p/>
+              </Guidance>
+              <Tests>
+                The evaluator shall perform the following tests:
+                <testlist>
+                <test>The evaluator shall devise two equal stateful traffic filtering rules with alternate operations – permit and drop. The rules should then be deployed in two distinct orders and in each case the evaluator shall ensure that the first rule is enforced in both cases by generating applicable packets and using packet capture and logs for confirmation.
+                <h:p/></test>
+                <test>The evaluator shall repeat the procedure above, except that the two rules should be devised where one is a subset of the other (e.g., a specific address vs. a network segment). Again, the evaluator should test both orders to ensure that the first is enforced regardless of the specificity of the rule.
+                </test>
+                </testlist>
+              </Tests>
+            </aactivity>
           </f-element>
           <f-element>
             <title>
               The TSF shall deny packet flow if a matching rule is not identified.
             </title>
           
-            <aactivity>
-              <TSS>TBD
+            <aactivity level="element">
+              <TSS>The evaluator shall verify that the TSS describes the process for applying traffic filtering rules and also that the behavior 
+                (either by default, or as configured by the administrator) is to deny packets when there is no rule match 
+                unless another required condition allows the network traffic (i.e., FFW_ACL_EXT.1.5). 
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>The evaluator shall verify that the guidance documentation describes the behavior 
+                if no rules or special conditions apply to the network traffic. 
+                If the behavior is configurable, the evaluator shall verify that the guidance documentation provides the appropriate instructions to configure the behavior to deny packets with no matching rules.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                For each attribute in FFW_ACL_EXT.1.2, the evaluator shall construct a test to demonstrate that the TOE can correctly compare the attribute from the packet header to the ruleset, 
+                and shall demonstrate both the permit and deny for each case. 
+                The evaluator shall check the log in each case to confirm that the relevant rule was applied. 
+                The evaluator shall record a packet capture for each test to demonstrate the correct TOE behavior.
               </Tests>
             </aactivity>
           </f-element>
@@ -1402,12 +1651,44 @@
           <f-element>
             <title>The TSF shall not define a static range of ports to remain open indefinitely for the purpose of allowing VVoIP protocol traffic.</title>
           <aactivity>
-              <TSS>TBD
+            <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to perform stateful traffic filtering of all VVoIP protocols specified in FFW_ACL_EXT.2.1. 
+              The evaluator shall also verify that the TSS identifies the default stateful traffic filtering rules 
+              that are enforced by the TSF and what actions are taken when traffic is found to be in violation of one more of these rules.
+             <h:p/> 
+              The evaluator shall verify that the TSS describes the ability of the TOE to dynamically open and close ports 
+              to handle VVoIP traffic such that the ports used to carry VVoIP traffic are not predictable and ports are not open and listening for VVoIP traffic.
                 <h:p/></TSS>
-              <Guidance>TBD
+            <Guidance>If the TOE provides the ability to configure its stateful traffic filtering rules, the evaluator shall review the guidance documentation to verify that it provides instructions on how to do so.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall perform the following tests:
+                <testlist>
+                  <test>[conditional, “SIP” is selected in FFW_ACL_EXT.2.1 and “SIP traffic where a BYE message precedes an INVITE message” is selected in FFW_ACL_EXT.2.2] 
+                    The evaluator shall connect a remote endpoint to the TOE and use it to transmit an out of sequence SIP request where a BYE message is sent before an INVITE request. The evaluator shall use packet captures and audit logs to verify that the out of sequence traffic was sent and that the call attempt was dropped and logged by the TOE.
+                <h:p/></test>
+                  <test>[conditional, “H.323 (H.225, H.245)” is selected in FFW_ACL_EXT.2.1 and “H.225 traffic where an RFC reply precedes any other traffic” is selected in FFW_ACL_EXT.2.2]
+                    The evaluator shall connect a remote endpoint to the TOE and use it to transmit an out of sequence H.225 request where an 
+                    RCF reply is sent before any other traffic. The evaluator shall use packet captures and audit logs to verify that the out of sequence traffic was sent and that the call attempt was dropped and logged by the TOE.
+                <h:p/></test>
+                  <test>[conditional, “H.323 (H.225, H.245)” is selected in FFW_ACL_EXT.2.1 and “H.245 traffic where a ResponseMessage precedes a RequestMessage” is selected in FFW_ACL_EXT.2.2]
+                     The evaluator shall connect a remote endpoint to the TOE and use it to transmit an out of sequence H.245 request where a ResponseMessage is sent prior to a corresponding RequestMessage. 
+                     The evaluator shall use packet captures and audit logs to verify that the out of sequence traffic was sent and that the call attempt was dropped and logged by the TOE.
+                <h:p/></test>
+                  <test>[conditional, “MGCP” is selected in FFW_ACL_EXT.2.1 and “MGCP traffic where DLCX message precedes a CRCX message” is selected in FFW_ACL_EXT.2.2] 
+                    The evaluator shall connect a remote endpoint to the TOE and use to transmit an out of sequence MGCP request where a DLCX message is sent 
+                    prior to a corresponding CRCX message. The evaluator shall use packet captures and audit logs to verify that the out of sequence traffic was sent and that the call attempt was dropped and logged by the TOE.
+                <h:p/></test>
+                  <test>The evaluator shall configure a custom ACL to deny a call originating from an IP address or subnet. 
+                    The evaluator shall then make a call from that IP address or subnet and verify the call cannot be completed. 
+                    The evaluator shall also verify that calls from any other IP address or subnet will complete a call.
+                <h:p/></test>
+                  <test>The evaluator shall complete a call and capture the packets. 
+                    The evaluator shall examine the packet capture and take note of the ports the media channel (RTP, SRTP) is communicating over. 
+                    The evaluator shall then terminate the call. Using a packet generator, 
+                    the evaluator shall attempt to send traffic over the media ports that were active when the call was active. 
+                    Using packet captures, the evaluator shall then verify that the traffic does not traverse the TOE on these ports.
+                  </test>
+                </testlist>
               </Tests>
             </aactivity>
           </f-element>
@@ -1470,12 +1751,20 @@
               </title>
             </ext-comp-def-title>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall examine the TSS to verify that it describes the ability of the TOE to perform deep packet inspection for any or all of 
+                H.323, SIP, RTP, and RTCP traffic (consistent with the ST’s SFR claim) 
+                and the rules that the TSF enforces to determine whether the received traffic is well-formed. 
+                The evaluator shall also verify that the TSS describes what actions the TOE performs when malformed traffic is detected.
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>If the deep packet inspection function of the TSF is configurable, the evaluator shall verify that the guidance documentation provides instructions on how to configure this function.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall repeat the following test for each protocol that the TOE is capable of performing deep packet inspection for:
+                If the deep packet function is configurable, the evaluator shall configure this function to flag, log, and/or drop malformed traffic, 
+                depending on the selections chosen in FFW_DPI_EXT.1.3. 
+                The evaluator shall then transmit malformed traffic to the TOE. 
+                Using packet captures and audit logs, the evaluator shall verify that the malformed traffic was sent to the TOE, 
+                logged, and not transmitted any further. The evaluator shall repeat this test for each type of malformed traffic that can be detected by the TOE as described in FFW_DPI_EXT.1.2.
               </Tests>
             </aactivity>
           </f-element>
@@ -1496,7 +1785,7 @@
             <h:li>Configuration of NAT.</h:li>
           </h:ul>
           </management>
-          <audit>TBD
+          <audit>There are no auditable events foreseen.
           </audit>
           <dependencies>FDP_IFC.1 Subset Information Flow Control<h:p/>
             FMT_SMR.1 Security Roles
@@ -1547,12 +1836,19 @@
               The TSF shall maintain a NAT table to ensure that traffic bound for the internal network is directed to only the intended recipient.
             </title>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall review the TSS to verify that it describes the ability of the TOE to support NAT for the protocols specified in FFW_NAT_EXT.1.2. 
+                The evaluator shall also verify that the TSS describes how the TSF uses NAT to replace the IP address header value of outbound traffic 
+                and how the TOE keeps track of the original identities of calling parties.
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>If the ST author selected “a [Security Administrator]-defined value” in FFW_NAT_EXT.1.3, the evaluator shall verify that the guidance documentation provides instructions on how to define the IP address header value
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall place a call originating from the “internal” network to the “external” network. 
+                The evaluator shall use packet captures on the “external” network to verify that the data in the packets do not disclose the “internal” network’s addressing or naming structure.
+                <h:p/>
+                If the ST author selected “a Security Administrator-defined value” in FFW_NAT_EXT.1.3, 
+                the evaluator shall specify a given IP header value and verify that the traffic replaces the original header value with the administrator-defined value. 
+                If the ST author instead selected “the IP address of the TOE,” the evaluator shall verify that this header value is the IP address of the TOE’s interface to the “external” network.
               </Tests>
             </aactivity>
           </f-element>
@@ -1564,7 +1860,7 @@
       
       <sec:man_fia title="Identification and Authentication (FIA)">
         
-        <ext-comp-def title="Session Initiation Protocol Trunking" fam-id="FAU_SIPT_EXT">
+        <ext-comp-def title="Session Initiation Protocol Trunking" fam-id="FIA_SIPT_EXT">
           <fam-behavior>This family defines requirements for SIP validation, authentication, and traffic encryption. </fam-behavior> 
         </ext-comp-def>
         <f-component cc-id="fia_sipt_ext.1" name="Session Initiation Protocol Trunking"> 
@@ -1608,12 +1904,20 @@
           <f-element>
             <title>The TSF shall require a service provider to encrypt traffic using TLS in order to establish a SIP trunk.</title>
           <aactivity>
-              <TSS>TBD
+            <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to support authenticated and encrypted SIP trunking along with the method by which the trunk peer will authenticate to the TOE.
                 <h:p/></TSS>
-              <Guidance>TBD
+            <Guidance>The evaluator shall verify that the guidance documentation provides instructions on how to configure SIP trunking to require encryption and authentication if this function is configurable.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall perform the following tests:
+                <testlist>
+                <test>Configure the TOE to support an encrypted SIP trunk. Configure a trunk peer to communicate with the TOE using the SIP trunk. Present a correct username/password combination or valid X.509 certificate on the trunk peer with a SIP trunk request that originates from an expected IP address. Verify via packet capture and audit log that the session was established.
+                  <h:p/></test>
+                <test>Repeat Test 1 but provide incorrect username/password information or invalid X.509 certificate with the trunk peer and verify via packet capture and audit log that the session was not established.
+                  <h:p/></test>
+                <test>Repeat Test 1 but change the IP address of the trunk peer and verify via packet capture and audit log that the session was not established.
+                </test>
+                </testlist>
               </Tests>
             </aactivity>
           </f-element>
@@ -1659,15 +1963,27 @@
 			  </note>
 			<aactivity>
 			  <TSS>
-			    TBD
+			    The evaluator shall examine the TSS to determine that, for each administrative function listed in the SFR, 
+			    the ability to execute the function and the logical interfaces used to perform the function is claimed. 
+			    For each of these functions, the evaluator shall also confirm that the TSS details how the ability to manipulate the TSF data through these interfaces is disallowed for non-administrative users.
 			    <h:p/>
 			  </TSS>
 			  <Guidance> 
-			    TBD
+			    The evaluator shall review the guidance documentation to determine that each of the functions detailed in the TSS are identified, 
+			    and that configuration information is provided to ensure that only administrators have access to the functions.
 			    <h:p/>
 			  </Guidance>
 			  <Tests>
-			  TBD 
+			    For each management function specified in FMT_SMF.1.1/SBC, the evaluator shall access the TOE with appropriate authorizations, 
+			    perform the required function, and demonstrate that configuration of the function results in the proper expected behavior. 
+			    For behavior related to SBC functionality (as opposed to manipulation of user accounts), this may be tested in conjunction with other SFRs.
+			    <h:p/>
+			    The evaluator shall also ensure that all relevant management functionality from FMT_SMF.1 in the Base-PP that relates to the SBC PP-Module are tested in conjunction with SBC functionality. 
+			    For example, for SBC functions that rely on time services, 
+			    the evaluator shall ensure that a Security Administrator can either manually configure the time or specify NTP server connectivity and ensure that the SBC functions will make use of the configured time data.
+			    <h:p/>
+			    The evaluator shall also demonstrate that a user who lacks privileges to execute these functions (as described in the operational guidance) are unable to execute them.
+			    <h:p/><comment>[JF] It was commented elsewhere that there was a statement that implies NTP support is required. If it does end up being required, the example listed in this test should be changed.</comment>
 			  </Tests>
 			</aactivity>
 		</f-element>
@@ -1703,12 +2019,22 @@
               The TSF shall ensure that each access to network bandwidth shall be mediated on the basis of the subject’s assigned priority and R-factor.
             </title>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to prioritize traffic flows as well as the mechanism by which access to network bandwidth is granted by the TSF.
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>The evaluator shall examine the guidance documentation for a description of how to configure Quality of Service (QoS) for the TOE, including how to set tags for given traffic flows.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall perform the following tests:
+                <testlist>
+                <test>Configure the TOE to support QoS. Set QoS tags for media and signaling traffic flows. Complete a call between calling parties that are connected to the TOE via two different external interfaces.
+                Verify, using packet captures, that traffic between the TOE and the callee is tagged with appropriate QoS markings.
+                <h:p/></test>
+                <test>Configure the TOE to support QoS. Set QoS tags for media and signaling traffic flows. 
+                  Configure one remote endpoint to act as a calling party that sends a continuous stream of VVoIP traffic (media and signaling) 
+                  to another endpoint that is connected to the TOE via a different external interface. 
+                  Verify using packet captures that traffic between the TOE and the callee is tagged with appropriate QoS markings, and that the QoS R-factor is being updated as the traffic persists.
+                </test>
+                </testlist>
               </Tests>
             </aactivity>
           </f-element>
@@ -1730,12 +2056,21 @@
               The intent of this SFR is for the TOE to be resistant to denial of service attacks.
             </note>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall verify that the TSS describes the internal resources that the TSF can protect from DoS attacks as well as the types of behavior that would constitute a DoS attack against each of these resources.
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>If the ability to protect against DoS attacks is configurable, the evaluator shall verify that the operational guidance provides instructions on how to configure this function.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall perform the following tests:
+                <testlist>
+                <test>Using a tool of choice, attempt a DoS attack that creates excess CPU cycles. Place a call while this attack occurs. Verify through packet capture and audio file or screenshot that the call was successful.
+                  <h:p/></test>
+                <test>Using a tool of choice, attempt a DoS attack that attempts to exhaust the TOE’s memory. Place a call while this attack occurs. Verify through packet capture and audio file or screenshot that the call was successful.
+                  <h:p/></test>
+                <test>Using a tool of choice, perform protocol fuzzing for each communications protocol supported by the TOE. Verify that fuzzing does not cause the TOE to be compromised or to experience degraded functionality.
+                For each tool of choice used to perform these tests, the evaluator shall provide justification for the appropriateness of the chosen tool.
+                </test>
+                </testlist>
               </Tests>
             </aactivity>
           </f-element>
@@ -1771,19 +2106,11 @@
 			    <title>The TSF shall initiate communication via the trusted channel for [<h:i>all communications with the ESC</h:i>]. 
 			    </title>
 			      
-				  <aactivity>
-				    <TSS>
-				      TBD
-				      <h:p/>
-				    </TSS>
-				    <Guidance>
-				      TBD
-				      <h:p/> 
-				    </Guidance>
-				    <Tests>
-				      TBD
-				    </Tests>
-				  </aactivity>	  
+			    <aactivity>
+			      <no-tests>
+			        This SFR is an iteration of FTP_ITC.1 as defined in the NDcPP. The evaluator shall repeat the EAs defined for FTP_ITC.1 in the NDcPP for this iteration of the SFR.
+			      </no-tests>
+			    </aactivity>  
 			  </f-element>
 		  </f-component>
 	    
@@ -1818,18 +2145,10 @@
 	        </title>
 	        
 	        <aactivity>
-	          <TSS>
-	            TBD
-	            <h:p/>
-	          </TSS>
-	          <Guidance>
-	            TBD
-	            <h:p/> 
-	          </Guidance>
-	          <Tests>
-	            TBD
-	          </Tests>
-	        </aactivity>	  
+	          <no-tests>
+	            This SFR is an iteration of FTP_ITC.1 as defined in the NDcPP. The evaluator shall repeat the EAs defined for FTP_ITC.1 in the NDcPP for this iteration of the SFR.
+	          </no-tests>
+	        </aactivity>
 	      </f-element>
 	    </f-component>
 	    
@@ -1874,18 +2193,10 @@
               FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, and FCS_IPSEC_EXT.1 are defined in the Base-PP.
             </note>
             <aactivity>
-              <TSS>
-                TBD
-                <h:p/>
-              </TSS>
-              <Guidance>
-                TBD
-                <h:p/> 
-              </Guidance>
-              <Tests>
-                TBD
-              </Tests>
-            </aactivity>	  
+              <no-tests>
+                This SFR is an iteration of FTP_ITC.1 as defined in the NDcPP. The evaluator shall repeat the EAs defined for FTP_ITC.1 in the NDcPP for this iteration of the SFR.
+              </no-tests>
+            </aactivity>  
           </f-element>
         </f-component>
         
@@ -1959,12 +2270,27 @@
             This SFR is therefore implementation-dependent based on whether the SBC has the capability to perform its own SIP registration of devices.
           </note>
             <aactivity>
-              <TSS>TBD
+              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to support SIP in compliance with RFC 3261, 
+                including the ability to require password authentication for SIP REGISTER function requests. 
+                The evaluator shall also verify that the TSS describes the allowed composition of SIP authentication passwords.
+                <h:p/>
+                The evaluator shall verify that the TSS describes the ability of the TSF to modify SIP header values for SIP traffic received by the TOE prior to retransmitting it.
                 <h:p/></TSS>
-              <Guidance>TBD
+              <Guidance>The evaluator shall verify that the guidance documentation indicates that SIP REGISTER requests must be authenticated by the TOE along with the minimum password strength required for the authentication credential.
+                <h:p/>
+                The evaluator shall also verify that the guidance documentation provides instructions for how to configure the TOE to manipulate SIP header values.
                 <h:p/></Guidance>
               <Tests>
-                TBD
+                The evaluator shall perform the following tests:
+                <testlist>
+                <test>Attempt to have a SIP client issue a SIP REGISTER request without providing authentication credentials. Observe that the request is rejected and logged by the TSF.
+                  <h:p/></test>
+                <test>Attempt to have a SIP client issue a SIP REGISTER request with authentication credentials using characters not supported by the TSF. Observe that the request is rejected and logged by the TSF.
+                  <h:p/></test>
+                <test>Attempt to have a SIP client issue a SIP REGISTER request with valid authentication credentials using characters supported by the TSF. Observe that the request is accepted and logged by the TSF. Repeat this test as many times as necessary to ensure that passwords of the minimum and maximum supported lengths are used and that each supported character is used in at least one password.
+                  <h:p/></test>
+                Test 4: Configure the TOE to manipulate SIP header values. Place a call through the TOE. Capture traffic both before it is received by the TOE and after it exits the TOE. Verify that the SIP header values have been modified. Repeat for each supported header modification, as necessary.
+                </testlist>
               </Tests>
             </aactivity>
           </f-element>
