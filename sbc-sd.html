@@ -876,10 +876,15 @@ The following sections list Common Criteria and technology terms used in this do
                 <li id="_t_33"><b><a href="#_t_33" class="definition">Test 1</a>: </b>Configure the TOE to support QoS. Set QoS tags for media and signaling traffic flows. Complete a call between calling parties that are connected to the TOE via two different external interfaces.
                 Verify, using packet captures, that traffic between the TOE and the callee is tagged with appropriate QoS markings.
                 <p></p></li>
-                <li id="_t_34"><b><a href="#_t_34" class="definition">Test 2</a>: </b>Configure the TOE to support QoS. Set QoS tags for media and signaling traffic flows. 
-                  Configure one remote endpoint to act as a calling party that sends a continuous stream of VVoIP traffic (media and signaling) 
-                  to another endpoint that is connected to the TOE via a different external interface. 
-                  Verify using packet captures that traffic between the TOE and the callee is tagged with appropriate QoS markings, and that the QoS R-factor is being updated as the traffic persists.
+                <li id="_t_34"><b><a href="#_t_34" class="definition">Test 2</a>: </b>Configure the TOE to support QoS. Set QoS tags for media and signaling traffic flows. Configure one remote endpoint to act as a calling party that sends a continuous stream of VVoIP traffic 
+                  (media and signaling) to another endpoint that is connected to the TOE via a different external interface.  
+                  Using a tool of choice, create a data stream of non-VVoIP (no media and no signaling) traffic that ingresses one interface, 
+                  passes through the TOE, and egresses on the TOE. These shall be the same interfaces used by the VVoIP traffic. 
+                  Verify using packet captures that traffic between the TOE and the callee is tagged with appropriate QoS markings, and that
+                  VVoIP and non-VVoIP traffic packets are passed through the TOE.  
+                  Change the TOE QoS configuration to rate-limit, or police, non-VVoIP traffic. 
+                  Verify either using packet captures that VVoIP traffic passes through the TOE while non-VVoIP traffic is rate-limited 
+                  (egress packets are less than ingress traffic) OR that Rating factor (R-Factor) and/or Mean Opinion Score (MOS) values signal mediation.
                 </li>
                 </ul>
               </div></div><div class="comp" id=""><h4>FRU_RSA.1 Maximum Quotas</h4><div class="component-activity-header">FRU_RSA.1</div>
