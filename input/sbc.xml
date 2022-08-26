@@ -64,6 +64,7 @@
       <term abbr="MGCP" full="Media Gateway Control Protocol">
         A means of communication between a media gateway and a media gateway controller.
       </term>
+      <term abbr="MOS"  full="Mean Opinion Score"/>
       <term abbr="NAT"  full="Network Address Translation"/>
       <term abbr="QoS"  full="Quality of Service"/>
       <term abbr="RTCP"  full="RTP Control Protocol"/>
@@ -2016,7 +2017,7 @@
           </f-element>
           <f-element>
             <title>
-              The TSF shall ensure that each access to network bandwidth shall be mediated on the basis of the subject’s assigned priority and R-factor.
+              The TSF shall ensure that each access to network bandwidth shall be mediated on the basis of the subject’s assigned priority.
             </title>
             <aactivity>
               <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to prioritize traffic flows as well as the mechanism by which access to network bandwidth is granted by the TSF.
@@ -2029,10 +2030,15 @@
                 <test>Configure the TOE to support QoS. Set QoS tags for media and signaling traffic flows. Complete a call between calling parties that are connected to the TOE via two different external interfaces.
                 Verify, using packet captures, that traffic between the TOE and the callee is tagged with appropriate QoS markings.
                 <h:p/></test>
-                <test>Configure the TOE to support QoS. Set QoS tags for media and signaling traffic flows. 
-                  Configure one remote endpoint to act as a calling party that sends a continuous stream of VVoIP traffic (media and signaling) 
-                  to another endpoint that is connected to the TOE via a different external interface. 
-                  Verify using packet captures that traffic between the TOE and the callee is tagged with appropriate QoS markings, and that the QoS R-factor is being updated as the traffic persists.
+                <test>Configure the TOE to support QoS. Set QoS tags for media and signaling traffic flows. Configure one remote endpoint to act as a calling party that sends a continuous stream of VVoIP traffic 
+                  (media and signaling) to another endpoint that is connected to the TOE via a different external interface.  
+                  Using a tool of choice, create a data stream of non-VVoIP (no media and no signaling) traffic that ingresses one interface, 
+                  passes through the TOE, and egresses on the TOE. These shall be the same interfaces used by the VVoIP traffic. 
+                  Verify using packet captures that traffic between the TOE and the callee is tagged with appropriate QoS markings, and that
+                  VVoIP and non-VVoIP traffic packets are passed through the TOE.  
+                  Change the TOE QoS configuration to rate-limit, or police, non-VVoIP traffic. 
+                  Verify either using packet captures that VVoIP traffic passes through the TOE while non-VVoIP traffic is rate-limited 
+                  (egress packets are less than ingress traffic) OR that Rating factor (R-Factor) and/or Mean Opinion Score (MOS) values signal mediation.
                 </test>
                 </testlist>
               </Tests>
