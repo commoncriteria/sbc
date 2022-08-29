@@ -16,7 +16,6 @@ output/sbc-release-linkable.html: SNMPv3
 output/sbc-release-linkable.html: STM
 output/sbc-release-linkable.html: Stateful
 output/sbc-release-linkable.html: adminsitrative
-output/sbc-release-linkable.html: allowlist
 output/sbc-release-linkable.html: allowlisted
 output/sbc-release-linkable.html: callee
 output/sbc-release-linkable.html: denylist
@@ -47,7 +46,6 @@ output/sbc-release.html: SNMPv3
 output/sbc-release.html: STM
 output/sbc-release.html: Stateful
 output/sbc-release.html: adminsitrative
-output/sbc-release.html: allowlist
 output/sbc-release.html: allowlisted
 output/sbc-release.html: callee
 output/sbc-release.html: denylist
@@ -73,7 +71,6 @@ output/sbc-sd.html: RequestMessage
 output/sbc-sd.html: ResponseMessage
 output/sbc-sd.html: SNMPv3
 output/sbc-sd.html: Stateful
-output/sbc-sd.html: allowlist
 output/sbc-sd.html: allowlisted
 output/sbc-sd.html: callee
 output/sbc-sd.html: denylist
@@ -101,7 +98,6 @@ output/sbc.html: SNMPv3
 output/sbc.html: STM
 output/sbc.html: Stateful
 output/sbc.html: adminsitrative
-output/sbc.html: allowlist
 output/sbc.html: allowlisted
 output/sbc.html: callee
 output/sbc.html: denylist
