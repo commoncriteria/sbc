@@ -23,6 +23,7 @@ A list of products that have passed evaluation against this Protection Profile c
 
 * [PP-Module for SBC](https://commoncriteria.github.io/pp/sbc/sbc-release.html) (html)
 * [PP-Module for SBC](https://commoncriteria.github.io/pp/sbc/sbc-release.pdf) (pdf)
+* [Quick Build Directory](https://commoncriteria.github.io/sbc)
 
 ## Release Version
 * No release version
