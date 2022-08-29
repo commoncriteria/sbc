@@ -5,6 +5,12 @@ on:
     branches:
     - '*'
     - '!gh-pages'
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: string
+        default: DEV
+        required: true
 
 jobs:
   test:
@@ -17,19 +23,30 @@ jobs:
         submodules: true
 
     - name: Install Build Packages
-      run: "sudo apt-get update && sudo apt-get install -y xsltproc hunspell pandoc"
+#      run: "sudo apt-get update && sudo apt-get install -y xsltproc hunspell pandoc"
+      run: "sudo apt-get update && sudo apt-get install -y xsltproc hunspell"
+
+    - name: Install Jing
+      run: wget -O - https://github.com/relaxng/jing-trang/releases/download/V20181222/jing-20181222.zip | jar -x
+
     # Get current banch name to use it as dest directory
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: extract_branch
 
-    - name: Install Jing
-      run: wget -O - https://github.com/relaxng/jing-trang/releases/download/V20181222/jing-20181222.zip | jar -x
-
-
     - name: Quick Build
-      run: WARN_PATH="output/SanityChecksOutput.md" make release 
+      run: |
+        WARN_PATH="output/SanityChecksOutput.md" make release 
+
+    - name: PDFify
+      if: ${{ github.ref_name != 'master' }}
+      run: |
+        sudo apt-get install -y wkhtmltopdf xvfb
+        xvfb-run --auto-servernum --server-args='-screen 0, 1024x768x16' /usr/bin/wkhtmltopdf \
+          --javascript-delay 15000 --footer-right '[page]' \
+          file://${PWD}/output/${PWD##*/}.html?expand=on \
+        output/${PWD##*/}-paged.pdf
 
     - id: validate
       run: |
@@ -41,12 +58,22 @@ jobs:
         SPELL_OUT="output/SpellCheckReport.txt" make spellcheck
         echo ::set-output name=LINES::$(wc -l output/SpellCheckReport.txt | { read first rest ; echo $first ; } )
 
-    - name: diff
-      run: make diff || true; 
-    # Little diff depends on having a git history. 
-    # The current checkout has  depth=1 and has no history
-    #- name: little diff
-    #  run: make little-diff || true
+    - id: tdate
+      run: |
+        echo "##[set-output name=TDATE;]$(cd transforms && git log -1 --format=%cs)"
+      
+    - name: Setup Java JDK
+      uses: actions/setup-java@v1.4.3
+      with:
+        java-version: 1.8
+    - name: Get DaisyDiff
+      run: wget -O- https://github.com/AndroidKitKat/ExecuteDaisy/archive/master.zip | jar -x
+      
+    - name: Make tmp dir
+      run: mkdir tmp
+      
+    - name: Diff against specified versions
+      run: DAISY_DIR=ExecuteDaisy-master make diff
 
     - name: Make a directory listing
       run: >
@@ -59,12 +86,6 @@ jobs:
            done;
            echo "</ol></body></html>") > index.html
  
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.0.0
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: output # The folder the action should deploy.
-
     - name: Prepare environment
       id: coverage
       run: |
@@ -85,18 +106,17 @@ jobs:
          echo ::set-output name=COLOR::$(if [ -s output/SanityChecksOutput.md ]; then echo red; else echo green; fi )
       id: status
       
+    # # This checkouts gh-pages branch
+    # - uses: actions/checkout@v1
+    #   with:
+    #     ref: ${{ steps.coverage.outputs.branch }}
 
-    - uses: actions/checkout@v1
-      with:
-        ref: ${{ steps.coverage.outputs.branch }}
-
-    # Create the directory where badges will be saved, if needed
-    - name: Create destination directory
-      env:
-        BADGE_PATH: ${{ steps.coverage.outputs.path }}
-      run: mkdir -p "${BADGE_PATH%/*}"
-
-
+    # # Create the directory where badges will be saved, if needed
+    # - name: Create destination directory
+    #   env:
+    #     BADGE_PATH: ${{ steps.coverage.outputs.path }}
+    #   run: mkdir -p "${BADGE_PATH%/*}"
+      
      # Use the output from the `coverage` step
     - name: Generate the spelling badge SVG image
       uses: emibcn/badge-action@v1
@@ -104,24 +124,23 @@ jobs:
         label: 'Misspellings'
         status: ${{ steps.spellcheck.outputs.LINES }}
         color: ${{ steps.coverage.outputs.spellcolor }}
-        path: ${{ steps.extract_branch.outputs.branch }}/spell-badge.svg
+        path: output/spell-badge.svg
 
-     # Use the output from the `coverage` step
-    - name: Generate the validation badge SVG image
+    - name: Generate the built branch SVG
       uses: emibcn/badge-action@v1
       with:
-        label: 'Validation'
-        status: ${{ steps.validate.outputs.VALERRORS }}
-        color: ${{ steps.coverage.outputs.valcolor }}
-        path: ${{ steps.extract_branch.outputs.branch }}/validation.svg
+        label: 'Last Built'
+        status: ${{ steps.extract_branch.outputs.branch }}
+        color: black
+        path:  "output/build-branch-badge.svg"
 
 
-    - name: Upload badge as artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: badge
-        path: ${{ steps.extract_branch.outputs.branch }}/spell-badge.svg
-        if-no-files-found: error
+    # - name: Upload badge as artifact
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: badge
+    #     path: build-branch-badge.svg
+    #     if-no-files-found: error
 
    # Use the output from the `coverage` step
     - name: Generate the badge SVG image
@@ -130,28 +149,28 @@ jobs:
         label: 'Warnings'
         status: ${{ steps.status.outputs.WORD }}
         color: ${{ steps.status.outputs.COLOR }}
-        path: ${{ steps.coverage.outputs.path }}
+        path: output/warnings.svg
 
-    - name: Upload badge as artifact
-      uses: actions/upload-artifact@v2
+        
+    - name: Generate the transforms badge
+      uses: emibcn/badge-action@v1
       with:
-        name: badge
-        path: ${{ steps.coverage.outputs.path }}
-        if-no-files-found: error
-
-    - name: Commit badges
-      continue-on-error: true
-      env:
-        BADGE: ${{ steps.coverage.outputs.path }}
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add "${{ steps.extract_branch.outputs.branch }}"
-        git commit -m "Add/Update badges"
-
-    - name: Push badge commit
-      uses: ad-m/github-push-action@master
-      if: ${{ success() }}
+        label: 'Transforms'
+        status: ${{ steps.tdate.outputs.TDATE }}
+        color: gray
+        path: output/transforms.svg
+        
+     # Use the output from the `coverage` step
+    - name: Generate the validation badge SVG image
+      uses: emibcn/badge-action@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ steps.coverage.outputs.branch }}
+        label: 'Validation'
+        status: ${{ steps.validate.outputs.VALERRORS }}
+        color: ${{ steps.coverage.outputs.valcolor }}
+        path: output/validation.svg
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.0.0
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: output        # The folder the action should deploy.
