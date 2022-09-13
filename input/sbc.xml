@@ -1240,7 +1240,7 @@
           </f-element>
         </f-component>
       </sec:man_fdp>
-      <sec:man_ffw title="Firewall">
+      <sec:man_ffw title="Firewall (FFW)">
         
         <ext-comp-class class="Firewall (FFW)">
           <description>Firewall functionality involves selective processing of network traffic such that the traffic is routed or discarded based on some notion of whether the traffic is valid. 
@@ -1724,7 +1724,7 @@
           <f-element>
             <title>
               The TSF shall implement DPI for the following protocols: <selectables>
-                <selectable>H.323 (H.225, H.245)</selectable>
+                <selectable id="dpi_H323">H.323 (H.225, H.245)</selectable>
                 <selectable>SIP</selectable>
                 <selectable>RTP</selectable>
                 <selectable>RTCP</selectable></selectables>. 
@@ -2172,7 +2172,7 @@
       <sec:sel_ftp title="Trusted Path/Channels (FTP)">
         
         <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (H.323 Communications)" iteration="H323">
-          <depends on-sel="filters_H323" and="stateful_H323" also="H323_SDP"/>
+          <depends on1="filters_H323" on2="stateful_H323" on3="dpi_H323" on4="H323_SDP"/>
           <consistency-rationale>
             This PP-Module iterates an SFR defined in the Base-PP to define a new external interface for communications using H.323. 
             This does not interfere with the ability of the Base-PP to enforce its security functionality on the existing logical interfaces.
