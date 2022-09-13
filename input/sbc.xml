@@ -2179,7 +2179,6 @@
           </consistency-rationale>
           <f-element>
             <title>
-              <comment>[JF] need syntax for when there are >3 triggers for a sel-based SFR (FFW_ACL_EXT.1, FFW_ACL_EXT.2, FFW_DPI_EXT.1, FIA_SIPS_EXT.1)</comment>
               The TSF shall provide an <h:b>H.323</h:b> communication channel <h:b>in accordance with ITU-REC H.235.0</h:b> between itself and 
               <h:b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and <selectables>
                 <selectable>IPsec as specified in FCS_IPSEC_EXT.1</selectable>
