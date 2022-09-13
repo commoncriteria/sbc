@@ -25,7 +25,6 @@ output/sbc-release-linkable.html: denylisted
 output/sbc-release-linkable.html: doesn
 output/sbc-release-linkable.html: firewalling
 output/sbc-release-linkable.html: retransmitting
-output/sbc-release-linkable.html: sel
 output/sbc-release-linkable.html: stateful
 output/sbc-release-linkable.html: transcoding
 output/sbc-release.html: 2e
@@ -55,7 +54,6 @@ output/sbc-release.html: denylisted
 output/sbc-release.html: doesn
 output/sbc-release.html: firewalling
 output/sbc-release.html: retransmitting
-output/sbc-release.html: sel
 output/sbc-release.html: stateful
 output/sbc-release.html: transcoding
 output/sbc-sd.html: 2e
@@ -110,7 +108,6 @@ output/sbc.html: doesn
 output/sbc.html: firewalling
 output/sbc.html: retransmitting
 output/sbc.html: ruleset
-output/sbc.html: sel
 output/sbc.html: stateful
 output/sbc.html: subnet
 output/sbc.html: testlist
