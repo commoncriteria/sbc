@@ -3,7 +3,6 @@ output/sbc-release-linkable.html: CEM
 output/sbc-release-linkable.html: CRCX
 output/sbc-release-linkable.html: DLCX
 output/sbc-release-linkable.html: DTLSC
-output/sbc-release-linkable.html: ECD
 output/sbc-release-linkable.html: ITU
 output/sbc-release-linkable.html: JF
 output/sbc-release-linkable.html: MSA
@@ -32,7 +31,6 @@ output/sbc-release.html: CEM
 output/sbc-release.html: CRCX
 output/sbc-release.html: DLCX
 output/sbc-release.html: DTLSC
-output/sbc-release.html: ECD
 output/sbc-release.html: ITU
 output/sbc-release.html: JF
 output/sbc-release.html: MSA
@@ -69,7 +67,6 @@ output/sbc-sd.html: RequestMessage
 output/sbc-sd.html: ResponseMessage
 output/sbc-sd.html: SNMPv3
 output/sbc-sd.html: Stateful
-output/sbc-sd.html: Testlists
 output/sbc-sd.html: allowlisted
 output/sbc-sd.html: callee
 output/sbc-sd.html: denylist
@@ -77,14 +74,12 @@ output/sbc-sd.html: denylisted
 output/sbc-sd.html: ruleset
 output/sbc-sd.html: stateful
 output/sbc-sd.html: subnet
-output/sbc-sd.html: testlist
 output/sbc.html: 2e
 output/sbc.html: AGD
 output/sbc.html: CEM
 output/sbc.html: CRCX
 output/sbc.html: DLCX
 output/sbc.html: DTLSC
-output/sbc.html: ECD
 output/sbc.html: ITU
 output/sbc.html: JF
 output/sbc.html: MSA
@@ -97,7 +92,6 @@ output/sbc.html: SMR
 output/sbc.html: SNMPv3
 output/sbc.html: STM
 output/sbc.html: Stateful
-output/sbc.html: Testlists
 output/sbc.html: additioanl
 output/sbc.html: adminsitrative
 output/sbc.html: allowlisted
@@ -110,5 +104,4 @@ output/sbc.html: retransmitting
 output/sbc.html: ruleset
 output/sbc.html: stateful
 output/sbc.html: subnet
-output/sbc.html: testlist
 output/sbc.html: transcoding
