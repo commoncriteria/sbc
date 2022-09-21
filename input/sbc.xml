@@ -1095,8 +1095,6 @@
                 <h:p/></Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
-                <comment>[JF] Testlists do not appear to be working properly with the current transforms - the tests below are 1.1 through 1.3 rather than being 1-3. The next testlist,
-                in FDP_IFF.1, is tests 2.1 through 2.10 rather than restarting at 1.</comment>
                 <testlist>
                 <test> <h:ol>
                 <h:li>If necessary, configure the TOE to use SRTP.</h:li> 
@@ -1241,11 +1239,11 @@
         </f-component>
       </sec:man_fdp>
       <sec:man_ffw title="Firewall (FFW)">
-        
+        <class-description>Firewall functionality involves selective processing of network traffic such that the traffic is routed or discarded based on some notion of whether the traffic is valid. 
+          Requirements in this class define capabilities for these processing functions.
+        </class-description>        
         <ext-comp-class class="Firewall (FFW)">
-          <description>Firewall functionality involves selective processing of network traffic such that the traffic is routed or discarded based on some notion of whether the traffic is valid. 
-            Requirements in this class define capabilities for these processing functions.
-          <comment>[JF] This text is in the ext-comp-class tag but is being placed in the body text instead of the ECD.</comment></description>
+          <description/>
         </ext-comp-class>
         <ext-comp-def title="Traffic Filtering" fam-id="FFW_ACL_EXT">
           <fam-behavior>
