@@ -457,7 +457,7 @@
           <description>When user data is transmitted between calling parties, the calling parties expect that this data is only transmitted to the intended recipients. 
             The SBC is expected to provide this assurance through correctly functioning as a B2BUA and through correct implementation of SIP.
             <h:p/>
-            <h:b>Addressed by:</h:b> FDP_IFC.1, FDP_IFF.1, FFW_NAT_EXT.1, FIA_SIPT_EXT.1, FIA_SIPS_EXT.1 (implementation-dependent)
+            <h:b>Addressed by:</h:b> FDP_IFC.1, FDP_IFF.1, FFW_NAT_EXT.1, FIA_SIPT_EXT.1, FIA_SIPS_EXT.1 (implementation-based)
           </description>
           <consistency-rationale>
             The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
@@ -479,7 +479,7 @@
           <rationale>
             This SFR supports the objective by defining the use of SIP trunking, which requires authentication of endpoints to ensure data is only transmitted to the intended endpoint.
           </rationale>
-          <addressed-by>FIA_SIPS_EXT.1 (implementation-dependent)</addressed-by>
+          <addressed-by>FIA_SIPS_EXT.1 (implementation-based)</addressed-by>
           <rationale>
             This SFR supports the objective by defining an optional capability to handle SIP registration in cases where the OE does not include an ESC that will provide that functionality.  
           </rationale>
@@ -2273,7 +2273,7 @@
             This SFR is optional because this functionality is not standard for SBCs because device registration can generally be handled by an ESC in the TOE’s OE. 
             However, in some cases, SIP registration directly to the SBC is required. 
             If an SBC advertises this service, it is expected that this functionality be included within the TOE boundary. 
-            This SFR is therefore implementation-dependent based on whether the SBC has the capability to perform its own SIP registration of devices.
+            This SFR is therefore implementation-based on whether the SBC has the capability to perform its own SIP registration of devices.
           </note>
             <aactivity>
               <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to support SIP in compliance with RFC 3261, 
@@ -2406,7 +2406,7 @@
         <h:td>Feature Dependent</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FIA_SIPS_EXT.1 (implementation-dependent)</h:td>
+        <h:td>FIA_SIPS_EXT.1 (implementation-based)</h:td>
         <h:td>Session Initiation Protocol Registration</h:td>
         <h:td>Feature Dependent</h:td>
       </h:tr>
