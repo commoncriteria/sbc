@@ -104,7 +104,7 @@
         <h:p/>
         The following diagram represents a typical deployment of the TOE and its operational environment (OE). 
         Note that the TOE boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
-        <h:p/> <comment>[JF] Note figure has known issues (blurry, figure title in actual image, duplicate trusted channel entry in key). Will need to re-make if editable version doesn't exist</comment>
+        <h:p/> 
 	     <h:p/>
         <figure entity="images/figure1.png" title="SBC Deployment Model" id="OperEnv"/>
         <h:p/>
@@ -369,12 +369,10 @@
         
         <SO name="O.SYSTEM_MONITORING">
           <description>In order to ensure that potentially malicious activity is detected, the NDcPP requires security-relevant events to be audited. 
-            The SBC also provides security functions to support system monitoring, defines additional security-relevant events for specific SBC functions, 
-            and requires the use of a Network Time Protocol (NTP) server to provide accurate system time. 
+            The SBC also provides security functions to support system monitoring and defines additional security-relevant events for specific SBC functions. 
             The SBC is also expected to support real-time system monitoring by providing the ability to automatically generate alerts when certain types of events occur.
             <h:p/>
             <h:b>Addressed by:</h:b> FAU_ARP_EXT.1, FAU_GEN.1/SBC, FAU_SAA.1, FAU_SEL.1
-            <h:p/> <comment>[JF] This is saying that NTP is required but that's not currently backed up by SFRs. Should it be? e.g. mandate the NTP selection in Base-PP FPT_STM_EXT.1 and mandate FCS_NTP_EXT.1</comment>
           </description>
           <consistency-rationale>
             The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
@@ -737,7 +735,7 @@
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
-                <h:li><h:b>All adminsitrative actions;</h:b></h:li>
+                <h:li><h:b>All administrative actions;</h:b></h:li>
                 <h:li><h:b>[<h:i>Specifically defined auditable events listed in the Auditable Events table (<xref to="auditSBC"/>)</h:i></h:b></h:li>
               </h:ol>
             <h:table>
@@ -1424,7 +1422,8 @@
               </Guidance>
               <Tests>
                 The evaluator shall perform the following tests: <testlist>
-                <test>The evaluator shall use the instructions in the guidance documentation to test that stateful packet filter firewall rules can be created that permit, drop, and log packets for each of the following attributes: 
+                <test id="stateful-rules-definition">The evaluator shall use the instructions in the guidance documentation to test 
+                  that stateful packet filter firewall rules can be created that permit, drop, and log packets for each of the following attributes: 
                   <h:ul>
                     <h:li>IPv4/IPv6 <h:ul>
                       <h:li>Source address (e.g., 10.0.0.1/16, 10.0.0.1, any)</h:li> 
@@ -1443,7 +1442,7 @@
                     </h:li>
                   </h:ul>
                 <h:p/></test>
-                <test>Repeat Test 1 above as needed to ensure that traffic filtering rules can be defined for each distinct network interface type supported by the TOE.
+                <test>Repeat <xref to="stateful-rules-definition"/> above as needed to ensure that traffic filtering rules can be defined for each distinct network interface type supported by the TOE.
                 </test>
                 </testlist>
               </Tests>
@@ -1505,7 +1504,7 @@
               <Tests>
                 The evaluator shall perform the following tests: 
                 <testlist>
-                <test>The evaluator shall configure the TOE to permit and log TCP traffic. 
+                <test id="invalid-tcp-flags">The evaluator shall configure the TOE to permit and log TCP traffic. 
                   The evaluator shall initiate a TCP session. 
                   While the TCP session is being established, the evaluator shall introduce session establishment packets with incorrect flags 
                   to determine that the altered traffic is not accepted as part of the session 
@@ -1514,18 +1513,18 @@
                   (source and destination addresses, source and destination ports, sequence number, flags) 
                   one at a time in order to verify that the altered packets are not accepted as part of the established session.
                 <h:p/></test>
-                <test>The evaluator shall terminate the TCP session established per Test 1 as described in the TSS. 
+                <test>The evaluator shall terminate the TCP session established per <xref to="invalid-tcp-flags"/> as described in the TSS. 
                   The evaluator shall then immediately send a packet matching the former session definition in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
                 <h:p/></test>
-                <test>The evaluator shall expire (i.e., reach timeout) the TCP session established per Test 1 as described in the TSS. 
+                  <test>The evaluator shall expire (i.e., reach timeout) the TCP session established per <xref to="invalid-tcp-flags"/> as described in the TSS. 
                   The evaluator shall then send a packet matching the former session in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
                 <h:p/></test>
-                <test>The evaluator shall configure the TOE to permit and log UDP traffic. 
+                <test id="invalid-udp-flags">The evaluator shall configure the TOE to permit and log UDP traffic. 
                   The evaluator shall establish a UDP session. Once a UDP session is established, 
                   the evaluator shall alter each of the attributes for determining the validity of a session 
                   (source and destination addresses, source and destination ports) one at a time in order to verify that the altered packets are not accepted as part of the established session. 
                 <h:p/></test>
-                <test>The evaluator shall expire (i.e., reach timeout) the UDP session established per Test 4 as described in the TSS. 
+                <test>The evaluator shall expire (i.e., reach timeout) the UDP session established per <xref to="invalid-udp-flags"/> as described in the TSS. 
                   The evaluator shall then send a packet matching the former session in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
                   </test>
                 </testlist>
@@ -1915,11 +1914,14 @@
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
-                <test>Configure the TOE to support an encrypted SIP trunk. Configure a trunk peer to communicate with the TOE using the SIP trunk. Present a correct username and password combination or valid X.509 certificate on the trunk peer with a SIP trunk request that originates from an expected IP address. Verify via packet capture and audit log that the session was established.
+                <test id="valid-trunk">Configure the TOE to support an encrypted SIP trunk. Configure a trunk peer to communicate with the TOE using the SIP trunk. 
+                  Present a correct username and password combination or valid X.509 certificate on the trunk peer with a SIP trunk request that 
+                  originates from an expected IP address. Verify via packet capture and audit log that the session was established.
                   <h:p/></test>
-                <test>Repeat Test 1 but provide incorrect username and password information or invalid X.509 certificate with the trunk peer and verify via packet capture and audit log that the session was not established.
+                <test>Repeat <xref to="valid-trunk"/> but provide incorrect username and password information or invalid 
+                  X.509 certificate with the trunk peer and verify via packet capture and audit log that the session was not established.
                   <h:p/></test>
-                <test>Repeat Test 1 but change the IP address of the trunk peer and verify via packet capture and audit log that the session was not established.
+                  <test>Repeat <xref to="valid-trunk"/> but change the IP address of the trunk peer and verify via packet capture and audit log that the session was not established.
                 </test>
                 </testlist>
               </Tests>
@@ -1934,7 +1936,7 @@
       <sec:man_fmt title="Security Management (FMT)">
         <f-component name="Specification of Management Functions (SBC)" id="fel-managementfun-as" cc-id="fmt_smf.1" iteration="SBC">
 			<consistency-rationale>
-			  This SFR is an iteration of a Base-PP requirement that defines additioanl management functions for SBC functionality that the Base-PP could not be expected to cover.
+			  This SFR is an iteration of a Base-PP requirement that defines additional management functions for SBC functionality that the Base-PP could not be expected to cover.
 			</consistency-rationale>
 			<f-element>
 			<title>The TSF shall be capable of performing the following management functions <h:b>related to SBC functionality</h:b>: [<h:i>Ability of a Security Administrator to:
@@ -1959,6 +1961,7 @@
 			    For example, the SBC portion of the TOE relies on the reliable time function that must be implemented by the Base-PP portion of the TOE. 
 			    If the Base-PP implements this using NTP, the “Ability to set the time which is used for time-stamps” or “Ability to configure NTP” 
 			    management function defined in FMT_SMF.1 in the Base-PP can be used to address this PP-Module’s dependency on reliable system time.
+			    Note that support for NTP is recommended but not required.
 			    <h:p/>
 			    The 'configurable auditable events' function relates to FAU_SEL.1, specifically with respect to allowing a Security Administrator 
 			    to determine whether a given event is auditable. As this refers to the events for the triggering of various filtering rules, 
@@ -1987,7 +1990,6 @@
 			    the evaluator shall ensure that a Security Administrator can either manually configure the time or specify NTP server connectivity and ensure that the SBC functions will make use of the configured time data.
 			    <h:p/>
 			    The evaluator shall also demonstrate that a user who lacks privileges to execute these functions (as described in the operational guidance) are unable to execute them.
-			    <h:p/><comment>[JF] It was commented elsewhere that there was a statement that implies NTP support is required. If it does end up being required, the example listed in this test should be changed.</comment>
 			  </Tests>
 			</aactivity>
 		</f-element>
@@ -2295,7 +2297,7 @@
                   <h:p/></test>
                 <test>Attempt to have a SIP client issue a SIP REGISTER request with valid authentication credentials using characters supported by the TSF. Observe that the request is accepted and logged by the TSF. Repeat this test as many times as necessary to ensure that passwords of the minimum and maximum supported lengths are used and that each supported character is used in at least one password.
                   <h:p/></test>
-                Test 4: Configure the TOE to manipulate SIP header values. Place a call through the TOE. Capture traffic both before it is received by the TOE and after it exits the TOE. Verify that the SIP header values have been modified. Repeat for each supported header modification, as necessary.
+                Configure the TOE to manipulate SIP header values. Place a call through the TOE. Capture traffic both before it is received by the TOE and after it exits the TOE. Verify that the SIP header values have been modified. Repeat for each supported header modification, as necessary.
                 </testlist>
               </Tests>
             </aactivity>
