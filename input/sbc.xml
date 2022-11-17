@@ -285,7 +285,7 @@
             <h:p/>
             <h:b>Addressed by:</h:b> FCS_TLSC_EXT.1 (refined from Base-PP), FCS_TLSC_EXT.2 (refined from Base-PP), FCS_TLSS_EXT.1 (refined from Base-PP), 
             FCS_TLSS_EXT.2 (refined from Base-PP), FIA_X509_EXT.1/Rev (refined from Base-PP), FIA_X509_EXT.2 (refined from Base-PP), 
-            FIA_X509_EXT.3 (refined from Base-PP), FTP_ITC.1 (refined from Base-PP), FCS_SRTP_EXT.1, FIA_SIPT_EXT.1, FTP_ITC.1/ESC, FTP_ITC.1/VVoIP, FTP_ITC.1/H323 (selection-based)
+            FIA_X509_EXT.3 (refined from Base-PP), FTP_ITC.1 (refined from Base-PP), FCS_SRTP_EXT.1, FIA_SIPT_EXT.1, FTP_ITC.1/ARP, FTP_ITC.1/ESC, FTP_ITC.1/VVoIP, FTP_ITC.1/H323 (selection-based)
           </description>
           <consistency-rationale>
             The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
@@ -333,6 +333,10 @@
           </rationale>
           <addressed-by>FTP_ITC.1/ESC</addressed-by>
           <rationale>
+            This SFR supports the objective by defining how communications of potential security violations are protected.
+          </rationale>
+          <addressed-by>FTP_ITC.1/ESC</addressed-by>
+          <rationale>
             This SFR supports the objective by defining how communications with an external ESC are protected.
           </rationale>
           <addressed-by>FTP_ITC.1/VVoIP</addressed-by>
@@ -372,7 +376,7 @@
             The SBC also provides security functions to support system monitoring and defines additional security-relevant events for specific SBC functions. 
             The SBC is also expected to support real-time system monitoring by providing the ability to automatically generate alerts when certain types of events occur.
             <h:p/>
-            <h:b>Addressed by:</h:b> FAU_ARP_EXT.1, FAU_GEN.1/SBC, FAU_SAA.1, FAU_SEL.1
+            <h:b>Addressed by:</h:b> FAU_ARP_EXT.1, FAU_GEN.1/SBC, FAU_SAA.1, FAU_SEL.1, FTP_ITC.1/ARP
           </description>
           <consistency-rationale>
             The NDcPP does not define any TOE objectives; instead, it maps SFRs directly to threats. 
@@ -394,6 +398,10 @@
           <rationale>
             This SFR supports the objective by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
             audit records can be suppressed when it is not practical to generate those records for performance reasons.
+          </rationale>
+          <addressed-by>FTP_ITC.1/ARP</addressed-by>
+          <rationale>
+            This SFR supports the objective by defining the trusted channel used to securely communicate potential security violations.
           </rationale>
         </SO>
         
@@ -608,8 +616,7 @@
         <sec:from_nd_ftp title="Trusted Path/Channels (FTP)">
           <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel"> 
             <consistency-rationale>
-              This PP-Module refines the Base-PP SFR to mandate the use of one of the trusted protocols defined by the Base-PP and 
-              to optionally allow the use of a new protocol (SNMPv3) specifically for the use of the alert channel that is defined in the PP-Module.
+              This PP-Module refines the Base-PP SFR to mandate the use of one of the trusted protocols defined by the Base-PP.
             </consistency-rationale>
             <f-element>
               <title>
@@ -619,7 +626,6 @@
                   <selectable>SSH</selectable>
                   <selectable>DTLS</selectable>
                   <selectable>HTTPS</selectable>
-                  <selectable><h:b>SNMPv3</h:b></selectable>
                   <selectable><h:b>no other protocol</h:b></selectable></selectables>
                 to provide a trusted communication channel between itself and authorized IT entities supporting the following capabilities: audit server, 
                 <selectables>
@@ -639,11 +645,10 @@
                 The TSF shall initiate communication via the trusted channel for <assignable>list of services for which the TSF is able to initiate communications</assignable>.
               </title>
             <note role="application">
-              TLS is mandated for SIP trunking as required by FIA_SIPT_EXT.1. SNMPv3 added as a selection to support FAU_ARP_EXT.1.
+              TLS is mandated for SIP trunking as required by FIA_SIPT_EXT.1.
             </note>
                 <aactivity>
-                  <no-tests>The evaluator shall evaluate this SFR in the manner specified in the NDcPP except that SNMPv3 communications shall be tested (if claimed) in addition to any other selected protocols. 
-                    Testing for SNMPv3 is performed through evaluation of FAU_ARP_EXT.1 if claimed there.</no-tests>
+                  <no-tests>The evaluator shall evaluate this SFR in the manner specified in the NDcPP.</no-tests>
                 </aactivity>
             </f-element>
           </f-component>
@@ -2092,6 +2097,47 @@
  
       
 	  <sec:man_ftp title="Trusted Path/Channels (FTP)">
+	    
+	      <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (Automatic Response)" iteration="ARP"> 
+	        <consistency-rationale>
+	          This SFR is used to specify the trusted channel used for transmission of alerts as specified in FAU_ARP_EXT.1.
+	        </consistency-rationale>
+	        <f-element>
+	          <title>
+	            The TSF shall <h:b>be capable of using  
+	              <selectables>
+	                <selectable>TLS</selectable>
+	                <selectable>IPsec</selectable>
+	                <selectable>SSH</selectable>
+	                <selectable>DTLS</selectable>
+	                <selectable>HTTPS</selectable>
+	                <selectable>SNMPv3</selectable>
+	              </selectables>
+	              to</h:b> provide a trusted communication channel between itself and 
+	            <h:b>authorized IT entities supporting the following capabilities: security audit automatic response</h:b> 
+	            that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data. 
+	          </title>
+	        </f-element>
+	        <f-element>
+	          <title>
+	            The TSF shall permit [<h:i>the TSF</h:i>] to initiate communication via the trusted channel.
+	          </title>
+	        </f-element>
+	        <f-element>
+	          <title>
+	            The TSF shall initiate communication via the trusted channel for [<h:i>transmission of potential security violations</h:i>].
+	          </title>
+	          <note role="application">
+	            This SFR is used to specify any trusted protocols that are implemented in support of FAU_ARP_EXT.1.
+	          </note>
+	          <aactivity>
+	            <no-tests>The evaluator shall evaluate this SFR in the manner specified for FTP_ITC.1 in the NDcPP except that SNMPv3 communications shall be tested (if claimed) in addition to any other selected protocols. 
+	              Testing for SNMPv3 is performed through evaluation of FAU_ARP_EXT.1 if claimed there.</no-tests>
+	          </aactivity>
+	        </f-element>
+	      </f-component>
+	    
+	    
 		  <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (ESC Communications)" iteration="ESC">
 		  <consistency-rationale>
 		    This PP-Module iterates an SFR defined in the Base-PP to define a new external interface for communications with an ESC. 
@@ -2166,7 +2212,12 @@
       </sec:man_ftp>
         
     </man-sfrs>
-   <opt-sfrs/>
+   <opt-sfrs>
+     
+  
+     
+     
+   </opt-sfrs>
     <sel-sfrs>
       
       <sec:sel_ftp title="Trusted Path/Channels (FTP)">
