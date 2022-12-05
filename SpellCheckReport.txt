@@ -3,7 +3,6 @@ output/sbc-release-linkable.html: CEM
 output/sbc-release-linkable.html: CRCX
 output/sbc-release-linkable.html: DLCX
 output/sbc-release-linkable.html: DTLSC
-output/sbc-release-linkable.html: ITU
 output/sbc-release-linkable.html: MSA
 output/sbc-release-linkable.html: NTP
 output/sbc-release-linkable.html: RCF
@@ -18,7 +17,6 @@ output/sbc-release-linkable.html: callee
 output/sbc-release-linkable.html: denylist
 output/sbc-release-linkable.html: denylisted
 output/sbc-release-linkable.html: firewalling
-output/sbc-release-linkable.html: retransmitting
 output/sbc-release-linkable.html: stateful
 output/sbc-release-linkable.html: transcoding
 output/sbc-release.html: 2e
@@ -26,7 +24,6 @@ output/sbc-release.html: CEM
 output/sbc-release.html: CRCX
 output/sbc-release.html: DLCX
 output/sbc-release.html: DTLSC
-output/sbc-release.html: ITU
 output/sbc-release.html: MSA
 output/sbc-release.html: NTP
 output/sbc-release.html: RCF
@@ -41,7 +38,7 @@ output/sbc-release.html: callee
 output/sbc-release.html: denylist
 output/sbc-release.html: denylisted
 output/sbc-release.html: firewalling
-output/sbc-release.html: retransmitting
+output/sbc-release.html: rules’
 output/sbc-release.html: stateful
 output/sbc-release.html: transcoding
 output/sbc-sd.html: 2e
@@ -49,17 +46,20 @@ output/sbc-sd.html: AGD
 output/sbc-sd.html: CEM
 output/sbc-sd.html: CRCX
 output/sbc-sd.html: DLCX
-output/sbc-sd.html: ITU
 output/sbc-sd.html: NTP
 output/sbc-sd.html: RCF
 output/sbc-sd.html: RequestMessage
 output/sbc-sd.html: ResponseMessage
 output/sbc-sd.html: SNMPv3
+output/sbc-sd.html: ST’s
 output/sbc-sd.html: Stateful
 output/sbc-sd.html: allowlisted
 output/sbc-sd.html: callee
 output/sbc-sd.html: denylist
 output/sbc-sd.html: denylisted
+output/sbc-sd.html: evaluator’s
+output/sbc-sd.html: fail’
+output/sbc-sd.html: pass’
 output/sbc-sd.html: ruleset
 output/sbc-sd.html: stateful
 output/sbc-sd.html: subnet
@@ -69,7 +69,6 @@ output/sbc.html: CEM
 output/sbc.html: CRCX
 output/sbc.html: DLCX
 output/sbc.html: DTLSC
-output/sbc.html: ITU
 output/sbc.html: MSA
 output/sbc.html: NTP
 output/sbc.html: RCF
@@ -84,8 +83,8 @@ output/sbc.html: callee
 output/sbc.html: denylist
 output/sbc.html: denylisted
 output/sbc.html: firewalling
-output/sbc.html: retransmitting
 output/sbc.html: ruleset
+output/sbc.html: rules’
 output/sbc.html: stateful
 output/sbc.html: subnet
 output/sbc.html: transcoding
