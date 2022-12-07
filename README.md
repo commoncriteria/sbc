@@ -26,7 +26,7 @@ A list of products that have passed evaluation against this Protection Profile c
 * [Quick Build Directory](https://commoncriteria.github.io/sbc)
 
 ## Release Version
-* No release version
+* [PP-Module for SBC](https://www.niap-ccevs.org/Profile/Info.cfm?PPID=478&id=478)
 
 ## Contributing
 
