@@ -1,0 +1,4 @@
+* https://commoncriteria.github.io/sbc/release-1.0-pub/sbc.html.pdf[sbc.html.pdf]
+* https://commoncriteria.github.io/sbc/release-1.0-pub/sbc-sd.html.pdf[sbc-sd.html.pdf]
+* https://commoncriteria.github.io/sbc/release-1.0-pub/sbc-release-linkable.html.pdf[sbc-release-linkable.html.pdf]
+* https://commoncriteria.github.io/sbc/release-1.0-pub/sbc-release.html.pdf[sbc-release.html.pdf]
