@@ -116,7 +116,15 @@
     </sec:Use_Cases> 
   </sec:Introduction>
   <sec:Conformance_Claims boilerplate="no">
-    <cclaims>
+    <CClaimsInfo cc-approach="direct-rationale" cc-version="cc-2022r1">
+      <cc-st-conf>exact</cc-st-conf>
+      <cc-pt2-conf>extended</cc-pt2-conf>
+      <cc-pt3-conf>conformant</cc-pt3-conf>
+      <cc-pp-conf/>
+      <cc-pp-config-with/>
+      <cc-pkg-claim/>
+    </CClaimsInfo>
+    <!-- <cclaims>
       <cclaim name="Conformance Statement">
         <description>
 	  <h:p>
@@ -137,9 +145,9 @@
         <description>This PP-Module does not
           claim conformance to any packages.</description>
       </cclaim>
-    </cclaims>
+    </cclaims> -->
   </sec:Conformance_Claims>
-  <sec:Security_Problem_Description>
+  <sec:Security_Problem_Definition>
     The security problem is described in terms of the threats that the TOE is expected to address, assumptions about its Operational Environment, and any organizational security policies that the TOE is expected to enforce.
     <sec:Threats>
       The following threats that are defined in this PP-Module extend the threats that are defined by the Base-PP.
@@ -244,7 +252,7 @@
       <!-- This PP-Module defines no additional organizational security policies beyond those specified in the NDcPP. -->
       <OSPs/>
     </sec:Organizational_Security_Policies>
-  </sec:Security_Problem_Description>
+  </sec:Security_Problem_Definition>
   <sec:Security_Objectives>
     <sec:Security_Objectives_for_the_TOE>
 
