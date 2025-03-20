@@ -113,5 +113,6 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/sec:impl_fia[1]""/f-component[1]""/f-element[4]""/aactivity[1]""/Tests[1]"The evalu"/testlist[1]""/test[2]"Attempt t"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/sec:impl_fia[1]""/f-component[1]""/f-element[4]""/aactivity[1]""/Tests[1]"The evalu"/testlist[1]""/test[3]"Attempt t"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/appendix[1]""/h:table[1]""/h:tr[2]""/h:td[2]"FDP_IFF.1"/h:p[1]""
+* Warning: fia_sips_ext.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/sec:impl_fia[1]""/f-component[1]""
 * Warning: Since FIA_SIPS_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
