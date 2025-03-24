@@ -1,3 +1,4 @@
+output/sbc-release-linkable.html: 0e
 output/sbc-release-linkable.html: 2e
 output/sbc-release-linkable.html: AGD
 output/sbc-release-linkable.html: CEM
@@ -22,6 +23,7 @@ output/sbc-release-linkable.html: ruleset
 output/sbc-release-linkable.html: stateful
 output/sbc-release-linkable.html: subnet
 output/sbc-release-linkable.html: transcoding
+output/sbc-release.html: 0e
 output/sbc-release.html: 2e
 output/sbc-release.html: CEM
 output/sbc-release.html: CRCX
@@ -44,6 +46,7 @@ output/sbc-release.html: firewalling
 output/sbc-release.html: rules’
 output/sbc-release.html: stateful
 output/sbc-release.html: transcoding
+output/sbc-sd.html: 0e
 output/sbc-sd.html: 2e
 output/sbc-sd.html: AGD
 output/sbc-sd.html: CEM
@@ -66,6 +69,7 @@ output/sbc-sd.html: pass’
 output/sbc-sd.html: ruleset
 output/sbc-sd.html: stateful
 output/sbc-sd.html: subnet
+output/sbc.html: 0e
 output/sbc.html: 2e
 output/sbc.html: AGD
 output/sbc.html: CEM
