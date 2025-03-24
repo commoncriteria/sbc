@@ -13,9 +13,9 @@
  
   <PPReference> 
     <ReferenceTable>
-      <PPVersion>1.0</PPVersion>
+      <PPVersion>1.1</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2022-12-05</PPPubDate>
+      <PPPubDate>2025-04-11</PPPubDate>
       <Keywords>Session Border Controller</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -24,6 +24,11 @@
       <version>1.0</version>
       <date>2022-12-05</date>
       <subject>Initial Release</subject>
+    </entry>
+    <entry>
+      <version>1.1</version>
+      <date>2025-04-11</date>
+      <subject>Apply NIAP Technical Decisions, Update to CC:2022</subject>
     </entry>
   </RevisionHistory>
   
@@ -36,7 +41,7 @@
       This PP-Module is intended for use with the following Base-PPs:
       <h:ul>
         <h:li>collaborative Protection Profile for
-          Network Devices, Version 2.2e (NDcPP)</h:li>
+          Network Devices, Version 3.0e (NDcPP)</h:li>
       </h:ul>
       This Base-PP is valid because a device that implements an SBC is a specific type of network device, 
       and there is nothing about the implementation of an SBC that would prevent any of the security capabilities defined by the Base-PP from being satisfied.
@@ -511,156 +516,99 @@
     </sec:Security_Objectives_Rationale>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="ND" plural="Network Devices">
-      <url><![CDATA[https://www.niap-ccevs.org/profile/Info.cfm?PPID=447&id=447]]></url>
+    <base-pp id="ND" version="3.0e" name="Network Device" product="Network Device" short="ND" plural="Network Devices">
+      <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
   	  <cPP/>
       <modified-sfrs>
         <!-- per open comment, it's unclear whether we need to treat any other NDcPP SFRs as 'modified' (most notably FIA_X509_EXT.1/Rev and FTP_ITC.1, or are those completely separate from what is needed for auth server) -->
 
-        <sec:from_nd_fia title="Cryptographic Support (FCS)">
-          <f-component cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol without Mutual Authentication"> 
-            <consistency-rationale>
+        <section title="Cryptographic Support (FCS)" id="nd-mod-fcs">
+          <base-sfr-spec cc-id="fcs_tlsc_ext.1" title="TLS Client Protocol without Mutual Authentication" id="nd-mod-fcs-tlsc-ext-1">
+          <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <f-element>
-              <title>
-                This SFR is selection-based in the NDcPP but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server.
-              </title>
-              <aactivity>
-                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-      
-            <f-component cc-id="fcs_tlsc_ext.2" name="TLS Client Support for Mutual Authentication"> 
-              <consistency-rationale>
+            <description>This SFR is selection-based in the NDcPP but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server. 
+            The SFR is unchanged from its original definition.</description>
+            <no-change/>
+            <set-status status="mandatory"/>
+          </base-sfr-spec>
+ 
+          <base-sfr-spec cc-id="fcs_tlsc_ext.2" title="TLS Client Support for Mutual Authentication" id="nd-mod-fcs-tlsc-ext-2">
+            <consistency-rationale>
                 This PP-Module mandates the inclusion of this optional SFR because it is required to implement the trusted communications required by the PP-Module.
-              </consistency-rationale>
-              <f-element>
-                <title>
-                  This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS.
-                </title>
-                <aactivity>
-                  <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
-                </aactivity>
-              </f-element>
-            </f-component>
-      
-          <f-component cc-id="fcs_tlss_ext.1" name="TLS Server Protocol without Mutual Authentication"> 
+            </consistency-rationale>
+            <description>This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
+            <no-change/>
+            <set-status status="mandatory"/>
+          </base-sfr-spec>
+          <base-sfr-spec cc-id="fcs_tlss_ext.1" title="TLS Server Protocol without Mutual Authentication" id="nd-mod-fcs-tlss-ext-1">
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <f-element>
-              <title>
-                This SFR is selection-based in the NDcPP but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server.
-              </title>
-              <aactivity>
-                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
-              </aactivity>
-            </f-element>
-          </f-component>
+            <description>This SFR is selection-based in the NDcPP but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server. The SFR is unchanged from its original definition.</description>
+            <no-change/>
+            <set-status status="mandatory"/>
+          </base-sfr-spec>
           
-          <f-component cc-id="fcs_tlss_ext.2" name="TLS Server Support for Mutual Authentication"> 
+          <base-sfr-spec cc-id="fcs_tlss_ext.2" title="TLS Server Support for Mutual Authentication" id="nd-mod-fcs-tlss-ext-2">
             <consistency-rationale>
               This PP-Module mandates the inclusion of this optional SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <f-element>
-              <title>
-                This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS.
-              </title>
-              <aactivity>
-                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
-              </aactivity>
-            </f-element>
-          </f-component>
+            <description>This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
+            <no-change/>
+            <set-status status="mandatory"/>
+          </base-sfr-spec>
       
-        </sec:from_nd_fia>
+        </section>
 
-        <sec:from_nd_fia title="Identification and Authentication (FIA)">
-          <f-component cc-id="fia_x509_ext.1" iteration="Rev" name="X.509 Certificate Validation"> 
+        <section title="Identification and Authentication (FIA)" id="nd-mod-fia">
+          <base-sfr-spec cc-id="fia_x509_ext.1" title="X.509 Certificate Validation" id="nd-mod-fia-x509-ext-1">
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <f-element>
-              <title>
-                This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
-              </title>
-              <aactivity>
-                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-          
-          <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication"> 
+            <description>This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <no-change/>
+            <set-status status="mandatory"/>
+          </base-sfr-spec>
+
+          <base-sfr-spec cc-id="fia_x509_ext.2" title="X.509 Certificate Authentication" id="nd-mod-fia-x509-ext-2">
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <f-element>
-              <title>
-                This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
-              </title>
-              <aactivity>
-                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
-              </aactivity>
-            </f-element>
-          </f-component>
+            <description>This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <no-change/>
+            <set-status status="mandatory"/>  
+          </base-sfr-spec>
           
-          
-          <f-component cc-id="fia_x509_ext.3" name="X.509 Certificate Requests"> 
+          <base-sfr-spec cc-id="fia_x509_ext.3" title="X.509 Certificate Requests" id="nd-mod-fia-x509-ext-3">
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <f-element>
-              <title>
-                This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality.
-              </title>
-              <aactivity>
-                <no-tests>There are no additional evaluation activities for this component beyond what the NDcPP requires.</no-tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-          
-        </sec:from_nd_fia>
-        <sec:from_nd_ftp title="Trusted Path/Channels (FTP)">
-          <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel"> 
+            <description>This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <no-change/>
+            <set-status status="mandatory"/>
+          </base-sfr-spec>          
+        </section>
+        <section title="Trusted Path/Channels (FTP)" id="nd-mod-ftp">
+          <base-sfr-spec cc-id="ftp_itc.1" title="Inter-TSF Trusted Channel" id="nd-mod-ftp-itc-1">
             <consistency-rationale>
               This PP-Module refines the Base-PP SFR to mandate the use of one of the trusted protocols defined by the Base-PP.
             </consistency-rationale>
-            <f-element>
-              <title>
-                The TSF shall be capable of using <h:b>TLS and</h:b> 
-                <selectables>
-                  <selectable>IPsec</selectable>
-                  <selectable>SSH</selectable>
-                  <selectable>DTLS</selectable>
-                  <selectable>HTTPS</selectable>
-                  <selectable><h:b>no other protocol</h:b></selectable></selectables>
-                to provide a trusted communication channel between itself and authorized IT entities supporting the following capabilities: audit server, 
-                <selectables>
-                  <selectable>authentication server</selectable>
-                  <selectable><assignable>other capabilities</assignable></selectable>
-                  <selectable>no other capabilities</selectable>
-                </selectables> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from disclosure and detection of modification of the channel data.
-              </title>
-            </f-element>
-            <f-element>
-              <title>
-                The TSF shall permit the TSF or the authorized IT entities to initiate communication via the trusted channel.
-              </title>
-            </f-element>
-            <f-element>
-              <title>
-                The TSF shall initiate communication via the trusted channel for <assignable>list of services for which the TSF is able to initiate communications</assignable>.
-              </title>
-            <note role="application">
-              TLS is mandated for SIP trunking as required by FIA_SIPT_EXT.1.
-            </note>
-                <aactivity>
-                  <no-tests>The evaluator shall evaluate this SFR in the manner specified in the NDcPP.</no-tests>
-                </aactivity>
-            </f-element>
-          </f-component>
-        </sec:from_nd_ftp>
+            <description>
+            <h:p>This SFR has been modified to mandate the use of TLS for inter-TSF trusted channels in the TOE. Any element not mentioned in this section is unchanged from its original definition.</h:p>
+            <h:p>The text of the requirement is replaced with:</h:p>
+            <h:p><h:b>FTP_ITC.1.1: </h:b>The TSF shall be capable of using <h:b>TLS and [selection: </h:b><h:i>IPsec, SSH, DTLS, HTTPS, <h:b>no other protocol</h:b></h:i>] to 
+            provide a trusted communication channel between itself and authorized IT entities supporting the following capabilities: audit server, 
+            [<h:b>selection: </h:b><h:i>authentication server, [<h:b>assignment: </h:b>other capabilities], no other capabilities</h:i>] 
+            that is logically distinct from other communication channels and provides assured identification of its end points and protection of 
+            the channel data from modification or disclosure.</h:p>
+            <h:p><h:b>FTP_ITC.1.2: </h:b>The TSF shall permit [<h:i>the TSF, the authorized IT entities</h:i>] to initiate communication via the trusted channel.</h:p>
+            <h:p><h:b>Application Note: </h:b>TLS is mandated for SIP trunking as required by FIA_SIPT_EXT.1.</h:p>
+            </description>
+            <!-- NDcPP does not exist in XML yet so no change can be modeled -->
+            <no-change/>
+          </base-sfr-spec>
+        </section>
         
 
       </modified-sfrs>
