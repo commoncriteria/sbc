@@ -762,8 +762,16 @@ The following sections list Common Criteria and technology terms used in this do
 					This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not claim conformance to 
 					any Protection Profile.
 				</dd><p></p><dd>There are no <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules that are allowed in a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> 
-					with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</dd><dt>Package Claim</dt><p></p><dd>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is not conformant to any 
-						Functional or Assurance Packages.</dd></dl>
+					with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
+					    Functional Package for TLS, version 2.0 conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
+					    Functional Package for X.509, version 1.0 conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any 
+						assurance packages.</li></ul></dd><p></p><dd>
+		The functional packages to which the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> conforms may include <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are not mandatory 
+		to claim for the sake of conformance. An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> that claims one or more of these functional 
+		packages may include any non-mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are appropriate to claim based on the 
+		capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and on any triggers for their inclusion based inherently on the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> 
+		selections made. 
+	</dd></dl>
     
   <h1 class="indexable" data-level="1" id="Security_Problem_Definition">3 Security Problem Definition</h1>
     The security problem is described in terms of the threats that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to address, assumptions about its Operational Environment, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to enforce.
@@ -905,6 +913,7 @@ Network Device
     </span><span class="note">
               The selected protocols must be reflected in FTP_ITC.1.
             </span></div></div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></div>
               
               
@@ -929,197 +938,63 @@ Network Device
         
         <div class="comp" id="FAU_GEN.1/SBC"><h4>FAU_GEN.1/SBC Audit Data Generation (Session Border Controller)</h4>
           
-<div class="element"><div class="reqid" id="FAU_GEN.1.1/SBC"><a href="#FAU_GEN.1.1/SBC" class="abbr">FAU_GEN.1.1/SBC</a></div><div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate an audit record of the following auditable
+          <div class="element"><div class="reqid" id="FAU_GEN.1.1/SBC"><a href="#FAU_GEN.1.1/SBC" class="abbr">FAU_GEN.1.1/SBC</a></div><div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate audit data of the following auditable
               events: <ol type="a">
                 <li>Start-up and shutdown of the audit functions;</li>
                 <li>All auditable events for the [<i>not specified</i>] level of audit;</li>
-                <li><b>All administrative actions;</b></li>
-                <li><b>[<i>Specifically defined auditable events listed in the Auditable Events table (<a onclick="showTarget('auditSBC')" href="#auditSBC" class="auditSBC-ref">Table <span class="counter">2</span></a>)</i></b></li>
-              </ol>
-            <table>
-              <tr>
-                <th>Requirement</th>
-                <th>Auditable Events</th>
-                <th>Additional Audit Record Contents</th>
-              </tr>
-              <tr>
-                <td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td>
-                <td colspan="2">None</td>
-              </tr>
-              <tr>
-                <td><a href="#FAU_SAA.1">FAU_SAA.1</a></td>
-                <td colspan="2">None</td>
-              </tr>
-              <tr>
-                <td><a href="#FAU_SEL.1">FAU_SEL.1</a></td>
-                <td colspan="2">None</td>
-              </tr>
-              <tr>
-                <td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td>
-                <td colspan="2">None</td>
-              </tr>
-              <tr>
-                <td><a href="#FDP_IFC.1">FDP_IFC.1</a></td>
-                <td colspan="2">None</td>
-              </tr>
-              <tr>
-                <td><a href="#FDP_IFF.1">FDP_IFF.1</a></td>
-                <td>Any modifications to the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy</td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td rowspan="3"><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td>
-                <td rowspan="3">Application of traffic filtering rules</td>
-                <td>Source and destination of observed traffic</td>
-              </tr>
-              <tr>
-                <td>Rule relevant to observed traffic</td>
-              </tr>
-              <tr>
-                <td>Result of rule evaluation</td>
-              </tr>
-              <tr>
-                <td rowspan="3"><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a></td>
-                <td rowspan="3">Application of traffic filtering rules</td>
-                <td>Source and destination of observed traffic</td>
-              </tr>
-              <tr>
-                <td>Rule relevant to observed traffic</td>
-              </tr>
-              <tr>
-                <td>Result of rule evaluation</td>
-              </tr>
-              <tr>
-                <td rowspan="3"><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></td>
-                <td rowspan="3">Application of deep packet inspection rules</td>
-                <td>Source and destination of observed traffic</td>
-              </tr>
-              <tr>
-                <td>Rule relevant to observed traffic</td>
-              </tr>
-              <tr>
-                <td>Result of rule evaluation</td>
-              </tr>
-              <tr>
-                <td><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a></td>
-                <td colspan="2">None</td>
-              </tr>
-              <tr>
-                <td rowspan="5"><a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a></td>
-                <td rowspan="5">Call Detail Record (<abbr class="dyn-abbr"><a href="#abbr_CDR">CDR</a></abbr>)</td>
-                <td>Calling party</td>
-              </tr>
-              <tr>
-                <td>Called party</td>
-              </tr>
-              <tr>
-                <td>Start time of the call</td>
-              </tr>
-              <tr>
-                <td>Call duration</td>
-              </tr>
-              <tr>
-                <td>Call type</td>
-              </tr>
-              <tr>
-                <td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td>
-                <td>All <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk authentication attempts</td>
-                <td>Username and IP address of the service provider</td>
-              </tr>
-              <tr>
-                <td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td>
-                <td>All management actions</td>
-                <td>Identifier of initiator</td>
-              </tr>
-              <tr>
-                <td><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a></td>
-                <td colspan="2">None</td>
-              </tr>
-              <tr>
-                <td><a href="#FRU_RSA.1">FRU_RSA.1</a></td>
-                <td colspan="2">None</td>
-              </tr>
-              <tr>
-                <td rowspan="3"><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td>
-                <td>Initiation of the trusted channel</td>
-                <td rowspan="3">Identification of the initiator and target of the trusted channel</td>
-              </tr>
-              <tr>
-                <td>Termination of the trusted channel</td>
-              </tr>
-              <tr>
-                <td>Failure of the trusted channel functions</td>
-              </tr>
-              <tr>
-                <td rowspan="3"><a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a> (selection-based)</td>
-                <td>Initiation of the trusted channel</td>
-                <td rowspan="3">Identification of the initiator and target of the trusted channel</td>
-              </tr>
-              <tr>
-                <td>Termination of the trusted channel</td>
-              </tr>
-              <tr>
-                <td>Failure of the trusted channel functions</td>
-              </tr>
-              <tr>
-                <td rowspan="3"><a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a></td>
-                <td>Initiation of the trusted channel</td>
-                <td rowspan="3">Identification of the initiator and target of the trusted channel</td>
-              </tr>
-              <tr>
-                <td>Termination of the trusted channel</td>
-              </tr>
-              <tr>
-                <td>Failure of the trusted channel functions</td>
-              </tr>
-         
-            </table>
-              <span class="ctr" data-myid="auditSBC" data-counter-type="ct-Table" id="auditSBC">Table <span class="counter">2</span>: Auditable Events</span>
+                <li>[<i>All administrative actions;</i></li>
+                <li><i>Specifically defined auditable events listed in the Auditable Events for Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#at-mandatory" class="dynref" data-format=""></a>)</i></li>
+                <li><i>[<b>selection</b>: <span class="selectable-content" id="_s_6">Auditable events listed in the Auditable Events for Implementation-Dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#at-feat-based" class="dynref" data-format=""></a>)</span>, <span class="selectable-content" id="_s_7">Auditable events listed in the Auditable Events for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#at-sel-based" class="dynref" data-format=""></a>)</span>, <span class="selectable-content" id="_s_8">no other events</span>]</i></li>
+              </ol>].
+            
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-	        The auditable events defined in the Auditable Events table are for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are explicitly defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-	        For any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are included as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> based on the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, it is expected that any applicable auditable events defined for those <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> are also claimed as part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
-	        <p></p>
-	        The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> iteration of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> also requires “all administrative actions” to be audited. When the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, 
-	        it is expected that this will also include the administrative actions that support the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defined in <a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a>.
-	        <p></p>
-	        For <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> labeled as optional or selection-based, the auditable event is required only if the corresponding <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is claimed.
-	        <p></p>
-	        A <abbr class="dyn-abbr"><a href="#abbr_CDR">CDR</a></abbr> is expected to be generated at the start of a session, at the end of a session, and during a session at an interval or time period specified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author.
-	    </span></div></div></div>
-  <div class="element"><div class="reqid" id="FAU_GEN.1.2/SBC"><a href="#FAU_GEN.1.2/SBC" class="abbr">FAU_GEN.1.2/SBC</a></div><div class="reqdesc">
-      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within each audit record at least the following information: <ol type="a">
-        <li>Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event; and</li>
-        <li>For each audit event type, based on the auditable event definitions of the functional components included in the 
-          <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><b>-Module</b>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i>information specified in column three of the Auditable Events table (<a onclick="showTarget('auditSBC')" href="#auditSBC" class="auditSBC-ref">Table <span class="counter">2</span></a>)</i>].</li>
-      </ol>
-    </div></div> 
-        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></div>
-    
-    
-    
-  <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that it identifies the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s auditable events. 
-      If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is distributed across multiple components, the evaluator shall also ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies the component that is responsible for each type of auditable event.
-      <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and provides a format for audit records. 
-      Each audit record format type must be covered, along with a brief description of each field. 
-      The evaluator shall check to make sure that every audit event type mandated by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
-      and claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> is described, and that the description of the fields contains the 
-      information required in <a href="#FAU_GEN.1.2/SBC">FAU_GEN.1.2/SBC</a> and the additional information specified in the Auditable Events table of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
-      <p></p>
-      If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s default configuration does not include all required auditable events, 
-      the evaluator shall check the operational guidance to ensure that it includes instructions on how to place the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> into its evaluated configuration by ensuring that all required auditable events are generated.
-      <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-      The evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to correctly generate audit records by having the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate audit records 
-      in accordance with the EAs associated with the functional requirements in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-      Additionally, the evaluator shall test that each administrative action applicable in the context of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is auditable. 
-      When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the operational guidance, 
-      and that the fields in each audit record have the proper entries. 
-      <p></p>
-      Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
-      For example, the testing that is performed to ensure that the operational guidance provided is correct will verify that AGD_OPE.1 is satisfied 
-      and should address the invocation of the administrative actions that are needed to verify the audit records are generated as expected.
-    </div></div></div></div></div>
+                The auditable events defined in the Auditable Events table are for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are explicitly defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+                For any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are included as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> based on the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, it is expected that any applicable auditable events defined for those <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> are also claimed as part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
+                <p></p>
+                The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> iteration of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> also requires “all administrative actions” to be audited. When the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, 
+                it is expected that this will also include the administrative actions that support the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defined in <a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a>.
+                <p></p>
+                If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> includes any implementation-dependent or selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, the selection for "Auditable events listed in the Auditable Events for Implementation-Dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table" or 
+                "Auditable events listed in the Auditable Events for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table" must be made, respectively. If no implementation-dependent or selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are included, "no other events" should be selected. 
+                The auditing of each implementation-dependent or selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is only required if that <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
+                <p></p>
+                A <abbr class="dyn-abbr"><a href="#abbr_CDR">CDR</a></abbr> is expected to be generated at the start of a session, at the end of a session, and during a session at an interval or time period specified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author.
+            </span></div></div></div>
+          <div class="element"><div class="reqid" id="FAU_GEN.1.2/SBC"><a href="#FAU_GEN.1.2/SBC" class="abbr">FAU_GEN.1.2/SBC</a></div><div class="reqdesc">
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within the audit data at least the following information: <ol type="a">
+                <li>Date and time of the auditable event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event;</li>
+                <li>For each auditable event type, based on the auditable event definitions of the functional components included in the 
+                  <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i>information specified in column three of the Auditable Events table in which the auditable event was defined</i>].</li>
+              </ol>
+            </div></div>
+         
+      <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></div>
+              
+              
+              
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that it identifies the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s auditable events. 
+                If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is distributed across multiple components, the evaluator shall also ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies the component that is responsible for each type of auditable event.
+                <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and provides a format for audit records. 
+                Each audit record format type must be covered, along with a brief description of each field. 
+                The evaluator shall check to make sure that every audit event type mandated by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+                and claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> is described, and that the description of the fields contains the 
+                information required in <a href="#FAU_GEN.1.2/SBC">FAU_GEN.1.2/SBC</a> and the additional information specified in the Auditable Events table of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
+                <p></p>
+                If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s default configuration does not include all required auditable events, 
+                the evaluator shall check the operational guidance to ensure that it includes instructions on how to place the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> into its evaluated configuration by ensuring that all required auditable events are generated.
+                <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                The evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to correctly generate audit records by having the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate audit records 
+                in accordance with the EAs associated with the functional requirements in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+                Additionally, the evaluator shall test that each administrative action applicable in the context of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is auditable. 
+                When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the operational guidance, 
+                and that the fields in each audit record have the proper entries. 
+                <p></p>
+                Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
+                For example, the testing that is performed to ensure that the operational guidance provided is correct will verify that AGD_OPE.1 is satisfied 
+                and should address the invocation of the administrative actions that are needed to verify the audit records are generated as expected.
+              </div></div></div></div></div>
         
         
         <div class="comp" id="FAU_SAA.1"><h4>FAU_SAA.1 Potential Violation Analysis</h4> 
@@ -1133,13 +1008,14 @@ Network Device
                 <li>Accumulation or combination of [<b>assignment</b>: 
      <span class="assignable-content">subset of defined auditable events</span>] known to indicate a potential security violation; </li>
                 <li>[<b>assignment</b>: 
-     <span class="assignable-content">any other rules</span>]</li>
+     <span class="assignable-content">any other rules</span>].</li>
               </ol>
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
             Examples of monitored audited events include authentication failures, self-test failures, or environmental failures (e.g. temperature violation).
             </span></div></div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_SAA.1">FAU_SAA.1</a></div>
               
               
@@ -1158,17 +1034,18 @@ Network Device
           
           <div class="element"><div class="reqid" id="FAU_SEL.1.1"><a href="#FAU_SEL.1.1" class="abbr">FAU_SEL.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to select the set of events to be audited from the set of all auditable events based on the following attributes: <ol type="a">
-              <li>[<i>event type</i></li>
+              <li>[<i>event type</i>]</li>
               <li>[<b>assignment</b>: 
      <span class="assignable-content">list of additional attributes that audit selectivity is based upon</span>]</li>
               </ol>
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              The auditable events associated with traffic filtering rules (see the <a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a> and <a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a> rows in <a onclick="showTarget('auditSBC')" href="#auditSBC" class="auditSBC-ref">Table <span class="counter">2</span></a> table above) 
+              The auditable events associated with traffic filtering rules (see the <a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a> and <a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a> rows in <a href="#at-mandatory" class="dynref" data-format=""></a> table above) 
               may generate a significant volume of traffic that make them impractical to generate on a persistent basis. 
               The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must have the ability to generate these records when necessary but this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> exists to allow for the generation of those events to be suppressed when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is in its evaluated configuration.
             </span></div></div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_SEL.1">FAU_SEL.1</a></div>
               
               
@@ -1207,7 +1084,7 @@ Network Device
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the Secure Real-Time Transport Protocol (<abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>) that complies with RFC 3711, 
               and use Security Descriptions for Media Streams (<abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>) in compliance with RFC 4568 to provide key information for the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> connection. 
             </div></div>
-          <div class="element"><div class="reqid" id="FCS_SRTP_EXT.1.2"><a href="#FCS_SRTP_EXT.1.2" class="abbr">FCS_SRTP_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>-SRTP supporting the following ciphersuites: [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_6">AES_CM_128_HMAC_SHA1_80, in accordance with RFC 4568</span></li><li style=""><span class="selectable-content" id="_s_7">AES_CM_128_HMAC_SHA1_32, in accordance with RFC 4568</span></li><li style=""><span class="selectable-content" id="_s_8">AES_256_CM_HMAC_SHA1_80, in accordance with RFC 6188</span></li><li style=""><span class="selectable-content" id="_s_9">AES_256_CM_HMAC_SHA1_32, in accordance with RFC 6188</span></li><li style=""><span class="selectable-content" id="_s_10">AEAD_AES_128_GCM, in accordance with RFC 7714</span></li><li style=""><span class="selectable-content" id="_s_11">AEAD_AES_256_GCM, in accordance with RFC 7714</span></li></ul>]
+          <div class="element"><div class="reqid" id="FCS_SRTP_EXT.1.2"><a href="#FCS_SRTP_EXT.1.2" class="abbr">FCS_SRTP_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>-SRTP supporting the following ciphersuites: [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_9">AES_CM_128_HMAC_SHA1_80, in accordance with RFC 4568</span></li><li style=""><span class="selectable-content" id="_s_10">AES_CM_128_HMAC_SHA1_32, in accordance with RFC 4568</span></li><li style=""><span class="selectable-content" id="_s_11">AES_256_CM_HMAC_SHA1_80, in accordance with RFC 6188</span></li><li style=""><span class="selectable-content" id="_s_12">AES_256_CM_HMAC_SHA1_32, in accordance with RFC 6188</span></li><li style=""><span class="selectable-content" id="_s_13">AEAD_AES_128_GCM, in accordance with RFC 7714</span></li><li style=""><span class="selectable-content" id="_s_14">AEAD_AES_256_GCM, in accordance with RFC 7714</span></li></ul>]
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1215,11 +1092,12 @@ Network Device
             The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author should select all ciphersuites that are supported.
             </span></div></div></div>
           <div class="element"><div class="reqid" id="FCS_SRTP_EXT.1.3"><a href="#FCS_SRTP_EXT.1.3" class="abbr">FCS_SRTP_EXT.1.3</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_12">is disabled</span>, <span class="selectable-content" id="_s_13">can be disabled by a [<i>Security Administrator</i>]</span>].
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_15">is disabled</span>, <span class="selectable-content" id="_s_16">can be disabled by a [<i>Security Administrator</i>]</span>].
             </div></div>
           <div class="element"><div class="reqid" id="FCS_SRTP_EXT.1.4"><a href="#FCS_SRTP_EXT.1.4" class="abbr">FCS_SRTP_EXT.1.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> ports to be used for <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> communications to be specified by a [<i>Security Administrator</i>].
             </div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></div>
             
             
@@ -1276,6 +1154,7 @@ Network Device
           <div class="element"><div class="reqid" id="FDP_IFC.1.1"><a href="#FDP_IFC.1.1" class="abbr">FDP_IFC.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the [<i><abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy</i>] on [<i>caller-callee pairs attempting to communicate through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></i>].
             </div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_IFC.1">FDP_IFC.1</a></div>
               The evaluation of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is performed as part of <a href="#FDP_IFF.1">FDP_IFF.1</a>.<br/><br/>
             </div></div></div>
@@ -1295,7 +1174,7 @@ Network Device
             </div></div>
           <div class="element"><div class="reqid" id="FDP_IFF.1.3"><a href="#FDP_IFF.1.3" class="abbr">FDP_IFF.1.3</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the [<i>following configurable behavioral rules: 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_16">Default-deny (allowlist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly deny all information flows except for those explicitly authorized by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></li><li style=""><span class="selectable-content" id="_s_17">Default-allow (denylist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly allow all information flows except for those explicitly denied by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></li></ul>]</i>]. 
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_19">Default-deny (allowlist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly deny all information flows except for those explicitly authorized by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></li><li style=""><span class="selectable-content" id="_s_20">Default-allow (denylist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly allow all information flows except for those explicitly denied by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></li></ul>]</i>]. 
             </div></div>
           <div class="element"><div class="reqid" id="FDP_IFF.1.4"><a href="#FDP_IFF.1.4" class="abbr">FDP_IFF.1.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall explicitly authorize an information flow based on the following rules: 
@@ -1307,6 +1186,7 @@ Network Device
               [<i>if the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is operating in a denylist posture, 
                 any calling parties that are present on the denylist (identifiable by calling number or source IP address, or communications protocols) are explicitly denied</i>].
             </div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_IFF.1">FDP_IFF.1</a></div>
               
               
@@ -1416,7 +1296,7 @@ Network Device
                 <li>Distinct Interface <b>(physical versus virtual or trust zone, e.g., trusted versus untrusted)</b></li>
                 
                 <li>[<i>Application (Real-Time Communications Protocol) <ul>
-                  <li>signaling protocols: [<b>selection</b>: <span class="selectable-content" id="_s_18"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="filters_H323">H.323</span>]]</li>
+                  <li>signaling protocols: [<b>selection</b>: <span class="selectable-content" id="_s_21"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="filters_H323">H.323</span>]]</li>
                 </ul></i></li>
               </ul>
             <div class="appnote"><span class="note-header">Application
@@ -1445,7 +1325,7 @@ Network Device
                 <li>UDP: source and destination addresses, source and destination ports</li>
               </ul>
               </li>
-              <li>Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_20">session inactivity timeout</span>, <span class="selectable-content" id="_s_21">completion of the expected information flow</span>].</li>
+              <li>Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_23">session inactivity timeout</span>, <span class="selectable-content" id="_s_24">completion of the expected information flow</span>].</li>
               </ul>
             </div></div>
           <div class="element"><div class="reqid" id="FFW_ACL_EXT.1.6"><a href="#FFW_ACL_EXT.1.6" class="abbr">FFW_ACL_EXT.1.6</a></div><div class="reqdesc">
@@ -1454,6 +1334,7 @@ Network Device
           <div class="element"><div class="reqid" id="FFW_ACL_EXT.1.7"><a href="#FFW_ACL_EXT.1.7" class="abbr">FFW_ACL_EXT.1.7</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall deny packet flow if a matching rule is not identified.
             </div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FFW_ACL_EXT.1.1">FFW_ACL_EXT.1.1</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">
                 The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> provides a description of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s initialization or startup process, 
@@ -1662,14 +1543,14 @@ Network Device
           
           
           <div class="element"><div class="reqid" id="FFW_ACL_EXT.2.1"><a href="#FFW_ACL_EXT.2.1" class="abbr">FFW_ACL_EXT.2.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful traffic filtering on the following <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols: [<b>selection</b>: <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="stateful_H323">H.323 (H.225, H.245)</span>, <span class="selectable-content" id="_s_24"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr></span>].
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful traffic filtering on the following <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols: [<b>selection</b>: <span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="stateful_H323">H.323 (H.225, H.245)</span>, <span class="selectable-content" id="_s_27"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr></span>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
               If “H.323” is selected in this requirement, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must include the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a>.
             </span></div></div></div>
 
-          <div class="element"><div class="reqid" id="FFW_ACL_EXT.2.2"><a href="#FFW_ACL_EXT.2.2" class="abbr">FFW_ACL_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following default stateful traffic filtering rules on all network traffic matching protocol types identified in <a href="#FFW_ACL_EXT.2.1">FFW_ACL_EXT.2.1</a>:[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> traffic where a BYE message precedes an INVITE message</span></li><li style=""><span class="selectable-content" id="_s_26">H.225 traffic where an RCF reply precedes any other traffic</span></li><li style=""><span class="selectable-content" id="_s_27">H.245 traffic where a ResponseMessage precedes a RequestMessage</span></li><li style=""><span class="selectable-content" id="_s_28"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr> traffic where a DLCX message precedes a CRCX message</span></li></ul>].
+          <div class="element"><div class="reqid" id="FFW_ACL_EXT.2.2"><a href="#FFW_ACL_EXT.2.2" class="abbr">FFW_ACL_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following default stateful traffic filtering rules on all network traffic matching protocol types identified in <a href="#FFW_ACL_EXT.2.1">FFW_ACL_EXT.2.1</a>:[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_28"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> traffic where a BYE message precedes an INVITE message</span></li><li style=""><span class="selectable-content" id="_s_29">H.225 traffic where an RCF reply precedes any other traffic</span></li><li style=""><span class="selectable-content" id="_s_30">H.245 traffic where a ResponseMessage precedes a RequestMessage</span></li><li style=""><span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr> traffic where a DLCX message precedes a CRCX message</span></li></ul>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1689,6 +1570,7 @@ Network Device
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall dynamically open media ports to <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocol traffic upon negotiation of a session and close these ports upon termination of a session.
             </div></div>
           <div class="element"><div class="reqid" id="FFW_ACL_EXT.2.5"><a href="#FFW_ACL_EXT.2.5" class="abbr">FFW_ACL_EXT.2.5</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not define a static range of ports to remain open indefinitely for the purpose of allowing <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocol traffic.</div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a></div>
             
             
@@ -1749,7 +1631,7 @@ Network Device
           
           
           <div class="element"><div class="reqid" id="FFW_DPI_EXT.1.1"><a href="#FFW_DPI_EXT.1.1" class="abbr">FFW_DPI_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="dpi_H323">H.323 (H.225, H.245)</span>, <span class="selectable-content" id="_s_30"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_RTP">RTP</a></abbr></span>, <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_RTCP">RTCP</a></abbr></span>]. 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="dpi_H323">H.323 (H.225, H.245)</span>, <span class="selectable-content" id="_s_33"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="_s_34"><abbr class="dyn-abbr"><a href="#abbr_RTP">RTP</a></abbr></span>, <span class="selectable-content" id="_s_35"><abbr class="dyn-abbr"><a href="#abbr_RTCP">RTCP</a></abbr></span>]. 
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">If “H.323” is selected in this requirement, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must include the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a>.</span></div></div></div>
@@ -1760,8 +1642,9 @@ Network Device
             </div></div>
           <div class="element"><div class="reqid" id="FFW_DPI_EXT.1.3"><a href="#FFW_DPI_EXT.1.3" class="abbr">FFW_DPI_EXT.1.3</a></div><div class="reqdesc">
               When traffic is found to be in violation of a <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> rule, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall take the following action:
-              [<b>selection</b>: <span class="selectable-content" id="_s_33">drop the traffic</span>, <span class="selectable-content" id="_s_34">generate an audit record</span>, <span class="selectable-content" id="_s_35">generate an alarm</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_36">drop the traffic</span>, <span class="selectable-content" id="_s_37">generate an audit record</span>, <span class="selectable-content" id="_s_38">generate an alarm</span>].
             </div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></div>
               
               
@@ -1794,15 +1677,16 @@ Network Device
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> of signaling and media channel traffic through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that is mediated by the [<i><abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy</i>] defined by <a href="#FDP_IFC.1">FDP_IFC.1</a>.
             </div></div>
           <div class="element"><div class="reqid" id="FFW_NAT_EXT.1.2"><a href="#FFW_NAT_EXT.1.2" class="abbr">FFW_NAT_EXT.1.2</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_38">H.225</span>, <span class="selectable-content" id="_s_39">H.245</span>]. 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="_s_39"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="_s_40"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_41">H.225</span>, <span class="selectable-content" id="_s_42">H.245</span>]. 
             </div></div>
           <div class="element"><div class="reqid" id="FFW_NAT_EXT.1.3"><a href="#FFW_NAT_EXT.1.3" class="abbr">FFW_NAT_EXT.1.3</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with 
-              [<b>selection</b>: <span class="selectable-content" id="_s_40">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_41">a [<i>Security Administrator</i>]-defined value</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_43">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_44">a [<i>Security Administrator</i>]-defined value</span>].
             </div></div>
           <div class="element"><div class="reqid" id="FFW_NAT_EXT.1.4"><a href="#FFW_NAT_EXT.1.4" class="abbr">FFW_NAT_EXT.1.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall maintain a <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> table to ensure that traffic bound for the internal network is directed to only the intended recipient.
             </div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a></div>
               
               
@@ -1840,10 +1724,11 @@ Network Device
             </div></div>
           <div class="element"><div class="reqid" id="FIA_SIPT_EXT.1.2"><a href="#FIA_SIPT_EXT.1.2" class="abbr">FIA_SIPT_EXT.1.2</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide valid identification in the form of a 
-              [<b>selection</b>: <span class="selectable-content" id="_s_44">username and password</span>, <span class="selectable-content" id="_s_45">X.509 certificate</span>] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.
+              [<b>selection</b>: <span class="selectable-content" id="_s_47">username and password</span>, <span class="selectable-content" id="_s_48">X.509 certificate</span>] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_SIPT_EXT.1.3"><a href="#FIA_SIPT_EXT.1.3" class="abbr">FIA_SIPT_EXT.1.3</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide a valid authentication credential in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.</div></div>
           <div class="element"><div class="reqid" id="FIA_SIPT_EXT.1.4"><a href="#FIA_SIPT_EXT.1.4" class="abbr">FIA_SIPT_EXT.1.4</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to encrypt traffic using TLS in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.</div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></div>
             
             
@@ -1874,61 +1759,62 @@ Network Device
       
       <h3 id="man_fmt" class="indexable" data-level="3">5.2.6 Security Management (FMT)</h3>
         <div class="comp" id="FMT_SMF.1/SBC"><h4>FMT_SMF.1/SBC Specification of Management Functions (SBC)</h4>
-			
-			<div class="element"><div class="reqid" id="FMT_SMF.1.1/SBC"><a href="#FMT_SMF.1.1/SBC" class="abbr">FMT_SMF.1.1/SBC</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions <b>related to SBC functionality</b>: [<i>Ability of a Security Administrator to:
-			  <ul>
-			    <li>Change a user's password</li>
-			    <li>Require a user's password to be changed upon next login</li>
-			    <li>Configure the auditable events that will result in the generation of an alarm</li>
-			    <li>Configure the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy</li>
-			    <li>Configure traffic filtering rules</li>
-			    <li>Configure auditable events</li>
-			    <li>Configure <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr></li>
-			    <li>Configure ports and cryptography for signaling and media communications</li>
-			    <li>Configure <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> communications</li>
-			  </ul></i>].
-			<div class="appnote"><span class="note-header">Application
+          
+          <div class="element"><div class="reqid" id="FMT_SMF.1.1/SBC"><a href="#FMT_SMF.1.1/SBC" class="abbr">FMT_SMF.1.1/SBC</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions <b>related to SBC functionality</b>: [<i>Ability of a Security Administrator to:
+              <ul>
+                <li>Change a user's password</li>
+                <li>Require a user's password to be changed upon next login</li>
+                <li>Configure the auditable events that will result in the generation of an alarm</li>
+                <li>Configure the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy</li>
+                <li>Configure traffic filtering rules</li>
+                <li>Configure auditable events</li>
+                <li>Configure <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr></li>
+                <li>Configure ports and cryptography for signaling and media communications</li>
+                <li>Configure <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> communications</li>
+              </ul></i>].
+            <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-			    This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines additional management functions for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> as FMT_SMF.1. 
-			    The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may have all management functionality implemented in the same logical interface; 
-			    it is not necessary for “network device management” and “SBC management” to be implemented in separate interfaces.
-			    <p></p>
-			    This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> may rely on management functionality defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to support the implementation of its functions. 
-			    For example, the SBC portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> relies on the reliable time function that must be implemented by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
-			    If the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> implements this using NTP, the “Ability to set the time which is used for time-stamps” or “Ability to configure NTP” 
-			    management function defined in FMT_SMF.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can be used to address this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s dependency on reliable system time.
-			    Note that support for NTP is recommended but not required.
-			    <p></p>
-			    The 'configurable auditable events' function relates to <a href="#FAU_SEL.1">FAU_SEL.1</a>, specifically with respect to allowing a Security Administrator 
-			    to determine whether a given event is auditable. As this refers to the events for the triggering of various filtering rules, 
-			    it may be implicitly addressed through the ‘configure traffic filtering rules’ function, 
-			    for example by explicitly defining a rule with a type that automatically requires it to be logged or a parameter that causes it to be logged if triggered.
-			  </span></div></div></div>
-		<div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></div>
-			  
-			  
-			  
-			<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
-			    The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that, for each administrative function listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, 
-			    the ability to execute the function and the logical interfaces used to perform the function is claimed. 
-			    For each of these functions, the evaluator shall also confirm that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> details how the ability to manipulate the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data through these interfaces is disallowed for non-administrative users.
-			    <p></p>
-			  </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
-			    The evaluator shall review the guidance documentation to determine that each of the functions detailed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> are identified, 
-			    and that configuration information is provided to ensure that only administrators have access to the functions.
-			    <p></p>
-			  </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-			    For each management function specified in <a href="#FMT_SMF.1.1/SBC">FMT_SMF.1.1/SBC</a>, the evaluator shall access the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with appropriate authorizations, 
-			    perform the required function, and demonstrate that configuration of the function results in the proper expected behavior. 
-			    For behavior related to SBC functionality (as opposed to manipulation of user accounts), this may be tested in conjunction with other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-			    <p></p>
-			    The evaluator shall also ensure that all relevant management functionality from FMT_SMF.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> that relates to the SBC <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are tested in conjunction with SBC functionality. 
-			    For example, for SBC functions that rely on time services, 
-			    the evaluator shall ensure that a Security Administrator can either manually configure the time or specify NTP server connectivity and ensure that the SBC functions will make use of the configured time data.
-			    <p></p>
-			    The evaluator shall also demonstrate that a user who lacks privileges to execute these functions (as described in the operational guidance) are unable to execute them.
-			  </div></div></div></div></div>
+              This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines additional management functions for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> as FMT_SMF.1. 
+              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may have all management functionality implemented in the same logical interface; 
+              it is not necessary for “network device management” and “SBC management” to be implemented in separate interfaces.
+              <p></p>
+              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> may rely on management functionality defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to support the implementation of its functions. 
+              For example, the SBC portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> relies on the reliable time function that must be implemented by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
+              If the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> implements this using NTP, the “Ability to set the time which is used for time-stamps” or “Ability to configure NTP” 
+              management function defined in FMT_SMF.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can be used to address this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s dependency on reliable system time.
+              Note that support for NTP is recommended but not required.
+              <p></p>
+              The 'configurable auditable events' function relates to <a href="#FAU_SEL.1">FAU_SEL.1</a>, specifically with respect to allowing a Security Administrator 
+              to determine whether a given event is auditable. As this refers to the events for the triggering of various filtering rules, 
+              it may be implicitly addressed through the ‘configure traffic filtering rules’ function, 
+              for example by explicitly defining a rule with a type that automatically requires it to be logged or a parameter that causes it to be logged if triggered.
+            </span></div></div></div>
+          
+		    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></div>
+              
+              
+              
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
+                The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that, for each administrative function listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, 
+                the ability to execute the function and the logical interfaces used to perform the function is claimed. 
+                For each of these functions, the evaluator shall also confirm that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> details how the ability to manipulate the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data through these interfaces is disallowed for non-administrative users.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
+                The evaluator shall review the guidance documentation to determine that each of the functions detailed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> are identified, 
+                and that configuration information is provided to ensure that only administrators have access to the functions.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                For each management function specified in <a href="#FMT_SMF.1.1/SBC">FMT_SMF.1.1/SBC</a>, the evaluator shall access the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with appropriate authorizations, 
+                perform the required function, and demonstrate that configuration of the function results in the proper expected behavior. 
+                For behavior related to SBC functionality (as opposed to manipulation of user accounts), this may be tested in conjunction with other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
+                <p></p>
+                The evaluator shall also ensure that all relevant management functionality from FMT_SMF.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> that relates to the SBC <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are tested in conjunction with SBC functionality. 
+                For example, for SBC functions that rely on time services, 
+                the evaluator shall ensure that a Security Administrator can either manually configure the time or specify NTP server connectivity and ensure that the SBC functions will make use of the configured time data.
+                <p></p>
+                The evaluator shall also demonstrate that a user who lacks privileges to execute these functions (as described in the operational guidance) are unable to execute them.
+              </div></div></div></div></div>
         
       
       <h3 id="man_fru" class="indexable" data-level="3">5.2.7 Resource Utilization (FRU)</h3>
@@ -1948,6 +1834,7 @@ Network Device
           <div class="element"><div class="reqid" id="FRU_PRS_EXT.1.2"><a href="#FRU_PRS_EXT.1.2" class="abbr">FRU_PRS_EXT.1.2</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that each access to network bandwidth shall be mediated on the basis of the subject’s assigned priority.
             </div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a></div>
               
               
@@ -1981,12 +1868,13 @@ Network Device
           <div class="element"><div class="reqid" id="FRU_RSA.1.1"><a href="#FRU_RSA.1.1" class="abbr">FRU_RSA.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce maximum quotas of the following resources: [<i>CPU, memory, [<b>assignment</b>: 
      <span class="assignable-content">other resources</span>]</i>], 
-              that [<i>subjects</i>] can use [<b>selection</b>: <span class="selectable-content" id="_s_46">simultaneously</span>, <span class="selectable-content" id="_s_47">over a specified period of time</span>]. 
+              that [<i>subjects</i>] can use [<b>selection</b>: <span class="selectable-content" id="_s_49">simultaneously</span>, <span class="selectable-content" id="_s_50">over a specified period of time</span>]. 
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
               The intent of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to be resistant to <abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr> attacks.
             </span></div></div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FRU_RSA.1">FRU_RSA.1</a></div>
               
               
@@ -2019,10 +1907,10 @@ Network Device
 	        
 	        <div class="element"><div class="reqid" id="FTP_ITC.1.1/ARP"><a href="#FTP_ITC.1.1/ARP" class="abbr">FTP_ITC.1.1/ARP</a></div><div class="reqdesc">
 	            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using  
-	              [<b>selection</b>: <span class="selectable-content" id="_s_48">TLS</span>, <span class="selectable-content" id="_s_49">IPsec</span>, <span class="selectable-content" id="_s_50">SSH</span>, <span class="selectable-content" id="_s_51">DTLS</span>, <span class="selectable-content" id="_s_52">HTTPS</span>, <span class="selectable-content" id="_s_53">SNMPv3</span>]
+	              [<b>selection</b>: <span class="selectable-content" id="_s_51">TLS</span>, <span class="selectable-content" id="_s_52">IPsec</span>, <span class="selectable-content" id="_s_53">SSH</span>, <span class="selectable-content" id="_s_54">DTLS</span>, <span class="selectable-content" id="_s_55">HTTPS</span>, <span class="selectable-content" id="_s_56">SNMPv3</span>]
 	              to</b> provide a trusted communication channel between itself and 
 	            <b>authorized IT entities supporting the following capabilities: security audit automatic response</b> 
-	            that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data. 
+	            that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
 	          </div></div>
 	        <div class="element"><div class="reqid" id="FTP_ITC.1.2/ARP"><a href="#FTP_ITC.1.2/ARP" class="abbr">FTP_ITC.1.2/ARP</a></div><div class="reqdesc">
 	            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication via the trusted channel.
@@ -2034,6 +1922,9 @@ Network Device
     </span><span class="note">
 	            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is used to specify any trusted protocols that are implemented in support of <a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a>.
 	          </span></div></div></div>
+          
+          
+          
 	      <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></div>
 	            The evaluator shall evaluate this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in the manner specified for FTP_ITC.1 in the NDcPP except that SNMPv3 communications shall be tested (if claimed) in addition to any other selected protocols. 
 	              Testing for SNMPv3 is performed through evaluation of <a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a> if claimed there.<br/><br/>
@@ -2043,7 +1934,7 @@ Network Device
 		  <div class="comp" id="FTP_ITC.1/ESC"><h4>FTP_ITC.1/ESC Inter-TSF Trusted Channel (ESC Communications)</h4>
 		  
 			  <div class="element"><div class="reqid" id="FTP_ITC.1.1/ESC"><a href="#FTP_ITC.1.1/ESC" class="abbr">FTP_ITC.1.1/ESC</a></div><div class="reqdesc">
-			    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a <b>signaling</b> channel between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_54">DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</span>, <span class="selectable-content" id="_s_55">no other protocol</span>]</b> that is logically distinct from other communication channels 
+			    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a <b>signaling</b> channel between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_57">DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</span>, <span class="selectable-content" id="_s_58">no other protocol</span>]</b> that is logically distinct from other communication channels 
 			    and provides assured identification of its end points and protection of the channel data from modification or disclosure.
 				  <div class="appnote"><span class="note-header">Application
       Note:
@@ -2055,6 +1946,9 @@ Network Device
 		</div></div>
 			  <div class="element"><div class="reqid" id="FTP_ITC.1.3/ESC"><a href="#FTP_ITC.1.3/ESC" class="abbr">FTP_ITC.1.3/ESC</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for [<i>all communications with the <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr></i>]. 
 			    </div></div>
+        
+          
+          
 		  <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></div>
 			      
 			        This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is an iteration of FTP_ITC.1 as defined in the NDcPP. The evaluator shall repeat the EAs defined for FTP_ITC.1 in the NDcPP for this iteration of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.
@@ -2065,10 +1959,10 @@ Network Device
 	    <div class="comp" id="FTP_ITC.1/VVoIP"><h4>FTP_ITC.1/VVoIP Inter-TSF Trusted Channel (VVoIP Communications)</h4>
 	      
 	      <div class="element"><div class="reqid" id="FTP_ITC.1.1/VVoIP"><a href="#FTP_ITC.1.1/VVoIP" class="abbr">FTP_ITC.1.1/VVoIP</a></div><div class="reqdesc">
-	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>, [<b>selection</b>: <span class="selectable-content" id="_s_56"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_57">IPsec</span>, <span class="selectable-content" id="_s_58">H.235</span>, <span class="selectable-content" id="_s_59">[<b>assignment</b>: 
+	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>, [<b>selection</b>: <span class="selectable-content" id="_s_59"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_60">IPsec</span>, <span class="selectable-content" id="_s_61">H.235</span>, <span class="selectable-content" id="_s_62">[<b>assignment</b>: 
      <span class="assignable-content">other protocols</span>]</span>]</b> 
-	          to provide a <b>trusted</b> communication channel between itself and <b>authorized</b> IT 
-	          <b>entities supporting the following capabilities: <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> signaling and media channels</b> that is
+	          to provide a <b>trusted</b> communication channel between itself and <b>authorized IT 
+	          entities supporting the following capabilities: <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> signaling and media channels</b> that is
 	          logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
 	        <div class="appnote"><span class="note-header">Application
       Note:
@@ -2081,6 +1975,9 @@ Network Device
 	      <div class="element"><div class="reqid" id="FTP_ITC.1.3/VVoIP"><a href="#FTP_ITC.1.3/VVoIP" class="abbr">FTP_ITC.1.3/VVoIP</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for [<b>assignment</b>: 
      <span class="assignable-content">list of functions for which a trusted channel is required</span>]. 
 	        </div></div>
+        
+          
+          
 	    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a></div>
 	          
 	            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is an iteration of FTP_ITC.1 as defined in the NDcPP. The evaluator shall repeat the EAs defined for FTP_ITC.1 in the NDcPP for this iteration of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.
@@ -2090,14 +1987,14 @@ Network Device
       
         
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr></table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr></table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 
     Protection Profile for Network Devices</h2><h3 id="contoe-ND" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3> 
         When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the NDcPP, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a network device. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include SBC functionality that is provided by the network device.
       <h3 id="consecprob-ND" class="indexable" data-level="3">6.1.2 
 	Consistency of Security Problem Definition
-      </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">4</span></span>: Consistency of Security Problem Definition (NDcPP base)
+      </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">3</span></span>: Consistency of Security Problem Definition (NDcPP base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.MALICIOUS_TRAFFIC">T.MALICIOUS_TRAFFIC</a></td><td>
             The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define a threat for malicious traffic because all of its security-relevant external interfaces define the network device as the endpoint. 
             This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines interfaces where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is facilitating a connection between two external entities, 
@@ -2134,7 +2031,7 @@ Network Device
           The rationale for why this does not conflict with the claims
       defined by the
       NDcPP are as follows:
-      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">5</span></span>: Consistency of Requirements (NDcPP base)
+      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">4</span></span>: Consistency of Requirements (NDcPP base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_TLSC_EXT.1</td><td>
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> mandates the inclusion of this selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> because it is required to implement the trusted communications required by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
             </td></tr><tr><td>FCS_TLSC_EXT.2</td><td>
@@ -2179,8 +2076,8 @@ Network Device
           </td></tr><tr><td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td>
             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> applies to <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking, which is a logical interface that is beyond the original scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
           </td></tr><tr><td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td><td>
-			  This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is an iteration of a <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement that defines additional management functions for SBC functionality that the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> could not be expected to cover.
-			</td></tr><tr><td><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a></td><td>
+            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is an iteration of a <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement that defines additional management functions for SBC functionality that the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> could not be expected to cover.
+          </td></tr><tr><td><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a></td><td>
             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> applies to enforcement of bandwidth priority of service, which is a mechanism that is beyond the scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not interfere with the ability of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to process valid network traffic securely.
           </td></tr><tr><td><a href="#FRU_RSA.1">FRU_RSA.1</a></td><td>
             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> applies to enforcement of resource quotas, which is a mechanism that is beyond the scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not interfere with the ability of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to process valid network traffic securely.
@@ -2230,7 +2127,7 @@ Network Device
           
           
           <div class="element"><div class="reqid" id="FIA_SIPS_EXT.1.1"><a href="#FIA_SIPS_EXT.1.1" class="abbr">FIA_SIPS_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_62"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_65"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
               describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic.
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -2257,6 +2154,7 @@ Network Device
             If an SBC advertises this service, it is expected that this functionality be included within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary. 
             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is therefore implementation-based on whether the SBC has the capability to perform its own <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> registration of devices.
           </span></div></div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a></div>
               
               
@@ -2297,8 +2195,8 @@ Network Device
           
           
           <div class="element"><div class="reqid" id="FTP_ITC.1.1/H323"><a href="#FTP_ITC.1.1/H323" class="abbr">FTP_ITC.1.1/H323</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide an <b>H.323</b> communication channel <b>in accordance with ITU-REC H.235.0</b> between itself and 
-              <b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_60">IPsec as specified in FCS_IPSEC_EXT.1</span>, <span class="selectable-content" id="_s_61">no other protocol</span>]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a<b>n H.323</b> communication channel <b>in accordance with ITU-REC H.235.0</b> between itself and 
+              <b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_63">IPsec as specified in FCS_IPSEC_EXT.1</span>, <span class="selectable-content" id="_s_64">no other protocol</span>]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2313,6 +2211,9 @@ Network Device
     </span><span class="note">
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is claimed if H.323 is specified as being supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in <a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a>, <a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a>, <a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a>, or <a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a>.
             </span></div></div></div>
+          
+          
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a></div>
               
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is an iteration of FTP_ITC.1 as defined in the NDcPP. The evaluator shall repeat the EAs defined for FTP_ITC.1 in the NDcPP for this iteration of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.
@@ -2329,7 +2230,7 @@ Network Device
 
 	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
 
-<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">6</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_SRTP_EXT Secure Real-Time Transport Protocol<br/></td></tr><tr data-sortkey="Firewall (FFW)"><td>Firewall (FFW)</td><td>FFW_ACL_EXT Traffic Filtering<br/>FFW_DPI_EXT Deep Packet Inspection<br/>FFW_NAT_EXT Network Address Translation<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_SIPS_EXT Session Initiation Protocol Registration<br/>FIA_SIPT_EXT Session Initiation Protocol Trunking<br/></td></tr><tr data-sortkey="Resource Utilization (FRU)"><td>Resource Utilization (FRU)</td><td>FRU_PRS_EXT Limited Priority of Service<br/></td></tr><tr data-sortkey="Security Audit (FAU)"><td>Security Audit (FAU)</td><td>FAU_ARP_EXT Security Audit Automatic Response<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">5</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_SRTP_EXT Secure Real-Time Transport Protocol<br/></td></tr><tr data-sortkey="Firewall (FFW)"><td>Firewall (FFW)</td><td>FFW_ACL_EXT Traffic Filtering<br/>FFW_DPI_EXT Deep Packet Inspection<br/>FFW_NAT_EXT Network Address Translation<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_SIPS_EXT Session Initiation Protocol Registration<br/>FIA_SIPT_EXT Session Initiation Protocol Trunking<br/></td></tr><tr data-sortkey="Resource Utilization (FRU)"><td>Resource Utilization (FRU)</td><td>FRU_PRS_EXT Limited Priority of Service<br/></td></tr><tr data-sortkey="Security Audit (FAU)"><td>Security Audit (FAU)</td><td>FAU_ARP_EXT Security Audit Automatic Response<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_SRTP_EXT" class="indexable" data-level="4">C.2.1.1 FCS_SRTP_EXT Secure Real-Time Transport Protocol</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for the implementation of <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_SRTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a>,
              Secure Real-Time Transport Protocol,
@@ -2347,7 +2248,7 @@ Network Device
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>-SRTP supporting the following ciphersuites [<b>assignment</b>: 
      <span class="assignable-content">list of supported ciphersuites and the standard in which they are defined</span>]. 
               <h4 id="ext-comp-FCS_SRTP_EXT.1.3">FCS_SRTP_EXT.1.3</h4>
-                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_14">is disabled</span>, <span class="selectable-content" id="_s_15">can be disabled by a [<b>assignment</b>: 
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_17">is disabled</span>, <span class="selectable-content" id="_s_18">can be disabled by a [<b>assignment</b>: 
      <span class="assignable-content">administrator role</span>]</span>].
               <h4 id="ext-comp-FCS_SRTP_EXT.1.4">FCS_SRTP_EXT.1.4</h4>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> ports to be used for <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> communications to be specified by a [<b>assignment</b>: 
@@ -2403,7 +2304,7 @@ Network Device
      <span class="assignable-content">other protocols or protocol types</span>]</li>
                 </ul>
               <h4 id="ext-comp-FFW_ACL_EXT.1.3">FFW_ACL_EXT.1.3</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the following operations to be associated with traffic filtering rules: permit or drop with the capability to log the operation <b>for each specific rule defined</b>.
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the following operations to be associated with traffic filtering rules: permit or drop with the capability to log the operation.
             <h4 id="ext-comp-FFW_ACL_EXT.1.4">FFW_ACL_EXT.1.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the traffic filtering rules to be assigned to each distinct network interface.
             <h4 id="ext-comp-FFW_ACL_EXT.1.5">FFW_ACL_EXT.1.5</h4>
@@ -2413,7 +2314,7 @@ Network Device
                 <li>UDP: source and destination addresses, source and destination ports</li>
               </ul>
               </li>
-              <li>Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_20">session inactivity timeout</span>, <span class="selectable-content" id="_s_21">completion of the expected information flow</span>].</li>
+              <li>Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_23">session inactivity timeout</span>, <span class="selectable-content" id="_s_24">completion of the expected information flow</span>].</li>
               </ul>
             <h4 id="ext-comp-FFW_ACL_EXT.1.6">FFW_ACL_EXT.1.6</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall process the applicable traffic filtering rules in an administratively defined order.
@@ -2472,7 +2373,7 @@ Network Device
      <span class="assignable-content">list of protocols</span>].
               <h4 id="ext-comp-FFW_NAT_EXT.1.3">FFW_NAT_EXT.1.3</h4>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with 
-                [<b>selection</b>: <span class="selectable-content" id="_s_42">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_43">a [<b>assignment</b>: 
+                [<b>selection</b>: <span class="selectable-content" id="_s_45">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_46">a [<b>assignment</b>: 
      <span class="assignable-content">administrator role</span>]-defined value</span>].  
               <h4 id="ext-comp-FFW_NAT_EXT.1.4">FFW_NAT_EXT.1.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall maintain a <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> table to ensure that traffic bound for the internal network is directed to only the intended recipient.
@@ -2496,7 +2397,7 @@ Network Device
           The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide support for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.
             <h4 id="ext-comp-FIA_SIPT_EXT.1.2">FIA_SIPT_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide valid identification in the form of a 
-              [<b>selection</b>: <span class="selectable-content" id="_s_44">username and password</span>, <span class="selectable-content" id="_s_45">X.509 certificate</span>] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.
+              [<b>selection</b>: <span class="selectable-content" id="_s_47">username and password</span>, <span class="selectable-content" id="_s_48">X.509 certificate</span>] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.
             <h4 id="ext-comp-FIA_SIPT_EXT.1.3">FIA_SIPT_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide a valid authentication credential in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.<h4 id="ext-comp-FIA_SIPT_EXT.1.4">FIA_SIPT_EXT.1.4</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to encrypt traffic using TLS in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.</div></div><h3 id="ext-comp-FIA_SIPS_EXT" class="indexable" data-level="4">C.2.3.2 FIA_SIPS_EXT Session Initiation Protocol Registration</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> registration.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_SIPS_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a>,
              Session Initiation Protocol Registration,
               defines requirements for how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must implement <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> registration, including protocol implementations and constraints on authentication.
@@ -2508,7 +2409,7 @@ Network Device
           </ul>
           </p><h4>FIA_SIPS_EXT.1 Session Initiation Protocol Registration</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>None
           </td></tr></table><h4 id="ext-comp-FIA_SIPS_EXT.1.1">FIA_SIPS_EXT.1.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_62"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_65"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
               describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic.
             <h4 id="ext-comp-FIA_SIPS_EXT.1.2">FIA_SIPS_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require password authentication for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> REGISTER function requests as specified in Section 22 of RFC 3261.
@@ -2549,7 +2450,7 @@ Network Device
 			This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.3 Dependencies between components.</p><p>This information benefits systems engineering activities which call for inclusion of particular
 			security controls. Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present 
 			and have been evaluated.</p>
-    <b><span class="ctr" data-myid="imp-sat-reqs-table" data-counter-type="ct-Table" id="imp-sat-reqs-table">Table  <span class="counter">7</span>: Implicitly Satisfied Requirements</span></b>
+    <b><span class="ctr" data-myid="imp-sat-reqs-table" data-counter-type="ct-Table" id="imp-sat-reqs-table">Table  <span class="counter">6</span>: Implicitly Satisfied Requirements</span></b>
     <table>	
       <tr class="header"><td>Requirement</td><td>Rationale for Satisfaction</td></tr>
       <tr>
@@ -2691,7 +2592,7 @@ Network Device
     
   <h1 id="EAR" class="indexable" data-level="A">Appendix F -  Entropy Documentation and Assessment</h1>
     The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.  
-  <h1 id="acronyms" class="indexable" data-level="A">Appendix G -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">8</span></span>: Acronyms
+  <h1 id="acronyms" class="indexable" data-level="A">Appendix G -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">7</span></span>: Acronyms
 		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_ACL"><abbr class="dyn-abbr"><a href="#abbr_ACL">ACL</a></abbr></span></td><td><span id="long_abbr_ACL">Access Control List</span></td></tr>
 <tr><td><span class="term" id="abbr_B2BUA"><abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr></span></td><td><span id="long_abbr_B2BUA">Back-To-Back User Agent</span></td></tr>
 <tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
@@ -2724,7 +2625,7 @@ Network Device
 <tr><td><span class="term" id="abbr_TSFI" data-plural="TSFIs"><abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr></span></td><td><span id="long_abbr_TSFI"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
 <tr><td><span class="term" id="abbr_VVoIP"><abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr></span></td><td><span id="long_abbr_VVoIP">Voice/Video Over IP</span></td></tr>
-</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix H -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">9</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix H -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">8</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
 				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: 
@@ -2739,7 +2640,7 @@ Network Device
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">
                  Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
           </ul></span></td></tr><tr><td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description">
-        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf">collaborative Protection Profile for Network Devices</a>, Version 2.2e, March 23, 2020
+        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</a>, Version 3.0e, 06 December 2023
       </span></td></tr><tr><td><span id="bibNDSD">[NDcPP SD]</span></td><td><span class="description">
-        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 2.2, December 2019
+        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 3.0e, 06 December 2023
       </span></td></tr></table></body></html>
