@@ -31,7 +31,21 @@
       <subject>Apply NIAP Technical Decisions, Update to CC:2022</subject>
     </entry>
   </RevisionHistory>
-  
+  <include-pkg id="pkgTLS">
+    <git>
+      <url>https://github.com/commoncriteria/tls</url>
+      <branch>release-2.0</branch>
+    </git>
+    <url>https://www.niap-ccevs.org/protectionprofiles/465</url>
+  </include-pkg>
+
+  <include-pkg id="pkgX509">
+    <git>
+      <url>https://github.com/commoncriteria/x509</url>
+      <branch>release-1.0</branch>
+    </git>
+    <url>https://www.niap-ccevs.org/protectionprofiles/511</url>
+  </include-pkg>
   
   <!-- TODO: see Issues for open items -->
   
@@ -138,7 +152,10 @@
       <cc-pt3-conf>conformant</cc-pt3-conf>
       <cc-pp-conf/>
       <cc-pp-config-with/>
-      <cc-pkg-claim/>
+      <cc-pkg-claim>
+        <FP-cc-ref conf="conformant">Functional Package for TLS, version 2.0</FP-cc-ref>
+        <FP-cc-ref conf="conformant">Functional Package for X.509, version 1.0</FP-cc-ref>
+      </cc-pkg-claim>
     </CClaimsInfo>
     <!-- <cclaims>
       <cclaim name="Conformance Statement">
@@ -684,6 +701,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         
@@ -691,15 +709,20 @@
           <consistency-rationale>
             This SFR is an iteration of a Base-PP requirement that defines additional auditable events for SBC functionality that the Base-PP could not be expected to cover.
           </consistency-rationale>
-<f-element>
-            <title> The TSF shall be able to generate an audit record of the following auditable
+          <f-element>
+            <title> The TSF shall be able to generate audit data of the following auditable
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
-                <h:li><h:b>All administrative actions;</h:b></h:li>
-                <h:li><h:b>[<h:i>Specifically defined auditable events listed in the Auditable Events table (<xref to="auditSBC"/>)</h:i></h:b></h:li>
-              </h:ol>
-            <h:table>
+                <h:li>[<h:i>All administrative actions;</h:i></h:li>
+                <h:li><h:i>Specifically defined auditable events listed in the Auditable Events for Mandatory SFRs table (<xref to="at-mandatory"/>)</h:i></h:li>
+                <h:li><h:i><selectables>
+                  <selectable>Auditable events listed in the Auditable Events for Implementation-Dependent SFRs table (<xref to="at-feat-based"/>)</selectable>
+                  <selectable>Auditable events listed in the Auditable Events for Selection-Based SFRs table (<xref to="at-sel-based"/>)</selectable>
+                  <selectable exclusive="yes">no other events</selectable>
+                </selectables></h:i></h:li>
+              </h:ol>].
+            <!-- <h:table>
               <h:tr>
                 <h:th>Requirement</h:th>
                 <h:th>Auditable Events</h:th>
@@ -837,55 +860,58 @@
               </h:tr>
          
             </h:table>
-              <ctr ctr-type="Table" id="auditSBC">: Auditable Events</ctr>
+              <ctr ctr-type="Table" id="auditSBC">: Auditable Events</ctr> -->
             </title>
-	    <note role="application">
-	        The auditable events defined in the Auditable Events table are for the SFRs that are explicitly defined in this PP-Module. 
-	        For any SFRs that are included as part of the TOE based on the claimed Base-PP, it is expected that any applicable auditable events defined for those SFRs in the Base-PP are also claimed as part of the TSF.
-	        <h:p/>
-	        The Base-PP iteration of the SFR also requires “all administrative actions” to be audited. When the TOE includes this PP-Module, 
-	        it is expected that this will also include the administrative actions that support the PP-Module defined in FMT_SMF.1/SBC.
-	        <h:p/>
-	        For SFRs labeled as optional or selection-based, the auditable event is required only if the corresponding SFR is claimed.
-	        <h:p/>
-	        A CDR is expected to be generated at the start of a session, at the end of a session, and during a session at an interval or time period specified by the ST author.
-	    </note>
-</f-element>
-  <f-element>
-    <title>
-      The TSF shall record within each audit record at least the following information: <h:ol type="a">
-        <h:li>Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event; and</h:li>
-        <h:li>For each audit event type, based on the auditable event definitions of the functional components included in the 
-          PP<h:b>-Module</h:b>/ST, [<h:i>information specified in column three of the Auditable Events table (<xref to="auditSBC"/>)</h:i>].</h:li>
-      </h:ol>
-    </title>
-  <aactivity>
-    <TSS>The evaluator shall examine the TSS to determine that it identifies the TOE’s auditable events. 
-      If the TOE is distributed across multiple components, the evaluator shall also ensure that the TSS identifies the component that is responsible for each type of auditable event.
-      <h:p/></TSS>
-    <Guidance>The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and provides a format for audit records. 
-      Each audit record format type must be covered, along with a brief description of each field. 
-      The evaluator shall check to make sure that every audit event type mandated by the PP-Module 
-      and claimed in the ST is described, and that the description of the fields contains the 
-      information required in FAU_GEN.1.2/SBC and the additional information specified in the Auditable Events table of the PP-Module.
-      <h:p/>
-      If the TOE’s default configuration does not include all required auditable events, 
-      the evaluator shall check the operational guidance to ensure that it includes instructions on how to place the TOE into its evaluated configuration by ensuring that all required auditable events are generated.
-      <h:p/></Guidance>
-    <Tests>
-      The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate audit records 
-      in accordance with the EAs associated with the functional requirements in the PP-Module. 
-      Additionally, the evaluator shall test that each administrative action applicable in the context of the PP-Module is auditable. 
-      When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the operational guidance, 
-      and that the fields in each audit record have the proper entries. 
-      <h:p/>
-      Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
-      For example, the testing that is performed to ensure that the operational guidance provided is correct will verify that AGD_OPE.1 is satisfied 
-      and should address the invocation of the administrative actions that are needed to verify the audit records are generated as expected.
-    </Tests>
-  </aactivity>
-</f-element> 
-        </f-component>
+            <note role="application">
+                The auditable events defined in the Auditable Events table are for the SFRs that are explicitly defined in this PP-Module. 
+                For any SFRs that are included as part of the TOE based on the claimed Base-PP, it is expected that any applicable auditable events defined for those SFRs in the Base-PP are also claimed as part of the TSF.
+                <h:p/>
+                The Base-PP iteration of the SFR also requires “all administrative actions” to be audited. When the TOE includes this PP-Module, 
+                it is expected that this will also include the administrative actions that support the PP-Module defined in FMT_SMF.1/SBC.
+                <h:p/>
+                If the ST includes any implementation-dependent or selection-based SFRs, the selection for "Auditable events listed in the Auditable Events for Implementation-Dependent SFRs table" or 
+                "Auditable events listed in the Auditable Events for Selection-Based SFRs table" must be made, respectively. If no implementation-dependent or selection-based SFRs are included, "no other events" should be selected. 
+                The auditing of each implementation-dependent or selection-based SFR is only required if that SFR is included in the ST.
+                <h:p/>
+                A CDR is expected to be generated at the start of a session, at the end of a session, and during a session at an interval or time period specified by the ST author.
+            </note>
+          </f-element>
+          <f-element>
+            <title>
+              The TSF shall record within the audit data at least the following information: <h:ol type="a">
+                <h:li>Date and time of the auditable event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event;</h:li>
+                <h:li>For each auditable event type, based on the auditable event definitions of the functional components included in the 
+                  PP, PP-Module, functional package or ST, [<h:i>information specified in column three of the Auditable Events table in which the auditable event was defined</h:i>].</h:li>
+              </h:ol>
+            </title>
+            <aactivity>
+              <TSS>The evaluator shall examine the TSS to determine that it identifies the TOE’s auditable events. 
+                If the TOE is distributed across multiple components, the evaluator shall also ensure that the TSS identifies the component that is responsible for each type of auditable event.
+                <h:p/></TSS>
+              <Guidance>The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and provides a format for audit records. 
+                Each audit record format type must be covered, along with a brief description of each field. 
+                The evaluator shall check to make sure that every audit event type mandated by the PP-Module 
+                and claimed in the ST is described, and that the description of the fields contains the 
+                information required in FAU_GEN.1.2/SBC and the additional information specified in the Auditable Events table of the PP-Module.
+                <h:p/>
+                If the TOE’s default configuration does not include all required auditable events, 
+                the evaluator shall check the operational guidance to ensure that it includes instructions on how to place the TOE into its evaluated configuration by ensuring that all required auditable events are generated.
+                <h:p/></Guidance>
+              <Tests>
+                The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate audit records 
+                in accordance with the EAs associated with the functional requirements in the PP-Module. 
+                Additionally, the evaluator shall test that each administrative action applicable in the context of the PP-Module is auditable. 
+                When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the operational guidance, 
+                and that the fields in each audit record have the proper entries. 
+                <h:p/>
+                Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
+                For example, the testing that is performed to ensure that the operational guidance provided is correct will verify that AGD_OPE.1 is satisfied 
+                and should address the invocation of the administrative actions that are needed to verify the audit records are generated as expected.
+              </Tests>
+            </aactivity>
+        </f-element>
+        <audit-event/> 
+      </f-component>
         
         
         <f-component cc-id="fau_saa.1" name="Potential Violation Analysis"> 
@@ -902,7 +928,7 @@
             <title>
               The TSF shall enforce the following rules for monitoring audited events: <h:ol type="a">
                 <h:li>Accumulation or combination of <assignable>subset of defined auditable events</assignable> known to indicate a potential security violation; </h:li>
-                <h:li><assignable>any other rules</assignable></h:li>
+                <h:li><assignable>any other rules</assignable>.</h:li>
               </h:ol>
             </title>
           
@@ -921,6 +947,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         
@@ -932,13 +959,13 @@
           <f-element>
             <title>
               The TSF shall be able to select the set of events to be audited from the set of all auditable events based on the following attributes: <h:ol type="a">
-              <h:li>[<h:i>event type</h:i></h:li>
+              <h:li>[<h:i>event type</h:i>]</h:li>
               <h:li><assignable>list of additional attributes that audit selectivity is based upon</assignable></h:li>
               </h:ol>
             </title>
          
             <note role="application">
-              The auditable events associated with traffic filtering rules (see the FFW_ACL_EXT.2 and FFW_DPI_EXT.1 rows in <xref to="auditSBC"/> table above) 
+              The auditable events associated with traffic filtering rules (see the FFW_ACL_EXT.2 and FFW_DPI_EXT.1 rows in <xref to="at-mandatory"/> table above) 
               may generate a significant volume of traffic that make them impractical to generate on a persistent basis. 
               The TOE must have the ability to generate these records when necessary but this SFR exists to allow for the generation of those events to be suppressed when the TOE is in its evaluated configuration.
             </note>
@@ -962,6 +989,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
       </sec:man_fau>
@@ -1082,6 +1110,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
      
@@ -1102,6 +1131,7 @@
               <no-tests>The evaluation of this SFR is performed as part of FDP_IFF.1.</no-tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         <f-component cc-id="fdp_iff.1" name="Simple Security Attributes"> 
@@ -1195,6 +1225,10 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Any modifications to the B2BUA policy.</audit-event-descr>
+            <audit-event-info/>
+          </audit-event>
         </f-component>
       </sec:man_fdp>
       <sec:man_ffw title="Firewall (FFW)">
@@ -1413,6 +1447,11 @@
             <title>
               The TSF shall allow the following operations to be associated with traffic filtering rules: permit or drop with the capability to log the operation <h:b>for each specific rule defined</h:b>.
             </title>
+            <ext-comp-def-title>
+              <title>
+              The TSF shall allow the following operations to be associated with traffic filtering rules: permit or drop with the capability to log the operation.
+            </title>
+            </ext-comp-def-title>
             <note role="application">
               Whether or not logging is performed may be applied to individual rules or groups of rules on an independent basis. 
               For example, if there are six rules defined, the TOE should allow for any subset of these rules to be logged, independent of one another.  
@@ -1541,6 +1580,12 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Application of traffic filtering rules.</audit-event-descr>
+            <audit-event-info>Source and destination of observed traffic.</audit-event-info>
+            <audit-event-info>Rule relevant to observed traffic.</audit-event-info>
+            <audit-event-info>Result of rule evaluation.</audit-event-info>
+          </audit-event>
         </f-component>
         
         
@@ -1656,6 +1701,12 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Application of traffic filtering rules.</audit-event-descr>
+            <audit-event-info>Source and destination of observed traffic.</audit-event-info>
+            <audit-event-info>Rule relevant to observed traffic.</audit-event-info>
+            <audit-event-info>Result of rule evaluation.</audit-event-info>
+          </audit-event>
         </f-component>
         
         
@@ -1732,6 +1783,12 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Application of deep packet inspection rules.</audit-event-descr>
+            <audit-event-info>Source and destination of observed traffic.</audit-event-info>
+            <audit-event-info>Rule relevant to observed traffic.</audit-event-info>
+            <audit-event-info>Result of rule evaluation.</audit-event-info>
+          </audit-event>
         </f-component>
         
         
@@ -1816,6 +1873,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         
@@ -1888,6 +1946,10 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>All SIP trunk authentication attempts.</audit-event-descr>
+            <audit-event-info>Username and IP address of the service provider.</audit-event-info>
+          </audit-event>
         </f-component>
           
     
@@ -1896,65 +1958,69 @@
       
       <sec:man_fmt title="Security Management (FMT)">
         <f-component name="Specification of Management Functions (SBC)" id="fel-managementfun-as" cc-id="fmt_smf.1" iteration="SBC">
-			<consistency-rationale>
-			  This SFR is an iteration of a Base-PP requirement that defines additional management functions for SBC functionality that the Base-PP could not be expected to cover.
-			</consistency-rationale>
-			<f-element>
-			<title>The TSF shall be capable of performing the following management functions <h:b>related to SBC functionality</h:b>: [<h:i>Ability of a Security Administrator to:
-			  <h:ul>
-			    <h:li>Change a user's password</h:li>
-			    <h:li>Require a user's password to be changed upon next login</h:li>
-			    <h:li>Configure the auditable events that will result in the generation of an alarm</h:li>
-			    <h:li>Configure the B2BUA policy</h:li>
-			    <h:li>Configure traffic filtering rules</h:li>
-			    <h:li>Configure auditable events</h:li>
-			    <h:li>Configure NAT</h:li>
-			    <h:li>Configure ports and cryptography for signaling and media communications</h:li>
-			    <h:li>Configure SIP communications</h:li>
-			  </h:ul></h:i>].
-			</title>
-			  <note role="Application">
-			    This SFR defines additional management functions for the TOE beyond what is defined in the Base-PP as FMT_SMF.1. 
-			    The TOE may have all management functionality implemented in the same logical interface; 
-			    it is not necessary for “network device management” and “SBC management” to be implemented in separate interfaces.
-			    <h:p/>
-			    This PP-Module may rely on management functionality defined in the Base-PP to support the implementation of its functions. 
-			    For example, the SBC portion of the TOE relies on the reliable time function that must be implemented by the Base-PP portion of the TOE. 
-			    If the Base-PP implements this using NTP, the “Ability to set the time which is used for time-stamps” or “Ability to configure NTP” 
-			    management function defined in FMT_SMF.1 in the Base-PP can be used to address this PP-Module’s dependency on reliable system time.
-			    Note that support for NTP is recommended but not required.
-			    <h:p/>
-			    The 'configurable auditable events' function relates to FAU_SEL.1, specifically with respect to allowing a Security Administrator 
-			    to determine whether a given event is auditable. As this refers to the events for the triggering of various filtering rules, 
-			    it may be implicitly addressed through the ‘configure traffic filtering rules’ function, 
-			    for example by explicitly defining a rule with a type that automatically requires it to be logged or a parameter that causes it to be logged if triggered.
-			  </note>
-			<aactivity>
-			  <TSS>
-			    The evaluator shall examine the TSS to determine that, for each administrative function listed in the SFR, 
-			    the ability to execute the function and the logical interfaces used to perform the function is claimed. 
-			    For each of these functions, the evaluator shall also confirm that the TSS details how the ability to manipulate the TSF data through these interfaces is disallowed for non-administrative users.
-			    <h:p/>
-			  </TSS>
-			  <Guidance> 
-			    The evaluator shall review the guidance documentation to determine that each of the functions detailed in the TSS are identified, 
-			    and that configuration information is provided to ensure that only administrators have access to the functions.
-			    <h:p/>
-			  </Guidance>
-			  <Tests>
-			    For each management function specified in FMT_SMF.1.1/SBC, the evaluator shall access the TOE with appropriate authorizations, 
-			    perform the required function, and demonstrate that configuration of the function results in the proper expected behavior. 
-			    For behavior related to SBC functionality (as opposed to manipulation of user accounts), this may be tested in conjunction with other SFRs.
-			    <h:p/>
-			    The evaluator shall also ensure that all relevant management functionality from FMT_SMF.1 in the Base-PP that relates to the SBC PP-Module are tested in conjunction with SBC functionality. 
-			    For example, for SBC functions that rely on time services, 
-			    the evaluator shall ensure that a Security Administrator can either manually configure the time or specify NTP server connectivity and ensure that the SBC functions will make use of the configured time data.
-			    <h:p/>
-			    The evaluator shall also demonstrate that a user who lacks privileges to execute these functions (as described in the operational guidance) are unable to execute them.
-			  </Tests>
-			</aactivity>
-		</f-element>
-		</f-component>
+          <consistency-rationale>
+            This SFR is an iteration of a Base-PP requirement that defines additional management functions for SBC functionality that the Base-PP could not be expected to cover.
+          </consistency-rationale>
+          <f-element>
+            <title>The TSF shall be capable of performing the following management functions <h:b>related to SBC functionality</h:b>: [<h:i>Ability of a Security Administrator to:
+              <h:ul>
+                <h:li>Change a user's password</h:li>
+                <h:li>Require a user's password to be changed upon next login</h:li>
+                <h:li>Configure the auditable events that will result in the generation of an alarm</h:li>
+                <h:li>Configure the B2BUA policy</h:li>
+                <h:li>Configure traffic filtering rules</h:li>
+                <h:li>Configure auditable events</h:li>
+                <h:li>Configure NAT</h:li>
+                <h:li>Configure ports and cryptography for signaling and media communications</h:li>
+                <h:li>Configure SIP communications</h:li>
+              </h:ul></h:i>].
+            </title>
+            <note role="Application">
+              This SFR defines additional management functions for the TOE beyond what is defined in the Base-PP as FMT_SMF.1. 
+              The TOE may have all management functionality implemented in the same logical interface; 
+              it is not necessary for “network device management” and “SBC management” to be implemented in separate interfaces.
+              <h:p/>
+              This PP-Module may rely on management functionality defined in the Base-PP to support the implementation of its functions. 
+              For example, the SBC portion of the TOE relies on the reliable time function that must be implemented by the Base-PP portion of the TOE. 
+              If the Base-PP implements this using NTP, the “Ability to set the time which is used for time-stamps” or “Ability to configure NTP” 
+              management function defined in FMT_SMF.1 in the Base-PP can be used to address this PP-Module’s dependency on reliable system time.
+              Note that support for NTP is recommended but not required.
+              <h:p/>
+              The 'configurable auditable events' function relates to FAU_SEL.1, specifically with respect to allowing a Security Administrator 
+              to determine whether a given event is auditable. As this refers to the events for the triggering of various filtering rules, 
+              it may be implicitly addressed through the ‘configure traffic filtering rules’ function, 
+              for example by explicitly defining a rule with a type that automatically requires it to be logged or a parameter that causes it to be logged if triggered.
+            </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall examine the TSS to determine that, for each administrative function listed in the SFR, 
+                the ability to execute the function and the logical interfaces used to perform the function is claimed. 
+                For each of these functions, the evaluator shall also confirm that the TSS details how the ability to manipulate the TSF data through these interfaces is disallowed for non-administrative users.
+                <h:p/>
+              </TSS>
+              <Guidance> 
+                The evaluator shall review the guidance documentation to determine that each of the functions detailed in the TSS are identified, 
+                and that configuration information is provided to ensure that only administrators have access to the functions.
+                <h:p/>
+              </Guidance>
+              <Tests>
+                For each management function specified in FMT_SMF.1.1/SBC, the evaluator shall access the TOE with appropriate authorizations, 
+                perform the required function, and demonstrate that configuration of the function results in the proper expected behavior. 
+                For behavior related to SBC functionality (as opposed to manipulation of user accounts), this may be tested in conjunction with other SFRs.
+                <h:p/>
+                The evaluator shall also ensure that all relevant management functionality from FMT_SMF.1 in the Base-PP that relates to the SBC PP-Module are tested in conjunction with SBC functionality. 
+                For example, for SBC functions that rely on time services, 
+                the evaluator shall ensure that a Security Administrator can either manually configure the time or specify NTP server connectivity and ensure that the SBC functions will make use of the configured time data.
+                <h:p/>
+                The evaluator shall also demonstrate that a user who lacks privileges to execute these functions (as described in the operational guidance) are unable to execute them.
+              </Tests>
+            </aactivity>
+          </f-element>
+          <audit-event>
+            <audit-event-descr>All management actions.</audit-event-descr>
+            <audit-event-info>Identifier of initiator.</audit-event-info>
+          </audit-event>
+		    </f-component>
         </sec:man_fmt>
       
       <sec:man_fru title="Resource Utilization (FRU)">
@@ -2010,6 +2076,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         <f-component cc-id="fru_rsa.1" name="Maximum Quotas"> 
@@ -2046,6 +2113,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         
@@ -2071,7 +2139,7 @@
 	              </selectables>
 	              to</h:b> provide a trusted communication channel between itself and 
 	            <h:b>authorized IT entities supporting the following capabilities: security audit automatic response</h:b> 
-	            that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data. 
+	            that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
 	          </title>
 	        </f-element>
 	        <f-element>
@@ -2091,6 +2159,18 @@
 	              Testing for SNMPv3 is performed through evaluation of FAU_ARP_EXT.1 if claimed there.</no-tests>
 	          </aactivity>
 	        </f-element>
+          <audit-event>
+            <audit-event-descr>Initiation of the trusted channel.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Termination of the trusted channel.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
 	      </f-component>
 	    
 	    
@@ -2125,6 +2205,18 @@
 			      </no-tests>
 			    </aactivity>  
 			  </f-element>
+        <audit-event>
+            <audit-event-descr>Initiation of the trusted channel.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Termination of the trusted channel.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
 		  </f-component>
 	    
 	    
@@ -2140,8 +2232,8 @@
 	            <selectable>IPsec</selectable>
 	            <selectable>H.235</selectable>
 	            <selectable><assignable>other protocols</assignable></selectable></selectables></h:b> 
-	          to provide a <h:b>trusted</h:b> communication channel between itself and <h:b>authorized</h:b> IT 
-	          <h:b>entities supporting the following capabilities: VVoIP signaling and media channels</h:b> that is
+	          to provide a <h:b>trusted</h:b> communication channel between itself and <h:b>authorized IT 
+	          entities supporting the following capabilities: VVoIP signaling and media channels</h:b> that is
 	          logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
 	        </title>
 	        <note role="Application">
@@ -2163,6 +2255,18 @@
 	          </no-tests>
 	        </aactivity>
 	      </f-element>
+        <audit-event>
+            <audit-event-descr>Initiation of the trusted channel.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Termination of the trusted channel.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
 	    </f-component>
 	    
       </sec:man_ftp>
@@ -2186,7 +2290,7 @@
           </consistency-rationale>
           <f-element>
             <title>
-              The TSF shall provide an <h:b>H.323</h:b> communication channel <h:b>in accordance with ITU-REC H.235.0</h:b> between itself and 
+              The TSF shall provide a<h:b>n H.323</h:b> communication channel <h:b>in accordance with ITU-REC H.235.0</h:b> between itself and 
               <h:b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and <selectables>
                 <selectable>IPsec as specified in FCS_IPSEC_EXT.1</selectable>
                 <selectable>no other protocol</selectable>
@@ -2213,6 +2317,18 @@
               </no-tests>
             </aactivity>  
           </f-element>
+          <audit-event>
+            <audit-event-descr>Initiation of the trusted channel.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Termination of the trusted channel.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr>
+            <audit-event-info>Identification of the initiator and target of the trusted channel.</audit-event-info>
+          </audit-event>
         </f-component>
         
       </sec:sel_ftp> 
@@ -2309,6 +2425,14 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Call Detail Record (CDR)</audit-event-descr>
+            <audit-event-info>Calling party.</audit-event-info>
+            <audit-event-info>Called party.</audit-event-info>
+            <audit-event-info>Start time of the call.</audit-event-info>
+            <audit-event-info>Call duration.</audit-event-info>
+            <audit-event-info>Call type.</audit-event-info>
+          </audit-event>
         </f-component>
       </sec:impl_fia>
       
@@ -2471,14 +2595,14 @@
     <entry id="bibNDcPP">
       <tag>NDcPP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf">collaborative Protection Profile for Network Devices</h:a>, Version 2.2e, March 23, 2020
+        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</h:a>, Version 3.0e, 06 December 2023
       </description>
     </entry>
     
     <entry id="bibNDSD">
       <tag>NDcPP SD</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</h:a>, Version 2.2, December 2019
+        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</h:a>, Version 3.0e, 06 December 2023
       </description>
     </entry>
 
