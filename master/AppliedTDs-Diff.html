@@ -17,6 +17,10 @@
                 </tr>
             </table>
         </div>
+        <div id="commmentbox-">
+            <a href="#Comment-1-">Comment: Comment-1-</a>
+            <br>
+        </div>
         <h1 class="title" style="page-break-before:auto;">PP-Module for Session Border Controllers</h1>
         <h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1>
         <div class="center">
@@ -46,7 +50,7 @@
         </h3>
         <h2>Contents</h2>
         <div class="toc" id="toc">
-            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:10px">1.4<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.5<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative Protection Profile for Network Devices Security Functional Requirements Direction </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Identification and Authentication (FIA)</span></a><a href="#@id" style="text-indent:30px">5.1.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#_sec_4" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#man_fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#man_fdp" style="text-indent:20px">5.2.4<span>User Data Protection (FDP)</span></a><a href="#man_ffw" style="text-indent:20px">5.2.5<span>Firewall (FFW)</span></a><a href="#man_fia" style="text-indent:20px">5.2.6<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.7<span>Security Management (FMT)</span></a><a href="#man_fru" style="text-indent:20px">5.2.8<span>Resource Utilization (FRU)</span></a><a href="#man_ftp" style="text-indent:20px">5.2.9<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative Protection Profile for Network Devices</span></a><a href="#contoe-ND" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-ND" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-ND" style="text-indent:20px">6.1.3<span> Consistency of OE Objectives </span></a><a href="#conreq-ND" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements </span></a><a href="#_sec_6" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Dependent SFRs</span></a><a href="#impl_fia" style="text-indent:20px">A.3.2<span>Identification and Authentication (FIA)</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#_sec_5" style="text-indent:10px">B.1<span>Auditable Events for Selection-Based SFRs</span></a><a href="#sel_ftp" style="text-indent:10px">B.2<span>Trusted Path/Channels (FTP)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_SRTP_EXT" style="text-indent:30px">C.2.1.1<span>FCS_SRTP_EXT Secure Real-Time Transport Protocol</span></a><a href="#ext-comp-FFW" style="text-indent:20px">C.2.2<span>Firewall (FFW)</span></a><a href="#ext-comp-FFW_ACL_EXT" style="text-indent:30px">C.2.2.1<span>FFW_ACL_EXT Traffic Filtering</span></a><a href="#ext-comp-FFW_DPI_EXT" style="text-indent:30px">C.2.2.2<span>FFW_DPI_EXT Deep Packet Inspection</span></a><a href="#ext-comp-FFW_NAT_EXT" style="text-indent:30px">C.2.2.3<span>FFW_NAT_EXT Network Address Translation</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.3<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_SIPT_EXT" style="text-indent:30px">C.2.3.1<span>FIA_SIPT_EXT Session Initiation Protocol Trunking</span></a><a href="#ext-comp-FIA_SIPS_EXT" style="text-indent:30px">C.2.3.2<span>FIA_SIPS_EXT Session Initiation Protocol Registration</span></a><a href="#ext-comp-FRU" style="text-indent:20px">C.2.4<span>Resource Utilization (FRU)</span></a><a href="#ext-comp-FRU_PRS_EXT" style="text-indent:30px">C.2.4.1<span>FRU_PRS_EXT Limited Priority of Service</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.5<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ARP_EXT" style="text-indent:30px">C.2.5.1<span>FAU_ARP_EXT Security Audit Automatic Response</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#allocation" style="text-indent:0px">Appendix E - <span>Allocation of Requirements in Distributed TOEs</span></a><a href="#EAR" style="text-indent:0px">Appendix F - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix G - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix H - <span>Bibliography</span></a>
+            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:10px">1.4<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.5<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative Protection Profile for Network Devices Security Functional Requirements Direction </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Identification and Authentication (FIA)</span></a><a href="#@id" style="text-indent:30px">5.1.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#_sec_4" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#man_fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#man_fdp" style="text-indent:20px">5.2.4<span>User Data Protection (FDP)</span></a><a href="#man_ffw" style="text-indent:20px">5.2.5<span>Firewall (FFW)</span></a><a href="#man_fia" style="text-indent:20px">5.2.6<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.7<span>Security Management (FMT)</span></a><a href="#man_fru" style="text-indent:20px">5.2.8<span>Resource Utilization (FRU)</span></a><a href="#man_ftp" style="text-indent:20px">5.2.9<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative Protection Profile for Network Devices</span></a><a href="#contoe-ND" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-ND" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-ND" style="text-indent:20px">6.1.3<span> Consistency of OE Objectives </span></a><a href="#conreq-ND" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements </span></a><a href="#_sec_6" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Dependent SFRs</span></a><a href="#impl_fia" style="text-indent:20px">A.3.2<span>Identification and Authentication (FIA)</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#_sec_5" style="text-indent:10px">B.1<span>Auditable Events for Selection-Based SFRs</span></a><a href="#sel_ftp" style="text-indent:10px">B.2<span>Trusted Path/Channels (FTP)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_SRTP_EXT" style="text-indent:30px">C.2.1.1<span>FCS_SRTP_EXT Secure Real-Time Transport Protocol</span></a><a href="#ext-comp-FFW" style="text-indent:20px">C.2.2<span>Firewall (FFW)</span></a><a href="#ext-comp-FFW_ACL_EXT" style="text-indent:30px">C.2.2.1<span>FFW_ACL_EXT Traffic Filtering</span></a><a href="#ext-comp-FFW_DPI_EXT" style="text-indent:30px">C.2.2.2<span>FFW_DPI_EXT Deep Packet Inspection</span></a><a href="#ext-comp-FFW_NAT_EXT" style="text-indent:30px">C.2.2.3<span>FFW_NAT_EXT Network Address Translation</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.3<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_SIPT_EXT" style="text-indent:30px">C.2.3.1<span>FIA_SIPT_EXT Session Initiation Protocol Trunking</span></a><a href="#ext-comp-FIA_SIPS_EXT" style="text-indent:30px">C.2.3.2<span>FIA_SIPS_EXT Session Initiation Protocol Registration</span></a><a href="#ext-comp-FRU" style="text-indent:20px">C.2.4<span>Resource Utilization (FRU)</span></a><a href="#ext-comp-FRU_PRS_EXT" style="text-indent:30px">C.2.4.1<span>FRU_PRS_EXT Limited Priority of Service</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.5<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ARP_EXT" style="text-indent:30px">C.2.5.1<span>FAU_ARP_EXT Security Audit Automatic Response</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#allocation" style="text-indent:0px">Appendix E - <span>Allocation of Requirements in Distributed TOEs</span></a><a href="#EAR" style="text-indent:0px">Appendix F - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix G - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix H - <span>Bibliography</span></a>
         </div>
         <h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
         <h2 class="indexable" data-level="2" id="Overview">1.1 Overview</h2>
@@ -288,56 +292,9 @@
         </p>
          This document does not define any additional OSPs. 
         <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
-        <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_TOE">4.1 Security Objectives for the TOE</h2>
-         
-        <dl>
-            <dt class="SO defined" id="O.AUTHORIZED_ADMINISTRATION">O.AUTHORIZED_ADMINISTRATION</dt>
-            <dd>
-                <span class="description">All network devices are expected to provide services that allow the security functionality of the device to be managed. The SBC, as a specific type of network device, has a refined set of management functions to address its specialized behavior. 
-                    <p></p>
-                     <b>Addressed by:</b> <a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a> </span>
-            </dd>
-            <dt class="SO defined" id="O.PROTECTED_COMMUNICATIONS">O.PROTECTED_COMMUNICATIONS</dt>
-            <dd>
-                <span class="description">To mitigate the threat of data-in-transit disclosure, the SBC must ensure that remote communications are secured using appropriate means. This includes the security of <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> signaling and media channels and Session Initiation Protocol (<abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>) trunking, in addition to any secure communications channels that are defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, such as communication with audit or authentication servers. 
-                    <p></p>
-                     <b>Addressed by:</b> FCS_TLSC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FCS_TLSC_EXT.2 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FCS_TLSS_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FCS_TLSS_EXT.2 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FIA_X509_EXT.1/Rev (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FIA_X509_EXT.2 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FIA_X509_EXT.3 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FTP_ITC.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a>, <a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a>, <a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a>, <a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a>, <a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a>, <a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a> (selection-based) </span>
-            </dd>
-            <dt class="SO defined" id="O.RESOURCE_AVAILABILITY">O.RESOURCE_AVAILABILITY</dt>
-            <dd>
-                <span class="description">The SBC is not capable of performing its primary functionality if an attacker is able to prevent it from handling user data through a denial of service (<abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr>) attack. Therefore, the SBC is expected to provide security functions that allow it to prioritize its resources and protect against traffic that is designed only to disrupt availability of the device. 
-                    <p></p>
-                     <b>Addressed by:</b> <a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a>, <a href="#FRU_RSA.1">FRU_RSA.1</a> </span>
-            </dd>
-            <dt class="SO defined" id="O.SYSTEM_MONITORING">O.SYSTEM_MONITORING</dt>
-            <dd>
-                <span class="description">In order to ensure that potentially malicious activity is detected, the NDcPP requires security-relevant events to be audited. The SBC also provides security functions to support system monitoring and defines additional security-relevant events for specific SBC functions. The SBC is also expected to support real-time system monitoring by providing the ability to automatically generate alerts when certain types of events occur. 
-                    <p></p>
-                     <b>Addressed by:</b> <a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a>, <a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a>, <a href="#FAU_SAA.1">FAU_SAA.1</a>, <a href="#FAU_SEL.1">FAU_SEL.1</a>, <a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a> </span>
-            </dd>
-            <dt class="SO defined" id="O.TOPOLOGY_HIDING">O.TOPOLOGY_HIDING</dt>
-            <dd>
-                <span class="description">In order to ensure that there is no unauthorized disclosure of network information, the SBC is expected to hide the topology of the protected network. The SBC ensures no unauthorized disclosure by functioning as a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> and by providing support for network address translation (<abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr>). These mechanisms ensure that the intended recipient of data being transmitted through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is not revealed and that devices inside the protected network are not directly accessible. 
-                    <p></p>
-                     <b>Addressed by:</b> <a href="#FDP_IFC.1">FDP_IFC.1</a>, <a href="#FDP_IFF.1">FDP_IFF.1</a>, <a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a> </span>
-            </dd>
-            <dt class="SO defined" id="O.TRAFFIC_FILTERING">O.TRAFFIC_FILTERING</dt>
-            <dd>
-                <span class="description">In order to ensure that malicious traffic cannot compromise the SBC or devices on its protected network, the SBC is expected to provide rudimentary traffic filtering capabilities. This ensures that unauthorized TCP/UDP traffic is blocked and that all signaling and media traffic is first checked to be well-formed prior to performing any action on it. 
-                    <p></p>
-                     <b>Addressed by:</b> <a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a>, <a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a>, <a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a> </span>
-            </dd>
-            <dt class="SO defined" id="O.USER_DATA_DELIVERY">O.USER_DATA_DELIVERY</dt>
-            <dd>
-                <span class="description">When user data is transmitted between calling parties, the calling parties expect that this data is only transmitted to the intended recipients. The SBC is expected to provide this assurance through correctly functioning as a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> and through correct implementation of <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>. 
-                    <p></p>
-                     <b>Addressed by:</b> <a href="#FDP_IFC.1">FDP_IFC.1</a>, <a href="#FDP_IFF.1">FDP_IFF.1</a>, <a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a>, <a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a>, <a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a> (implementation-based) </span>
-            </dd>
-        </dl>
-         
-        <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_Operational_Environment">4.2 Security Objectives for the Operational Environment</h2>
+        <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_Operational_Environment">4.1 Security Objectives for the Operational Environment</h2>
          All objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> also apply to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and not the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-        <h2 id="" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>
+        <h2 id="" class="indexable,h2" data-level="2">4.2 Security Objectives Rationale</h2>
          This section describes how the assumptions and organizational security policies map to operational environment security objectives. 
         <table>
             <caption>
@@ -345,45 +302,6 @@
             </caption>
             <tr class="header">
                 <td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="2"><a href="#T.MALICIOUS_TRAFFIC">T.MALICIOUS_​TRAFFIC</a></td><td><a href="#O.SYSTEM_MONITORING">O.SYSTEM_​MONITORING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of malformed traffic causing a system crash by ensuring that any such instances are logged so that their cause can be diagnosed and prevented in the future.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.TRAFFIC_FILTERING">O.TRAFFIC_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of malformed traffic causing a failure of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> by providing a mechanism to prevent the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> from processing it.</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="5"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a></td><td><a href="#O.AUTHORIZED_ADMINISTRATION">O.AUTHORIZED_​ADMINISTRATION</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of unauthorized network access by giving the administrator the ability to configure traffic filtering rules to block unauthorized traffic.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.PROTECTED_COMMUNICATIONS">O.PROTECTED_​COMMUNICATIONS</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of unauthorized network access by enforcing the use of protected communications channels that prevent impersonation of legitimate subjects.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.SYSTEM_MONITORING">O.SYSTEM_​MONITORING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of unauthorized network access by ensuring that any such instances are logged so that their cause can be diagnosed and prevented in the future.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.TOPOLOGY_HIDING">O.TOPOLOGY_​HIDING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of unauthorized network access by hiding its topology so that an attacker on an external network cannot discover or enumerate devices on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s internal network.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.TRAFFIC_FILTERING">O.TRAFFIC_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of unauthorized network access by enforcing traffic filtering rules that prevent devices on the internal network from being accessed.</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="4"><a href="#T.RESOURCE_EXHAUSTION">T.RESOURCE_​EXHAUSTION</a></td><td><a href="#O.AUTHORIZED_ADMINISTRATION">O.AUTHORIZED_​ADMINISTRATION</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of resource exhaustion by giving administrators the ability to configure traffic rules so that traffic flooding attempts can be discarded.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.RESOURCE_AVAILABILITY">O.RESOURCE_​AVAILABILITY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of the transmission of network traffic that causes the inability of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform its functions, by protecting against disruptive traffic.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.SYSTEM_MONITORING">O.SYSTEM_​MONITORING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of unauthorized network access by ensuring that any such instances are logged so that their cause can be diagnosed and prevented in the future.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.TRAFFIC_FILTERING">O.TRAFFIC_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of resource exhaustion by providing the ability to filter network traffic that could cause a <abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr>.</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="1"><a href="#T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_​COMMUNICATION_​CHANNELS</a></td><td><a href="#O.PROTECTED_COMMUNICATIONS">O.PROTECTED_​COMMUNICATIONS</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of disclosure of data in transit by enforcing the use of protected communications channels that prevent transmitted data from unauthorized disclosure.</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="1"><a href="#T.USER_DATA_REUSE">T.USER_​DATA_​REUSE</a></td><td><a href="#O.USER_DATA_DELIVERY">O.USER_​DATA_​DELIVERY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> mitigates the threat of inadvertently sending user data to an unintended destination by implementing measures that ensure that data is only sent to the intended recipient.</td>
             </tr>
         </table>
         <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
@@ -526,7 +444,7 @@
                 <td></td>
             </tr>
             <tr data-sortkey="FDP_IFF.1.6">
-                <td>Any modifications to the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy.</td><td></td>
+                <td>Any modifications to the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy.</td><td>No additional information.</td>
             </tr>
             <tr data-sortkey="FFW_ACL_EXT.1">
                 <td rowspan="2"><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td><td style="display:none"></td>
@@ -776,7 +694,7 @@
                         </li>
                     </ol>
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> The auditable events associated with traffic filtering rules (see the <a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a> and <a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a> rows in <a href="#at-mandatory" class="at-mandatory-ref">Table <span class="counter">2</span></a> table above) may generate a significant volume of traffic that make them impractical to generate on a persistent basis. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must have the ability to generate these records when necessary but this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> exists to allow for the generation of those events to be suppressed when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is in its evaluated configuration. </span>
+                        <span class="note-header">Application Note: </span><span class="note"> The auditable events associated with traffic filtering rules (see the <a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a> and <a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a> rows in <a href="#at-mandatory" class="at-mandatory-ref">Table <span class="counter">2</span></a> above) may generate a significant volume of traffic that make them impractical to generate on a persistent basis. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must have the ability to generate these records when necessary but this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> exists to allow for the generation of those events to be suppressed when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is in its evaluated configuration. </span>
                     </div>
                 </div>
             </div>
@@ -797,28 +715,7 @@
                     <a href="#FCS_SRTP_EXT.1.2" class="abbr">FCS_SRTP_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>-SRTP supporting the following ciphersuites: [<b>selection</b>: 
-                    <ul>
-                        <li style="">
-                            <span class="selectable-content" id="_s_9">AES_CM_128_HMAC_SHA1_80, in accordance with RFC 4568</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_10">AES_CM_128_HMAC_SHA1_32, in accordance with RFC 4568</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_11">AES_256_CM_HMAC_SHA1_80, in accordance with RFC 6188</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_12">AES_256_CM_HMAC_SHA1_32, in accordance with RFC 6188</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_13">AEAD_AES_128_GCM, in accordance with RFC 7714</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_14">AEAD_AES_256_GCM, in accordance with RFC 7714</span>
-                        </li>
-                    </ul>
-                    ] 
+                    <span style="" class="comment " id="Comment-1-">It's unclear if CNSA 1.0 algorithm restrictions should be applied to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>. </span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>-SRTP supporting the following ciphersuites: [<i>AEAD_AES_256_GCM, in accordance with RFC 7714</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> This requirement specifies that the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic will be keyed according to an <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr> dialog using one of the identified ciphersuites. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author should select all ciphersuites that are supported. </span>
                     </div>
@@ -829,7 +726,7 @@
                     <a href="#FCS_SRTP_EXT.1.3" class="abbr">FCS_SRTP_EXT.1.3</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_15">is disabled</span>, <span class="selectable-content" id="_s_16">can be disabled by a [<i>Security Administrator</i>]</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_9">is disabled</span>, <span class="selectable-content" id="_s_10">can be disabled by a [<i>Security Administrator</i>]</span>]. 
                 </div>
             </div>
             <div class="element">
@@ -879,10 +776,10 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the [<i>following configurable behavioral rules: [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_19">Default-deny (allowlist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly deny all information flows except for those explicitly authorized by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>
+                                <span class="selectable-content" id="_s_13">Default-deny (allowlist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly deny all information flows except for those explicitly authorized by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_20">Default-allow (denylist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly allow all information flows except for those explicitly denied by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>
+                                <span class="selectable-content" id="_s_14">Default-allow (denylist) posture: If configured, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> will implicitly allow all information flows except for those explicitly denied by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>
                             </li>
                         </ul>
                         ]</i>]. 
@@ -961,7 +858,7 @@
                             [<i>Application (Real-Time Communications Protocol) 
                                 <ul>
                                     <li>
-                                        signaling protocols: [<b>selection</b>: <span class="selectable-content" id="_s_21"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="filters_H323">H.323</span>]]
+                                        signaling protocols: [<b>selection</b>: <span class="selectable-content" id="_s_15"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="filters_H323">H.323</span>]]
                                     </li>
                                 </ul>
                             </i>
@@ -1008,7 +905,7 @@
                             </ul>
                         </li>
                         <li>
-                            Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_23">session inactivity timeout</span>, <span class="selectable-content" id="_s_24">completion of the expected information flow</span>].
+                            Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_17">session inactivity timeout</span>, <span class="selectable-content" id="_s_18">completion of the expected information flow</span>].
                         </li>
                     </ul>
                 </div>
@@ -1037,7 +934,7 @@
                     <a href="#FFW_ACL_EXT.2.1" class="abbr">FFW_ACL_EXT.2.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful traffic filtering on the following <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols: [<b>selection</b>: <span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="stateful_H323">H.323 (H.225, H.245)</span>, <span class="selectable-content" id="_s_27"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr></span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful traffic filtering on the following <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> protocols: [<b>selection</b>: <span class="selectable-content" id="_s_19"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="stateful_H323">H.323 (H.225, H.245)</span>, <span class="selectable-content" id="_s_21"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr></span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> If &ldquo;H.323&rdquo; is selected in this requirement, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must include the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a>. </span>
                     </div>
@@ -1051,16 +948,16 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following default stateful traffic filtering rules on all network traffic matching protocol types identified in <a href="#FFW_ACL_EXT.2.1">FFW_ACL_EXT.2.1</a>:[<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_28"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> traffic where a BYE message precedes an INVITE message</span>
+                            <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> traffic where a BYE message precedes an INVITE message</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_29">H.225 traffic where an RCF reply precedes any other traffic</span>
+                            <span class="selectable-content" id="_s_23">H.225 traffic where an RCF reply precedes any other traffic</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_30">H.245 traffic where a ResponseMessage precedes a RequestMessage</span>
+                            <span class="selectable-content" id="_s_24">H.245 traffic where a ResponseMessage precedes a RequestMessage</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr> traffic where a DLCX message precedes a CRCX message</span>
+                            <span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_MGCP">MGCP</a></abbr> traffic where a DLCX message precedes a CRCX message</span>
                         </li>
                     </ul>
                     ]. 
@@ -1104,7 +1001,7 @@
                     <a href="#FFW_DPI_EXT.1.1" class="abbr">FFW_DPI_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="dpi_H323">H.323 (H.225, H.245)</span>, <span class="selectable-content" id="_s_33"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="_s_34"><abbr class="dyn-abbr"><a href="#abbr_RTP">RTP</a></abbr></span>, <span class="selectable-content" id="_s_35"><abbr class="dyn-abbr"><a href="#abbr_RTCP">RTCP</a></abbr></span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="dpi_H323">H.323 (H.225, H.245)</span>, <span class="selectable-content" id="_s_27"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="_s_28"><abbr class="dyn-abbr"><a href="#abbr_RTP">RTP</a></abbr></span>, <span class="selectable-content" id="_s_29"><abbr class="dyn-abbr"><a href="#abbr_RTCP">RTCP</a></abbr></span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">If &ldquo;H.323&rdquo; is selected in this requirement, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must include the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a>.</span>
                     </div>
@@ -1123,7 +1020,7 @@
                     <a href="#FFW_DPI_EXT.1.3" class="abbr">FFW_DPI_EXT.1.3</a>
                 </div>
                 <div class="reqdesc">
-                     When traffic is found to be in violation of a <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> rule, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall take the following action: [<b>selection</b>: <span class="selectable-content" id="_s_36">drop the traffic</span>, <span class="selectable-content" id="_s_37">generate an audit record</span>, <span class="selectable-content" id="_s_38">generate an alarm</span>]. 
+                     When traffic is found to be in violation of a <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> rule, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall take the following action: [<b>selection</b>: <span class="selectable-content" id="_s_30">drop the traffic</span>, <span class="selectable-content" id="_s_31">generate an audit record</span>, <span class="selectable-content" id="_s_32">generate an alarm</span>]. 
                 </div>
             </div>
         </div>
@@ -1142,7 +1039,7 @@
                     <a href="#FFW_NAT_EXT.1.2" class="abbr">FFW_NAT_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="_s_39"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="_s_40"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_41">H.225</span>, <span class="selectable-content" id="_s_42">H.245</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols: [<b>selection</b>: <span class="selectable-content" id="_s_33"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span>, <span class="selectable-content" id="_s_34"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_35">H.225</span>, <span class="selectable-content" id="_s_36">H.245</span>]. 
                 </div>
             </div>
             <div class="element">
@@ -1150,7 +1047,7 @@
                     <a href="#FFW_NAT_EXT.1.3" class="abbr">FFW_NAT_EXT.1.3</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with [<b>selection</b>: <span class="selectable-content" id="_s_43">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_44">a [<i>Security Administrator</i>]-defined value</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with [<b>selection</b>: <span class="selectable-content" id="_s_37">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_38">a [<i>Security Administrator</i>]-defined value</span>]. 
                 </div>
             </div>
             <div class="element">
@@ -1178,7 +1075,7 @@
                     <a href="#FIA_SIPT_EXT.1.2" class="abbr">FIA_SIPT_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide valid identification in the form of a [<b>selection</b>: <span class="selectable-content" id="_s_47">username and password</span>, <span class="selectable-content" id="_s_48">X.509 certificate</span>] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide valid identification in the form of a [<b>selection</b>: <span class="selectable-content" id="_s_41">username and password</span>, <span class="selectable-content" id="_s_42">X.509 certificate</span>] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk. 
                 </div>
             </div>
             <div class="element">
@@ -1262,7 +1159,7 @@
                     <a href="#FRU_RSA.1.1" class="abbr">FRU_RSA.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce maximum quotas of the following resources: [<i>CPU, memory, [<b>assignment</b>: <span class="assignable-content">other resources</span>]</i>], that [<i>subjects</i>] can use [<b>selection</b>: <span class="selectable-content" id="_s_49">simultaneously</span>, <span class="selectable-content" id="_s_50">over a specified period of time</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce maximum quotas of the following resources: [<i>CPU, memory, [<b>assignment</b>: <span class="assignable-content">other resources</span>]</i>], that [<i>subjects</i>] can use [<b>selection</b>: <span class="selectable-content" id="_s_43">simultaneously</span>, <span class="selectable-content" id="_s_44">over a specified period of time</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The intent of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to be resistant to <abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr> attacks. </span>
                     </div>
@@ -1277,7 +1174,7 @@
                     <a href="#FTP_ITC.1.1/ARP" class="abbr">FTP_ITC.1.1/ARP</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using [<b>selection</b>: <span class="selectable-content" id="_s_51">TLS</span>, <span class="selectable-content" id="_s_52">IPsec</span>, <span class="selectable-content" id="_s_53">SSH</span>, <span class="selectable-content" id="_s_54">DTLS</span>, <span class="selectable-content" id="_s_55">HTTPS</span>, <span class="selectable-content" id="_s_56">SNMPv3</span>] to</b> provide a trusted communication channel between itself and <b>authorized IT entities supporting the following capabilities: security audit automatic response</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using [<b>selection</b>: <span class="selectable-content" id="_s_45">TLS</span>, <span class="selectable-content" id="_s_46">IPsec</span>, <span class="selectable-content" id="_s_47">SSH</span>, <span class="selectable-content" id="_s_48">DTLS</span>, <span class="selectable-content" id="_s_49">HTTPS</span>, <span class="selectable-content" id="_s_50">SNMPv3</span>] to</b> provide a trusted communication channel between itself and <b>authorized IT entities supporting the following capabilities: security audit automatic response</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
                 </div>
             </div>
             <div class="element">
@@ -1307,9 +1204,9 @@
                     <a href="#FTP_ITC.1.1/ESC" class="abbr">FTP_ITC.1.1/ESC</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a <b>signaling</b> channel between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_57">DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</span>, <span class="selectable-content" id="_s_58">no other protocol</span>]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a <b>signaling</b> channel between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_51">DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</span>, <span class="selectable-content" id="_s_52">no other protocol</span>]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </span>
+                        <span class="note-header">Application Note: </span><span class="note"> FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.0</a>. </span>
                     </div>
                 </div>
             </div>
@@ -1337,9 +1234,9 @@
                     <a href="#FTP_ITC.1.1/VVoIP" class="abbr">FTP_ITC.1.1/VVoIP</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>, [<b>selection</b>: <span class="selectable-content" id="_s_59"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_60">IPsec</span>, <span class="selectable-content" id="_s_61">H.235</span>, <span class="selectable-content" id="_s_62">[<b>assignment</b>: <span class="assignable-content">other protocols</span>]</span>]</b> to provide a <b>trusted</b> communication channel between itself and <b>authorized IT entities supporting the following capabilities: <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> signaling and media channels</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>, [<b>selection</b>: <span class="selectable-content" id="_s_53"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_54">IPsec</span>, <span class="selectable-content" id="_s_55">H.235</span>, <span class="selectable-content" id="_s_56">[<b>assignment</b>: <span class="assignable-content">other protocols</span>]</span>]</b> to provide a <b>trusted</b> communication channel between itself and <b>authorized IT entities supporting the following capabilities: <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> signaling and media channels</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </span>
+                        <span class="note-header">Application Note: </span><span class="note"> FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.0</a>. </span>
                     </div>
                 </div>
             </div>
@@ -1370,6 +1267,199 @@
                 </caption>
                 <tr>
                     <th>Threat</th><th>Addressed by</th><th>Rationale</th>
+                </tr>
+                <tr class="major-row">
+                    <td rowspan="5"><a href="#T.MALICIOUS_TRAFFIC">T.MALICIOUS_​TRAFFIC</a>
+                        <br>
+                    </td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td> Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td><td> Mitigates the threat by iterating a <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement to define additional auditable events that are specific to SBC functionality. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td> Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SEL.1">FAU_SEL.1</a></td><td> Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority audit records can be suppressed when it is not practical to generate those records for performance reasons. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td> Mitigates the threat by defining the trusted channel used to securely communicate potential security violations. </td>
+                </tr>
+                <tr class="major-row">
+                    <td rowspan="26"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a>
+                        <br>
+                    </td><td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td><td> Mitigates the threat by defining <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> management functions that require authorizations to use. </td>
+                </tr>
+                <tr>
+                    <td>FCS_TLSC_EXT.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by requiring TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking and <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> signaling channel communications. </td>
+                </tr>
+                <tr>
+                    <td>FCS_TLSC_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by requiring mutually-authenticated TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. </td>
+                </tr>
+                <tr>
+                    <td>FCS_TLSS_EXT.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by requiring TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking and <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> signaling channel communications. </td>
+                </tr>
+                <tr>
+                    <td>FCS_TLSS_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by requiring mutually-authenticated TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. </td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.1/Rev (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.3 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining a mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> obtains the certificates it uses for TLS client and server connections. </td>
+                </tr>
+                <tr>
+                    <td>FTP_ITC.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td> Mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s implementation of the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> protocol that is used to protect <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint communications. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td> Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td><td> Mitigates the threat by defining how communications of potential security violations are protected. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td><td> Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> are protected. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a></td><td> Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint are protected. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a> (selection-based)</td><td> Mitigates the threat by defining H.323 as a permitted method of protected communications for when a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements this logical interface. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td> Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td><td> Mitigates the threat by iterating a <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement to define additional auditable events that are specific to SBC functionality. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td> Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SEL.1">FAU_SEL.1</a></td><td> Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority audit records can be suppressed when it is not practical to generate those records for performance reasons. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td> Mitigates the threat by defining the trusted channel used to securely communicate potential security violations. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td> Mitigates the threat by defining a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy so that <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoints are only connected to each other through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as an intermediary. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FDP_IFF.1">FDP_IFF.1</a></td><td> Mitigates the threat by defining the specific rules that the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy enforces. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a></td><td> Mitigates the threat by defining the use of <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to obfuscate IP addresses of endpoint devices on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s internal network. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td><td> Mitigates the threat by defining capabilities for traffic filtering of network packets. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a></td><td> Mitigates the threat by defining specific methods of stateful traffic inspection for specific protocols. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></td><td> Mitigates the threat by defining the capability to perform <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for certain network traffic. </td>
+                </tr>
+                <tr class="major-row">
+                    <td rowspan="11"><a href="#T.RESOURCE_EXHAUSTION">T.RESOURCE_​EXHAUSTION</a>
+                        <br>
+                    </td><td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td><td> Mitigates the threat by defining <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> management functions that require authorizations to use. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a></td><td> Mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement priority of service to ensure that low-priority traffic cannot cause a <abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr>. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FRU_RSA.1">FRU_RSA.1</a></td><td> Mitigates the threat by enforcing quotas for <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> resources to prevent <abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr>. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td> Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td><td> Mitigates the threat by iterating a <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement to define additional auditable events that are specific to SBC functionality. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td> Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SEL.1">FAU_SEL.1</a></td><td> Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority audit records can be suppressed when it is not practical to generate those records for performance reasons. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td> Mitigates the threat by defining the trusted channel used to securely communicate potential security violations. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td><td> Mitigates the threat by defining capabilities for traffic filtering of network packets. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a></td><td> Mitigates the threat by defining specific methods of stateful traffic inspection for specific protocols. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></td><td> Mitigates the threat by defining the capability to perform <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for certain network traffic. </td>
+                </tr>
+                <tr class="major-row">
+                    <td rowspan="14"><a href="#T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_​COMMUNICATION_​CHANNELS</a>
+                        <br>
+                    </td><td>FCS_TLSC_EXT.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by requiring TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking and <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> signaling channel communications. </td>
+                </tr>
+                <tr>
+                    <td>FCS_TLSC_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by requiring mutually-authenticated TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. </td>
+                </tr>
+                <tr>
+                    <td>FCS_TLSS_EXT.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by requiring TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking and <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> signaling channel communications. </td>
+                </tr>
+                <tr>
+                    <td>FCS_TLSS_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by requiring mutually-authenticated TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. </td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.1/Rev (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.3 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining a mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> obtains the certificates it uses for TLS client and server connections. </td>
+                </tr>
+                <tr>
+                    <td>FTP_ITC.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td> Mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s implementation of the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> protocol that is used to protect <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint communications. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td> Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td><td> Mitigates the threat by defining how communications of potential security violations are protected. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td><td> Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> are protected. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a></td><td> Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint are protected. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a> (selection-based)</td><td> Mitigates the threat by defining H.323 as a permitted method of protected communications for when a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements this logical interface. </td>
+                </tr>
+                <tr class="major-row">
+                    <td rowspan="5"><a href="#T.USER_DATA_REUSE">T.USER_​DATA_​REUSE</a>
+                        <br>
+                    </td><td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td> Mitigates the threat by defining a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy that is used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to establish connections between <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoints. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FDP_IFF.1">FDP_IFF.1</a></td><td> Mitigates the threat by defining the rules that the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy enforces. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a></td><td> Mitigates the threat by requiring the use of <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to maintain a unique relationship between how external entities identify entities on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s internal network and how they are actually addressed by that network. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td> Mitigates the threat by defining the use of <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking, which requires authentication of endpoints to ensure data is only transmitted to the intended endpoint. </td>
+                </tr>
+                <tr>
+                    <td><a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a> (implementation-based)</td><td> Mitigates the threat by defining an optional capability to handle <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> registration in cases where the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> does not include an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> that will provide that functionality. </td>
                 </tr>
             </table>
         </p>
@@ -1571,7 +1661,7 @@
                     <a href="#FIA_SIPS_EXT.1.1" class="abbr">FIA_SIPS_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_65"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_59"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> If &ldquo;H.323 protocol that complies with ITU-REC H.235.0&rdquo; is selected in this requirement, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must include the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a>. </span>
                     </div>
@@ -1641,9 +1731,9 @@
                     <a href="#FTP_ITC.1.1/H323" class="abbr">FTP_ITC.1.1/H323</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a<b>n H.323</b> communication channel <b>in accordance with ITU-REC H.235.0</b> between itself and <b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_63">IPsec as specified in FCS_IPSEC_EXT.1</span>, <span class="selectable-content" id="_s_64">no other protocol</span>]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a<b>n H.323</b> communication channel <b>in accordance with ITU-REC H.235.0</b> between itself and <b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_57">IPsec as specified in FCS_IPSEC_EXT.1</span>, <span class="selectable-content" id="_s_58">no other protocol</span>]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> FCS_IPSEC_EXT.1, FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 are defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </span>
+                        <span class="note-header">Application Note: </span><span class="note"> FCS_IPSEC_EXT.1, FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 are defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.0</a>. </span>
                     </div>
                 </div>
             </div>
@@ -1757,7 +1847,7 @@
                         <h4 id="ext-comp-FCS_SRTP_EXT.1.2">FCS_SRTP_EXT.1.2</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_SDES">SDES</a></abbr>-SRTP supporting the following ciphersuites [<b>assignment</b>: <span class="assignable-content">list of supported ciphersuites and the standard in which they are defined</span>]. 
                         <h4 id="ext-comp-FCS_SRTP_EXT.1.3">FCS_SRTP_EXT.1.3</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_17">is disabled</span>, <span class="selectable-content" id="_s_18">can be disabled by a [<b>assignment</b>: <span class="assignable-content">administrator role</span>]</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_11">is disabled</span>, <span class="selectable-content" id="_s_12">can be disabled by a [<b>assignment</b>: <span class="assignable-content">administrator role</span>]</span>]. 
                         <h4 id="ext-comp-FCS_SRTP_EXT.1.4">FCS_SRTP_EXT.1.4</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> ports to be used for <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> communications to be specified by a [<b>assignment</b>: <span class="assignable-content">administrator role</span>]. 
                     </div>
@@ -1865,7 +1955,7 @@
                                 </ul>
                             </li>
                             <li>
-                                Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_23">session inactivity timeout</span>, <span class="selectable-content" id="_s_24">completion of the expected information flow</span>].
+                                Remove existing traffic flows from the set of established traffic flows based on the following: [<b>selection</b>: <span class="selectable-content" id="_s_17">session inactivity timeout</span>, <span class="selectable-content" id="_s_18">completion of the expected information flow</span>].
                             </li>
                         </ul>
                         <h4 id="ext-comp-FFW_ACL_EXT.1.6">FFW_ACL_EXT.1.6</h4>
@@ -2000,7 +2090,7 @@
                         <h4 id="ext-comp-FFW_NAT_EXT.1.2">FFW_NAT_EXT.1.2</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> for the following protocols: [<b>assignment</b>: <span class="assignable-content">list of protocols</span>]. 
                         <h4 id="ext-comp-FFW_NAT_EXT.1.3">FFW_NAT_EXT.1.3</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with [<b>selection</b>: <span class="selectable-content" id="_s_45">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_46">a [<b>assignment</b>: <span class="assignable-content">administrator role</span>]-defined value</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with [<b>selection</b>: <span class="selectable-content" id="_s_39">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_40">a [<b>assignment</b>: <span class="assignable-content">administrator role</span>]-defined value</span>]. 
                         <h4 id="ext-comp-FFW_NAT_EXT.1.4">FFW_NAT_EXT.1.4</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall maintain a <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> table to ensure that traffic bound for the internal network is directed to only the intended recipient. 
                     </div>
@@ -2064,7 +2154,7 @@
                         <h4 id="ext-comp-FIA_SIPT_EXT.1.1">FIA_SIPT_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide support for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. 
                         <h4 id="ext-comp-FIA_SIPT_EXT.1.2">FIA_SIPT_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide valid identification in the form of a [<b>selection</b>: <span class="selectable-content" id="_s_47">username and password</span>, <span class="selectable-content" id="_s_48">X.509 certificate</span>] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide valid identification in the form of a [<b>selection</b>: <span class="selectable-content" id="_s_41">username and password</span>, <span class="selectable-content" id="_s_42">X.509 certificate</span>] and IP address in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk. 
                         <h4 id="ext-comp-FIA_SIPT_EXT.1.3">FIA_SIPT_EXT.1.3</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require a service provider to provide a valid authentication credential in order to establish a <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunk.
                         <h4 id="ext-comp-FIA_SIPT_EXT.1.4">FIA_SIPT_EXT.1.4</h4>
@@ -2117,7 +2207,7 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FIA_SIPS_EXT.1.1">FIA_SIPS_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_65"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_59"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic. 
                         <h4 id="ext-comp-FIA_SIPS_EXT.1.2">FIA_SIPS_EXT.1.2</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require password authentication for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> REGISTER function requests as specified in Section 22 of RFC 3261. 
                         <h4 id="ext-comp-FIA_SIPS_EXT.1.3">FIA_SIPS_EXT.1.3</h4>
@@ -2449,6 +2539,9 @@
             </tr>
             <tr>
                 <td><span id="bibNDSD">[NDcPP SD]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 3.0e, 06 December 2023 </span></td>
+            </tr>
+            <tr>
+                <td><span id="bibTLS">[PKG_TLS]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.0</a></span></td>
             </tr>
         </table>
     </body>

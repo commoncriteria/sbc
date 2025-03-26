@@ -1,3 +1,4 @@
+* Warning: This document still has at least one comment.
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Overview[1]"The scope"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/h:p[2]""
@@ -6,13 +7,6 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:TOE_Boundary[1]"An SBC is"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:TOE_Boundary[1]"An SBC is"/h:p[3]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:TOE_Boundary[1]"An SBC is"/h:p[4]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]""/sec:Security_Objectives_for_the_TOE[1]""/SOs[1]""/SO[1]""/description[1]"All netwo"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]""/sec:Security_Objectives_for_the_TOE[1]""/SOs[1]""/SO[2]""/description[1]"To mitiga"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]""/sec:Security_Objectives_for_the_TOE[1]""/SOs[1]""/SO[3]""/description[1]"The SBC i"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]""/sec:Security_Objectives_for_the_TOE[1]""/SOs[1]""/SO[4]""/description[1]"In order "/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]""/sec:Security_Objectives_for_the_TOE[1]""/SOs[1]""/SO[5]""/description[1]"In order "/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]""/sec:Security_Objectives_for_the_TOE[1]""/SOs[1]""/SO[6]""/description[1]"In order "/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]""/sec:Security_Objectives_for_the_TOE[1]""/SOs[1]""/SO[7]""/description[1]"When user"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/sec:man_fau[1]""/f-component[1]""/dependencies[1]"FAU_SAA.1"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/sec:man_fau[1]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/sec:man_fau[1]""/f-component[1]""/f-element[1]""/aactivity[1]""/Guidance[1]"The evalu"/h:p[1]""
