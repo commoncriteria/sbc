@@ -630,6 +630,11 @@
 
     </base-pp>
     <man-sfrs>
+
+      <section title="Auditable Events for Mandatory SFRs">
+        <audit-table table="mandatory" id="at-mandatory">
+        </audit-table>
+      </section>
       
       <sec:man_fau title="Security Audit (FAU)">
         <ext-comp-def title="Security Audit Automatic Response" fam-id="FAU_ARP_EXT">
@@ -2268,6 +2273,11 @@
      
    </opt-sfrs>
     <sel-sfrs>
+
+      <section title="Auditable Events for Selection-Based SFRs">
+          <audit-table table="sel-based" id="at-sel-based">
+          </audit-table>
+      </section>
       
       <sec:sel_ftp title="Trusted Path/Channels (FTP)">
         
@@ -2327,6 +2337,9 @@
     <obj-sfrs>
     </obj-sfrs>
     <impl-dep-sfrs>
+      <section title="Auditable Events for Implementation-Dependent SFRs">
+          <audit-table id="at-feat-based" table="feat-based"/>
+      </section>
       
       <sec:impl_fia title="Identification and Authentication (FIA)">
         
