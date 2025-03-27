@@ -849,7 +849,7 @@
             </title>
           </f-element>
           <f-element>
-            <title><comment>It's unclear if CNSA 1.0 algorithm restrictions should be applied to this SFR. </comment>
+            <title>
             The TSF shall implement SDES-SRTP supporting the following ciphersuites: [<h:i>AEAD_AES_256_GCM, in accordance with RFC 7714</h:i>].
             </title>
             <ext-comp-def-title>
