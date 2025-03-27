@@ -109,9 +109,3 @@
 * Warning: fia_sips_ext.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/sec:impl_fia[1]""/f-component[1]""
 * Warning: Since FIA_SIPS_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
-output/pkgX509.xml:1: parser error : Document is empty
-
-^
-output/pkgX509.xml:1: parser error : Document is empty
-
-^
