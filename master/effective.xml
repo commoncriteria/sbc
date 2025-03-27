@@ -213,9 +213,26 @@
             such that traffic between them will flow through the TOE as opposed to into and out of the TOE. 
             This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.
           </consistency-rationale>
-          <addressed-by>FMT_SMF.1/SBC</addressed-by>
+          <addressed-by>FAU_ARP_EXT.1</addressed-by>
           <rationale>
-            Mitigates the threat by defining TSF management functions that require authorizations to use.
+            Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.
+          </rationale>
+          <addressed-by>FAU_GEN.1/SBC</addressed-by>
+          <rationale>
+            Mitigates the threat by iterating a Base-PP requirement to define additional auditable events that are specific to SBC functionality.
+          </rationale>
+          <addressed-by>FAU_SAA.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations. 
+          </rationale>
+          <addressed-by>FAU_SEL.1</addressed-by>
+          <rationale>
+            Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
+            audit records can be suppressed when it is not practical to generate those records for performance reasons.
+          </rationale>
+          <addressed-by>FCS_SRTP_EXT.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.
           </rationale>
           <addressed-by>FCS_TLSC_EXT.1 (refined from the <xref to="bibTLS"/>)</addressed-by>
           <rationale>
@@ -232,6 +249,34 @@
           <addressed-by>FCS_TLSS_EXT.2 (refined from the <xref to="bibTLS"/>)</addressed-by>
           <rationale>
             Mitigates the threat by requiring mutually-authenticated TLS for SIP trunking.
+          </rationale>     
+          <addressed-by>FDP_IFC.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining a B2BUA policy so that VVoIP endpoints are only connected to each other through the TOE as an intermediary.
+          </rationale>
+          <addressed-by>FDP_IFF.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining the specific rules that the B2BUA policy enforces.
+          </rationale>
+          <addressed-by>FFW_ACL_EXT.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining capabilities for traffic filtering of network packets.
+          </rationale>
+          <addressed-by>FFW_ACL_EXT.2</addressed-by>
+          <rationale>
+            Mitigates the threat by defining specific methods of stateful traffic inspection for specific protocols.
+          </rationale>
+          <addressed-by>FFW_DPI_EXT.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining the capability to perform DPI for certain network traffic.
+          </rationale>
+          <addressed-by>FFW_NAT_EXT.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining the use of NAT to obfuscate IP addresses of endpoint devices on the TOE’s internal network. 
+          </rationale>
+          <addressed-by>FIA_SIPT_EXT.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining secure behavior for SIP trunking.
           </rationale>
           <addressed-by>FIA_X509_EXT.1/Rev (refined from the <xref to="bibTLS"/>)</addressed-by>
           <rationale>
@@ -245,19 +290,15 @@
           <rationale>
             Mitigates the threat by defining a mechanism by which the TOE obtains the certificates it uses for TLS client and server connections.
           </rationale>
-          <addressed-by>FTP_ITC.1 (refined from the <xref to="bibTLS"/>)</addressed-by>
+          <addressed-by>FMT_SMF.1/SBC</addressed-by>
+          <rationale>
+            Mitigates the threat by defining TSF management functions that require authorizations to use.
+          </rationale>
+          <addressed-by>FTP_ITC.1 (refined from Base-PP)</addressed-by>
           <rationale>
             Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications.
           </rationale>
-          <addressed-by>FCS_SRTP_EXT.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.
-          </rationale>
-          <addressed-by>FIA_SIPT_EXT.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining secure behavior for SIP trunking.
-          </rationale>
-          <addressed-by>FTP_ITC.1/ESC</addressed-by>
+          <addressed-by>FTP_ITC.1/ARP</addressed-by>
           <rationale>
             Mitigates the threat by defining how communications of potential security violations are protected.
           </rationale>
@@ -273,51 +314,8 @@
           <rationale>
             Mitigates the threat by defining H.323 as a permitted method of protected communications for when a conformant TOE implements this logical interface.
           </rationale>
-          <addressed-by>FAU_ARP_EXT.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.
-          </rationale>
-          <addressed-by>FAU_GEN.1/SBC</addressed-by>
-          <rationale>
-            Mitigates the threat by iterating a Base-PP requirement to define additional auditable events that are specific to SBC functionality.
-          </rationale>
-          <addressed-by>FAU_SAA.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations. 
-          </rationale>
-          <addressed-by>FAU_SEL.1</addressed-by>
-          <rationale>
-            Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
-            audit records can be suppressed when it is not practical to generate those records for performance reasons.
-          </rationale>
-          <addressed-by>FTP_ITC.1/ARP</addressed-by>
-          <rationale>
-            Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.
-          </rationale>
-          <addressed-by>FDP_IFC.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining a B2BUA policy so that VVoIP endpoints are only connected to each other through the TOE as an intermediary.
-          </rationale>
-          <addressed-by>FDP_IFF.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining the specific rules that the B2BUA policy enforces.
-          </rationale>
-          <addressed-by>FFW_NAT_EXT.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining the use of NAT to obfuscate IP addresses of endpoint devices on the TOE’s internal network. 
-          </rationale>
-          <addressed-by>FFW_ACL_EXT.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining capabilities for traffic filtering of network packets.
-          </rationale>
-          <addressed-by>FFW_ACL_EXT.2</addressed-by>
-          <rationale>
-            Mitigates the threat by defining specific methods of stateful traffic inspection for specific protocols.
-          </rationale>
-          <addressed-by>FFW_DPI_EXT.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining the capability to perform DPI for certain network traffic.
-          </rationale>
+          
+          
         </threat>
         
         
@@ -329,18 +327,6 @@
             The Base-PP does not define DoS protections because it does not define logical interfaces that are intended to process large volumes of network traffic. 
             This PP-Module extends the threat by defining a specific example of it that applies to an SBC device that has this functionality.
           </consistency-rationale>
-          <addressed-by>FMT_SMF.1/SBC</addressed-by>
-          <rationale>
-            Mitigates the threat by defining TSF management functions that require authorizations to use.
-          </rationale>
-          <addressed-by>FRU_PRS_EXT.1</addressed-by>
-          <rationale>
-           Mitigates the threat by requiring the TSF to implement priority of service to ensure that low-priority traffic cannot cause a DoS.
-          </rationale>
-          <addressed-by>FRU_RSA.1</addressed-by>
-          <rationale>
-           Mitigates the threat by enforcing quotas for TSF resources to prevent DoS.
-          </rationale>
           <addressed-by>FAU_ARP_EXT.1</addressed-by>
           <rationale>
             Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.
@@ -357,10 +343,6 @@
           <rationale>
             Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
             audit records can be suppressed when it is not practical to generate those records for performance reasons.
-          </rationale>
-          <addressed-by>FTP_ITC.1/ARP</addressed-by>
-          <rationale>
-            Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.
           </rationale>
           <addressed-by>FFW_ACL_EXT.1</addressed-by>
           <rationale>
@@ -374,6 +356,23 @@
           <rationale>
            Mitigates the threat by defining the capability to perform DPI for certain network traffic.
           </rationale>
+          <addressed-by>FMT_SMF.1/SBC</addressed-by>
+          <rationale>
+            Mitigates the threat by defining TSF management functions that require authorizations to use.
+          </rationale>
+          <addressed-by>FRU_PRS_EXT.1</addressed-by>
+          <rationale>
+           Mitigates the threat by requiring the TSF to implement priority of service to ensure that low-priority traffic cannot cause a DoS.
+          </rationale>
+          <addressed-by>FRU_RSA.1</addressed-by>
+          <rationale>
+           Mitigates the threat by enforcing quotas for TSF resources to prevent DoS.
+          </rationale>
+          <addressed-by>FTP_ITC.1/ARP</addressed-by>
+          <rationale>
+            Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.
+          </rationale>
+          
         </threat>
         
         
@@ -382,6 +381,10 @@
           <consistency-rationale>
             The threat of disclosure of data in transit is fundamentally the same as the NDcPP threat with the same name. This PP-Module extends the threat to apply to the external interfaces that are defined specifically in support of SBC functions.
           </consistency-rationale>
+          <addressed-by>FCS_SRTP_EXT.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.
+          </rationale>
           <addressed-by>FCS_TLSC_EXT.1 (refined from the <xref to="bibTLS"/>)</addressed-by>
           <rationale>
             Mitigates the threat by requiring TLS for SIP trunking and ESC signaling channel communications.
@@ -398,6 +401,10 @@
           <rationale>
             Mitigates the threat by requiring mutually-authenticated TLS for SIP trunking.
           </rationale>
+          <addressed-by>FIA_SIPT_EXT.1</addressed-by>
+          <rationale>
+            Mitigates the threat by defining secure behavior for SIP trunking.
+          </rationale>
           <addressed-by>FIA_X509_EXT.1/Rev (refined from the <xref to="bibTLS"/>)</addressed-by>
           <rationale>
             Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
@@ -410,19 +417,11 @@
           <rationale>
             Mitigates the threat by defining a mechanism by which the TOE obtains the certificates it uses for TLS client and server connections.
           </rationale>
-          <addressed-by>FTP_ITC.1 (refined from the <xref to="bibTLS"/>)</addressed-by>
+          <addressed-by>FTP_ITC.1 (refined from Base-PP)</addressed-by>
           <rationale>
             Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications.
           </rationale>
-          <addressed-by>FCS_SRTP_EXT.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.
-          </rationale>
-          <addressed-by>FIA_SIPT_EXT.1</addressed-by>
-          <rationale>
-            Mitigates the threat by defining secure behavior for SIP trunking.
-          </rationale>
-          <addressed-by>FTP_ITC.1/ESC</addressed-by>
+          <addressed-by>FTP_ITC.1/ARP</addressed-by>
           <rationale>
             Mitigates the threat by defining how communications of potential security violations are protected.
           </rationale>
@@ -513,7 +512,7 @@
             <consistency-rationale>
                 This PP-Module mandates the inclusion of this optional SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <description>This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the TLS Functional Package but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -521,7 +520,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <description>This SFR is selection-based in the NDcPP but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the TLS Functional Package but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -530,7 +529,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this optional SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <description>This SFR is optional in the NDcPP but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the TLS Functional Package but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -542,7 +541,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <description>This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the X.509 Functional Package but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -551,7 +550,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <description>This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the X.509 Functional Package but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>  
           </base-sfr-spec>
@@ -560,7 +559,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <description>This SFR is selection-based in the Base-PP but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the X.509 Functional Package but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>          
@@ -2121,7 +2120,7 @@
               </selectables></h:b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
             </title>
             <note role="Application">
-              FCS_IPSEC_EXT.1, FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 are defined in the <xref to="pkgTLS"/>.
+              FCS_IPSEC_EXT.1 is defined in the Base-PP. FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 are defined in the <xref to="pkgTLS"/>.
             </note>
           </f-element>
           <f-element>
