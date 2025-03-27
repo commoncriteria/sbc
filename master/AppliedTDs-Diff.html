@@ -323,7 +323,7 @@
         <h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4>
         <div class="comp" id="@id">
             <h4>FCS_TLSC_EXT.1: TLS Client Protocol without Mutual Authentication</h4>
-            <span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the NDcPP but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because Transport Layer Security (TLS) is used for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. An SBC implements TLS as both a client and a server. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span>
+            <span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the TLS Functional Package but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because Transport Layer Security (TLS) is used for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. An SBC implements TLS as both a client and a server. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span>
         </div>
         <div class="comp" id="@id">
             <h4>FCS_TLSC_EXT.2: TLS Client Support for Mutual Authentication</h4>
@@ -1332,13 +1332,13 @@
                     <td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td> Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. </td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.1/Rev (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
+                    <td>FIA_X509_EXT.1/Rev (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
+                    <td>FIA_X509_EXT.2 (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.3 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining a mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> obtains the certificates it uses for TLS client and server connections. </td>
+                    <td>FIA_X509_EXT.3 (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td> Mitigates the threat by defining a mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> obtains the certificates it uses for TLS client and server connections. </td>
                 </tr>
                 <tr>
                     <td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td><td> Mitigates the threat by defining <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> management functions that require authorizations to use. </td>
@@ -1414,13 +1414,13 @@
                     <td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td> Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. </td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.1/Rev (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
+                    <td>FIA_X509_EXT.1/Rev (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
+                    <td>FIA_X509_EXT.2 (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td> Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s TLS implementation. </td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.3 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td> Mitigates the threat by defining a mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> obtains the certificates it uses for TLS client and server connections. </td>
+                    <td>FIA_X509_EXT.3 (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td> Mitigates the threat by defining a mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> obtains the certificates it uses for TLS client and server connections. </td>
                 </tr>
                 <tr>
                     <td>FTP_ITC.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td> Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications. </td>
@@ -2535,6 +2535,9 @@
             </tr>
             <tr>
                 <td><span id="bibTLS">[PKG_TLS]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.0</a></span></td>
+            </tr>
+            <tr>
+                <td><span id="bibX509">[PKG_X509]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/protectionprofiles/511">, version </a></span></td>
             </tr>
         </table>
     </body>

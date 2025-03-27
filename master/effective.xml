@@ -278,15 +278,15 @@
           <rationale>
             Mitigates the threat by defining secure behavior for SIP trunking.
           </rationale>
-          <addressed-by>FIA_X509_EXT.1/Rev (refined from the <xref to="bibTLS"/>)</addressed-by>
+          <addressed-by>FIA_X509_EXT.1/Rev (refined from the <xref to="bibX509"/>)</addressed-by>
           <rationale>
             Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
           </rationale>
-          <addressed-by>FIA_X509_EXT.2 (refined from the <xref to="bibTLS"/>)</addressed-by>
+          <addressed-by>FIA_X509_EXT.2 (refined from the <xref to="bibX509"/>)</addressed-by>
           <rationale>
             Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
           </rationale>
-          <addressed-by>FIA_X509_EXT.3 (refined from the <xref to="bibTLS"/>)</addressed-by>
+          <addressed-by>FIA_X509_EXT.3 (refined from the <xref to="bibX509"/>)</addressed-by>
           <rationale>
             Mitigates the threat by defining a mechanism by which the TOE obtains the certificates it uses for TLS client and server connections.
           </rationale>
@@ -405,15 +405,15 @@
           <rationale>
             Mitigates the threat by defining secure behavior for SIP trunking.
           </rationale>
-          <addressed-by>FIA_X509_EXT.1/Rev (refined from the <xref to="bibTLS"/>)</addressed-by>
+          <addressed-by>FIA_X509_EXT.1/Rev (refined from the <xref to="bibX509"/>)</addressed-by>
           <rationale>
             Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
           </rationale>
-          <addressed-by>FIA_X509_EXT.2 (refined from the <xref to="bibTLS"/>)</addressed-by>
+          <addressed-by>FIA_X509_EXT.2 (refined from the <xref to="bibX509"/>)</addressed-by>
           <rationale>
             Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
           </rationale>
-          <addressed-by>FIA_X509_EXT.3 (refined from the <xref to="bibTLS"/>)</addressed-by>
+          <addressed-by>FIA_X509_EXT.3 (refined from the <xref to="bibX509"/>)</addressed-by>
           <rationale>
             Mitigates the threat by defining a mechanism by which the TOE obtains the certificates it uses for TLS client and server connections.
           </rationale>
@@ -502,7 +502,7 @@
           <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <description>This SFR is selection-based in the NDcPP but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server. 
+            <description>This SFR is selection-based in the TLS Functional Package but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server. 
             The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
@@ -2434,6 +2434,10 @@
     <entry id="bibTLS">
       <tag>PKG_TLS</tag>
       <description><xref to="pkgTLS"/></description>
+    </entry>
+    <entry id="bibX509">
+      <tag>PKG_X509</tag>
+      <description><xref to="pkgX509"/></description>
     </entry>
 
   </bibliography>
