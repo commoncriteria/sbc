@@ -245,22 +245,6 @@
           <rationale>
             Mitigates the threat by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.
           </rationale>
-          <addressed-by>FCS_TLSC_EXT.1 (refined from the <xref to="bibTLS"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by requiring TLS for SIP trunking and ESC signaling channel communications.
-          </rationale>
-          <addressed-by>FCS_TLSC_EXT.2 (refined from the <xref to="bibTLS"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by requiring mutually-authenticated TLS for SIP trunking.
-          </rationale>
-          <addressed-by>FCS_TLSS_EXT.1 (refined from the <xref to="bibTLS"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by requiring TLS for SIP trunking and ESC signaling channel communications.
-          </rationale>
-          <addressed-by>FCS_TLSS_EXT.2 (refined from the <xref to="bibTLS"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by requiring mutually-authenticated TLS for SIP trunking.
-          </rationale>     
           <addressed-by>FDP_IFC.1</addressed-by>
           <rationale>
             Mitigates the threat by defining a B2BUA policy so that VVoIP endpoints are only connected to each other through the TOE as an intermediary.
@@ -395,22 +379,6 @@
           <addressed-by>FCS_SRTP_EXT.1</addressed-by>
           <rationale>
             Mitigates the threat by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.
-          </rationale>
-          <addressed-by>FCS_TLSC_EXT.1 (refined from the <xref to="bibTLS"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by requiring TLS for SIP trunking and ESC signaling channel communications.
-          </rationale>
-          <addressed-by>FCS_TLSC_EXT.2 (refined from the <xref to="bibTLS"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by requiring mutually-authenticated TLS for SIP trunking.
-          </rationale>
-          <addressed-by>FCS_TLSS_EXT.1 (refined from the <xref to="bibTLS"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by requiring TLS for SIP trunking and ESC signaling channel communications.
-          </rationale>
-          <addressed-by>FCS_TLSS_EXT.2 (refined from the <xref to="bibTLS"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by requiring mutually-authenticated TLS for SIP trunking.
           </rationale>
           <addressed-by>FIA_SIPT_EXT.1</addressed-by>
           <rationale>
