@@ -1421,7 +1421,7 @@ Network Device
 <tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>
             Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.
           </td></tr>
-<tr class="major-row"><td rowspan="25"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a><br/></td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td>
+<tr class="major-row"><td rowspan="21"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a><br/></td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td>
             Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.
           </td></tr>
 <tr><td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td><td>
@@ -1436,18 +1436,6 @@ Network Device
           </td></tr>
 <tr><td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td>
             Mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s implementation of the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> protocol that is used to protect <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint communications.
-          </td></tr>
-<tr><td>FCS_TLSC_EXT.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td>
-            Mitigates the threat by requiring TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking and <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> signaling channel communications.
-          </td></tr>
-<tr><td>FCS_TLSC_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td>
-            Mitigates the threat by requiring mutually-authenticated TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.
-          </td></tr>
-<tr><td>FCS_TLSS_EXT.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td>
-            Mitigates the threat by requiring TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking and <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> signaling channel communications.
-          </td></tr>
-<tr><td>FCS_TLSS_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td>
-            Mitigates the threat by requiring mutually-authenticated TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.
           </td></tr>
 <tr><td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td>
             Mitigates the threat by defining a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy so that <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoints are only connected to each other through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as an intermediary.
@@ -1531,20 +1519,8 @@ Network Device
 <tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>
             Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.
           </td></tr>
-<tr class="major-row"><td rowspan="14"><a href="#T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_​COMMUNICATION_​CHANNELS</a><br/></td><td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td>
+<tr class="major-row"><td rowspan="10"><a href="#T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_​COMMUNICATION_​CHANNELS</a><br/></td><td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td>
             Mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s implementation of the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> protocol that is used to protect <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint communications.
-          </td></tr>
-<tr><td>FCS_TLSC_EXT.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td>
-            Mitigates the threat by requiring TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking and <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> signaling channel communications.
-          </td></tr>
-<tr><td>FCS_TLSC_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td>
-            Mitigates the threat by requiring mutually-authenticated TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.
-          </td></tr>
-<tr><td>FCS_TLSS_EXT.1 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td>
-            Mitigates the threat by requiring TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking and <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> signaling channel communications.
-          </td></tr>
-<tr><td>FCS_TLSS_EXT.2 (refined from the <a href="#bibTLS">[PKG_TLS]</a>)</td><td>
-            Mitigates the threat by requiring mutually-authenticated TLS for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.
           </td></tr>
 <tr><td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td>
             Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.
