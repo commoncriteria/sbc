@@ -839,15 +839,15 @@ Network Device
     <h3 id="modsfr-ND" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the NDcPP and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_TLSC_EXT.1: TLS Client Protocol without Mutual Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the TLS Functional Package but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because Transport Layer Security (TLS) is used for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. An SBC implements TLS as both a client and a server. 
-            The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FCS_TLSC_EXT.2: TLS Client Support for Mutual Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the TLS Functional Package but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking requires mutually-authenticated TLS. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FCS_TLSS_EXT.1: TLS Server Protocol without Mutual Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the TLS Functional Package but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because TLS is used for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. An SBC implements TLS as both a client and a server. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FCS_TLSS_EXT.2: TLS Server Support for Mutual Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the TLS Functional Package but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking requires mutually-authenticated TLS. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Identification and Authentication (FIA)</h4><div class="comp" id="@id"><h4>FIA_X509_EXT.1: X.509 Certificate Validation</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the X.509 Functional Package but mandatory in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation requires appropriate X.509 functionality. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FIA_X509_EXT.2: X.509 Certificate Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the X.509 Functional Package but mandatory in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation requires appropriate X.509 functionality. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FIA_X509_EXT.3: X.509 Certificate Requests</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the X.509 Functional Package but mandatory in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation requires appropriate X.509 functionality. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.3 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FTP_ITC.1: Inter-TSF Trusted Channel</h4><span class="description">
+		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_TLSC_EXT.1: TLS Client Protocol without Mutual Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the Functional Package for TLS but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because Transport Layer Security (TLS) is used for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. An SBC implements TLS as both a client and a server. 
+            The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FCS_TLSC_EXT.2: TLS Client Support for Mutual Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the Functional Package for TLS but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking requires mutually-authenticated TLS. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FCS_TLSS_EXT.1: TLS Server Protocol without Mutual Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the Functional Package for TLS but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because TLS is used for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking. An SBC implements TLS as both a client and a server. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FCS_TLSS_EXT.2: TLS Server Support for Mutual Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the Functional Package for TLS but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking requires mutually-authenticated TLS. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Identification and Authentication (FIA)</h4><div class="comp" id="@id"><h4>FIA_X509_EXT.1: X.509 Certificate Validation</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the Functional Package for X.509but mandatory in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation requires appropriate X.509 functionality. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FIA_X509_EXT.2: X.509 Certificate Authentication</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the Functional Package for X.509 but mandatory in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation requires appropriate X.509 functionality. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><div class="comp" id="@id"><h4>FIA_X509_EXT.3: X.509 Certificate Requests</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the Functional Package for X.509 but mandatory in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation requires appropriate X.509 functionality. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its original definition.</span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.3 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FTP_ITC.1: Inter-TSF Trusted Channel</h4><span class="description">
             <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified to mandate the use of TLS for inter-TSF trusted channels in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. Any element not mentioned in this section is unchanged from its original definition.</p>
             <p>The text of the requirement is replaced with:</p>
             <p><b>FTP_ITC.1.1: </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of using <b>TLS and [selection: </b><i>IPsec, SSH, DTLS, HTTPS, <b>no other protocol</b></i>] to 
             provide a trusted communication channel between itself and authorized IT entities supporting the following capabilities: audit server, 
             [<b>selection: </b><i>authentication server, [<b>assignment: </b>other capabilities], no other capabilities</i>] 
-            that is logically distinct from other communication channels and provides assured identification of its end points and protection of 
-            the channel data from modification or disclosure.</p>
+            that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of 
+            the channel data from disclosure and detection of modification of the channel data.</p>
             <p><b>FTP_ITC.1.2: </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>, the authorized IT entities</i>] to initiate communication via the trusted channel.</p>
             <p><b>Application Note: </b>TLS is mandated for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking as required by <a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a>.</p>
             </span></div><h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>
@@ -910,7 +910,7 @@ Network Device
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within the audit data at least the following information: <ol type="a">
                 <li>Date and time of the auditable event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event;</li>
                 <li>For each auditable event type, based on the auditable event definitions of the functional components included in the 
-                  <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i>information specified in column three of the Auditable Events table in which the auditable event was defined</i>].</li>
+                  <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package, or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i>information specified in column three of the Auditable Events table in which the auditable event was defined</i>].</li>
               </ol>
             </div></div>
          
@@ -985,10 +985,10 @@ Network Device
             The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author should select all ciphersuites that are supported.
             </span></div></div></div>
           <div class="element"><div class="reqid" id="FCS_SRTP_EXT.1.3"><a href="#FCS_SRTP_EXT.1.3" class="abbr">FCS_SRTP_EXT.1.3</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_9">is disabled</span>, <span class="selectable-content" id="_s_10">can be disabled by a [<i>Security Administrator</i>]</span>].
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> NULL algorithm [<b>selection</b>: <span class="selectable-content" id="_s_9">is disabled</span>, <span class="selectable-content" id="_s_10">can be disabled by a [<i>security administrator</i>]</span>].
             </div></div>
           <div class="element"><div class="reqid" id="FCS_SRTP_EXT.1.4"><a href="#FCS_SRTP_EXT.1.4" class="abbr">FCS_SRTP_EXT.1.4</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> ports to be used for <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> communications to be specified by a [<i>Security Administrator</i>].
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> ports to be used for <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> communications to be specified by a [<i>security administrator</i>].
             </div></div>
           
         </div>
@@ -1211,7 +1211,7 @@ Network Device
             </div></div>
           <div class="element"><div class="reqid" id="FFW_NAT_EXT.1.3"><a href="#FFW_NAT_EXT.1.3" class="abbr">FFW_NAT_EXT.1.3</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to replace the IP address header value of traffic originating from the internal network with 
-              [<b>selection</b>: <span class="selectable-content" id="_s_37">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_38">a [<i>Security Administrator</i>]-defined value</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_37">the IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_38">a [<i>security administrator</i>]-defined value</span>].
             </div></div>
           <div class="element"><div class="reqid" id="FFW_NAT_EXT.1.4"><a href="#FFW_NAT_EXT.1.4" class="abbr">FFW_NAT_EXT.1.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall maintain a <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> table to ensure that traffic bound for the internal network is directed to only the intended recipient.
@@ -1253,7 +1253,7 @@ Network Device
       <h3 id="man_fmt" class="indexable" data-level="3">5.2.7 Security Management (FMT)</h3>
         <div class="comp" id="FMT_SMF.1/SBC"><h4>FMT_SMF.1/SBC Specification of Management Functions (SBC)</h4>
           
-          <div class="element"><div class="reqid" id="FMT_SMF.1.1/SBC"><a href="#FMT_SMF.1.1/SBC" class="abbr">FMT_SMF.1.1/SBC</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions <b>related to SBC functionality</b>: [<i>Ability of a Security Administrator to:
+          <div class="element"><div class="reqid" id="FMT_SMF.1.1/SBC"><a href="#FMT_SMF.1.1/SBC" class="abbr">FMT_SMF.1.1/SBC</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions <b>related to SBC functionality</b>: [<i>Ability of a security administrator to:
               <ul>
                 <li>Change a user's password</li>
                 <li>Require a user's password to be changed upon next login</li>
@@ -1278,7 +1278,7 @@ Network Device
               management function defined in FMT_SMF.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can be used to address this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s dependency on reliable system time.
               Note that support for NTP is recommended but not required.
               <p></p>
-              The 'configurable auditable events' function relates to <a href="#FAU_SEL.1">FAU_SEL.1</a>, specifically with respect to allowing a Security Administrator 
+              The 'configurable auditable events' function relates to <a href="#FAU_SEL.1">FAU_SEL.1</a>, specifically with respect to allowing a security administrator 
               to determine whether a given event is auditable. As this refers to the events for the triggering of various filtering rules, 
               it may be implicitly addressed through the ‘configure traffic filtering rules’ function, 
               for example by explicitly defining a rule with a type that automatically requires it to be logged or a parameter that causes it to be logged if triggered.
@@ -1333,9 +1333,9 @@ Network Device
 	        <div class="element"><div class="reqid" id="FTP_ITC.1.1/ARP"><a href="#FTP_ITC.1.1/ARP" class="abbr">FTP_ITC.1.1/ARP</a></div><div class="reqdesc">
 	            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using  
 	              [<b>selection</b>: <span class="selectable-content" id="_s_45">TLS</span>, <span class="selectable-content" id="_s_46">IPsec</span>, <span class="selectable-content" id="_s_47">SSH</span>, <span class="selectable-content" id="_s_48">DTLS</span>, <span class="selectable-content" id="_s_49">HTTPS</span>, <span class="selectable-content" id="_s_50">SNMPv3</span>]
-	              to</b> provide a trusted communication channel between itself and 
+	              to</b> provide a <b>trusted</b> communication channel between itself and 
 	            <b>authorized IT entities supporting the following capabilities: security audit automatic response</b> 
-	            that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+	            that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure. 
 	          </div></div>
 	        <div class="element"><div class="reqid" id="FTP_ITC.1.2/ARP"><a href="#FTP_ITC.1.2/ARP" class="abbr">FTP_ITC.1.2/ARP</a></div><div class="reqdesc">
 	            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication via the trusted channel.
@@ -1357,7 +1357,7 @@ Network Device
 		  
 			  <div class="element"><div class="reqid" id="FTP_ITC.1.1/ESC"><a href="#FTP_ITC.1.1/ESC" class="abbr">FTP_ITC.1.1/ESC</a></div><div class="reqdesc">
 			    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a <b>signaling</b> channel between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_51">DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</span>, <span class="selectable-content" id="_s_52">no other protocol</span>]</b> that is logically distinct from other communication channels 
-			    and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+			    and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.
 				  <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1381,9 +1381,9 @@ Network Device
 	      <div class="element"><div class="reqid" id="FTP_ITC.1.1/VVoIP"><a href="#FTP_ITC.1.1/VVoIP" class="abbr">FTP_ITC.1.1/VVoIP</a></div><div class="reqdesc">
 	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>, [<b>selection</b>: <span class="selectable-content" id="_s_53"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr>-TLS</span>, <span class="selectable-content" id="_s_54">IPsec</span>, <span class="selectable-content" id="_s_55">H.235</span>, <span class="selectable-content" id="_s_56">[<b>assignment</b>: 
      <span class="assignable-content">other protocols</span>]</span>]</b> 
-	          to provide a <b>trusted</b> communication channel between itself and <b>authorized IT 
+	          <b>to</b> provide a <b>trusted</b> communication channel between itself and <b>authorized IT 
 	          entities supporting the following capabilities: <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> signaling and media channels</b> that is
-	          logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+	          logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.
 	        <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1392,7 +1392,8 @@ Network Device
         2.0</a>.
 	        </span></div></div></div>
 	      <div class="element"><div class="reqid" id="FTP_ITC.1.2/VVoIP"><a href="#FTP_ITC.1.2/VVoIP" class="abbr">FTP_ITC.1.2/VVoIP</a></div><div class="reqdesc">
-	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>, the authorized IT entities</i>] to initiate communication via the trusted channel.
+	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<b>selection</b>: <span class="selectable-content" id="_s_57">the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_58">the authorized IT entities</span>]
+	          to initiate communication via the trusted channel.
 	        </div></div>
 	      <div class="element"><div class="reqid" id="FTP_ITC.1.3/VVoIP"><a href="#FTP_ITC.1.3/VVoIP" class="abbr">FTP_ITC.1.3/VVoIP</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for [<b>assignment</b>: 
      <span class="assignable-content">list of functions for which a trusted channel is required</span>]. 
@@ -1421,7 +1422,7 @@ Network Device
 <tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>
             Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.
           </td></tr>
-<tr class="major-row"><td rowspan="21"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a><br/></td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td>
+<tr class="major-row"><td rowspan="17"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a><br/></td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td>
             Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.
           </td></tr>
 <tr><td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td><td>
@@ -1458,20 +1459,8 @@ Network Device
 <tr><td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td>
             Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.
           </td></tr>
-<tr><td>FIA_X509_EXT.1/Rev (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td>
-            Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation.
-          </td></tr>
-<tr><td>FIA_X509_EXT.2 (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td>
-            Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation.
-          </td></tr>
-<tr><td>FIA_X509_EXT.3 (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td>
-            Mitigates the threat by defining a mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> obtains the certificates it uses for TLS client and server connections.
-          </td></tr>
 <tr><td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td><td>
             Mitigates the threat by defining <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> management functions that require authorizations to use.
-          </td></tr>
-<tr><td>FTP_ITC.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>
-            Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications.
           </td></tr>
 <tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>
             Mitigates the threat by defining how communications of potential security violations are protected.
@@ -1519,23 +1508,11 @@ Network Device
 <tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>
             Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.
           </td></tr>
-<tr class="major-row"><td rowspan="10"><a href="#T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_​COMMUNICATION_​CHANNELS</a><br/></td><td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td>
+<tr class="major-row"><td rowspan="6"><a href="#T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_​COMMUNICATION_​CHANNELS</a><br/></td><td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td>
             Mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s implementation of the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> protocol that is used to protect <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint communications.
           </td></tr>
 <tr><td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td>
             Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.
-          </td></tr>
-<tr><td>FIA_X509_EXT.1/Rev (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td>
-            Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation.
-          </td></tr>
-<tr><td>FIA_X509_EXT.2 (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td>
-            Mitigates the threat by defining requirements for the X.509 validation algorithm used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s TLS implementation.
-          </td></tr>
-<tr><td>FIA_X509_EXT.3 (refined from the <a href="#bibX509">[PKG_X509]</a>)</td><td>
-            Mitigates the threat by defining a mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> obtains the certificates it uses for TLS client and server connections.
-          </td></tr>
-<tr><td>FTP_ITC.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>
-            Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications.
           </td></tr>
 <tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>
             Mitigates the threat by defining how communications of potential security violations are protected.
@@ -1703,7 +1680,7 @@ Network Device
           
           
           <div class="element"><div class="reqid" id="FIA_SIPS_EXT.1.1"><a href="#FIA_SIPS_EXT.1.1" class="abbr">FIA_SIPS_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_59"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_61"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
               describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic.
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -1714,9 +1691,12 @@ Network Device
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require password authentication for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> REGISTER function requests as specified in Section 22 of RFC 3261.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_SIPS_EXT.1.3"><a href="#FIA_SIPS_EXT.1.3" class="abbr">FIA_SIPS_EXT.1.3</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> authentication passwords that contain at least [<b>assignment</b>: 
-     <span class="assignable-content">positive integer of 8 or more</span>] 
-              characters in the set of [<i>upper case characters, lower case characters, numbers, and the following special characters: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”, 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> authentication passwords that contain at least
+              [<b>assignment</b>: 
+     <span class="assignable-content">positive integer of eight or more</span>] 
+              characters in the set of [<i>upper case characters, lower case characters, numbers,
+                and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*",
+                "(", and ")", 
                 and [<b>assignment</b>: 
      <span class="assignable-content">other supported special characters</span>]</i>].
             </div></div>
@@ -1750,7 +1730,7 @@ Network Device
           
           <div class="element"><div class="reqid" id="FTP_ITC.1.1/H323"><a href="#FTP_ITC.1.1/H323" class="abbr">FTP_ITC.1.1/H323</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a<b>n H.323</b> communication channel <b>in accordance with ITU-REC H.235.0</b> between itself and 
-              <b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_57">IPsec as specified in FCS_IPSEC_EXT.1</span>, <span class="selectable-content" id="_s_58">no other protocol</span>]</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+              <b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and [<b>selection</b>: <span class="selectable-content" id="_s_59">IPsec as specified in FCS_IPSEC_EXT.1</span>, <span class="selectable-content" id="_s_60">no other protocol</span>]</b> that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1961,7 +1941,7 @@ Network Device
           </ul>
           </p><h4>FIA_SIPS_EXT.1 Session Initiation Protocol Registration</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>None
           </td></tr></table><h4 id="ext-comp-FIA_SIPS_EXT.1.1">FIA_SIPS_EXT.1.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_59"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the [<b>selection</b>: <span class="selectable-content" id="_s_61"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> that complies with RFC 3261</span>, <span class="selectable-content" id="H323_SDP">H.323 protocol that complies with ITU-REC H.235.0</span>] using the Session Description Protocol (<abbr class="dyn-abbr"><a href="#abbr_SDP">SDP</a></abbr>) complying with RFC 4566 to 
               describe the multimedia session that will be used to carry the <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> traffic.
             <h4 id="ext-comp-FIA_SIPS_EXT.1.2">FIA_SIPS_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require password authentication for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> REGISTER function requests as specified in Section 22 of RFC 3261.

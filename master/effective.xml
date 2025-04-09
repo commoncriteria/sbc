@@ -262,25 +262,9 @@
           <rationale>
             Mitigates the threat by defining secure behavior for SIP trunking.
           </rationale>
-          <addressed-by>FIA_X509_EXT.1/Rev (refined from the <xref to="bibX509"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
-          </rationale>
-          <addressed-by>FIA_X509_EXT.2 (refined from the <xref to="bibX509"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
-          </rationale>
-          <addressed-by>FIA_X509_EXT.3 (refined from the <xref to="bibX509"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by defining a mechanism by which the TOE obtains the certificates it uses for TLS client and server connections.
-          </rationale>
           <addressed-by>FMT_SMF.1/SBC</addressed-by>
           <rationale>
             Mitigates the threat by defining TSF management functions that require authorizations to use.
-          </rationale>
-          <addressed-by>FTP_ITC.1 (refined from Base-PP)</addressed-by>
-          <rationale>
-            Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications.
           </rationale>
           <addressed-by>FTP_ITC.1/ARP</addressed-by>
           <rationale>
@@ -373,22 +357,6 @@
           <rationale>
             Mitigates the threat by defining secure behavior for SIP trunking.
           </rationale>
-          <addressed-by>FIA_X509_EXT.1/Rev (refined from the <xref to="bibX509"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
-          </rationale>
-          <addressed-by>FIA_X509_EXT.2 (refined from the <xref to="bibX509"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by defining requirements for the X.509 validation algorithm used by the TOE’s TLS implementation.
-          </rationale>
-          <addressed-by>FIA_X509_EXT.3 (refined from the <xref to="bibX509"/>)</addressed-by>
-          <rationale>
-            Mitigates the threat by defining a mechanism by which the TOE obtains the certificates it uses for TLS client and server connections.
-          </rationale>
-          <addressed-by>FTP_ITC.1 (refined from Base-PP)</addressed-by>
-          <rationale>
-            Mitigates the threat by defining external interfaces that require protected communications as well as the trusted protocols used to protect those communications.
-          </rationale>
           <addressed-by>FTP_ITC.1/ARP</addressed-by>
           <rationale>
             Mitigates the threat by defining how communications of potential security violations are protected.
@@ -470,7 +438,7 @@
           <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <description>This SFR is selection-based in the TLS Functional Package but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server. 
+            <description>This SFR is selection-based in the Functional Package for TLS but is mandated by this PP-Module because Transport Layer Security (TLS) is used for SIP trunking. An SBC implements TLS as both a client and a server. 
             The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
@@ -480,7 +448,7 @@
             <consistency-rationale>
                 This PP-Module mandates the inclusion of this optional SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <description>This SFR is selection-based in the TLS Functional Package but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the Functional Package for TLS but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -488,7 +456,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <description>This SFR is selection-based in the TLS Functional Package but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the Functional Package for TLS but is mandated by this PP-Module because TLS is used for SIP trunking. An SBC implements TLS as both a client and a server. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -497,7 +465,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this optional SFR because it is required to implement the trusted communications required by the PP-Module.
             </consistency-rationale>
-            <description>This SFR is selection-based in the TLS Functional Package but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the Functional Package for TLS but is mandated by this PP-Module because SIP trunking requires mutually-authenticated TLS. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -509,7 +477,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <description>This SFR is selection-based in the X.509 Functional Package but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the Functional Package for X.509but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -518,7 +486,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <description>This SFR is selection-based in the X.509 Functional Package but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the Functional Package for X.509 but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>  
           </base-sfr-spec>
@@ -527,7 +495,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <description>This SFR is selection-based in the X.509 Functional Package but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the Functional Package for X.509 but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>          
@@ -543,8 +511,8 @@
             <h:p><h:b>FTP_ITC.1.1: </h:b>The TSF shall be capable of using <h:b>TLS and [selection: </h:b><h:i>IPsec, SSH, DTLS, HTTPS, <h:b>no other protocol</h:b></h:i>] to 
             provide a trusted communication channel between itself and authorized IT entities supporting the following capabilities: audit server, 
             [<h:b>selection: </h:b><h:i>authentication server, [<h:b>assignment: </h:b>other capabilities], no other capabilities</h:i>] 
-            that is logically distinct from other communication channels and provides assured identification of its end points and protection of 
-            the channel data from modification or disclosure.</h:p>
+            that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of 
+            the channel data from disclosure and detection of modification of the channel data.</h:p>
             <h:p><h:b>FTP_ITC.1.2: </h:b>The TSF shall permit [<h:i>the TSF, the authorized IT entities</h:i>] to initiate communication via the trusted channel.</h:p>
             <h:p><h:b>Application Note: </h:b>TLS is mandated for SIP trunking as required by FIA_SIPT_EXT.1.</h:p>
             </description>
@@ -673,7 +641,7 @@
               The TSF shall record within the audit data at least the following information: <h:ol type="a">
                 <h:li>Date and time of the auditable event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event;</h:li>
                 <h:li>For each auditable event type, based on the auditable event definitions of the functional components included in the 
-                  PP, PP-Module, functional package or ST, [<h:i>information specified in column three of the Auditable Events table in which the auditable event was defined</h:i>].</h:li>
+                  PP, PP-Module, functional package, or ST, [<h:i>information specified in column three of the Auditable Events table in which the auditable event was defined</h:i>].</h:li>
               </h:ol>
             </title>
             <aactivity>
@@ -834,7 +802,7 @@
             <title>
               The TSF shall ensure the SRTP NULL algorithm <selectables>
                 <selectable>is disabled</selectable>
-                <selectable>can be disabled by a [<h:i>Security Administrator</h:i>]</selectable></selectables>.
+                <selectable>can be disabled by a [<h:i>security administrator</h:i>]</selectable></selectables>.
             </title>
             <ext-comp-def-title>
               <title>
@@ -846,7 +814,7 @@
           </f-element>
           <f-element>
             <title>
-              The TSF shall allow the SRTP ports to be used for SRTP communications to be specified by a [<h:i>Security Administrator</h:i>].
+              The TSF shall allow the SRTP ports to be used for SRTP communications to be specified by a [<h:i>security administrator</h:i>].
             </title>
             <ext-comp-def-title>
               <title>
@@ -856,13 +824,13 @@
           <aactivity>
             <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to do the following: <h:ul>
               <h:li>Support the use of SRTP and the ciphersuites that are supported by the SRTP implementation.</h:li>
-              <h:li>Disable the SRTP NULL algorithm automatically or provide the ability for it to be disabled by a Security Administrator.</h:li>
-              <h:li>Provide the ability for a Security Administrator to specify the SRTP ports used for SRTP communications.</h:li>
+              <h:li>Disable the SRTP NULL algorithm automatically or provide the ability for it to be disabled by a security administrator.</h:li>
+              <h:li>Provide the ability for a security administrator to specify the SRTP ports used for SRTP communications.</h:li>
             </h:ul>
                 <h:p/></TSS>
             <Guidance>The evaluator shall verify that the TSS describes the ability of the TOE to do the following: <h:ul>
               <h:li>How to configure the ciphersuites used by SRTP.</h:li>
-              <h:li>[conditional, if “can be disabled by a [Security Administrator]” is selected in FCS_SRTP_EXT.1.3] How to disable use of the SRTP NULL algorithm.</h:li>
+              <h:li>[conditional, if “can be disabled by a [security administrator]” is selected in FCS_SRTP_EXT.1.3] How to disable use of the SRTP NULL algorithm.</h:li>
               <h:li>How to specify the ports used for SRTP communications.</h:li>
             </h:ul>
                 <h:p/></Guidance>
@@ -879,7 +847,7 @@
                 
                 <test> <h:ol>
                 <h:li>Deploy a packet capture tool that is capable of sniffing traffic on the network interface where SRTP traffic will be transmitted.</h:li> 
-                <h:li>[conditional, if “can be disabled by a [Security Administrator]” is selected in FCS_SRTP_EXT.1.3] Configure the TOE to disable use of the SRTP NULL algorithm.</h:li> 
+                <h:li>[conditional, if “can be disabled by a [security administrator]” is selected in FCS_SRTP_EXT.1.3] Configure the TOE to disable use of the SRTP NULL algorithm.</h:li> 
                 <h:li>Transmit SRTP NULL message to the TOE and observe that it is rejected.</h:li>
                 </h:ol>
                 </test>
@@ -1627,7 +1595,7 @@
               The TSF shall use NAT to replace the IP address header value of traffic originating from the internal network with 
               <selectables>
                 <selectable>the IP address of the TOE</selectable>
-                <selectable>a [<h:i>Security Administrator</h:i>]-defined value</selectable></selectables>.
+                <selectable>a [<h:i>security administrator</h:i>]-defined value</selectable></selectables>.
             </title>
             <ext-comp-def-title>
               <title>
@@ -1647,13 +1615,13 @@
                 The evaluator shall also verify that the TSS describes how the TSF uses NAT to replace the IP address header value of outbound traffic 
                 and how the TOE keeps track of the original identities of calling parties.
                 <h:p/></TSS>
-              <Guidance>If the ST author selected “a Security Administrator-defined value” in FFW_NAT_EXT.1.3, the evaluator shall verify that the guidance documentation provides instructions on how to define the IP address header value
+              <Guidance>If the ST author selected “a security administrator-defined value” in FFW_NAT_EXT.1.3, the evaluator shall verify that the guidance documentation provides instructions on how to define the IP address header value
                 <h:p/></Guidance>
               <Tests>
                 The evaluator shall place a call originating from the internal network to the external network. 
                 The evaluator shall use packet captures on the external network to verify that the data in the packets do not disclose the internal network’s addressing or naming structure.
                 <h:p/>
-                If the ST author selected “a Security Administrator-defined value” in FFW_NAT_EXT.1.3, 
+                If the ST author selected “a security administrator-defined value” in FFW_NAT_EXT.1.3, 
                 the evaluator shall specify a given IP header value and verify that the traffic replaces the original header value with the administrator-defined value. 
                 If the ST author instead selected “the IP address of the TOE,” the evaluator shall verify that this header value is the IP address of the TOE’s interface to the “external” network.
               </Tests>
@@ -1748,7 +1716,7 @@
             This SFR is an iteration of a Base-PP requirement that defines additional management functions for SBC functionality that the Base-PP could not be expected to cover.
           </consistency-rationale>
           <f-element>
-            <title>The TSF shall be capable of performing the following management functions <h:b>related to SBC functionality</h:b>: [<h:i>Ability of a Security Administrator to:
+            <title>The TSF shall be capable of performing the following management functions <h:b>related to SBC functionality</h:b>: [<h:i>Ability of a security administrator to:
               <h:ul>
                 <h:li>Change a user's password</h:li>
                 <h:li>Require a user's password to be changed upon next login</h:li>
@@ -1772,7 +1740,7 @@
               management function defined in FMT_SMF.1 in the Base-PP can be used to address this PP-Module’s dependency on reliable system time.
               Note that support for NTP is recommended but not required.
               <h:p/>
-              The 'configurable auditable events' function relates to FAU_SEL.1, specifically with respect to allowing a Security Administrator 
+              The 'configurable auditable events' function relates to FAU_SEL.1, specifically with respect to allowing a security administrator 
               to determine whether a given event is auditable. As this refers to the events for the triggering of various filtering rules, 
               it may be implicitly addressed through the ‘configure traffic filtering rules’ function, 
               for example by explicitly defining a rule with a type that automatically requires it to be logged or a parameter that causes it to be logged if triggered.
@@ -1796,7 +1764,7 @@
                 <h:p/>
                 The evaluator shall also ensure that all relevant management functionality from FMT_SMF.1 in the Base-PP that relates to the SBC PP-Module are tested in conjunction with SBC functionality. 
                 For example, for SBC functions that rely on time services, 
-                the evaluator shall ensure that a Security Administrator can either manually configure the time or specify NTP server connectivity and ensure that the SBC functions will make use of the configured time data.
+                the evaluator shall ensure that a security administrator can either manually configure the time or specify NTP server connectivity and ensure that the SBC functions will make use of the configured time data.
                 <h:p/>
                 The evaluator shall also demonstrate that a user who lacks privileges to execute these functions (as described in the operational guidance) are unable to execute them.
               </Tests>
@@ -1923,9 +1891,9 @@
 	                <selectable>HTTPS</selectable>
 	                <selectable>SNMPv3</selectable>
 	              </selectables>
-	              to</h:b> provide a trusted communication channel between itself and 
+	              to</h:b> provide a <h:b>trusted</h:b> communication channel between itself and 
 	            <h:b>authorized IT entities supporting the following capabilities: security audit automatic response</h:b> 
-	            that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+	            that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure. 
 	          </title>
 	        </f-element>
 	        <f-element>
@@ -1970,7 +1938,7 @@
 			    The TSF shall provide a <h:b>signaling</h:b> channel between itself and <h:b>an ESC using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and <selectables>
 			      <selectable>DTLS as specified in FCS_DTLSC_EXT.1 and FCS_DTLSC_EXT.2</selectable>
 			      <selectable>no other protocol</selectable></selectables></h:b> that is logically distinct from other communication channels 
-			    and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+			    and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.
 				  </title>
 			    <note role="Application">
 			      FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <xref to="pkgTLS"/>.
@@ -2018,9 +1986,9 @@
 	            <selectable>IPsec</selectable>
 	            <selectable>H.235</selectable>
 	            <selectable><assignable>other protocols</assignable></selectable></selectables></h:b> 
-	          to provide a <h:b>trusted</h:b> communication channel between itself and <h:b>authorized IT 
+	          <h:b>to</h:b> provide a <h:b>trusted</h:b> communication channel between itself and <h:b>authorized IT 
 	          entities supporting the following capabilities: VVoIP signaling and media channels</h:b> that is
-	          logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+	          logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.
 	        </title>
 	        <note role="Application">
 	          FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <xref to="pkgTLS"/>.
@@ -2028,7 +1996,11 @@
 	      </f-element>
 	      <f-element>
 	        <title>
-	          The TSF shall permit [<h:i>the TSF, the authorized IT entities</h:i>] to initiate communication via the trusted channel.
+	          The TSF shall permit <selectables>
+	            <selectable>the TSF</selectable>
+	            <selectable>the authorized IT entities</selectable>
+	          </selectables>
+	          to initiate communication via the trusted channel.
 	        </title>
 	      </f-element>
 	      <f-element>
@@ -2085,7 +2057,7 @@
               <h:b>a gatekeeper using TLS as specified in FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 and <selectables>
                 <selectable>IPsec as specified in FCS_IPSEC_EXT.1</selectable>
                 <selectable>no other protocol</selectable>
-              </selectables></h:b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure.
+              </selectables></h:b> that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.
             </title>
             <note role="Application">
               FCS_IPSEC_EXT.1 is defined in the Base-PP. FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 are defined in the <xref to="pkgTLS"/>.
@@ -2174,8 +2146,11 @@
           </f-element>
           <f-element>
             <title>
-              The TSF shall support ESC authentication passwords that contain at least <assignable>positive integer of 8 or more</assignable> 
-              characters in the set of [<h:i>upper case characters, lower case characters, numbers, and the following special characters: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”, 
+              The TSF shall support ESC authentication passwords that contain at least
+              <assignable>positive integer of eight or more</assignable> 
+              characters in the set of [<h:i>upper case characters, lower case characters, numbers,
+                and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*",
+                "(", and ")", 
                 and <assignable>other supported special characters</assignable></h:i>].
             </title>
             <ext-comp-def-title>

@@ -1,4 +1,5 @@
 output/sbc-release-linkable.html: 0e
+output/sbc-release-linkable.html: 509but
 output/sbc-release-linkable.html: AGD
 output/sbc-release-linkable.html: CEM
 output/sbc-release-linkable.html: CRCX
@@ -23,6 +24,7 @@ output/sbc-release-linkable.html: stateful
 output/sbc-release-linkable.html: subnet
 output/sbc-release-linkable.html: transcoding
 output/sbc-release.html: 0e
+output/sbc-release.html: 509but
 output/sbc-release.html: CEM
 output/sbc-release.html: CRCX
 output/sbc-release.html: DLCX
@@ -67,6 +69,7 @@ output/sbc-sd.html: ruleset
 output/sbc-sd.html: stateful
 output/sbc-sd.html: subnet
 output/sbc.html: 0e
+output/sbc.html: 509but
 output/sbc.html: AGD
 output/sbc.html: CEM
 output/sbc.html: CRCX
