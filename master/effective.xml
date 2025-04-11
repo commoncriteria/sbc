@@ -477,7 +477,7 @@
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
-            <description>This SFR is selection-based in the Functional Package for X.509but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
+            <description>This SFR is selection-based in the Functional Package for X.509 but mandatory in this PP-Module because the TOE’s TLS implementation requires appropriate X.509 functionality. The SFR is unchanged from its original definition.</description>
             <no-change/>
             <set-status status="mandatory"/>
           </base-sfr-spec>
