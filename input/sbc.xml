@@ -484,7 +484,7 @@
         </section>
 
         <section title="Identification and Authentication (FIA)" id="nd-mod-fia">
-          <base-sfr-spec cc-id="fia_x509_ext.1" title="X.509 Certificate Validation" id="nd-mod-fia-x509-ext-1">
+          <base-sfr-spec cc-id="fia_x509_ext.1" iteration="Rev" title="X.509 Certificate Validation" id="nd-mod-fia-x509-ext-1">
             <consistency-rationale>
               This PP-Module mandates the inclusion of this selection-based SFR because it is a dependency of the TLS requirements that it also mandates.
             </consistency-rationale>
