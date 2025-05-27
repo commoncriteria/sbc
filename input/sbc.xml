@@ -54,8 +54,7 @@
       The scope of this Protection Profile Module (PP-Module) is to describe the security functionality of a Session Border Controller (SBC) in terms of [CC] and to define functional and assurance requirements for such products. 
       This PP-Module is intended for use with the following Base-PPs:
       <h:ul>
-        <h:li>collaborative Protection Profile for
-          Network Devices, Version 3.0e (NDcPP)</h:li>
+        <h:li>Network Device collaborative Protection Profile Version 4.0<comment>Please update the reference in the bio.</comment></h:li>
       </h:ul>
       This Base-PP is valid because a device that implements an SBC is a specific type of network device, 
       and there is nothing about the implementation of an SBC that would prevent any of the security capabilities defined by the Base-PP from being satisfied.
@@ -151,7 +150,7 @@
       <cc-pt2-conf>extended</cc-pt2-conf>
       <cc-pt3-conf>conformant</cc-pt3-conf>
       <cc-pp-conf/>
-      <cc-pp-config-with/>
+      <cc-pp-config-with><PP-cc-ref>Network Device collaborative Protection Profile Version 4.0</PP-cc-ref></cc-pp-config-with>
       <cc-pkg-claim>
         <FP-cc-ref conf="conformant">Functional Package for TLS, version 2.0</FP-cc-ref>
         <FP-cc-ref conf="conformant">Functional Package for X.509, version 1.0</FP-cc-ref>
@@ -2375,7 +2374,7 @@
     <entry id="bibNDcPP">
       <tag>NDcPP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</h:a>, Version 3.0e, 06 December 2023
+        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</h:a>, Version 4.0, 06 December 2023
       </description>
     </entry>
     
