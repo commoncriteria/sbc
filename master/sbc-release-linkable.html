@@ -627,7 +627,7 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for Session Border Controllers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"><br>
+    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br></div><h1 class="title" style="page-break-before:auto;">PP-Module for Session Border Controllers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"><br>
       Version: 2.0<br>2025-04-11<br><b>National Information Assurance Partnership</b><br></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2022-12-05</td><td>Initial Release</td></tr>
 <tr><td>2.0</td><td>2025-04-11</td><td>Apply NIAP Technical Decisions, Update to <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022</td></tr>
 </table><h3>TDs Applied</h3><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:10px">1.4<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.5<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
@@ -651,66 +651,65 @@ function showTarget(id){
       The scope of this Protection Profile Module (<abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>) is to describe the security functionality of a Session Border Controller (SBC) in terms of [<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>] and to define functional and assurance requirements for such products<a id="period_0" href="#period_0">. </a>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>:
       <ul>
-        <li>collaborative Protection Profile for
-          Network Devices, Version 3.0e (NDcPP)</li>
+        <li>Network Device collaborative Protection Profile Version 4.0<span style="" class="comment " id="Comment-1-">Please update the reference in the bio<a id="period_1" href="#period_1">. </a></span></li>
       </ul>
       This <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is valid because a device that implements an SBC is a specific type of network device, 
-      and there is nothing about the implementation of an SBC that would prevent any of the security capabilities defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> from being satisfied<a id="period_1" href="#period_1">. </a>      <p></p>
-      Note that the NDcPP defines an optional architecture for a &#8220;distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8221; that allows for security functionality to be spread across multiple distinct components<a id="period_2" href="#period_2">. </a>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require or prohibit the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from being a distributed system when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to the NDcPP; the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may be standalone or distributed in this case<a id="period_3" href="#period_3">. </a>      
+      and there is nothing about the implementation of an SBC that would prevent any of the security capabilities defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> from being satisfied<a id="period_2" href="#period_2">. </a>      <p></p>
+      Note that the NDcPP defines an optional architecture for a &#8220;distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8221; that allows for security functionality to be spread across multiple distinct components<a id="period_3" href="#period_3">. </a>
+      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require or prohibit the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from being a distributed system when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to the NDcPP; the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may be standalone or distributed in this case<a id="period_4" href="#period_4">. </a>      
     
     <div class="no-link"><h2 id="glossary" class="indexable" data-level="2">1.2 Terms</h2>
-The following sections list Common Criteria and technology terms used in this document<a id="period_4" href="#period_4">. </a>    <h3 id="cc-terms" class="indexable" data-level="3">1.2.1 Common Criteria Terms</h3><table><tr><td><div id="Assurance">Assurance</div></td><td>Grounds for confidence that a TOE meets the SFRs <a href="#bibCC">[CC]</a><a id="period_5" href="#period_5">. </a></td></tr>
-<tr><td><div id="Base_Protection_Profile">Base Protection Profile (Base-PP)</div></td><td>Protection Profile used as a basis to build a PP-Configuration<a id="period_6" href="#period_6">. </a></td></tr>
+The following sections list Common Criteria and technology terms used in this document<a id="period_5" href="#period_5">. </a>    <h3 id="cc-terms" class="indexable" data-level="3">1.2.1 Common Criteria Terms</h3><table><tr><td><div id="Assurance">Assurance</div></td><td>Grounds for confidence that a TOE meets the SFRs <a href="#bibCC">[CC]</a><a id="period_6" href="#period_6">. </a></td></tr>
+<tr><td><div id="Base_Protection_Profile">Base Protection Profile (Base-PP)</div></td><td>Protection Profile used as a basis to build a PP-Configuration<a id="period_7" href="#period_7">. </a></td></tr>
 <tr><td><div id="Collaborative_Protection_Profile">Collaborative Protection Profile (cPP)</div></td><td>A Protection Profile developed by
-    international technical communities and approved by multiple schemes<a id="period_7" href="#period_7">. </a></td></tr>
-<tr><td><div id="Common_Criteria">Common Criteria (CC)</div></td><td>Common Criteria for Information Technology Security Evaluation (International Standard ISO/IEC 15408)<a id="period_8" href="#period_8">. </a></td></tr>
+    international technical communities and approved by multiple schemes<a id="period_8" href="#period_8">. </a></td></tr>
+<tr><td><div id="Common_Criteria">Common Criteria (CC)</div></td><td>Common Criteria for Information Technology Security Evaluation (International Standard ISO/IEC 15408)<a id="period_9" href="#period_9">. </a></td></tr>
 <tr><td><div id="Common_Criteria_Testing_Laboratory">Common Criteria Testing Laboratory</div></td><td>
       Within the context of the Common Criteria Evaluation and Validation Scheme (CCEVS), an IT security evaluation facility
-      accredited by the National Voluntary Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to conduct Common Criteria-based evaluations<a id="period_9" href="#period_9">. </a>    </td></tr>
-<tr><td><div id="Common_Evaluation_Methodology">Common Evaluation Methodology (CEM)</div></td><td>Common Evaluation Methodology for Information Technology Security Evaluation<a id="period_10" href="#period_10">. </a></td></tr>
-<tr><td><div id="Distributed_TOE">Distributed TOE</div></td><td>A TOE composed of multiple components operating as a logical whole<a id="period_11" href="#period_11">. </a></td></tr>
-<tr><td><div id="Operational_Environment">Operational Environment (OE)</div></td><td>Hardware and software that are outside the TOE boundary that support the TOE functionality and security policy<a id="period_12" href="#period_12">. </a></td></tr>
-<tr><td><div id="Protection_Profile">Protection Profile (PP)</div></td><td>An implementation-independent set of security requirements for a category of products<a id="period_13" href="#period_13">. </a></td></tr>
-<tr><td><div id="Protection_Profile_Configuration">Protection Profile Configuration (PP-Configuration)</div></td><td>A comprehensive set of security requirements for a product type that consists of at least one Base-PP and at least one PP-Module<a id="period_14" href="#period_14">. </a></td></tr>
-<tr><td><div id="Protection_Profile_Module">Protection Profile Module (PP-Module)</div></td><td>An implementation-independent statement of security needs for a TOE type complementary to one or more Base-PPs<a id="period_15" href="#period_15">. </a></td></tr>
-<tr><td><div id="Security_Assurance_Requirement">Security Assurance Requirement (SAR)</div></td><td>A requirement to assure the security of the TOE<a id="period_16" href="#period_16">. </a></td></tr>
-<tr><td><div id="Security_Functional_Requirement">Security Functional Requirement (SFR)</div></td><td>A requirement for security enforcement by the TOE<a id="period_17" href="#period_17">. </a></td></tr>
-<tr><td><div id="Security_Target">Security Target (ST)</div></td><td>A set of implementation-dependent security requirements for a specific product<a id="period_18" href="#period_18">. </a></td></tr>
-<tr><td><div id="Target_of_Evaluation">Target of Evaluation (TOE)</div></td><td>The product under evaluation<a id="period_19" href="#period_19">. </a></td></tr>
-<tr><td><div id="TOE_Security_Functionality">TOE Security Functionality (TSF)</div></td><td>The security functionality of the product under evaluation<a id="period_20" href="#period_20">. </a></td></tr>
-<tr><td><div id="TOE_Summary_Specification">TOE Summary Specification (TSS)</div></td><td>A description of how a TOE satisfies the SFRs in an ST<a id="period_21" href="#period_21">. </a></td></tr>
+      accredited by the National Voluntary Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to conduct Common Criteria-based evaluations<a id="period_10" href="#period_10">. </a>    </td></tr>
+<tr><td><div id="Common_Evaluation_Methodology">Common Evaluation Methodology (CEM)</div></td><td>Common Evaluation Methodology for Information Technology Security Evaluation<a id="period_11" href="#period_11">. </a></td></tr>
+<tr><td><div id="Distributed_TOE">Distributed TOE</div></td><td>A TOE composed of multiple components operating as a logical whole<a id="period_12" href="#period_12">. </a></td></tr>
+<tr><td><div id="Operational_Environment">Operational Environment (OE)</div></td><td>Hardware and software that are outside the TOE boundary that support the TOE functionality and security policy<a id="period_13" href="#period_13">. </a></td></tr>
+<tr><td><div id="Protection_Profile">Protection Profile (PP)</div></td><td>An implementation-independent set of security requirements for a category of products<a id="period_14" href="#period_14">. </a></td></tr>
+<tr><td><div id="Protection_Profile_Configuration">Protection Profile Configuration (PP-Configuration)</div></td><td>A comprehensive set of security requirements for a product type that consists of at least one Base-PP and at least one PP-Module<a id="period_15" href="#period_15">. </a></td></tr>
+<tr><td><div id="Protection_Profile_Module">Protection Profile Module (PP-Module)</div></td><td>An implementation-independent statement of security needs for a TOE type complementary to one or more Base-PPs<a id="period_16" href="#period_16">. </a></td></tr>
+<tr><td><div id="Security_Assurance_Requirement">Security Assurance Requirement (SAR)</div></td><td>A requirement to assure the security of the TOE<a id="period_17" href="#period_17">. </a></td></tr>
+<tr><td><div id="Security_Functional_Requirement">Security Functional Requirement (SFR)</div></td><td>A requirement for security enforcement by the TOE<a id="period_18" href="#period_18">. </a></td></tr>
+<tr><td><div id="Security_Target">Security Target (ST)</div></td><td>A set of implementation-dependent security requirements for a specific product<a id="period_19" href="#period_19">. </a></td></tr>
+<tr><td><div id="Target_of_Evaluation">Target of Evaluation (TOE)</div></td><td>The product under evaluation<a id="period_20" href="#period_20">. </a></td></tr>
+<tr><td><div id="TOE_Security_Functionality">TOE Security Functionality (TSF)</div></td><td>The security functionality of the product under evaluation<a id="period_21" href="#period_21">. </a></td></tr>
+<tr><td><div id="TOE_Summary_Specification">TOE Summary Specification (TSS)</div></td><td>A description of how a TOE satisfies the SFRs in an ST<a id="period_22" href="#period_22">. </a></td></tr>
 </table><h3 id="tech-terms" class="indexable" data-level="3">1.2.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Enterprise_Session_Controller">Enterprise Session Controller (ESC)</div></td><td>
-        A voice/video over IP (VVoIP) infrastructure device that is used to set up and tear down calls between VVoIP endpoints<a id="period_22" href="#period_22">. </a>      </td></tr>
+        A voice/video over IP (VVoIP) infrastructure device that is used to set up and tear down calls between VVoIP endpoints<a id="period_23" href="#period_23">. </a>      </td></tr>
 <tr><td><div id="H.323">H.323</div></td><td>
-        A communications protocol defined by the ITU Telecommunications Standardization Sector (ITU-T) that is used for creating, modifying, and terminating multimedia sessions with multiple participants<a id="period_23" href="#period_23">. </a>      </td></tr>
+        A communications protocol defined by the ITU Telecommunications Standardization Sector (ITU-T) that is used for creating, modifying, and terminating multimedia sessions with multiple participants<a id="period_24" href="#period_24">. </a>      </td></tr>
 <tr><td><div id="Media_Gateway_Control_Protocol">Media Gateway Control Protocol (MGCP)</div></td><td>
-        A means of communication between a media gateway and a media gateway controller<a id="period_24" href="#period_24">. </a>      </td></tr>
+        A means of communication between a media gateway and a media gateway controller<a id="period_25" href="#period_25">. </a>      </td></tr>
 <tr><td><div id="Secure_Real-Time_Transport_Protocol">Secure Real-Time Transport Protocol (SRTP)</div></td><td>
-        A protocol that is used to provide multimedia (voice/video) streaming services with added security of encryption, message authentication and integrity, and replay protection<a id="period_25" href="#period_25">. </a>      </td></tr>
+        A protocol that is used to provide multimedia (voice/video) streaming services with added security of encryption, message authentication and integrity, and replay protection<a id="period_26" href="#period_26">. </a>      </td></tr>
 <tr><td><div id="Session_Initiation_Protocol">Session Initiation Protocol (SIP)</div></td><td>
-        A communications protocol defined by the Internet Engineering Task Force (IETF) that is used for creating, modifying, and terminating multimedia sessions with multiple participants<a id="period_26" href="#period_26">. </a>      </td></tr>
+        A communications protocol defined by the Internet Engineering Task Force (IETF) that is used for creating, modifying, and terminating multimedia sessions with multiple participants<a id="period_27" href="#period_27">. </a>      </td></tr>
 </table></div>
     <h2 class="indexable" data-level="2" id="Compliant_Targets_of_Evaluation">1.3 Compliant Targets of Evaluation</h2>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifically addresses SBCs that provide firewalling, interoperability, and security functions for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks<a id="period_27" href="#period_27">. </a>
-      The SBC also provides protected communication between trusted components of the network infrastructure<a id="period_28" href="#period_28">. </a>      <p></p>
+      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifically addresses SBCs that provide firewalling, interoperability, and security functions for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks<a id="period_28" href="#period_28">. </a>
+      The SBC also provides protected communication between trusted components of the network infrastructure<a id="period_29" href="#period_29">. </a>      <p></p>
       The physical boundary of the SBC is defined by the operating system components storing or providing security functions and 
-      all software supplied by the vendor, including vendor modified components to the operating system<a id="period_29" href="#period_29">. </a>
-      All the security functionality is contained and executed within the physical boundary of the device<a id="period_30" href="#period_30">. </a>      <p></p>
+      all software supplied by the vendor, including vendor modified components to the operating system<a id="period_30" href="#period_30">. </a>
+      All the security functionality is contained and executed within the physical boundary of the device<a id="period_31" href="#period_31">. </a>      <p></p>
       While the functionality that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is obligated to implement in response to the described threat environment is detailed in later sections, 
-      a brief description is provided here<a id="period_31" href="#period_31">. </a>A compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide security functionality that addresses threats to itself<a id="period_32" href="#period_32">. </a>
+      a brief description is provided here<a id="period_32" href="#period_32">. </a>A compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide security functionality that addresses threats to itself<a id="period_33" href="#period_33">. </a>
       It must also protect communications between itself and an Internet Protocol Public Branch Exchange (<abbr class="dyn-abbr"><a href="#abbr_IP-PBX">IP-PBX</a></abbr>) 
-      or another SBC by using a trusted channel<a id="period_33" href="#period_33">. </a>Some protocols required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> make use of certificates; therefore, the SBC must securely store certificates and private keys<a id="period_34" href="#period_34">. </a>
+      or another SBC by using a trusted channel<a id="period_34" href="#period_34">. </a>Some protocols required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> make use of certificates; therefore, the SBC must securely store certificates and private keys<a id="period_35" href="#period_35">. </a>
       <p></p>
       Since this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the NDcPP, conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> must implement the functionality required in the NDcPP along 
-      with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in response to the threat environment discussed later in this document<a id="period_35" href="#period_35">. </a>      
+      with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in response to the threat environment discussed later in this document<a id="period_36" href="#period_36">. </a>      
     
       <h2 class="indexable" data-level="2" id="TOE_Boundary">1.4 TOE Boundary</h2>
-        An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions<a id="period_36" href="#period_36">. </a>
+        An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions<a id="period_37" href="#period_37">. </a>
         SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
-        service provider networks and residential customers, or in some cases as a back-to-back user agent (<abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr>) that allows mobile users the ability to connect to their internal <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> network<a id="period_37" href="#period_37">. </a>        <p></p>
-        The following diagram represents a typical deployment of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its operational environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>)<a id="period_38" href="#period_38">. </a>
-        Note that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC<a id="period_39" href="#period_39">. </a>        <p></p> 
+        service provider networks and residential customers, or in some cases as a back-to-back user agent (<abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr>) that allows mobile users the ability to connect to their internal <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> network<a id="period_38" href="#period_38">. </a>        <p></p>
+        The following diagram represents a typical deployment of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its operational environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>)<a id="period_39" href="#period_39">. </a>
+        Note that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC<a id="period_40" href="#period_40">. </a>        <p></p> 
 	     <p></p>
         <div class="figure" id="figure-OperEnv"><img id="OperEnv" src="images/figure1.png" width="" height=""><br><span class="ctr" data-myid="OperEnv" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
       SBC Deployment Model</div>
@@ -720,30 +719,31 @@ The following sections list Common Criteria and technology terms used in this do
     
     <h2 class="indexable" data-level="2" id="Use_Cases">1.5 Use Cases</h2>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines a single potential use case for the SBC <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:
-      <dl><dt id="usecase-dedicated"> [USE CASE 1] Border Protection</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a specialized network device that provides firewall services for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks<a id="period_40" href="#period_40">. </a>
-            The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is intended to provide protection against well-known threats that target these networks<a id="period_41" href="#period_41">. </a>
-            The SBC examines headers and data values of packets and compares them to an Access Control List (<abbr class="dyn-abbr"><a href="#abbr_ACL">ACL</a></abbr>) to either permit or deny them to or through the SBC<a id="period_42" href="#period_42">. </a>
+      <dl><dt id="usecase-dedicated"> [USE CASE 1] Border Protection</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a specialized network device that provides firewall services for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks<a id="period_41" href="#period_41">. </a>
+            The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is intended to provide protection against well-known threats that target these networks<a id="period_42" href="#period_42">. </a>
+            The SBC examines headers and data values of packets and compares them to an Access Control List (<abbr class="dyn-abbr"><a href="#abbr_ACL">ACL</a></abbr>) to either permit or deny them to or through the SBC<a id="period_43" href="#period_43">. </a>
             The SBC is typically deployed between service providers for security, interoperability, translation, and transcoding purposes; 
-            between service providers and residential customers for security and interoperability purposes; or between service providers and enterprise networks for translation, transcoding, and security purposes<a id="period_43" href="#period_43">. </a>
-            The SBC, as a border element, should also be able to establish a secure communication channel with external devices it communicates with<a id="period_44" href="#period_44">. </a></span></dd></dl> 
+            between service providers and residential customers for security and interoperability purposes; or between service providers and enterprise networks for translation, transcoding, and security purposes<a id="period_44" href="#period_44">. </a>
+            The SBC, as a border element, should also be able to establish a secure communication channel with external devices it communicates with<a id="period_45" href="#period_45">. </a></span></dd></dl> 
      
   <h1 class="indexable" data-level="1" id="Conformance_Claims">2 Conformance Claims</h1>
     <dl><dt>Conformance Statement</dt><p></p><dd>An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must claim exact conformance 
-		 to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_45" href="#period_45">. </a></dd><p></p><dd>The evaluation methods used for evaluating the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are a combination of the workunits 
+		 to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_46" href="#period_46">. </a></dd><p></p><dd>The evaluation methods used for evaluating the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are a combination of the workunits 
 			defined in <a href="#bibCEM">[CEM]</a> as well as the Evaluation Activities for ensuring that individual <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> 
 			and <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> have a sufficient level of supporting evidence in the Security Target and guidance 
 			documentation and have been sufficiently tested by the laboratory as part of completing 
-			ATE_IND.1<a id="period_46" href="#period_46">. </a>Any functional packages this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> claims similarly contain their own Evaluation 
-			Activities that are used in this same manner<a id="period_47" href="#period_47">. </a>			</dd><dt>CC Conformance Claims</dt><p></p><dd>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is conformant to 
+			ATE_IND.1<a id="period_47" href="#period_47">. </a>Any functional packages this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> claims similarly contain their own Evaluation 
+			Activities that are used in this same manner<a id="period_48" href="#period_48">. </a>			</dd><dt>CC Conformance Claims</dt><p></p><dd>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is conformant to 
 			Part 2 (extended) 
 			
 			
 			and Part 3 (conformant)
 			
-				of Common Criteria <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1<a id="period_48" href="#period_48">. </a>			</dd><dt>PP Claim</dt><p></p><dd>
+				of Common Criteria <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1<a id="period_49" href="#period_49">. </a>			</dd><dt>PP Claim</dt><p></p><dd>
 					This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not claim conformance to 
-					any Protection Profile<a id="period_49" href="#period_49">. </a>				</dd><p></p><dd>There are no <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules that are allowed in a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> 
-					with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_50" href="#period_50">. </a></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
+					any Protection Profile<a id="period_50" href="#period_50">. </a>				</dd><p></p><dd>The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a 
+					<abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>:
+					<ul><li>Network Device collaborative Protection Profile Version 4.0</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
 					    Functional Package for TLS, version 2.0 conformant<a id="period_51" href="#period_51">. </a></li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
 					    Functional Package for X.509, version 1.0 conformant<a id="period_52" href="#period_52">. </a></li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any 
 						assurance packages<a id="period_53" href="#period_53">. </a></li></ul></dd><p></p><dd>
@@ -1955,7 +1955,7 @@ Network Device
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">
                  Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_455" href="#period_455">. </a></li>
           </ul></span></td></tr><tr><td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description">
-        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</a>, Version 3.0e, 06 December 2023
+        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</a>, Version 4.0, 06 December 2023
       </span></td></tr><tr><td><span id="bibNDSD">[NDcPP SD]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 3.0e, 06 December 2023
       </span></td></tr><tr><td><span id="bibTLS">[PKG_TLS]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS),
