@@ -23,7 +23,7 @@
   <release-notes><h:h3>TDs Applied</h:h3></release-notes><include-pkg id="pkgTLS">
     <git>
       <url>https://github.com/commoncriteria/tls</url>
-      <branch>release-2.0</branch>
+      <branch>release-2.1</branch>
     </git>
     <url>https://www.niap-ccevs.org/protectionprofiles/465</url>
   </include-pkg>
@@ -141,7 +141,7 @@
       <cc-pp-conf/>
       <cc-pp-config-with><PP-cc-ref>Network Device collaborative Protection Profile Version 4.0</PP-cc-ref></cc-pp-config-with>
       <cc-pkg-claim>
-        <FP-cc-ref conf="conformant">Functional Package for TLS, version 2.0</FP-cc-ref>
+        <FP-cc-ref conf="conformant">Functional Package for TLS, version 2.1</FP-cc-ref>
         <FP-cc-ref conf="conformant">Functional Package for X.509, version 1.0</FP-cc-ref>
       </cc-pkg-claim>
     </CClaimsInfo>
@@ -692,7 +692,8 @@
             </title>
           
           <note role="application">
-            Examples of monitored audited events include authentication failures, self-test failures, or environmental failures (e.g. temperature violation).
+            Examples of monitored audited events include authentication failures, self-test
+            failures, or environmental failures (e.g., temperature violation).
             </note>
             <aactivity>
               <TSS>The evaluator shall verify that the TSS describes the conditions that will be flagged by the TSF as a potential security violation and whether these conditions are administratively configurable.
