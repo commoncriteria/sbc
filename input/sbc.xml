@@ -437,7 +437,7 @@
     </sec:Security_Objectives_Rationale>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <base-pp id="ND" version="3.0e" name="Network Device" product="Network Device" short="ND" plural="Network Devices">
+    <base-pp id="ND" version="4.0" name="Network Device" product="Network Device" short="ND" plural="Network Devices">
       <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
   	  <cPP/>
       <modified-sfrs>
@@ -2375,14 +2375,15 @@
     <entry id="bibNDcPP">
       <tag>NDcPP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</h:a>, Version 4.0, 06 December 2023
+        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V4.0.pdf">collaborative Protection Profile for Network Devices</h:a>, Version 4.0, 06 December 2023
       </description>
     </entry>
     
     <entry id="bibNDSD">
       <tag>NDcPP SD</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</h:a>, Version 3.0e, 06 December 2023
+        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V4.0-SD.pdf">Supporting Document -
+          Evaluation Activities for Network Device cPP</h:a>, Version 4.0, 06 December 2023
       </description>
     </entry>
     <entry id="bibTLS">
