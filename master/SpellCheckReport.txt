@@ -6,6 +6,7 @@ output/sbc-release-linkable.html: DLCX
 output/sbc-release-linkable.html: DTLSC
 output/sbc-release-linkable.html: DTLSS
 output/sbc-release-linkable.html: MSA
+output/sbc-release-linkable.html: NDcPP
 output/sbc-release-linkable.html: NTP
 output/sbc-release-linkable.html: OCSP
 output/sbc-release-linkable.html: RCF
@@ -34,6 +35,7 @@ output/sbc-release.html: DLCX
 output/sbc-release.html: DTLSC
 output/sbc-release.html: DTLSS
 output/sbc-release.html: MSA
+output/sbc-release.html: NDcPP
 output/sbc-release.html: NTP
 output/sbc-release.html: OCSP
 output/sbc-release.html: RCF
@@ -58,6 +60,7 @@ output/sbc-sd.html: AGD
 output/sbc-sd.html: CEM
 output/sbc-sd.html: CRCX
 output/sbc-sd.html: DLCX
+output/sbc-sd.html: NDcPP
 output/sbc-sd.html: NTP
 output/sbc-sd.html: RCF
 output/sbc-sd.html: RequestMessage
@@ -84,6 +87,7 @@ output/sbc.html: DLCX
 output/sbc.html: DTLSC
 output/sbc.html: DTLSS
 output/sbc.html: MSA
+output/sbc.html: NDcPP
 output/sbc.html: NTP
 output/sbc.html: OCSP
 output/sbc.html: RCF
