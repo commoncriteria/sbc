@@ -271,7 +271,7 @@
           <consistency-rationale>
             The Base-PP does not define a threat for malicious traffic because all of its security-relevant external interfaces define the network device as the endpoint. 
             This PP-Module defines interfaces where the TOE is facilitating a connection between two external entities, 
-            such that traffic between them will flow through the TOE as opposed to to and from the TOE. 
+            such that traffic between them will flow through the TOE as opposed to and from the TOE. 
             This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.
           </consistency-rationale>
           <addressed-by>FAU_ARP_EXT.1</addressed-by>
@@ -473,7 +473,7 @@
           <consistency-rationale>
             The Base-PP does not define a threat of user data transmitted to the wrong destination because all of its security-relevant external interfaces define the network device as the endpoint. 
             This PP-Module defines interfaces where the TOE is facilitating a connection between two external entities, 
-            such that traffic between them will flow through the TOE as opposed to to and from the TOE. 
+            such that traffic between them will flow through the TOE as opposed to and from the TOE. 
             This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.
           </consistency-rationale>
           <addressed-by>FDP_IFC.1</addressed-by>
