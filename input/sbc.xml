@@ -532,7 +532,8 @@
             <description>
             <h:p>This SFR has been modified to mandate the use of TLS for inter-TSF trusted channels in the TOE. Any element not mentioned in this section is unchanged from its original definition.</h:p>
             <h:p>The text of the requirement is replaced with:</h:p>
-            <h:p><h:b>FTP_ITC.1.1: </h:b>The TSF shall be capable of using <h:b>TLS and [selection:
+              <h:p><h:b>FTP_ITC.1.1: </h:b>The TSF shall be capable of using <h:b>TLS as defined in
+                the Functional Package for TLS and [selection:
             </h:b><h:i>IPsec, SSH as defined in the Functional Package for SSH, DTLS as defined in
               the Functional Package for TLS, HTTPS, <h:b>no other protocol</h:b></h:i>] to 
             provide a trusted communication channel between itself and authorized IT entities supporting the following capabilities: audit server, 
