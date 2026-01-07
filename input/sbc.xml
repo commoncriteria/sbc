@@ -2385,6 +2385,17 @@
     The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP.  
   </appendix>
   
-  <bibliography/>
+
+  <bibliography>
+    <cc-entry/>
+  <entry id="bibNDcPP">
+      <tag>NDcPP</tag>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/524">
+          collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</h:a>
+      </description>
+    </entry>
+    </bibliography>
+
     
 </Module>
