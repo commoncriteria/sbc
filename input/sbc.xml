@@ -2223,7 +2223,7 @@
             </aactivity>
           </f-element>
           <audit-event>
-            <audit-event-descr>Call Detail Record (CDR)</audit-event-descr>
+            <audit-event-descr>Call Detail Record (CDR).</audit-event-descr>
             <audit-event-info>Calling party.</audit-event-info>
             <audit-event-info>Called party.</audit-event-info>
             <audit-event-info>Start time of the call.</audit-event-info>
@@ -2382,7 +2382,7 @@
   </appendix>
   
   <appendix title="Entropy Documentation and Assessment" id="EAR">
-    The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP.  
+    The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP.   
   </appendix>
   
 
