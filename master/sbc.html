@@ -752,7 +752,7 @@ The following sections list Common Criteria and technology terms used in this do
       This section contains selections and assignments that are required when the listed Functional Packages are claimed by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
     	<br/>
     	Package Usage guidance defined in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s relevant <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> applies to the usage of the packages for this module, unless explicitly stated otherwise in this section.
-      <dt><b>, Version </b><p></p></dt><dd><b>Certificate Verification and Assertion Required in FIA_XCU_EXT.1.1</b><p></p><span class="description">Because this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> mandates support for mutual authentication for <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> communications, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall select the options to both verify and assert certificate identities in FIA_XCU_EXT.1.1.</span><p></p></dd><dd><b>Limitations on Signature Algorithms in FIA_X509_EXT.1.1</b><p></p><span class="description">
+      <dt><b>Functional Package for X.509, Version 1.0</b><p></p></dt><dd><b>Certificate Verification and Assertion Required in FIA_XCU_EXT.1.1</b><p></p><span class="description">Because this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> mandates support for mutual authentication for <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> communications, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall select the options to both verify and assert certificate identities in FIA_XCU_EXT.1.1.</span><p></p></dd><dd><b>Limitations on Signature Algorithms in FIA_X509_EXT.1.1</b><p></p><span class="description">
               The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must utilize appropriate cryptographic algorithms that conform to CNSA standards. Thus, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall utilize no other algorithms outside of those specified in RFC 8603 for certificate or CRL signatures. 
               Additionally, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall not use ECDSA with SHA-512 signatures for OCSP responses, and shall utilize no other algorithms for OCSP responses.
             </span><p></p></dd><dd><b>Required Extension Processing for FIA_X509_EXT.1.2</b><p></p><span class="description">
@@ -765,7 +765,7 @@ The following sections list Common Criteria and technology terms used in this do
 			The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always support the use of extendedKeyUsage values to verify that X.509 certificates are used in accordance with their intended purpose. Accordingly, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall claim that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports the processing of extendedKeyUsage fields in the leaf certificate (as opposed to application of trust store context rules or passing the certification path or other supported context information to an external function) and shall select all values that are relevant to the claimed uses of X.509 in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. In particular, since the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not define any functions that require the use of S/MIME, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall not select this as an extendedKeyUsage value to be validated.
 			</span><p></p></dd><dd><b>Requirements on Functions for FIA_X509_EXT.2.1</b><p></p><span class="description">
 			The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall ensure that the selections and assignments in this requirement reflect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s usage of X.509 certificate validation for TLS. Other assignments and selections may be made as applicable for other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> functions.
-			</span><p></p></dd><dt><b>, Version </b><p></p></dt><dd><b>DTLS or TLS Server and Client Functionality Required</b><p></p><span class="description">
+			</span><p></p></dd><dt><b>Functional Package for Transport Layer Security (TLS), Version 2.1</b><p></p></dt><dd><b>DTLS or TLS Server and Client Functionality Required</b><p></p><span class="description">
 							The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall select the option to utilize TLS as both a server and client. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall additionally select the option to utilize DTLS as a server and client if support for DTLS is claimed in <a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a>.
 						</span><p></p></dd><dd><b>DTLS or TLS Mutual Authentication Required</b><p></p><span class="description">
 							The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> shall select the option to support mutual authentication in FCS_TLSC_EXT.1 and FCS_TLSS_EXT.1, or FCS_DTLSC_EXT.1 and FCS_DTLSS_EXT.1, according with the protocol support claimed in <a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a>.
@@ -1929,9 +1929,7 @@ Network Device
 				  <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-			      FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>.
+			      FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <a href="#pkgTLS" class="dynref" data-format=""></a>.
 			    </span></div></div></div>
 			    <div class="element"><div class="reqid" id="FTP_ITC.1.2/ESC"><a href="#FTP_ITC.1.2/ESC" class="abbr">FTP_ITC.1.2/ESC</a></div><div class="reqdesc">
 		  The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication via the trusted channel.
@@ -1959,9 +1957,7 @@ Network Device
 	        <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-	          FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>.
+	          FCS_TLSC_EXT.1, FCS_TLSC_EXT.2, FCS_DTLSC_EXT.1, and FCS_DTLSC_EXT.2 are defined in the <a href="#pkgTLS" class="dynref" data-format=""></a>.
 	        </span></div></div></div>
 	      <div class="element"><div class="reqid" id="FTP_ITC.1.2/VVoIP"><a href="#FTP_ITC.1.2/VVoIP" class="abbr">FTP_ITC.1.2/VVoIP</a></div><div class="reqdesc">
 	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<b>selection</b>: <span class="selectable-content" id="_s_57">the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_58">the authorized IT entities</span>]
@@ -2326,9 +2322,7 @@ Network Device
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              FCS_IPSEC_EXT.1 is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 are defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>.
+              FCS_IPSEC_EXT.1 is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. FCS_TLSC_EXT.1 and FCS_TLSC_EXT.2 are defined in the <a href="#pkgTLS" class="dynref" data-format=""></a>.
             </span></div></div></div>
           <div class="element"><div class="reqid" id="FTP_ITC.1.2/H323"><a href="#FTP_ITC.1.2/H323" class="abbr">FTP_ITC.1.2/H323</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication via the trusted channel.
