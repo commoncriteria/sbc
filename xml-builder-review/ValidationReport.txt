@@ -1,0 +1,7 @@
+/home/runner/work/sbc/sbc/input/sbc.xml:39:13: error: element "modules" not allowed here; expected element "include-pkg", "pp-preferences" or "section" or an element from another namespace
+/home/runner/work/sbc/sbc/input/sbc.xml:258:14: error: element "appendix" not allowed yet; expected element "section" or an element from another namespace
+/home/runner/work/sbc/sbc/input/sbc.xml:258:14: error: element "appendix" missing required attributes "id" and "title"
+/home/runner/work/sbc/sbc/input/sbc.xml:260:13: error: element "entry" missing required attribute "id"
+/home/runner/work/sbc/sbc/input/sbc.xml:260:13: error: element "entry" incomplete; missing required element "tag"
+/home/runner/work/sbc/sbc/input/sbc.xml:262:60: error: element "sec:Security_Requirements" not allowed here; expected the element end-tag
+/home/runner/work/sbc/sbc/input/sbc.xml:262:60: error: found attribute "title", but no attributes allowed here

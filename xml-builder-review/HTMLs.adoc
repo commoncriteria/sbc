@@ -1,0 +1,5 @@
+* https://commoncriteria.github.io/sbc/xml-builder-review/Master-Diff.html[Master-Diff.html]
+* https://commoncriteria.github.io/sbc/xml-builder-review/sbc-release-linkable.html[sbc-release-linkable.html]
+* https://commoncriteria.github.io/sbc/xml-builder-review/sbc-release.html[sbc-release.html]
+* https://commoncriteria.github.io/sbc/xml-builder-review/sbc-sd.html[sbc-sd.html]
+* https://commoncriteria.github.io/sbc/xml-builder-review/sbc.html[sbc.html]
