@@ -22,7 +22,20 @@
       <subject>Apply NIAP Technical Decisions, Update to CC:2022</subject>
     </entry>
   </RevisionHistory>
-  <include-pkg/>
+   <include-pkg id="tls">
+    <git>
+      <url>https://github.com/commoncriteria/tls</url>  <!-- url of github repo -->
+      <branch>master</branch>                      <!-- github branch of published version -->
+    </git>
+    <url>https://www.niap-ccevs.org/protectionprofiles/465</url>  <!-- url of published document on NIAP site -->
+  </include-pkg>
+  <include-pkg id="X509">
+    <git>
+      <url>https://github.com/commoncriteria/X509</url>
+      <branch>master</branch>
+    </git>
+    <url>https://www.niap-ccevs.org/protectionprofiles/511</url>
+  </include-pkg> 
   <modules/>
   <pp-preferences/>
   <sec:Introduction>
