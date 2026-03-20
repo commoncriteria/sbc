@@ -20,6 +20,24 @@ https://commoncriteria.github.io/sbc/master/sbc-release-linkable.html[sbc-releas
 https://commoncriteria.github.io/sbc/master/sbc-release.html[sbc-release.html] +
 https://commoncriteria.github.io/sbc/master/sbc-sd.html[sbc-sd.html] +
 https://commoncriteria.github.io/sbc/master/sbc.html[sbc.html] +
+
+| https://github.com/commoncriteria/sbc/tree/release-2.0[release-2.0] 
+a| https://commoncriteria.github.io/sbc/release-2.0/sbc-release.html[📄]
+a|[link=https://github.com/commoncriteria/sbc/blob/gh-pages/release-2.0/ValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/sbc/gh-pages/release-2.0/validation.svg[Validation]
+a|[link=https://github.com/commoncriteria/sbc/blob/gh-pages/release-2.0/SanityChecksOutput.md]
+image::https://raw.githubusercontent.com/commoncriteria/sbc/gh-pages/release-2.0/warnings.svg[SanityChecks]
+a|[link=https://github.com/commoncriteria/sbc/blob/gh-pages/release-2.0/SpellCheckReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/sbc/gh-pages/release-2.0/spell-badge.svg[SpellCheck]
+a|[link=https://github.com/commoncriteria/sbc/blob/gh-pages/release-2.0/TDValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/sbc/gh-pages/release-2.0/tds.svg[TDs]
+a|image::https://raw.githubusercontent.com/commoncriteria/sbc/gh-pages/release-2.0/transforms.svg[transforms,150]
+a| 
+https://commoncriteria.github.io/sbc/release-2.0/diff-v1.0.html[diff-v1.0.html] +
+https://commoncriteria.github.io/sbc/release-2.0/sbc-release-linkable.html[sbc-release-linkable.html] +
+https://commoncriteria.github.io/sbc/release-2.0/sbc-release.html[sbc-release.html] +
+https://commoncriteria.github.io/sbc/release-2.0/sbc-sd.html[sbc-sd.html] +
+https://commoncriteria.github.io/sbc/release-2.0/sbc.html[sbc.html] +
 |===
 
 
@@ -37,7 +55,7 @@ link:QQQQ[here].
 
 === Draft Version
 
-* https://commoncriteria.github.io/pp/sbc/sbc-release.html[PP-Module for
+* https://commoncriteria.github.io/sbc/master/sbc.html[PP-Module for
 SBC] (html)
 * https://commoncriteria.github.io/pp/sbc/sbc-release.pdf[PP-Module for
 SBC] (pdf)
@@ -45,8 +63,8 @@ SBC] (pdf)
 
 === Release Version
 
-* https://www.niap-ccevs.org/Profile/Info.cfm?PPID=478&id=478[PP-Module
-for SBC]
+* https://commoncriteria.github.io/sbc/release-2.0/sbc.html[PP-Module
+for SBC v2.0]
 
 === Contributing
 
