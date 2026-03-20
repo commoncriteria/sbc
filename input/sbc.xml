@@ -22,12 +22,12 @@
       <subject>Apply NIAP Technical Decisions, Update to CC:2022</subject>
     </entry>
   </RevisionHistory>
-   <include-pkg id="tls">
+  <include-pkg id="tls">
     <git>
-      <url>https://github.com/commoncriteria/tls</url>  <!-- url of github repo -->
-      <branch>master</branch>                      <!-- github branch of published version -->
+      <url>https://github.com/commoncriteria/tls</url>
+      <branch>master</branch>
     </git>
-    <url>https://www.niap-ccevs.org/protectionprofiles/465</url>  <!-- url of published document on NIAP site -->
+    <url>https://www.niap-ccevs.org/protectionprofiles/465</url>
   </include-pkg>
   <include-pkg id="X509">
     <git>
@@ -35,8 +35,7 @@
       <branch>master</branch>
     </git>
     <url>https://www.niap-ccevs.org/protectionprofiles/511</url>
-  </include-pkg> 
-  <modules/>
+  </include-pkg>
   <pp-preferences/>
   <sec:Introduction>
     <sec:Overview title="Overview">
@@ -87,8 +86,20 @@
       <h:p/>
       Since this PP-Module builds on the NDcPP, conformant TOEs must implement the functionality required in the NDcPP along 
       with the additional functionality defined in this PP-Module in response to the threat environment discussed later in this document.
+      <sec:TOE_Boundary>
+        An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions. 
+        SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
+        service provider networks and residential customers, or in some cases as a back-to-back user agent (B2BUA) that allows mobile users the ability to connect to their internal VVoIP network.
+        <h:p/>
+        The following diagram represents a typical deployment of the TOE and its operational environment (OE). 
+        Note that the TOE boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
+        <h:p/>
+        <h:p/>
+        <figure entity="images/figure1.png" title="SBC Deployment Model" id="OperEnv"/>
+        <h:p/>
+      </sec:TOE_Boundary>
     </sec:Compliant_Targets_of_Evaluation>
-    <sec:TOE_Usage>
+    <sec:Use_Cases>
       This PP-Module defines a single potential use case for the SBC TOE:
       <usecases>
         <usecase title="Border Protection" id="usecase-dedicated">
@@ -100,7 +111,7 @@
             The SBC, as a border element, should also be able to establish a secure communication channel with external devices it communicates with.</description>
         </usecase>
       </usecases>
-    </sec:TOE_Usage>
+    </sec:Use_Cases>
     <section title="Package Usage">
       This section contains selections and assignments that are required when the listed Functional Packages are claimed by this PP-Module.
       <h:br/>
@@ -185,86 +196,162 @@
   </sec:Conformance_Claims>
   <!-- 3.0 Security Problem Definition-->
   <sec:Security_Problem_Definition>
-    The security problem is described in terms
-    of the threats that the TOE is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the TOE
-    is expected to enforce.
+    The security problem is described in terms of the threats that the TOE is expected to address, assumptions about its Operational Environment, and any organizational security policies that the TOE is expected to enforce.
     <!-- 3.1 Threats -->
     <sec:Threats>
+      The following threats that are defined in this PP-Module extend the threats that are defined by the Base-PP.
       <threats>
-        <threat name="T.QQQQ">
-          <!-- Repeatable -->
-          <description>QQQQ</description>
-          <objective-refer ref="O.QQQQ">
-            <!-- Repeatable -->
-            <rationale>QQQQ</rationale>
-          </objective-refer>
+        <threat name="T.MALICIOUS_TRAFFIC">
+          <description>An attacker may attempt to send malformed packets to the SBC to cause the network stack or services listening on TCP/UDP ports on the SBC or protected network to crash.</description>
+          <consistency-rationale>The Base-PP does not define a threat for malicious traffic because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This PP-Module defines interfaces where the TOE is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the TOE as opposed to and from the TOE. 
+            This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.</consistency-rationale>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FAU_ARP_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.</rationale>
+          <addressed-by>FAU_GEN.1/SBC</addressed-by>
+          <rationale>Mitigates the threat by iterating a Base-PP requirement to define additional auditable events that are specific to SBC functionality.</rationale>
+          <addressed-by>FAU_SAA.1</addressed-by>
+          <rationale>Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations.</rationale>
+          <addressed-by>FAU_SEL.1</addressed-by>
+          <rationale>Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
+            audit records can be suppressed when it is not practical to generate those records for performance reasons.</rationale>
+          <addressed-by>FTP_ITC.1/ARP</addressed-by>
+          <rationale>Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.</rationale>
+        </threat>
+        <threat name="T.NETWORK_ACCESS">
+          <description>An attacker may send traffic through the TOE that enables them to access devices in the TOE’s OE without authorization.</description>
+          <consistency-rationale>The Base-PP does not define a threat for access to network resources because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This PP-Module defines interfaces where the TOE is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the TOE as opposed to into and out of the TOE. 
+            This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.</consistency-rationale>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FAU_ARP_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.</rationale>
+          <addressed-by>FAU_GEN.1/SBC</addressed-by>
+          <rationale>Mitigates the threat by iterating a Base-PP requirement to define additional auditable events that are specific to SBC functionality.</rationale>
+          <addressed-by>FAU_SAA.1</addressed-by>
+          <rationale>Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations.</rationale>
+          <addressed-by>FAU_SEL.1</addressed-by>
+          <rationale>Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
+            audit records can be suppressed when it is not practical to generate those records for performance reasons.</rationale>
+          <addressed-by>FCS_SRTP_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.</rationale>
+          <addressed-by>FDP_IFC.1</addressed-by>
+          <rationale>Mitigates the threat by defining a B2BUA policy so that VVoIP endpoints are only connected to each other through the TOE as an intermediary.</rationale>
+          <addressed-by>FDP_IFF.1</addressed-by>
+          <rationale>Mitigates the threat by defining the specific rules that the B2BUA policy enforces.</rationale>
+          <addressed-by>FFW_ACL_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining capabilities for traffic filtering of network packets.</rationale>
+          <addressed-by>FFW_ACL_EXT.2</addressed-by>
+          <rationale>Mitigates the threat by defining specific methods of stateful traffic inspection for specific protocols.</rationale>
+          <addressed-by>FFW_DPI_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the capability to perform DPI for certain network traffic.</rationale>
+          <addressed-by>FFW_NAT_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the use of NAT to obfuscate IP addresses of endpoint devices on the TOE’s internal network.</rationale>
+          <addressed-by>FIA_SIPT_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining secure behavior for SIP trunking.</rationale>
+          <addressed-by>FMT_SMF.1/SBC</addressed-by>
+          <rationale>Mitigates the threat by defining TSF management functions that require authorizations to use.</rationale>
+          <addressed-by>FTP_ITC.1/ARP</addressed-by>
+          <rationale>Mitigates the threat by defining how communications of potential security violations are protected.</rationale>
+          <addressed-by>FTP_ITC.1/ESC</addressed-by>
+          <rationale>Mitigates the threat by defining how communications with an external ESC are protected.</rationale>
+          <addressed-by>FTP_ITC.1/H323 (selection-based)</addressed-by>
+          <rationale>Mitigates the threat by defining H.323 as a permitted method of protected communications for when a conformant TOE implements this logical interface.</rationale>
+          <addressed-by>FTP_ITC.1/VVoIP</addressed-by>
+          <rationale>Mitigates the threat by defining how communications with an external VVoIP endpoint are protected.</rationale>
+        </threat>
+        <threat name="T.RESOURCE_EXHAUSTION">
+          <description>An attacker may transmit network traffic to the TOE that causes it to be unable to perform its functions on legitimate network traffic.</description>
+          <consistency-rationale>The threat of network traffic causing the TOE to be unable to perform its functions is similar to T.SECURITY_FUNCTIONALITY_FAILURE in the Base-PP 
+            because the intent of the threat is to cause the TSF to fail. 
+            The Base-PP does not define DoS protections because it does not define logical interfaces that are intended to process large volumes of network traffic. 
+            This PP-Module extends the threat by defining a specific example of it that applies to an SBC device that has this functionality.</consistency-rationale>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FAU_ARP_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.</rationale>
+          <addressed-by>FAU_GEN.1/SBC</addressed-by>
+          <rationale>Mitigates the threat by iterating a Base-PP requirement to define additional auditable events that are specific to SBC functionality.</rationale>
+          <addressed-by>FAU_SAA.1</addressed-by>
+          <rationale>Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations.</rationale>
+          <addressed-by>FAU_SEL.1</addressed-by>
+          <rationale>Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
+            audit records can be suppressed when it is not practical to generate those records for performance reasons.</rationale>
+          <addressed-by>FFW_ACL_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining capabilities for traffic filtering of network packets.</rationale>
+          <addressed-by>FFW_ACL_EXT.2</addressed-by>
+          <rationale>Mitigates the threat by defining specific methods of stateful traffic inspection for specific protocols.</rationale>
+          <addressed-by>FFW_DPI_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the capability to perform DPI for certain network traffic.</rationale>
+          <addressed-by>FMT_SMF.1/SBC</addressed-by>
+          <rationale>Mitigates the threat by defining TSF management functions that require authorizations to use.</rationale>
+          <addressed-by>FRU_PRS_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by requiring the TSF to implement priority of service to ensure that low-priority traffic cannot cause a DoS.</rationale>
+          <addressed-by>FRU_RSA.1</addressed-by>
+          <rationale>Mitigates the threat by enforcing quotas for TSF resources to prevent DoS.</rationale>
+          <addressed-by>FTP_ITC.1/ARP</addressed-by>
+          <rationale>Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.</rationale>
+        </threat>
+        <threat name="T.UNTRUSTED_COMMUNICATION_CHANNELS">
+          <description>An attacker may acquire sensitive TOE or user data that is transmitted to or from the TOE because an untrusted communication channel causes a disclosure of data in transit.</description>
+          <consistency-rationale>The threat of disclosure of data in transit is fundamentally the same as the NDcPP threat with the same name. This PP-Module extends the threat to apply to the external interfaces that are defined specifically in support of SBC functions.</consistency-rationale>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FCS_SRTP_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the TOE’s implementation of the SRTP protocol that is used to protect VVoIP endpoint communications.</rationale>
+          <addressed-by>FIA_SIPT_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining secure behavior for SIP trunking.</rationale>
+          <addressed-by>FTP_ITC.1/ARP</addressed-by>
+          <rationale>Mitigates the threat by defining how communications of potential security violations are protected.</rationale>
+          <addressed-by>FTP_ITC.1/ESC</addressed-by>
+          <rationale>Mitigates the threat by defining how communications with an external ESC are protected.</rationale>
+          <addressed-by>FTP_ITC.1/H323 (selection-based)</addressed-by>
+          <rationale>Mitigates the threat by defining H.323 as a permitted method of protected communications for when a conformant TOE implements this logical interface.</rationale>
+          <addressed-by>FTP_ITC.1/VVoIP</addressed-by>
+          <rationale>Mitigates the threat by defining how communications with an external VVoIP endpoint are protected.</rationale>
+        </threat>
+        <threat name="T.USER_DATA_REUSE">
+          <description>User data may be inadvertently sent to a destination not intended by the original sender, causing an unauthorized disclosure of the data.</description>
+          <consistency-rationale>The Base-PP does not define a threat of user data transmitted to the wrong destination because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This PP-Module defines interfaces where the TOE is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the TOE as opposed to and from the TOE. 
+            This threat is consistent with the Base-PP because it is only applied to the interfaces defined in this PP-Module where it is relevant; it does not apply to the interfaces defined in the Base-PP.</consistency-rationale>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FDP_IFC.1</addressed-by>
+          <rationale>Mitigates the threat by defining a B2BUA policy that is used by the TOE to establish connections between VVoIP endpoints.</rationale>
+          <addressed-by>FDP_IFF.1</addressed-by>
+          <rationale>Mitigates the threat by defining the rules that the B2BUA policy enforces.</rationale>
+          <addressed-by>FFW_NAT_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by requiring the use of NAT to maintain a unique relationship between how external entities identify entities on the TOE’s internal network and how they are actually addressed by that network.</rationale>
+          <addressed-by>FIA_SIPT_EXT.1</addressed-by>
+          <rationale>Mitigates the threat by defining the use of SIP trunking, which requires authentication of endpoints to ensure data is only transmitted to the intended endpoint.</rationale>
         </threat>
       </threats>
     </sec:Threats>
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
-      <assumptions>
-        <assumption name="A.QQQQ">
-          <!-- Repeatable -->
-          <description>QQQQ</description>
-          <objective-refer ref="OE.QQQQ">
-            <!-- Repeatable -->
-            <rationale>QQQQ</rationale>
-          </objective-refer>
-        </assumption>
-      </assumptions>
+      All assumptions for the OE of the Base-PP also apply to this PP-Module. A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are defined by the Base-PP and not the PP-Module.
+      <assumptions/>
     </sec:Assumptions>
     <!-- 3.3 Organizational Security Policies -->
     <sec:Organizational_Security_Policies>
       <OSPs/>
-      <!--     <OSP id="P.QQQQ"> 
-        <description>QQQQ</description>
-        <objective-refer ref="O.QQQQ">
-            <rationale>QQQQ</rationale>
-        </objective-refer>
-    </OSP>
-    </OSPs> -->
     </sec:Organizational_Security_Policies>
   </sec:Security_Problem_Definition>
   <!-- 4.0 Security Objectives -->
   <sec:Security_Objectives>
     <!-- 4.1 Security Objectives for the TOE -->
-    <sec:Security_Objectives_for_the_TOE>
-      <SOs>
-        <SO name="O.QQQQ">
-          <!-- Repeatable -->
-          <description>QQQQ</description>
-          <addressed-by>QQQQ.#/QQQQ</addressed-by>
-          <rationale>QQQQ</rationale>
-          <!-- Repeatable -->
-        </SO>
-      </SOs>
-    </sec:Security_Objectives_for_the_TOE>
     <!-- 4.2 Security Objctives for the Operational Environment -->
-    <sec:Security_Objectives_for_the_Operational_Environment>
-      QQQQ
-      <SOEs>
-        <SOE name="OE.QQQQ">
-          <!-- Repeatable -->
-          <description>QQQQ</description>
-        </SOE>
-      </SOEs>
-    </sec:Security_Objectives_for_the_Operational_Environment>
+    <sec:Security_Objectives_for_the_Operational_Environment>All objectives for the OE of the Base-PP also apply to this PP-Module. OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are defined by the Base-PP and not the PP-Module.</sec:Security_Objectives_for_the_Operational_Environment>
     <!-- 4.3 Security Objectives Rationale -->
-    <sec:Security_Objectives_Rationale/>
   </sec:Security_Objectives>
   <!-- 5.0 Security Requirements -->
-  <appendix/>
-  <bibliography>
-    <entry/>
-  </bibliography>
   <sec:Security_Requirements title="Security Requirements">
     <!-- 5.1 ND PP Security Functional Requirements Direction -->
     <base-pp id="ND" name="Network Device" product="Network Device" short="ND" version="4.0" plural="Network Devices">
       <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
       <cPP/>
-      <sec-func-req-dir/>
       <!-- 5.1.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Trusted Path/Channels (FTP)" id="nd-mod-ftp">
@@ -1693,4 +1780,169 @@
       </section>
     </impl-dep-sfrs>
   </sec:Security_Requirements>
+  <appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
+    <h:b>
+      <ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements</ctr>
+    </h:b>
+    <h:table>
+      <h:tr class="header">
+        <h:td>Requirement</h:td>
+        <h:td>Rationale for Satisfaction</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>
+          <h:b>FMT_MSA.3 – Static Attribute Initialization</h:b>
+        </h:td>
+        <h:td>
+          FDP_IFF.1 has a dependency on FMT_MSA.3 to define the default security posture of security attributes for the purpose of information flow control enforcement. 
+          This SFR has not been defined by this PP-Module because the enforcement of FDP_IFF.1 
+          is not dependent on the initial state of security attributes. 
+          For example, FDP_IFF.1.2 requires the TSF to determine if a communication attempt is valid before authorizing it. 
+          This is true regardless of whether the default value of security attributes associated 
+          with the connection attempt are permissive or restrictive; there is no difference in how the TSF determines “validity” in this case.
+          <h:p/>
+          The default values of security attributes do not cause the information flow control policy to behave differently for those rules that must always be enforced by the TSF. 
+          FDP_IFF.1.4 requires that all allowlisted calling parties be authorized while all denylisted calling parties be rejected. 
+          It does not matter for the purpose of enforcing this SFR whether the absence of a calling party from both the allowlist and the denylist means they are authorized or rejected by default.
+        </h:td>
+      </h:tr>
+    </h:table>
+  </appendix>
+  <appendix title="Entropy Documentation and Assessment" id="EAR">The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP.</appendix>
+  <appendix title="Allocation of Requirements in Distributed TOEs" id="allocation">
+    For a distributed TOE, the SFRs in this PP-Module need to be met by the
+    TOE as a whole, but not all SFRs will necessarily be implemented by all components. The
+    following categories are defined in order to specify when each SFR must be implemented by a
+    component:
+    <h:ul>
+      <h:li>
+        <h:b>All Components ("All"):</h:b>
+        All components that comprise the distributed TOE must
+        independently satisfy the requirement.
+      </h:li>
+      <h:li>
+        <h:b>At least one Component ("One"):</h:b>
+        This requirement must be fulfilled by at least one
+        component within the distributed TOE.
+      </h:li>
+      <h:li>
+        <h:b>Feature Dependent ("Feature Dependent"):</h:b>
+        These requirements will only be
+        fulfilled where the feature is implemented by the distributed TOE component (note
+        that the requirement to meet the PP-Module as a whole requires that at least one component
+        implements these requirements if they are claimed by the TOE).
+      </h:li>
+    </h:ul>
+    The table below specifies how each of the SFRs in this PP-Module must be met, using the categories above.
+    <h:table>
+      <h:tr class="header">
+        <h:td>Requirement</h:td>
+        <h:td>Description</h:td>
+        <h:td>Distributed TOE SFR Allocation</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FAU_ARP_EXT.1</h:td>
+        <h:td>Security Audit Automatic Response</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FAU_GEN.1/SBC</h:td>
+        <h:td>Audit Data Generation (Session Border Controller)</h:td>
+        <h:td>All</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FAU_SAA.1</h:td>
+        <h:td>Potential Violation Analysis</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FAU_SEL.1</h:td>
+        <h:td>Selective Audit</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FCS_SRTP_EXT.1</h:td>
+        <h:td>Secure Real-Time Transport Protocol</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FDP_IFC.1</h:td>
+        <h:td>Subset Information Flow Control</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FDP_IFF.1</h:td>
+        <h:td>Simple Security Attributes</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FFW_ACL_EXT.1</h:td>
+        <h:td>Real-Time Communications Traffic Filtering</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FFW_ACL_EXT.2</h:td>
+        <h:td>Stateful VVoIP Traffic Filtering</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FFW_DPI_EXT.1</h:td>
+        <h:td>Deep Packet Inspection</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FFW_NAT_EXT.1</h:td>
+        <h:td>Topology Hiding/NAT Traversal</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FIA_SIPS_EXT.1 (implementation-based)</h:td>
+        <h:td>Session Initiation Protocol Registration</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FIA_SIPT_EXT.1</h:td>
+        <h:td>Session Initiation Protocol Trunking</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FMT_SMF.1/SBC</h:td>
+        <h:td>Specification of Management Functions (SBC)</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FRU_PRS_EXT.1</h:td>
+        <h:td>Limited Priority of Service</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FRU_RSA.1</h:td>
+        <h:td>Maximum Quotas</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1/ESC</h:td>
+        <h:td>Inter-TSF Trusted Channel (ESC Communications)</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1/H323 (selection-based)</h:td>
+        <h:td>Inter-TSF Trusted Channel (H.323 Communications)</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1/VVoIP</h:td>
+        <h:td>Inter-TSF Trusted Channel (VVoIP Communications)</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+    </h:table>
+  </appendix>
+  <bibliography>
+    <entry id="bibNDcPP">
+      <tag>NDcPP</tag>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/524">collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</h:a>
+      </description>
+    </entry>
+  </bibliography>
 </Module>
