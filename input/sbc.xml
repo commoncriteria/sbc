@@ -99,35 +99,35 @@
 
     </tech-terms>
     <sec:Compliant_Targets_of_Evaluation>
-      This PP-Module specifically addresses SBCs that provide firewalling, interoperability, and security functions for VVoIP networks. 
-      The SBC also provides protected communication between trusted components of the network infrastructure.
-      <h:p/>
-      The physical boundary of the SBC is defined by the operating system components storing or providing security functions and 
-      all software supplied by the vendor, including vendor modified components to the operating system. 
-      All the security functionality is contained and executed within the physical boundary of the device.
-      <h:p/>
-      While the functionality that the TOE is obligated to implement in response to the described threat environment is detailed in later sections, 
-      a brief description is provided here. A compliant TOE will provide security functionality that addresses threats to itself. 
-      It must also protect communications between itself and an Internet Protocol Public Branch Exchange (IP-PBX) 
-      or another SBC by using a trusted channel. Some protocols required by this PP-Module make use of certificates; therefore, the SBC must securely store certificates and private keys. 
-      <h:p/>
-      Since this PP-Module builds on the NDcPP, conformant TOEs must implement the functionality required in the NDcPP along 
-      with the additional functionality defined in this PP-Module in response to the threat environment discussed later in this document.
+		This PP-Module specifically addresses SBCs that provide firewalling, interoperability, and security functions for VVoIP networks. 
+		The SBC also provides protected communication between trusted components of the network infrastructure.
+		<h:p/>
+		The physical boundary of the SBC is defined by the operating system components storing or providing security functions and 
+		all software supplied by the vendor, including vendor modified components to the operating system. 
+		All the security functionality is contained and executed within the physical boundary of the device.
+		<h:p/>
+		While the functionality that the TOE is obligated to implement in response to the described threat environment is detailed in later sections, 
+		a brief description is provided here. A compliant TOE will provide security functionality that addresses threats to itself. 
+		It must also protect communications between itself and an Internet Protocol Public Branch Exchange (IP-PBX) 
+		or another SBC by using a trusted channel. Some protocols required by this PP-Module make use of certificates; therefore, the SBC must securely store certificates and private keys. 
+		<h:p/>
+		Since this PP-Module builds on the NDcPP, conformant TOEs must implement the functionality required in the NDcPP along 
+		with the additional functionality defined in this PP-Module in response to the threat environment discussed later in this document.
+
+		<sec:TOE_Boundary>
+			An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions. 
+			SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
+			service provider networks and residential customers, or in some cases as a back-to-back user agent (B2BUA) that allows mobile users the ability to connect to their internal VVoIP network.
+			<h:p/>
+			The following diagram represents a typical deployment of the TOE and its operational environment (OE). 
+			Note that the TOE boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
+			<h:p/> 
+			 <h:p/>
+			<figure entity="images/figure1.png" title="SBC Deployment Model" id="OperEnv"/>
+			<h:p/>
+		</sec:TOE_Boundary>
       
     </sec:Compliant_Targets_of_Evaluation>
-      <sec:TOE_Boundary>
-        An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions. 
-        SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
-        service provider networks and residential customers, or in some cases as a back-to-back user agent (B2BUA) that allows mobile users the ability to connect to their internal VVoIP network.
-        <h:p/>
-        The following diagram represents a typical deployment of the TOE and its operational environment (OE). 
-        Note that the TOE boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
-        <h:p/> 
-	     <h:p/>
-        <figure entity="images/figure1.png" title="SBC Deployment Model" id="OperEnv"/>
-        <h:p/>
-      </sec:TOE_Boundary>
-    
     
     <sec:Use_Cases>
       This PP-Module defines a single potential use case for the SBC TOE:
