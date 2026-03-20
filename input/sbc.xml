@@ -492,7 +492,7 @@
           <rationale>
            Mitigates the threat by defining the use of SIP trunking, which requires authentication of endpoints to ensure data is only transmitted to the intended endpoint.
           </rationale>
-          <addressed-by>FIA_SIPS_EXT.1 (implementation-based)</addressed-by>
+          <addressed-by>FIA_SIPS_EXT.1 (implementation-dependent)</addressed-by>
           <rationale>
            Mitigates the threat by defining an optional capability to handle SIP registration in cases where the OE does not include an ESC that will provide that functionality.  
           </rationale>
