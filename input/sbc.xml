@@ -393,6 +393,9 @@
     </base-pp>
     <!-- 5.2 TOE Security Functional Requirements -->
     <man-sfrs>
+      <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs">
+        <audit-table id="at-mandatory" table="mandatory"/>
+      </section>
       <!-- 5.2.1 Security Audit (FAU) -->
       <section title="Security Audit (FAU)" id="man_fau">
         <ext-comp-def title="Security Audit Automatic Response" fam-id="FAU_ARP_EXT">
@@ -1638,6 +1641,9 @@
     </man-sfrs>
     <opt-sfrs/>
     <sel-sfrs>
+      <section id="sel-audit-table" title="Auditable Events for Selection-Based SFRs">
+        <audit-table id="at-sel-based" table="sel-based"/>
+      </section>
       <!-- 5.2.9 Trusted Path/Channels (FTP) -->
       <section title="Trusted Path/Channels (FTP)" id="sel_ftp">
         <!-- FTP_ITC.1/H323 Inter-TSF Trusted Channel (H.323 Communications) -->
@@ -1694,6 +1700,9 @@
     </sel-sfrs>
     <obj-sfrs/>
     <impl-dep-sfrs>
+      <section id="impl-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
+        <audit-table id="at-feat-based" table="feat-based"/>
+      </section>
       <!-- 5.2.10 Identification and Authentication (FIA) -->
       <section title="Identification and Authentication (FIA)" id="impl_fia">
         <ext-comp-def title="Session Initiation Protocol Registration" fam-id="FIA_SIPS_EXT">
