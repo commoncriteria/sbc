@@ -698,26 +698,26 @@ The following sections list Common Criteria and technology terms used in this do
 </table></div>
     <h2 class="indexable" data-level="2" id="Compliant_Targets_of_Evaluation">1.3 Compliant Targets of Evaluation</h2>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifically addresses SBCs that provide firewalling, interoperability, and security functions for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks. 
-      The SBC also provides protected communication between trusted components of the network infrastructure.
+		The SBC also provides protected communication between trusted components of the network infrastructure.
       <p></p>
       The physical boundary of the SBC is defined by the operating system components storing or providing security functions and 
-      all software supplied by the vendor, including vendor modified components to the operating system. 
-      All the security functionality is contained and executed within the physical boundary of the device.
+		all software supplied by the vendor, including vendor modified components to the operating system. 
+		All the security functionality is contained and executed within the physical boundary of the device.
       <p></p>
       While the functionality that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is obligated to implement in response to the described threat environment is detailed in later sections, 
-      a brief description is provided here. A compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide security functionality that addresses threats to itself. 
-      It must also protect communications between itself and an Internet Protocol Public Branch Exchange (<abbr class="dyn-abbr"><a href="#abbr_IP-PBX">IP-PBX</a></abbr>) 
-      or another SBC by using a trusted channel. Some protocols required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> make use of certificates; therefore, the SBC must securely store certificates and private keys.
+		a brief description is provided here. A compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide security functionality that addresses threats to itself. 
+		It must also protect communications between itself and an Internet Protocol Public Branch Exchange (<abbr class="dyn-abbr"><a href="#abbr_IP-PBX">IP-PBX</a></abbr>) 
+		or another SBC by using a trusted channel. Some protocols required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> make use of certificates; therefore, the SBC must securely store certificates and private keys.
       <p></p>
       Since this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the NDcPP, conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> must implement the functionality required in the NDcPP along 
-      with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in response to the threat environment discussed later in this document.
+		with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in response to the threat environment discussed later in this document.
       <h3 class="indexable" data-level="3" id="TOE_Boundary">1.3.1 TOE Boundary</h3>
         An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions. 
-        SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
-        service provider networks and residential customers, or in some cases as a back-to-back user agent (<abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr>) that allows mobile users the ability to connect to their internal <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> network.
+			SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
+			service provider networks and residential customers, or in some cases as a back-to-back user agent (<abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr>) that allows mobile users the ability to connect to their internal <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> network.
         <p></p>
         The following diagram represents a typical deployment of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its operational environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>). 
-        Note that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
+			Note that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
         <p></p>
         <p></p>
         <div class="figure" id="figure-OperEnv"><img id="OperEnv" src="images/figure1.png" width="" height=""></img><br/><span class="ctr" data-myid="OperEnv" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
@@ -1832,9 +1832,10 @@ Network Device
 <tr><td><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td><td>Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> are protected.</td></tr>
 <tr><td><a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a> (selection-based)</td><td>Mitigates the threat by defining H.323 as a permitted method of protected communications for when a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements this logical interface.</td></tr>
 <tr><td><a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a></td><td>Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint are protected.</td></tr>
-<tr class="major-row"><td rowspan="4"><a href="#T.USER_DATA_REUSE">T.USER_​DATA_​REUSE</a></td><td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td>Mitigates the threat by defining a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy that is used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to establish connections between <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoints.</td></tr>
+<tr class="major-row"><td rowspan="5"><a href="#T.USER_DATA_REUSE">T.USER_​DATA_​REUSE</a></td><td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td>Mitigates the threat by defining a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy that is used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to establish connections between <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoints.</td></tr>
 <tr><td><a href="#FDP_IFF.1">FDP_IFF.1</a></td><td>Mitigates the threat by defining the rules that the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy enforces.</td></tr>
 <tr><td><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a></td><td>Mitigates the threat by requiring the use of <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to maintain a unique relationship between how external entities identify entities on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s internal network and how they are actually addressed by that network.</td></tr>
+<tr><td><a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a> (implementation-dependent)</td><td>Mitigates the threat by defining an optional capability to handle <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> registration in cases where the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> does not include an <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> that will provide that functionality.</td></tr>
 <tr><td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td>Mitigates the threat by defining the use of <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking, which requires authentication of endpoints to ensure data is only transmitted to the intended endpoint.</td></tr>
 </table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 
     Protection Profile for Network Devices</h2><h3 id="contoe-ND" class="indexable" data-level="3">6.1.1 
