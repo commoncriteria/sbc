@@ -632,7 +632,7 @@ function showTarget(id){
     </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for Session Border Controllers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2026-03-17<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2022-12-05</td><td>Initial Release</td></tr>
 <tr><td>2.0</td><td>2026-03-17</td><td>Apply NIAP Technical Decisions, Update to <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022</td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Usage" style="text-indent:10px">1.4<span>TOE Usage</span></a><a href="#_sec_1" style="text-indent:10px">1.5<span>Package Usage</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#_sec_1" style="text-indent:10px">1.5<span>Package Usage</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
     </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fau" style="text-indent:20px">5.2.1<span>Security Audit (FAU)</span></a><a href="#man_fcs" style="text-indent:20px">5.2.2<span>Cryptographic Support (FCS)</span></a><a href="#man_fdp" style="text-indent:20px">5.2.3<span>User Data Protection (FDP)</span></a><a href="#man_ffw" style="text-indent:20px">5.2.4<span>Firewall (FFW)</span></a><a href="#man_fia" style="text-indent:20px">5.2.5<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.6<span>Security Management (FMT)</span></a><a href="#man_fru" style="text-indent:20px">5.2.7<span>Resource Utilization (FRU)</span></a><a href="#man_ftp" style="text-indent:20px">5.2.8<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
@@ -648,7 +648,7 @@ function showTarget(id){
     </span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
     </span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements
     </span></a><a href="#impl_fia" style="text-indent:20px">A.3.1<span>Identification and Authentication (FIA)</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements
-    </span></a><a href="#sel_ftp" style="text-indent:10px">B.1<span>Trusted Path/Channels (FTP)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_SRTP_EXT" style="text-indent:30px">C.2.1.1<span>FCS_SRTP_EXT Secure Real-Time Transport Protocol</span></a><a href="#ext-comp-FFW" style="text-indent:20px">C.2.2<span>Firewall (FFW)</span></a><a href="#ext-comp-FFW_ACL_EXT" style="text-indent:30px">C.2.2.1<span>FFW_ACL_EXT Traffic Filtering</span></a><a href="#ext-comp-FFW_DPI_EXT" style="text-indent:30px">C.2.2.2<span>FFW_DPI_EXT Deep Packet Inspection</span></a><a href="#ext-comp-FFW_NAT_EXT" style="text-indent:30px">C.2.2.3<span>FFW_NAT_EXT Network Address Translation</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.3<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_SIPT_EXT" style="text-indent:30px">C.2.3.1<span>FIA_SIPT_EXT Session Initiation Protocol Trunking</span></a><a href="#ext-comp-FIA_SIPS_EXT" style="text-indent:30px">C.2.3.2<span>FIA_SIPS_EXT Session Initiation Protocol Registration</span></a><a href="#ext-comp-FRU" style="text-indent:20px">C.2.4<span>Resource Utilization (FRU)</span></a><a href="#ext-comp-FRU_PRS_EXT" style="text-indent:30px">C.2.4.1<span>FRU_PRS_EXT Limited Priority of Service</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.5<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ARP_EXT" style="text-indent:30px">C.2.5.1<span>FAU_ARP_EXT Security Audit Automatic Response</span></a><a href="#" style="text-indent:0px">Appendix D - <span></span></a><a href="#acronyms" style="text-indent:0px">Appendix E - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix F - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
+    </span></a><a href="#sel_ftp" style="text-indent:10px">B.1<span>Trusted Path/Channels (FTP)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_SRTP_EXT" style="text-indent:30px">C.2.1.1<span>FCS_SRTP_EXT Secure Real-Time Transport Protocol</span></a><a href="#ext-comp-FFW" style="text-indent:20px">C.2.2<span>Firewall (FFW)</span></a><a href="#ext-comp-FFW_ACL_EXT" style="text-indent:30px">C.2.2.1<span>FFW_ACL_EXT Traffic Filtering</span></a><a href="#ext-comp-FFW_DPI_EXT" style="text-indent:30px">C.2.2.2<span>FFW_DPI_EXT Deep Packet Inspection</span></a><a href="#ext-comp-FFW_NAT_EXT" style="text-indent:30px">C.2.2.3<span>FFW_NAT_EXT Network Address Translation</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.3<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_SIPT_EXT" style="text-indent:30px">C.2.3.1<span>FIA_SIPT_EXT Session Initiation Protocol Trunking</span></a><a href="#ext-comp-FIA_SIPS_EXT" style="text-indent:30px">C.2.3.2<span>FIA_SIPS_EXT Session Initiation Protocol Registration</span></a><a href="#ext-comp-FRU" style="text-indent:20px">C.2.4<span>Resource Utilization (FRU)</span></a><a href="#ext-comp-FRU_PRS_EXT" style="text-indent:30px">C.2.4.1<span>FRU_PRS_EXT Limited Priority of Service</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.5<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ARP_EXT" style="text-indent:30px">C.2.5.1<span>FAU_ARP_EXT Security Audit Automatic Response</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#EAR" style="text-indent:0px">Appendix E - <span>Entropy Documentation and Assessment</span></a><a href="#allocation" style="text-indent:0px">Appendix F - <span>Allocation of Requirements in Distributed TOEs</span></a><a href="#acronyms" style="text-indent:0px">Appendix G - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix H - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
     <h2 class="indexable" data-level="2" id="Overview">1.1 Overview</h2>
       The scope of this Protection Profile Module (<abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>) is to describe the security functionality of a Session Border Controller (SBC) in terms of [<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>] and to define functional and assurance requirements for such products. 
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>:
@@ -711,8 +711,21 @@ The following sections list Common Criteria and technology terms used in this do
       <p></p>
       Since this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the NDcPP, conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> must implement the functionality required in the NDcPP along 
       with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in response to the threat environment discussed later in this document.
+      <h3 class="indexable" data-level="3" id="TOE_Boundary">1.3.1 TOE Boundary</h3>
+        An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions. 
+        SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
+        service provider networks and residential customers, or in some cases as a back-to-back user agent (<abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr>) that allows mobile users the ability to connect to their internal <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> network.
+        <p></p>
+        The following diagram represents a typical deployment of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its operational environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>). 
+        Note that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
+        <p></p>
+        <p></p>
+        <div class="figure" id="figure-OperEnv"><img id="OperEnv" src="images/figure1.png" width="" height=""></img><br/><span class="ctr" data-myid="OperEnv" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
+      SBC Deployment Model</div>
+        <p></p>
+      
     
-    <h2 class="indexable" data-level="2" id="TOE_Usage">1.4 TOE Usage</h2>
+    <h2 class="indexable" data-level="2" id="Use_Cases">1.4 Use Cases</h2>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines a single potential use case for the SBC <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:
       <dl><dt id="usecase-dedicated"> [USE CASE 1] Border Protection</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a specialized network device that provides firewall services for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks. 
             The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is intended to provide protection against well-known threats that target these networks. 
@@ -759,41 +772,26 @@ The following sections list Common Criteria and technology terms used in this do
 		selections made. 
 	</dd></dl>
   <h1 class="indexable" data-level="1" id="Security_Problem_Definition">3 Security Problem Definition</h1>
-    The security problem is described in terms
-    of the threats that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-    is expected to enforce.
+    The security problem is described in terms of the threats that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to address, assumptions about its Operational Environment, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to enforce.
     
     <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2>
-      <dl><dt class="threat defined" id="T.QQQQ">T.QQQQ</dt><dd><span class="description">QQQQ</span></dd></dl>
+      The following threats that are defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extend the threats that are defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
+      <dl><dt class="threat defined" id="T.MALICIOUS_TRAFFIC">T.MALICIOUS_TRAFFIC</dt><dd><span class="description">An attacker may attempt to send malformed packets to the SBC to cause the network stack or services listening on TCP/UDP ports on the SBC or protected network to crash.</span></dd><dt class="threat defined" id="T.NETWORK_ACCESS">T.NETWORK_ACCESS</dt><dd><span class="description">An attacker may send traffic through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that enables them to access devices in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> without authorization.</span></dd><dt class="threat defined" id="T.RESOURCE_EXHAUSTION">T.RESOURCE_EXHAUSTION</dt><dd><span class="description">An attacker may transmit network traffic to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that causes it to be unable to perform its functions on legitimate network traffic.</span></dd><dt class="threat defined" id="T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_COMMUNICATION_CHANNELS</dt><dd><span class="description">An attacker may acquire sensitive <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or user data that is transmitted to or from the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> because an untrusted communication channel causes a disclosure of data in transit.</span></dd><dt class="threat defined" id="T.USER_DATA_REUSE">T.USER_DATA_REUSE</dt><dd><span class="description">User data may be inadvertently sent to a destination not intended by the original sender, causing an unauthorized disclosure of the data.</span></dd></dl>
     
     
-    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2><p>These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
-security functionality specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> can be provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> that does not meet these assumptions, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may no longer be able to
-provide all of its security functionality.</p>
-      <dl><dt class="assumption defined" id="A.QQQQ">A.QQQQ</dt><dd><span class="description">QQQQ</span></dd></dl>
+    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Assumptions beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
+      All assumptions for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> also apply to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and not the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
+      
     
     
     <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Organizational Security Policies beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
       
-      
     
   <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
     
-    <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_TOE">4.1 Security Objectives for the TOE</h2>
-      <dl><dt class="SO defined" id="O.QQQQ">O.QQQQ</dt><dd><span class="description">QQQQ</span></dd></dl>
     
+    <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_Operational_Environment">4.1 Security Objectives for the Operational Environment</h2>All objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> also apply to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and not the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
     
-    <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_Operational_Environment">4.2 Security Objectives for the Operational Environment</h2>
-      QQQQ
-      <dl><dt class="SOE defined" id="OE.QQQQ">OE.QQQQ</dt><dd><span class="description">QQQQ</span></dd></dl>
-    
-    
-    <h2 id="" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>   
-		This section describes how the assumptions and organizational 
-		security policies map to operational environment security objectives.
-	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="1"><a href="#T.QQQQ">T.QQQQ</a></td><td><a href="#O.QQQQ">O.QQQQ</a></td><td>QQQQ</td></tr><tr class="major-row"><td rowspan="1"><a href="#A.QQQQ">A.QQQQ</a></td><td><a href="#OE.QQQQ">OE.QQQQ</a></td><td>QQQQ</td></tr></table>
   <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
       This chapter describes the security requirements which have to be fulfilled by the product under evaluation.
      Those requirements comprise functional components from Part 2 and assurance components from Part 3 of 
@@ -821,7 +819,14 @@ provide all of its security functionality.</p>
    <h2 id="secreq-ND" class="indexable" data-level="2">5.1 Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
-    </h2><h3 id="modsfr-ND" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
+    </h2>
+      In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the NDcPP,
+      the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the
+Network Device
+      as a whole and evaluated against the  NDcPP.
+      The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
+      defined in the NDcPP in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.2 TOE Security Functional Requirements</a>.
+    <h3 id="modsfr-ND" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the NDcPP and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
 		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FTP_ITC.1: Inter-TSF Trusted Channel</h4><span class="description">
@@ -1331,16 +1336,73 @@ provide all of its security functionality.</p>
         </div>
       
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr></table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">1</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="5"><a href="#T.MALICIOUS_TRAFFIC">T.MALICIOUS_​TRAFFIC</a></td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td>Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.</td></tr>
+<tr><td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td><td>Mitigates the threat by iterating a <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement to define additional auditable events that are specific to SBC functionality.</td></tr>
+<tr><td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td>Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations.</td></tr>
+<tr><td><a href="#FAU_SEL.1">FAU_SEL.1</a></td><td>Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
+            audit records can be suppressed when it is not practical to generate those records for performance reasons.</td></tr>
+<tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.</td></tr>
+<tr class="major-row"><td rowspan="17"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a></td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td>Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.</td></tr>
+<tr><td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td><td>Mitigates the threat by iterating a <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement to define additional auditable events that are specific to SBC functionality.</td></tr>
+<tr><td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td>Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations.</td></tr>
+<tr><td><a href="#FAU_SEL.1">FAU_SEL.1</a></td><td>Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
+            audit records can be suppressed when it is not practical to generate those records for performance reasons.</td></tr>
+<tr><td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td>Mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s implementation of the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> protocol that is used to protect <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint communications.</td></tr>
+<tr><td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td>Mitigates the threat by defining a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy so that <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoints are only connected to each other through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as an intermediary.</td></tr>
+<tr><td><a href="#FDP_IFF.1">FDP_IFF.1</a></td><td>Mitigates the threat by defining the specific rules that the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy enforces.</td></tr>
+<tr><td><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td><td>Mitigates the threat by defining capabilities for traffic filtering of network packets.</td></tr>
+<tr><td><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a></td><td>Mitigates the threat by defining specific methods of stateful traffic inspection for specific protocols.</td></tr>
+<tr><td><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></td><td>Mitigates the threat by defining the capability to perform <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for certain network traffic.</td></tr>
+<tr><td><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a></td><td>Mitigates the threat by defining the use of <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to obfuscate IP addresses of endpoint devices on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s internal network.</td></tr>
+<tr><td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td>Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.</td></tr>
+<tr><td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td><td>Mitigates the threat by defining <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> management functions that require authorizations to use.</td></tr>
+<tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>Mitigates the threat by defining how communications of potential security violations are protected.</td></tr>
+<tr><td><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td><td>Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> are protected.</td></tr>
+<tr><td><a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a> (selection-based)</td><td>Mitigates the threat by defining H.323 as a permitted method of protected communications for when a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements this logical interface.</td></tr>
+<tr><td><a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a></td><td>Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint are protected.</td></tr>
+<tr class="major-row"><td rowspan="11"><a href="#T.RESOURCE_EXHAUSTION">T.RESOURCE_​EXHAUSTION</a></td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td>Mitigates the threat by defining the ability to generate security violations that are transmitted to external entities.</td></tr>
+<tr><td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td><td>Mitigates the threat by iterating a <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement to define additional auditable events that are specific to SBC functionality.</td></tr>
+<tr><td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td>Mitigates the threat by defining a set of rules to monitor auditable events for potential security violations.</td></tr>
+<tr><td><a href="#FAU_SEL.1">FAU_SEL.1</a></td><td>Mitigates the threat by allowing for some monitoring functions to be selectively enabled and disabled as needed so that the generation of lower-priority 
+            audit records can be suppressed when it is not practical to generate those records for performance reasons.</td></tr>
+<tr><td><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td><td>Mitigates the threat by defining capabilities for traffic filtering of network packets.</td></tr>
+<tr><td><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a></td><td>Mitigates the threat by defining specific methods of stateful traffic inspection for specific protocols.</td></tr>
+<tr><td><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></td><td>Mitigates the threat by defining the capability to perform <abbr class="dyn-abbr"><a href="#abbr_DPI">DPI</a></abbr> for certain network traffic.</td></tr>
+<tr><td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td><td>Mitigates the threat by defining <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> management functions that require authorizations to use.</td></tr>
+<tr><td><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a></td><td>Mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement priority of service to ensure that low-priority traffic cannot cause a <abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr>.</td></tr>
+<tr><td><a href="#FRU_RSA.1">FRU_RSA.1</a></td><td>Mitigates the threat by enforcing quotas for <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> resources to prevent <abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr>.</td></tr>
+<tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>Mitigates the threat by defining the trusted channel used to securely communicate potential security violations.</td></tr>
+<tr class="major-row"><td rowspan="6"><a href="#T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_​COMMUNICATION_​CHANNELS</a></td><td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td><td>Mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s implementation of the <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr> protocol that is used to protect <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint communications.</td></tr>
+<tr><td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td>Mitigates the threat by defining secure behavior for <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking.</td></tr>
+<tr><td><a href="#FTP_ITC.1/ARP">FTP_ITC.1/ARP</a></td><td>Mitigates the threat by defining how communications of potential security violations are protected.</td></tr>
+<tr><td><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td><td>Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> are protected.</td></tr>
+<tr><td><a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a> (selection-based)</td><td>Mitigates the threat by defining H.323 as a permitted method of protected communications for when a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements this logical interface.</td></tr>
+<tr><td><a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a></td><td>Mitigates the threat by defining how communications with an external <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoint are protected.</td></tr>
+<tr class="major-row"><td rowspan="4"><a href="#T.USER_DATA_REUSE">T.USER_​DATA_​REUSE</a></td><td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td>Mitigates the threat by defining a <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy that is used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to establish connections between <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> endpoints.</td></tr>
+<tr><td><a href="#FDP_IFF.1">FDP_IFF.1</a></td><td>Mitigates the threat by defining the rules that the <abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr> policy enforces.</td></tr>
+<tr><td><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a></td><td>Mitigates the threat by requiring the use of <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> to maintain a unique relationship between how external entities identify entities on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s internal network and how they are actually addressed by that network.</td></tr>
+<tr><td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td><td>Mitigates the threat by defining the use of <abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr> trunking, which requires authentication of endpoints to ensure data is only transmitted to the intended endpoint.</td></tr>
+</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 
     Protection Profile for Network Devices</h2><h3 id="contoe-ND" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3>When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the NDcPP, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a network device. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include SBC functionality that is provided by the network device.<h3 id="consecprob-ND" class="indexable" data-level="3">6.1.2 
 	Consistency of Security Problem Definition
-      </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">3</span></span>: Consistency of Security Problem Definition (NDcPP base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.QQQQ">T.QQQQ</a></td><td></td></tr><tr><td><a href="#A.QQQQ">A.QQQQ</a></td><td></td></tr></table><h3 id="conobj-ND" class="indexable" data-level="3">6.1.3 
+      </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">2</span></span>: Consistency of Security Problem Definition (NDcPP base)
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.MALICIOUS_TRAFFIC">T.MALICIOUS_TRAFFIC</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define a threat for malicious traffic because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines interfaces where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as opposed to and from the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
+            This threat is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because it is only applied to the interfaces defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> where it is relevant; it does not apply to the interfaces defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#T.NETWORK_ACCESS">T.NETWORK_ACCESS</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define a threat for access to network resources because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines interfaces where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as opposed to into and out of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
+            This threat is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because it is only applied to the interfaces defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> where it is relevant; it does not apply to the interfaces defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#T.RESOURCE_EXHAUSTION">T.RESOURCE_EXHAUSTION</a></td><td>The threat of network traffic causing the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to be unable to perform its functions is similar to T.SECURITY_FUNCTIONALITY_FAILURE in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> 
+            because the intent of the threat is to cause the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to fail. 
+            The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define <abbr class="dyn-abbr"><a href="#abbr_DoS">DoS</a></abbr> protections because it does not define logical interfaces that are intended to process large volumes of network traffic. 
+            This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the threat by defining a specific example of it that applies to an SBC device that has this functionality.</td></tr><tr><td><a href="#T.UNTRUSTED_COMMUNICATION_CHANNELS">T.UNTRUSTED_COMMUNICATION_CHANNELS</a></td><td>The threat of disclosure of data in transit is fundamentally the same as the NDcPP threat with the same name. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the threat to apply to the external interfaces that are defined specifically in support of SBC functions.</td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define a threat of user data transmitted to the wrong destination because all of its security-relevant external interfaces define the network device as the endpoint. 
+            This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines interfaces where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is facilitating a connection between two external entities, 
+            such that traffic between them will flow through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as opposed to and from the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
+            This threat is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because it is only applied to the interfaces defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> where it is relevant; it does not apply to the interfaces defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr></table><h3 id="conobj-ND" class="indexable" data-level="3">6.1.3 
 			Consistency of OE Objectives
-		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">4</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (NDcPP base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.QQQQ">OE.QQQQ</a></td><td></td></tr></table></p><h3 id="conreq-ND" class="indexable" data-level="3">6.1.4 
+		</h3><p></p><h3 id="conreq-ND" class="indexable" data-level="3">6.1.4 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
@@ -1352,7 +1414,7 @@ provide all of its security functionality.</p>
           The rationale for why this does not conflict with the claims
       defined by the
       NDcPP are as follows:
-      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">5</span></span>: Consistency of Requirements (NDcPP base)
+      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">3</span></span>: Consistency of Requirements (NDcPP base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FTP_ITC.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> refines the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to mandate the use of one of the trusted protocols defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
 	      NDcPP is the base.
@@ -1451,7 +1513,7 @@ provide all of its security functionality.</p>
 
 	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
 
-<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">6</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_SRTP_EXT Secure Real-Time Transport Protocol<br/></td></tr><tr data-sortkey="Firewall (FFW)"><td>Firewall (FFW)</td><td>FFW_ACL_EXT Traffic Filtering<br/>FFW_DPI_EXT Deep Packet Inspection<br/>FFW_NAT_EXT Network Address Translation<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_SIPS_EXT Session Initiation Protocol Registration<br/>FIA_SIPT_EXT Session Initiation Protocol Trunking<br/></td></tr><tr data-sortkey="Resource Utilization (FRU)"><td>Resource Utilization (FRU)</td><td>FRU_PRS_EXT Limited Priority of Service<br/></td></tr><tr data-sortkey="Security Audit (FAU)"><td>Security Audit (FAU)</td><td>FAU_ARP_EXT Security Audit Automatic Response<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">4</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_SRTP_EXT Secure Real-Time Transport Protocol<br/></td></tr><tr data-sortkey="Firewall (FFW)"><td>Firewall (FFW)</td><td>FFW_ACL_EXT Traffic Filtering<br/>FFW_DPI_EXT Deep Packet Inspection<br/>FFW_NAT_EXT Network Address Translation<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_SIPS_EXT Session Initiation Protocol Registration<br/>FIA_SIPT_EXT Session Initiation Protocol Trunking<br/></td></tr><tr data-sortkey="Resource Utilization (FRU)"><td>Resource Utilization (FRU)</td><td>FRU_PRS_EXT Limited Priority of Service<br/></td></tr><tr data-sortkey="Security Audit (FAU)"><td>Security Audit (FAU)</td><td>FAU_ARP_EXT Security Audit Automatic Response<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_SRTP_EXT" class="indexable" data-level="4">C.2.1.1 FCS_SRTP_EXT Secure Real-Time Transport Protocol</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for the implementation of <abbr class="dyn-abbr"><a href="#abbr_SRTP">SRTP</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_SRTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a>,
              Secure Real-Time Transport Protocol,
@@ -1588,7 +1650,167 @@ provide all of its security functionality.</p>
                 [<b>assignment</b>: 
      <span class="assignable-content">trusted channel defined in FTP_ITC.1</span>]
                 to transmit potential security violations to an external IT entity in the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> upon detection.
-              </div></div></span></span><h1 id="" class="indexable" data-level="A">Appendix D - </h1><h1 id="acronyms" class="indexable" data-level="A">Appendix E -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">7</span></span>: Acronyms
+              </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
+			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
+			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
+			standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation.
+			This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.3 Dependencies between components.</p><p>This information benefits systems engineering activities which call for inclusion of particular
+			security controls. Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present 
+			and have been evaluated.</p>
+    <b>
+      <span class="ctr" data-myid="imp-sat-reqs-table" data-counter-type="ct-Table" id="imp-sat-reqs-table">Table  <span class="counter">5</span>: Implicitly Satisfied Requirements</span>
+    </b>
+    <table>
+      <tr class="header">
+        <td>Requirement</td>
+        <td>Rationale for Satisfaction</td>
+      </tr>
+      <tr>
+        <td>
+          <b>FMT_MSA.3 – Static Attribute Initialization</b>
+        </td>
+        <td>
+          <a href="#FDP_IFF.1">FDP_IFF.1</a> has a dependency on FMT_MSA.3 to define the default security posture of security attributes for the purpose of information flow control enforcement. 
+          This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has not been defined by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the enforcement of <a href="#FDP_IFF.1">FDP_IFF.1</a> 
+          is not dependent on the initial state of security attributes. 
+          For example, <a href="#FDP_IFF.1.2">FDP_IFF.1.2</a> requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to determine if a communication attempt is valid before authorizing it. 
+          This is true regardless of whether the default value of security attributes associated 
+          with the connection attempt are permissive or restrictive; there is no difference in how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> determines “validity” in this case.
+          <p></p>
+          The default values of security attributes do not cause the information flow control policy to behave differently for those rules that must always be enforced by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
+          <a href="#FDP_IFF.1.4">FDP_IFF.1.4</a> requires that all allowlisted calling parties be authorized while all denylisted calling parties be rejected. 
+          It does not matter for the purpose of enforcing this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> whether the absence of a calling party from both the allowlist and the denylist means they are authorized or rejected by default.
+        </td>
+      </tr>
+    </table>
+  <h1 id="EAR" class="indexable" data-level="A">Appendix E -  Entropy Documentation and Assessment</h1>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.<h1 id="allocation" class="indexable" data-level="A">Appendix F -  Allocation of Requirements in Distributed TOEs</h1>
+    For a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> need to be met by the
+    <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as a whole, but not all <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> will necessarily be implemented by all components. The
+    following categories are defined in order to specify when each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> must be implemented by a
+    component:
+    <ul>
+      <li>
+        <b>All Components ("All"):</b>
+        All components that comprise the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must
+        independently satisfy the requirement.
+      </li>
+      <li>
+        <b>At least one Component ("One"):</b>
+        This requirement must be fulfilled by at least one
+        component within the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+      </li>
+      <li>
+        <b>Feature Dependent ("Feature Dependent"):</b>
+        These requirements will only be
+        fulfilled where the feature is implemented by the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> component (note
+        that the requirement to meet the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> as a whole requires that at least one component
+        implements these requirements if they are claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).
+      </li>
+    </ul>
+    The table below specifies how each of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> must be met, using the categories above.
+    <table>
+      <tr class="header">
+        <td>Requirement</td>
+        <td>Description</td>
+        <td>Distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Allocation</td>
+      </tr>
+      <tr>
+        <td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td>
+        <td>Security Audit Automatic Response</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FAU_GEN.1/SBC">FAU_GEN.1/SBC</a></td>
+        <td>Audit Data Generation (Session Border Controller)</td>
+        <td>All</td>
+      </tr>
+      <tr>
+        <td><a href="#FAU_SAA.1">FAU_SAA.1</a></td>
+        <td>Potential Violation Analysis</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FAU_SEL.1">FAU_SEL.1</a></td>
+        <td>Selective Audit</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FCS_SRTP_EXT.1">FCS_SRTP_EXT.1</a></td>
+        <td>Secure Real-Time Transport Protocol</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FDP_IFC.1">FDP_IFC.1</a></td>
+        <td>Subset Information Flow Control</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FDP_IFF.1">FDP_IFF.1</a></td>
+        <td>Simple Security Attributes</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FFW_ACL_EXT.1">FFW_ACL_EXT.1</a></td>
+        <td>Real-Time Communications Traffic Filtering</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FFW_ACL_EXT.2">FFW_ACL_EXT.2</a></td>
+        <td>Stateful <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> Traffic Filtering</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FFW_DPI_EXT.1">FFW_DPI_EXT.1</a></td>
+        <td>Deep Packet Inspection</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FFW_NAT_EXT.1">FFW_NAT_EXT.1</a></td>
+        <td>Topology Hiding/<abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> Traversal</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FIA_SIPS_EXT.1">FIA_SIPS_EXT.1</a> (implementation-based)</td>
+        <td>Session Initiation Protocol Registration</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FIA_SIPT_EXT.1">FIA_SIPT_EXT.1</a></td>
+        <td>Session Initiation Protocol Trunking</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FMT_SMF.1/SBC">FMT_SMF.1/SBC</a></td>
+        <td>Specification of Management Functions (SBC)</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FRU_PRS_EXT.1">FRU_PRS_EXT.1</a></td>
+        <td>Limited Priority of Service</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FRU_RSA.1">FRU_RSA.1</a></td>
+        <td>Maximum Quotas</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FTP_ITC.1/ESC">FTP_ITC.1/ESC</a></td>
+        <td>Inter-TSF Trusted Channel (<abbr class="dyn-abbr"><a href="#abbr_ESC">ESC</a></abbr> Communications)</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FTP_ITC.1/H323">FTP_ITC.1/H323</a> (selection-based)</td>
+        <td>Inter-TSF Trusted Channel (H.323 Communications)</td>
+        <td>Feature Dependent</td>
+      </tr>
+      <tr>
+        <td><a href="#FTP_ITC.1/VVoIP">FTP_ITC.1/VVoIP</a></td>
+        <td>Inter-TSF Trusted Channel (<abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> Communications)</td>
+        <td>Feature Dependent</td>
+      </tr>
+    </table>
+  <h1 id="acronyms" class="indexable" data-level="A">Appendix G -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">6</span></span>: Acronyms
 		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_ACL"><abbr class="dyn-abbr"><a href="#abbr_ACL">ACL</a></abbr></span></td><td><span id="long_abbr_ACL">Access Control List</span></td></tr>
 <tr><td><span class="term" id="abbr_B2BUA"><abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr></span></td><td><span id="long_abbr_B2BUA">Back-To-Back User Agent</span></td></tr>
 <tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
@@ -1621,7 +1843,7 @@ provide all of its security functionality.</p>
 <tr><td><span class="term" id="abbr_TSFI" data-plural="TSFIs"><abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr></span></td><td><span id="long_abbr_TSFI"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
 <tr><td><span class="term" id="abbr_VVoIP"><abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr></span></td><td><span id="long_abbr_VVoIP">Voice/Video Over IP</span></td></tr>
-</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix F -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">8</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="">[]</span></td><td></td></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix H -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">7</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
 				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: 
@@ -1635,4 +1857,6 @@ provide all of its security functionality.</p>
           </ul></span></td></tr><tr><td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">Common Methodology for Information Technology Security Evaluation - <ul>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">
                  Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
-          </ul></span></td></tr></table></body></html>
+          </ul></span></td></tr><tr><td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description">
+        <a href="https://www.niap-ccevs.org/protectionprofiles/524">collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</a>
+      </span></td></tr></table></body></html>

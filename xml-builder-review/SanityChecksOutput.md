@@ -20,6 +20,10 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/h:p[3]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/sec:TOE_Boundary[1]"An SBC is"/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/sec:TOE_Boundary[1]"An SBC is"/h:p[2]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/sec:TOE_Boundary[1]"An SBC is"/h:p[3]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Compliant_Targets_of_Evaluation[1]"This PP-M"/sec:TOE_Boundary[1]"An SBC is"/h:p[4]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[1]""/dependencies[1]"FAU_SAA.1"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[1]""/f-element[1]""/aactivity[1]""/Guidance[1]"The evalu"/h:p[1]""
@@ -119,6 +123,7 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[1]""/f-component[1]""/f-element[4]""/aactivity[1]""/Tests[1]"The evalu"/testlist[1]""/test[1]"Attempt t"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[1]""/f-component[1]""/f-element[4]""/aactivity[1]""/Tests[1]"The evalu"/testlist[1]""/test[2]"Attempt t"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[1]""/f-component[1]""/f-element[4]""/aactivity[1]""/Tests[1]"The evalu"/testlist[1]""/test[3]"Attempt t"/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/appendix[1]""/h:table[1]""/h:tr[2]""/h:td[2]"FDP_IFF.1"/h:p[1]""
 * Warning: fia_sips_ext.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[1]""/f-component[1]""
  Failed to find a reference to at-mandatory.
  Failed to find a reference to at-feat-based.
