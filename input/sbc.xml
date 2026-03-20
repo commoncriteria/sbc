@@ -563,7 +563,7 @@
     </base-pp>
     <man-sfrs>
 
-      <section title="Auditable Events for Mandatory SFRs">
+      <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs">
         <audit-table table="mandatory" id="at-mandatory">
         </audit-table>
       </section>
@@ -2066,7 +2066,7 @@
    </opt-sfrs>
     <sel-sfrs>
 
-      <section title="Auditable Events for Selection-Based SFRs">
+      <section id="sel-audit-table" title="Auditable Events for Selection-Based SFRs">
           <audit-table table="sel-based" id="at-sel-based">
           </audit-table>
       </section>
@@ -2129,7 +2129,7 @@
     <obj-sfrs>
     </obj-sfrs>
     <impl-dep-sfrs>
-      <section title="Auditable Events for Implementation-Dependent SFRs">
+      <section id="impl-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
           <audit-table id="at-feat-based" table="feat-based"/>
       </section>
       
