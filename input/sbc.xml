@@ -514,9 +514,7 @@
     <sec:Security_Objectives_for_the_Operational_Environment>
       All objectives for the OE of the Base-PP also apply to this PP-Module. OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are defined by the Base-PP and not the PP-Module.
     </sec:Security_Objectives_for_the_Operational_Environment>
-    <sec:Security_Objectives_Rationale>
-      <!-- NOTE: This section should remain empty and is populated from the rationale tags in the previous sections.  -->
-    </sec:Security_Objectives_Rationale>
+
   </sec:Security_Objectives>
   <sec:Security_Requirements>
     <base-pp id="ND" version="4.0" name="Network Device" product="Network Device" short="ND" plural="Network Devices">
