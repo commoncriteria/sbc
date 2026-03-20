@@ -632,7 +632,7 @@ function showTarget(id){
     </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for Session Border Controllers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2026-03-17<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2022-12-05</td><td>Initial Release</td></tr>
 <tr><td>2.0</td><td>2026-03-17</td><td>Apply NIAP Technical Decisions, Update to <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022</td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:10px">1.4<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.5<span>Use Cases</span></a><a href="#_sec_1" style="text-indent:10px">1.6<span>Package Usage</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#_sec_1" style="text-indent:10px">1.5<span>Package Usage</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
     </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#_sec_3" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#man_fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#man_fdp" style="text-indent:20px">5.2.4<span>User Data Protection (FDP)</span></a><a href="#man_ffw" style="text-indent:20px">5.2.5<span>Firewall (FFW)</span></a><a href="#man_fia" style="text-indent:20px">5.2.6<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.7<span>Security Management (FMT)</span></a><a href="#man_fru" style="text-indent:20px">5.2.8<span>Resource Utilization (FRU)</span></a><a href="#man_ftp" style="text-indent:20px">5.2.9<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
@@ -708,38 +708,38 @@ The following sections list Common Criteria and technology terms used in this do
       </td></tr>
 </table></div>
     <h2 class="indexable" data-level="2" id="Compliant_Targets_of_Evaluation">1.3 Compliant Targets of Evaluation</h2>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifically addresses SBCs that provide firewalling, interoperability, and security functions for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks. 
-      The SBC also provides protected communication between trusted components of the network infrastructure.
-      <p></p>
-      The physical boundary of the SBC is defined by the operating system components storing or providing security functions and 
-      all software supplied by the vendor, including vendor modified components to the operating system. 
-      All the security functionality is contained and executed within the physical boundary of the device.
-      <p></p>
-      While the functionality that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is obligated to implement in response to the described threat environment is detailed in later sections, 
-      a brief description is provided here. A compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide security functionality that addresses threats to itself. 
-      It must also protect communications between itself and an Internet Protocol Public Branch Exchange (<abbr class="dyn-abbr"><a href="#abbr_IP-PBX">IP-PBX</a></abbr>) 
-      or another SBC by using a trusted channel. Some protocols required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> make use of certificates; therefore, the SBC must securely store certificates and private keys. 
-      <p></p>
-      Since this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the NDcPP, conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> must implement the functionality required in the NDcPP along 
-      with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in response to the threat environment discussed later in this document.
-      
-    
-      <h2 class="indexable" data-level="2" id="TOE_Boundary">1.4 TOE Boundary</h2>
-        An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions. 
-        SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
-        service provider networks and residential customers, or in some cases as a back-to-back user agent (<abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr>) that allows mobile users the ability to connect to their internal <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> network.
-        <p></p>
-        The following diagram represents a typical deployment of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its operational environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>). 
-        Note that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
-        <p></p> 
-	     <p></p>
-        <div class="figure" id="figure-OperEnv"><img id="OperEnv" src="images/figure1.png" width="" height=""></img><br/><span class="ctr" data-myid="OperEnv" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
+		This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifically addresses SBCs that provide firewalling, interoperability, and security functions for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks. 
+		The SBC also provides protected communication between trusted components of the network infrastructure.
+		<p></p>
+		The physical boundary of the SBC is defined by the operating system components storing or providing security functions and 
+		all software supplied by the vendor, including vendor modified components to the operating system. 
+		All the security functionality is contained and executed within the physical boundary of the device.
+		<p></p>
+		While the functionality that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is obligated to implement in response to the described threat environment is detailed in later sections, 
+		a brief description is provided here. A compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide security functionality that addresses threats to itself. 
+		It must also protect communications between itself and an Internet Protocol Public Branch Exchange (<abbr class="dyn-abbr"><a href="#abbr_IP-PBX">IP-PBX</a></abbr>) 
+		or another SBC by using a trusted channel. Some protocols required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> make use of certificates; therefore, the SBC must securely store certificates and private keys. 
+		<p></p>
+		Since this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the NDcPP, conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> must implement the functionality required in the NDcPP along 
+		with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in response to the threat environment discussed later in this document.
+
+		<h3 class="indexable" data-level="3" id="TOE_Boundary">1.3.1 TOE Boundary</h3>
+			An SBC is a security device composed of hardware and software connected to two or more distinct voice networks that provides security and interoperability functions. 
+			SBCs are deployed between peering service provider networks, service provider networks and enterprise networks, 
+			service provider networks and residential customers, or in some cases as a back-to-back user agent (<abbr class="dyn-abbr"><a href="#abbr_B2BUA">B2BUA</a></abbr>) that allows mobile users the ability to connect to their internal <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> network.
+			<p></p>
+			The following diagram represents a typical deployment of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its operational environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>). 
+			Note that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is limited to the physical boundary of the SBC device itself, and the trusted channels/paths that are established by the SBC.
+			<p></p> 
+			 <p></p>
+			<div class="figure" id="figure-OperEnv"><img id="OperEnv" src="images/figure1.png" width="" height=""></img><br/><span class="ctr" data-myid="OperEnv" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
       SBC Deployment Model</div>
-        <p></p>
+			<p></p>
+		
       
     
     
-    <h2 class="indexable" data-level="2" id="Use_Cases">1.5 Use Cases</h2>
+    <h2 class="indexable" data-level="2" id="Use_Cases">1.4 Use Cases</h2>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines a single potential use case for the SBC <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:
       <dl><dt id="usecase-dedicated"> [USE CASE 1] Border Protection</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a specialized network device that provides firewall services for <abbr class="dyn-abbr"><a href="#abbr_VVoIP">VVoIP</a></abbr> networks. 
             The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is intended to provide protection against well-known threats that target these networks. 
@@ -748,7 +748,7 @@ The following sections list Common Criteria and technology terms used in this do
             between service providers and residential customers for security and interoperability purposes; or between service providers and enterprise networks for translation, transcoding, and security purposes. 
             The SBC, as a border element, should also be able to establish a secure communication channel with external devices it communicates with.</span></dd></dl> 
     
-        <h2 class="indexable" data-level="2" id="_sec_1">1.6 Package Usage</h2>
+        <h2 class="indexable" data-level="2" id="_sec_1">1.5 Package Usage</h2>
       This section contains selections and assignments that are required when the listed Functional Packages are claimed by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
     	<br/>
     	Package Usage guidance defined in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s relevant <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> applies to the usage of the packages for this module, unless explicitly stated otherwise in this section.
