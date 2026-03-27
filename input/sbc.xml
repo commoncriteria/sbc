@@ -356,7 +356,7 @@
       <cPP/>
       <!-- 5.1.1 Modified SFRs -->
       <modified-sfrs>
-        <section title="Trusted Path/Channels (FTP)" id="nd-mod-ftp">
+        <section title="Class FTP: Trusted Path/Channels" id="nd-mod-ftp">
           <!-- FTP_ITC.1 Inter-TSF Trusted Channel -->
           <base-sfr-spec cc-id="ftp_itc.1" id="nd-mod-ftp-itc-1" title="Inter-TSF Trusted Channel">
             <consistency-rationale>This PP-Module refines the Base-PP SFR to mandate the use of one of the trusted protocols defined by the Base-PP.</consistency-rationale>
@@ -399,7 +399,7 @@
         <audit-table id="at-mandatory" table="mandatory"/>
       </section>
       <!-- 5.2.1 Security Audit (FAU) -->
-      <section title="Security Audit (FAU)" id="man_fau">
+      <section title="Class FAU: Security Audit" id="man_fau">
         <ext-comp-def title="Security Audit Automatic Response" fam-id="FAU_ARP_EXT">
           <fam-behavior>This family defines requirements for secure external transmission of detected security violations to the OE.</fam-behavior>
         </ext-comp-def>
@@ -621,7 +621,7 @@
         </f-component>
       </section>
       <!-- 5.2.2 Cryptographic Support (FCS) -->
-      <section title="Cryptographic Support (FCS)" id="man_fcs">
+      <section title="Class FCS: Cryptographic Support" id="man_fcs">
         <ext-comp-def title="Secure Real-Time Transport Protocol" fam-id="FCS_SRTP_EXT">
           <fam-behavior>This family defines requirements for the implementation of SRTP.</fam-behavior>
         </ext-comp-def>
@@ -719,7 +719,7 @@
         </f-component>
       </section>
       <!-- 5.2.3 User Data Protection (FDP) -->
-      <section title="User Data Protection (FDP)" id="man_fdp">
+      <section title="Class FDP: User Data Protection" id="man_fdp">
         <!-- FDP_IFC.1 Subset Information Flow Control -->
         <f-component cc-id="fdp_ifc.1" id="fdp-ifc-1" name="Subset Information Flow Control">
           <consistency-rationale>This SFR applies to the TOE’s implementation of a B2BUA policy, which applies to the TOE’s through-traffic interfaces and is therefore beyond the original scope of the Base-PP.</consistency-rationale>
@@ -805,7 +805,7 @@
         </f-component>
       </section>
       <!-- 5.2.4 Firewall (FFW) -->
-      <section title="Firewall (FFW)" id="man_ffw">
+      <section title="Class FFW: Firewall" id="man_ffw">
         <class-description>Firewall functionality involves selective processing of network traffic such that the traffic is routed or discarded based on some notion of whether the traffic is valid. 
           Requirements in this class define capabilities for these processing functions.</class-description>
         <ext-comp-def title="Traffic Filtering" fam-id="FFW_ACL_EXT">
@@ -1281,7 +1281,7 @@
         </f-component>
       </section>
       <!-- 5.2.5 Identification and Authentication (FIA) -->
-      <section title="Identification and Authentication (FIA)" id="man_fia">
+      <section title="Class FIA: Identification and Authentication" id="man_fia">
         <ext-comp-def title="Session Initiation Protocol Trunking" fam-id="FIA_SIPT_EXT">
           <fam-behavior>This family defines requirements for SIP validation, authentication, and traffic encryption.</fam-behavior>
         </ext-comp-def>
@@ -1346,7 +1346,7 @@
         </f-component>
       </section>
       <!-- 5.2.6 Security Management (FMT) -->
-      <section title="Security Management (FMT)" id="man_fmt">
+      <section title="Class FMT: Security Management" id="man_fmt">
         <!-- FMT_SMF.1/SBC Specification of Management Functions (SBC) -->
         <f-component cc-id="fmt_smf.1" id="fel-managementfun-as" name="Specification of Management Functions (SBC)" iteration="SBC">
           <consistency-rationale>This SFR is an iteration of a Base-PP requirement that defines additional management functions for SBC functionality that the Base-PP could not be expected to cover.</consistency-rationale>
@@ -1415,7 +1415,7 @@
         </f-component>
       </section>
       <!-- 5.2.7 Resource Utilization (FRU) -->
-      <section title="Resource Utilization (FRU)" id="man_fru">
+      <section title="Class FRU: Resource Utilization" id="man_fru">
         <ext-comp-def title="Limited Priority of Service" fam-id="FRU_PRS_EXT">
           <fam-behavior>This family defines requirements for prioritizing communication packets and bandwidth.</fam-behavior>
         </ext-comp-def>
@@ -1487,7 +1487,7 @@
         </f-component>
       </section>
       <!-- 5.2.8 Trusted Path/Channels (FTP) -->
-      <section title="Trusted Path/Channels (FTP)" id="man_ftp">
+      <section title="Class FTP: Trusted Path/Channels" id="man_ftp">
         <!-- FTP_ITC.1/ARP Inter-TSF Trusted Channel (Automatic Response) -->
         <f-component cc-id="ftp_itc.1" id="ftp-itc-1-arp" name="Inter-TSF Trusted Channel (Automatic Response)" iteration="ARP">
           <consistency-rationale>This SFR is used to specify the trusted channel used for transmission of alerts as specified in FAU_ARP_EXT.1.</consistency-rationale>
@@ -1647,7 +1647,7 @@
         <audit-table id="at-sel-based" table="sel-based"/>
       </section>
       <!-- 5.2.9 Trusted Path/Channels (FTP) -->
-      <section title="Trusted Path/Channels (FTP)" id="sel_ftp">
+      <section title="Class FTP: Trusted Path/Channels" id="sel_ftp">
         <!-- FTP_ITC.1/H323 Inter-TSF Trusted Channel (H.323 Communications) -->
         <f-component cc-id="ftp_itc.1" id="ftp-itc-1-h323" name="Inter-TSF Trusted Channel (H.323 Communications)" iteration="H323">
           <depends on-sel="filters_H323"/>
@@ -1706,7 +1706,7 @@
         <audit-table id="at-feat-based" table="feat-based"/>
       </section>
       <!-- 5.2.10 Identification and Authentication (FIA) -->
-      <section title="Identification and Authentication (FIA)" id="impl_fia">
+      <section title="Class FIA: Identification and Authentication" id="impl_fia">
         <ext-comp-def title="Session Initiation Protocol Registration" fam-id="FIA_SIPS_EXT">
           <fam-behavior>This family defines requirements for SIP registration.</fam-behavior>
         </ext-comp-def>
