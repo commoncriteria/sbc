@@ -1,0 +1,1 @@
+/home/runner/work/sbc/sbc/input/sbc.xml:7:13: error: element "PPTitle" not allowed here; expected element "PPVersion"
